@@ -40,6 +40,7 @@
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.op_cb_combosections = new Telerik.WinControls.UI.RadDropDownList();
             this.op_btn_clearselection = new Telerik.WinControls.UI.RadButton();
+            this.op_btn_add_account = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredmembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredmembers.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.op_cb_combosections)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.op_btn_clearselection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.op_btn_add_account)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,11 +174,21 @@
             this.op_btn_clearselection.Text = "Clear";
             this.op_btn_clearselection.Click += new System.EventHandler(this.op_btn_clearselection_Click);
             // 
+            // op_btn_add_account
+            // 
+            this.op_btn_add_account.Location = new System.Drawing.Point(744, 414);
+            this.op_btn_add_account.Name = "op_btn_add_account";
+            this.op_btn_add_account.Size = new System.Drawing.Size(147, 81);
+            this.op_btn_add_account.TabIndex = 7;
+            this.op_btn_add_account.Text = "Add New Authorized \r\nAccount";
+            this.op_btn_add_account.Click += new System.EventHandler(this.op_btn_add_account_Click);
+            // 
             // OfficersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 618);
+            this.Controls.Add(this.op_btn_add_account);
             this.Controls.Add(this.op_btn_clearselection);
             this.Controls.Add(this.op_cb_combosections);
             this.Controls.Add(this.radButton1);
@@ -206,6 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.op_cb_combosections)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.op_btn_clearselection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.op_btn_add_account)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,5 +238,6 @@
         private Telerik.WinControls.UI.RadButton radButton1;
         private Telerik.WinControls.UI.RadDropDownList op_cb_combosections;
         private Telerik.WinControls.UI.RadButton op_btn_clearselection;
+        private Telerik.WinControls.UI.RadButton op_btn_add_account;
     }
 }

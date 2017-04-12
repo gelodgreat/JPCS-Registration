@@ -96,7 +96,7 @@ namespace JPCS_Registration
 
                         if (count >= 1)
                         {
-                            RadMessageBox.Show(this, "Studno " + reg_tb_studno.Text +  " is already registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                            RadMessageBox.Show(this, "Student # " + reg_tb_studno.Text +  " is already registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
                         }
                         else
                         {

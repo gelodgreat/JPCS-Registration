@@ -209,6 +209,11 @@ namespace JPCS_Registration
 
         }
 
-
+        private void op_btn_add_account_Click(object sender, EventArgs e)
+        {
+            AddAccount ac = new AddAccount();
+            ac.ShowDialog();
+          
+        }
     }
 }
