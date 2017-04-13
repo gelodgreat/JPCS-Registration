@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.aa_lbl_usernamestat = new Telerik.WinControls.UI.RadLabel();
+            this.aa_lbl_studnostat = new Telerik.WinControls.UI.RadLabel();
             this.aa_rb_gender = new Telerik.WinControls.UI.RadGroupBox();
             this.aa_rb_female = new Telerik.WinControls.UI.RadRadioButton();
             this.aa_rb_male = new Telerik.WinControls.UI.RadRadioButton();
@@ -55,14 +58,19 @@
             this.radGroupBox4 = new Telerik.WinControls.UI.RadGroupBox();
             this.rgv_registeredaccounts = new Telerik.WinControls.UI.RadGridView();
             this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
-            this.aa_btn_clear = new Telerik.WinControls.UI.RadButton();
-            this.aa_btn_register = new Telerik.WinControls.UI.RadButton();
-            this.aa_btn_update = new Telerik.WinControls.UI.RadButton();
             this.aa_btn_delete = new Telerik.WinControls.UI.RadButton();
-            this.aa_lbl_studnostat = new Telerik.WinControls.UI.RadLabel();
-            this.aa_lbl_usernamestat = new Telerik.WinControls.UI.RadLabel();
+            this.aa_btn_update = new Telerik.WinControls.UI.RadButton();
+            this.aa_btn_register = new Telerik.WinControls.UI.RadButton();
+            this.aa_btn_clear = new Telerik.WinControls.UI.RadButton();
+            this.aa_timer_studno = new System.Windows.Forms.Timer(this.components);
+            this.aa_timer_username = new System.Windows.Forms.Timer(this.components);
+            this.lbltestgen = new Telerik.WinControls.UI.RadLabel();
+            this.lbltestisjp = new Telerik.WinControls.UI.RadLabel();
+            this.fq = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_usernamestat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_studnostat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_gender)).BeginInit();
             this.aa_rb_gender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_female)).BeginInit();
@@ -93,12 +101,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredaccounts.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
             this.radGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_update)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_btn_delete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_studnostat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_usernamestat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_update)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbltestgen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbltestisjp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +141,22 @@
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "&Registration &Box";
             // 
+            // aa_lbl_usernamestat
+            // 
+            this.aa_lbl_usernamestat.Location = new System.Drawing.Point(301, 245);
+            this.aa_lbl_usernamestat.Name = "aa_lbl_usernamestat";
+            this.aa_lbl_usernamestat.Size = new System.Drawing.Size(37, 18);
+            this.aa_lbl_usernamestat.TabIndex = 11;
+            this.aa_lbl_usernamestat.Text = "Status";
+            // 
+            // aa_lbl_studnostat
+            // 
+            this.aa_lbl_studnostat.Location = new System.Drawing.Point(301, 39);
+            this.aa_lbl_studnostat.Name = "aa_lbl_studnostat";
+            this.aa_lbl_studnostat.Size = new System.Drawing.Size(37, 18);
+            this.aa_lbl_studnostat.TabIndex = 10;
+            this.aa_lbl_studnostat.Text = "Status";
+            // 
             // aa_rb_gender
             // 
             this.aa_rb_gender.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
@@ -149,7 +174,9 @@
             this.aa_rb_female.Name = "aa_rb_female";
             this.aa_rb_female.Size = new System.Drawing.Size(56, 18);
             this.aa_rb_female.TabIndex = 1;
+            this.aa_rb_female.TabStop = false;
             this.aa_rb_female.Text = "Female";
+            this.aa_rb_female.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_female_ToggleStateChanged);
             // 
             // aa_rb_male
             // 
@@ -157,7 +184,9 @@
             this.aa_rb_male.Name = "aa_rb_male";
             this.aa_rb_male.Size = new System.Drawing.Size(45, 18);
             this.aa_rb_male.TabIndex = 0;
+            this.aa_rb_male.TabStop = false;
             this.aa_rb_male.Text = "Male";
+            this.aa_rb_male.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_male_ToggleStateChanged);
             // 
             // aa_tb_repass
             // 
@@ -212,6 +241,7 @@
             this.aa_tb_username.Name = "aa_tb_username";
             this.aa_tb_username.Size = new System.Drawing.Size(196, 20);
             this.aa_tb_username.TabIndex = 5;
+            this.aa_tb_username.TextChanged += new System.EventHandler(this.aa_tb_username_TextChanged);
             // 
             // radLabel8
             // 
@@ -239,6 +269,7 @@
             this.aa_rb_no.Size = new System.Drawing.Size(35, 18);
             this.aa_rb_no.TabIndex = 1;
             this.aa_rb_no.Text = "No";
+            this.aa_rb_no.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_no_ToggleStateChanged);
             // 
             // aa_rb_yes
             // 
@@ -247,6 +278,7 @@
             this.aa_rb_yes.Size = new System.Drawing.Size(37, 18);
             this.aa_rb_yes.TabIndex = 0;
             this.aa_rb_yes.Text = "Yes";
+            this.aa_rb_yes.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_yes_ToggleStateChanged);
             // 
             // radLabel5
             // 
@@ -285,7 +317,6 @@
             this.aa_tb_fname.Name = "aa_tb_fname";
             this.aa_tb_fname.Size = new System.Drawing.Size(263, 20);
             this.aa_tb_fname.TabIndex = 3;
-            this.aa_tb_fname.TextChanged += new System.EventHandler(this.aa_tb_fname_TextChanged);
             // 
             // radLabel2
             // 
@@ -301,6 +332,7 @@
             this.aa_tb_studno.Name = "aa_tb_studno";
             this.aa_tb_studno.Size = new System.Drawing.Size(196, 20);
             this.aa_tb_studno.TabIndex = 1;
+            this.aa_tb_studno.TextChanged += new System.EventHandler(this.aa_tb_studno_TextChanged);
             // 
             // radLabel1
             // 
@@ -355,14 +387,21 @@
             this.radGroupBox5.TabIndex = 2;
             this.radGroupBox5.Text = "Controls";
             // 
-            // aa_btn_clear
+            // aa_btn_delete
             // 
-            this.aa_btn_clear.Location = new System.Drawing.Point(13, 21);
-            this.aa_btn_clear.Name = "aa_btn_clear";
-            this.aa_btn_clear.Size = new System.Drawing.Size(110, 40);
-            this.aa_btn_clear.TabIndex = 0;
-            this.aa_btn_clear.Text = "Clear";
-            this.aa_btn_clear.Click += new System.EventHandler(this.aa_btn_clear_Click);
+            this.aa_btn_delete.Location = new System.Drawing.Point(361, 21);
+            this.aa_btn_delete.Name = "aa_btn_delete";
+            this.aa_btn_delete.Size = new System.Drawing.Size(110, 40);
+            this.aa_btn_delete.TabIndex = 2;
+            this.aa_btn_delete.Text = "Delete";
+            // 
+            // aa_btn_update
+            // 
+            this.aa_btn_update.Location = new System.Drawing.Point(245, 21);
+            this.aa_btn_update.Name = "aa_btn_update";
+            this.aa_btn_update.Size = new System.Drawing.Size(110, 40);
+            this.aa_btn_update.TabIndex = 1;
+            this.aa_btn_update.Text = "Update";
             // 
             // aa_btn_register
             // 
@@ -373,43 +412,55 @@
             this.aa_btn_register.Text = "Register";
             this.aa_btn_register.Click += new System.EventHandler(this.aa_btn_register_Click);
             // 
-            // aa_btn_update
+            // aa_btn_clear
             // 
-            this.aa_btn_update.Location = new System.Drawing.Point(245, 21);
-            this.aa_btn_update.Name = "aa_btn_update";
-            this.aa_btn_update.Size = new System.Drawing.Size(110, 40);
-            this.aa_btn_update.TabIndex = 1;
-            this.aa_btn_update.Text = "Update";
+            this.aa_btn_clear.Location = new System.Drawing.Point(13, 21);
+            this.aa_btn_clear.Name = "aa_btn_clear";
+            this.aa_btn_clear.Size = new System.Drawing.Size(110, 40);
+            this.aa_btn_clear.TabIndex = 0;
+            this.aa_btn_clear.Text = "Clear";
+            this.aa_btn_clear.Click += new System.EventHandler(this.aa_btn_clear_Click);
             // 
-            // aa_btn_delete
+            // aa_timer_studno
             // 
-            this.aa_btn_delete.Location = new System.Drawing.Point(361, 21);
-            this.aa_btn_delete.Name = "aa_btn_delete";
-            this.aa_btn_delete.Size = new System.Drawing.Size(110, 40);
-            this.aa_btn_delete.TabIndex = 2;
-            this.aa_btn_delete.Text = "Delete";
+            this.aa_timer_studno.Tick += new System.EventHandler(this.aa_timer_studno_Tick);
             // 
-            // aa_lbl_studnostat
+            // aa_timer_username
             // 
-            this.aa_lbl_studnostat.Location = new System.Drawing.Point(301, 39);
-            this.aa_lbl_studnostat.Name = "aa_lbl_studnostat";
-            this.aa_lbl_studnostat.Size = new System.Drawing.Size(37, 18);
-            this.aa_lbl_studnostat.TabIndex = 10;
-            this.aa_lbl_studnostat.Text = "Status";
+            this.aa_timer_username.Tick += new System.EventHandler(this.aa_timer_username_Tick);
             // 
-            // aa_lbl_usernamestat
+            // lbltestgen
             // 
-            this.aa_lbl_usernamestat.Location = new System.Drawing.Point(301, 245);
-            this.aa_lbl_usernamestat.Name = "aa_lbl_usernamestat";
-            this.aa_lbl_usernamestat.Size = new System.Drawing.Size(37, 18);
-            this.aa_lbl_usernamestat.TabIndex = 11;
-            this.aa_lbl_usernamestat.Text = "Status";
+            this.lbltestgen.Location = new System.Drawing.Point(739, 367);
+            this.lbltestgen.Name = "lbltestgen";
+            this.lbltestgen.Size = new System.Drawing.Size(52, 18);
+            this.lbltestgen.TabIndex = 3;
+            this.lbltestgen.Text = "label test";
+            // 
+            // lbltestisjp
+            // 
+            this.lbltestisjp.Location = new System.Drawing.Point(739, 392);
+            this.lbltestisjp.Name = "lbltestisjp";
+            this.lbltestisjp.Size = new System.Drawing.Size(61, 18);
+            this.lbltestisjp.TabIndex = 4;
+            this.lbltestisjp.Text = "radLabel11";
+            // 
+            // fq
+            // 
+            this.fq.Location = new System.Drawing.Point(739, 416);
+            this.fq.Name = "fq";
+            this.fq.Size = new System.Drawing.Size(61, 18);
+            this.fq.TabIndex = 5;
+            this.fq.Text = "radLabel10";
             // 
             // AddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 447);
+            this.Controls.Add(this.fq);
+            this.Controls.Add(this.lbltestisjp);
+            this.Controls.Add(this.lbltestgen);
             this.Controls.Add(this.radGroupBox5);
             this.Controls.Add(this.radGroupBox4);
             this.Controls.Add(this.radGroupBox1);
@@ -419,9 +470,12 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "AddAccount";
+            this.Load += new System.EventHandler(this.AddAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_usernamestat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_studnostat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_gender)).EndInit();
             this.aa_rb_gender.ResumeLayout(false);
             this.aa_rb_gender.PerformLayout();
@@ -454,14 +508,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredaccounts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
             this.radGroupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_update)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_btn_delete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_studnostat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_usernamestat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_update)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbltestgen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbltestisjp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -499,5 +555,10 @@
         private Telerik.WinControls.UI.RadButton aa_btn_clear;
         private Telerik.WinControls.UI.RadLabel aa_lbl_usernamestat;
         private Telerik.WinControls.UI.RadLabel aa_lbl_studnostat;
+        private System.Windows.Forms.Timer aa_timer_studno;
+        private System.Windows.Forms.Timer aa_timer_username;
+        private Telerik.WinControls.UI.RadLabel lbltestgen;
+        private Telerik.WinControls.UI.RadLabel lbltestisjp;
+        private Telerik.WinControls.UI.RadLabel fq;
     }
 }

@@ -19,10 +19,18 @@ namespace JPCS_Registration
         DialogResult delYn;
         DialogResult updYn;
         public string query;
-
+        string gender;
+        string isofficerstat;
+        int timerusername = 0;
+        int studnotimeer = 0;
         public AddAccount()
         {
             InitializeComponent();
+        }
+
+        private void AddAccount_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void aa_btn_clear_Click(object sender, EventArgs e)
@@ -31,8 +39,8 @@ namespace JPCS_Registration
             aa_tb_fname.Clear();
             aa_tb_lname.Clear();
             aa_rb_male.ToggleState = Telerik.WinControls.Enumerations.ToggleState.Off;
-            aa_rb_female.ToggleState = Telerik.WinControls.Enumerations.ToggleState.Off; 
-            aa_rb_yes.ToggleState = Telerik.WinControls.Enumerations.ToggleState.Off; 
+            aa_rb_female.ToggleState = Telerik.WinControls.Enumerations.ToggleState.Off;
+            aa_rb_yes.ToggleState = Telerik.WinControls.Enumerations.ToggleState.Off;
             aa_rb_no.ToggleState = Telerik.WinControls.Enumerations.ToggleState.Off;
             aa_tb_address.Clear();
             aa_tb_username.Clear();
@@ -48,85 +56,56 @@ namespace JPCS_Registration
             MySqlCommand command = gc.command;
             conn.ConnectionString = gc.conn;
             MySqlDataReader reader = default(MySqlDataReader);
-
-            string gender,isofficerstat;
-
-
-            if (conn.State == ConnectionState.Open)
+            try
+            {
+                if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
             }
 
-            try
-            {
                 if ((string.IsNullOrEmpty(aa_tb_studno.Text)) | ((string.IsNullOrEmpty(aa_tb_fname.Text)) | ((string.IsNullOrEmpty(aa_tb_lname.Text)) | ((string.IsNullOrEmpty(aa_tb_address.Text)) | ((string.IsNullOrEmpty(aa_tb_password.Text)) | ((string.IsNullOrEmpty(aa_tb_repass.Text)) | (string.IsNullOrEmpty(aa_tb_username.Text))))))))
                 {
                     MessageBox.Show("Please fill all fields");
-                } else
+                }
+                else
                 {
-                    if (aa_rb_female.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
+
+                    if (aa_lbl_studnostat.Text == "Not Available" | aa_lbl_usernamestat.Text == "Not Available")
                     {
-                        gender = "Female";
-                    } else if (aa_rb_male.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
-                    {
-                        gender = "Male";
+                        MessageBox.Show("Please check either your username or your student number!");
                     }
-
-                    if (aa_rb_yes.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
+                    else
                     {
-                        isofficerstat = "Yes";
+                        if (aa_tb_password.Text != aa_tb_repass.Text)
+                        {
+                            MessageBox.Show("Password doesn't match!");
+                        }
+                        else
+                        {
+                          
+                            addYn = RadMessageBox.Show(this, "Are you sure you want to register?", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+                            if (addYn == DialogResult.Yes)
+                            {
+                                conn.Open();
 
-                    }else if (aa_rb_no.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
-                    {
-                        isofficerstat = "No";
+                                query = "INSERT INTO auth_accounts VALUES (@studno,@fname,@lname,@gender,@isofficer,@address,@username,@password)";
+                                command = new MySqlCommand(query, conn);
+                                command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
+                                command.Parameters.AddWithValue("fname", aa_tb_fname.Text);
+                                command.Parameters.AddWithValue("lname", aa_tb_lname.Text);
+                                command.Parameters.AddWithValue("gender", gender);
+                                command.Parameters.AddWithValue("isofficer", isofficerstat);
+                                command.Parameters.AddWithValue("address", aa_tb_address.Text);
+                                command.Parameters.AddWithValue("username", aa_tb_username.Text);
+                                command.Parameters.AddWithValue("password", aa_tb_password.Text);
+                                reader = command.ExecuteReader();
+
+                                RadMessageBox.Show(this, "Successfully Registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                                conn.Close();
+                            }
+                        }
                     }
-
-                  
-
-
                 }
-
-
-
-
-
-                }
-            catch (Exception ex)
-            {
-
-            }
-            finally
-            {
-
-            }
-        }
-
-        private void aa_tb_fname_TextChanged(object sender, EventArgs e)
-        {
-            conn = new MySqlConnection();
-            MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
-            MySqlDataReader reader = default(MySqlDataReader);
-            try
-            {
-                conn.Open();
-                query = "SELECT * FROM auth_accounts WHERE studno=@studno";
-                command = new MySqlCommand(query, conn);
-                command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
-                reader = command.ExecuteReader();
-                int count = 0;
-
-                while (reader.Read())
-                {
-                    count += 1;
-                }
-
-                if (count >= 1)
-                {
-                    RadMessageBox.Show(this, "Student # " + aa_tb_studno.Text + " is already in used!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
-                }
-
-                conn.Close();
             }
             catch (Exception ex)
             {
@@ -136,7 +115,159 @@ namespace JPCS_Registration
             {
                 conn.Dispose();
             }
-            
         }
+
+
+        private void aa_timer_studno_Tick(object sender, EventArgs e)
+        {
+            conn = new MySqlConnection();
+            MySqlCommand command = gc.command;
+            conn.ConnectionString = gc.conn;
+            MySqlDataReader reader = default(MySqlDataReader);
+
+            try
+            {
+                studnotimeer++;
+
+                if (studnotimeer == 20)
+                {
+                    conn.Open();
+                    query = "SELECT * FROM auth_accounts WHERE studno=@studno";
+                    command = new MySqlCommand(query, conn);
+                    command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
+                    reader = command.ExecuteReader();
+                    int count = 0;
+
+                    while (reader.Read())
+                    {
+                        count += 1;
+                    }
+
+                    if (count >= 1)
+                    {
+                        RadMessageBox.Show(this, "Student # " + aa_tb_studno.Text + " is already in used!", "JPCS Registration", MessageBoxButtons.OK,
+                            RadMessageIcon.Error);
+                        aa_lbl_studnostat.ForeColor = Color.Red;
+                        aa_lbl_studnostat.Text = "Not Available";
+                        aa_tb_studno.Clear();
+                        aa_tb_studno.Focus();
+                     
+                    }
+                    else
+                    {
+                        aa_lbl_studnostat.ForeColor = Color.Green;
+                        aa_lbl_studnostat.Text = "Available";
+                    }
+                    aa_timer_studno.Stop();
+                    studnotimeer = 0;
+                }
+                conn.Close();
+       
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Dispose();
+             
+            }
+        }
+
+        private void aa_timer_username_Tick(object sender, EventArgs e)
+        {
+            conn = new MySqlConnection();
+            MySqlCommand command = gc.command;
+            conn.ConnectionString = gc.conn;
+            MySqlDataReader reader = default(MySqlDataReader);
+
+            try
+            {
+                timerusername++;
+
+                if (timerusername == 20)
+                {
+                    conn.Open();
+                    query = "SELECT * FROM auth_accounts WHERE username=@username";
+                    command = new MySqlCommand(query, conn);
+                    command.Parameters.AddWithValue("username", aa_tb_username.Text);
+                    reader = command.ExecuteReader();
+                    int count = 0;
+
+                    while (reader.Read())
+                    {
+                        count += 1;
+                    }
+
+                    if (count >= 1)
+                    {
+                        RadMessageBox.Show(this, "Username " + aa_tb_username.Text + " is already in used!", "JPCS Registration", MessageBoxButtons.OK,
+                            RadMessageIcon.Error);
+                        aa_lbl_usernamestat.ForeColor = Color.Red;
+                        aa_lbl_usernamestat.Text = "Not Available";
+                        aa_tb_username.Clear();
+                        aa_tb_username.Focus();
+                     }
+                    else
+                    {
+                        aa_lbl_usernamestat.ForeColor = Color.Green;
+                        aa_lbl_usernamestat.Text = "Available";
+                    }
+                    aa_timer_username.Stop();
+                    timerusername = 0;
+                }
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                conn.Dispose();
+              
+            }
+        }
+
+
+        private void aa_rb_male_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        {
+            gender = "Male";
+            lbltestgen.Text = gender;   
+        }
+
+        private void aa_rb_female_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        {
+            gender = "Female";
+            lbltestgen.Text = gender;
+
+        }
+
+        private void aa_rb_yes_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        {
+            isofficerstat = "Yes";
+            lbltestisjp.Text = isofficerstat;
+        }
+
+        private void aa_rb_no_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        {
+            isofficerstat = "No";
+            lbltestisjp.Text = isofficerstat;
+        }
+
+        private void aa_tb_username_TextChanged(object sender, EventArgs e)
+        {
+            aa_timer_username.Start();
+        }
+
+        private void aa_tb_studno_TextChanged(object sender, EventArgs e)
+        {
+            aa_timer_studno.Start();
+            fq.Text = aa_tb_studno.Text;
+        }
+
     }
 }

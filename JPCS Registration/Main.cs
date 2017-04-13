@@ -101,11 +101,12 @@ namespace JPCS_Registration
                         else
                         {
                             conn.Close();
-                            conn.Open();
+                         
 
-                        addYn = addYn = RadMessageBox.Show(this, "Are you sure you want to register?", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+                        addYn = RadMessageBox.Show(this, "Are you sure you want to register?", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
                         if (addYn == DialogResult.Yes)
                         {
+                            conn.Open();
                             query = "INSERT INTO registration VALUES (@studno,@name,@section,@address,@cn)";
                             command = new MySqlCommand(query, conn);
                             command.Parameters.AddWithValue("studno", reg_tb_studno.Text);
