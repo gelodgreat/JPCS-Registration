@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.aa_lbl_usernamestat = new Telerik.WinControls.UI.RadLabel();
             this.aa_lbl_studnostat = new Telerik.WinControls.UI.RadLabel();
             this.aa_rb_gender = new Telerik.WinControls.UI.RadGroupBox();
             this.aa_rb_female = new Telerik.WinControls.UI.RadRadioButton();
             this.aa_rb_male = new Telerik.WinControls.UI.RadRadioButton();
+            this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
+            this.aa_btn_register = new Telerik.WinControls.UI.RadButton();
+            this.aa_btn_clear = new Telerik.WinControls.UI.RadButton();
             this.aa_tb_repass = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.aa_tb_password = new Telerik.WinControls.UI.RadTextBox();
@@ -57,11 +60,6 @@
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox4 = new Telerik.WinControls.UI.RadGroupBox();
             this.rgv_registeredaccounts = new Telerik.WinControls.UI.RadGridView();
-            this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
-            this.aa_btn_delete = new Telerik.WinControls.UI.RadButton();
-            this.aa_btn_update = new Telerik.WinControls.UI.RadButton();
-            this.aa_btn_register = new Telerik.WinControls.UI.RadButton();
-            this.aa_btn_clear = new Telerik.WinControls.UI.RadButton();
             this.aa_timer_studno = new System.Windows.Forms.Timer(this.components);
             this.aa_timer_username = new System.Windows.Forms.Timer(this.components);
             this.lbltestgen = new Telerik.WinControls.UI.RadLabel();
@@ -75,6 +73,10 @@
             this.aa_rb_gender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_female)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_male)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
+            this.radGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_tb_repass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_tb_password)).BeginInit();
@@ -99,12 +101,6 @@
             this.radGroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredaccounts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredaccounts.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
-            this.radGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_delete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_update)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbltestgen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbltestisjp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fq)).BeginInit();
@@ -114,9 +110,12 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.radGroupBox1.Controls.Add(this.aa_lbl_usernamestat);
             this.radGroupBox1.Controls.Add(this.aa_lbl_studnostat);
             this.radGroupBox1.Controls.Add(this.aa_rb_gender);
+            this.radGroupBox1.Controls.Add(this.radGroupBox5);
             this.radGroupBox1.Controls.Add(this.aa_tb_repass);
             this.radGroupBox1.Controls.Add(this.radLabel9);
             this.radGroupBox1.Controls.Add(this.aa_tb_password);
@@ -137,13 +136,13 @@
             this.radGroupBox1.HeaderText = "&Registration &Box";
             this.radGroupBox1.Location = new System.Drawing.Point(12, 12);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(383, 351);
+            this.radGroupBox1.Size = new System.Drawing.Size(383, 431);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "&Registration &Box";
             // 
             // aa_lbl_usernamestat
             // 
-            this.aa_lbl_usernamestat.Location = new System.Drawing.Point(301, 245);
+            this.aa_lbl_usernamestat.Location = new System.Drawing.Point(305, 245);
             this.aa_lbl_usernamestat.Name = "aa_lbl_usernamestat";
             this.aa_lbl_usernamestat.Size = new System.Drawing.Size(37, 18);
             this.aa_lbl_usernamestat.TabIndex = 11;
@@ -151,7 +150,7 @@
             // 
             // aa_lbl_studnostat
             // 
-            this.aa_lbl_studnostat.Location = new System.Drawing.Point(301, 39);
+            this.aa_lbl_studnostat.Location = new System.Drawing.Point(305, 39);
             this.aa_lbl_studnostat.Name = "aa_lbl_studnostat";
             this.aa_lbl_studnostat.Size = new System.Drawing.Size(37, 18);
             this.aa_lbl_studnostat.TabIndex = 10;
@@ -163,7 +162,7 @@
             this.aa_rb_gender.Controls.Add(this.aa_rb_female);
             this.aa_rb_gender.Controls.Add(this.aa_rb_male);
             this.aa_rb_gender.HeaderText = "";
-            this.aa_rb_gender.Location = new System.Drawing.Point(98, 117);
+            this.aa_rb_gender.Location = new System.Drawing.Point(102, 117);
             this.aa_rb_gender.Name = "aa_rb_gender";
             this.aa_rb_gender.Size = new System.Drawing.Size(126, 25);
             this.aa_rb_gender.TabIndex = 1;
@@ -188,16 +187,49 @@
             this.aa_rb_male.Text = "Male";
             this.aa_rb_male.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_male_ToggleStateChanged);
             // 
+            // radGroupBox5
+            // 
+            this.radGroupBox5.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.radGroupBox5.Controls.Add(this.aa_btn_register);
+            this.radGroupBox5.Controls.Add(this.aa_btn_clear);
+            this.radGroupBox5.HeaderText = "Controls";
+            this.radGroupBox5.Location = new System.Drawing.Point(72, 355);
+            this.radGroupBox5.Name = "radGroupBox5";
+            this.radGroupBox5.Size = new System.Drawing.Size(238, 66);
+            this.radGroupBox5.TabIndex = 2;
+            this.radGroupBox5.Text = "Controls";
+            // 
+            // aa_btn_register
+            // 
+            this.aa_btn_register.Location = new System.Drawing.Point(122, 21);
+            this.aa_btn_register.Name = "aa_btn_register";
+            this.aa_btn_register.Size = new System.Drawing.Size(110, 40);
+            this.aa_btn_register.TabIndex = 1;
+            this.aa_btn_register.Text = "Register";
+            this.aa_btn_register.Click += new System.EventHandler(this.aa_btn_register_Click);
+            // 
+            // aa_btn_clear
+            // 
+            this.aa_btn_clear.Location = new System.Drawing.Point(6, 21);
+            this.aa_btn_clear.Name = "aa_btn_clear";
+            this.aa_btn_clear.Size = new System.Drawing.Size(110, 40);
+            this.aa_btn_clear.TabIndex = 0;
+            this.aa_btn_clear.Text = "Clear";
+            this.aa_btn_clear.Click += new System.EventHandler(this.aa_btn_clear_Click);
+            // 
             // aa_tb_repass
             // 
-            this.aa_tb_repass.Location = new System.Drawing.Point(98, 297);
+            this.aa_tb_repass.Location = new System.Drawing.Point(102, 297);
             this.aa_tb_repass.Name = "aa_tb_repass";
+            this.aa_tb_repass.PasswordChar = '*';
             this.aa_tb_repass.Size = new System.Drawing.Size(263, 20);
             this.aa_tb_repass.TabIndex = 9;
             // 
             // radLabel9
             // 
-            this.radLabel9.Location = new System.Drawing.Point(37, 297);
+            this.radLabel9.Location = new System.Drawing.Point(41, 297);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(55, 33);
             this.radLabel9.TabIndex = 8;
@@ -205,15 +237,16 @@
             // 
             // aa_tb_password
             // 
-            this.aa_tb_password.Location = new System.Drawing.Point(98, 271);
+            this.aa_tb_password.Location = new System.Drawing.Point(102, 271);
             this.aa_tb_password.Name = "aa_tb_password";
+            this.aa_tb_password.PasswordChar = '*';
             this.aa_tb_password.Size = new System.Drawing.Size(263, 20);
             this.aa_tb_password.TabIndex = 7;
             // 
             // aa_tb_address
             // 
             this.aa_tb_address.AutoSize = false;
-            this.aa_tb_address.Location = new System.Drawing.Point(98, 182);
+            this.aa_tb_address.Location = new System.Drawing.Point(102, 182);
             this.aa_tb_address.Multiline = true;
             this.aa_tb_address.Name = "aa_tb_address";
             this.aa_tb_address.Size = new System.Drawing.Size(263, 57);
@@ -221,7 +254,7 @@
             // 
             // radLabel7
             // 
-            this.radLabel7.Location = new System.Drawing.Point(36, 271);
+            this.radLabel7.Location = new System.Drawing.Point(40, 271);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(56, 18);
             this.radLabel7.TabIndex = 6;
@@ -229,7 +262,7 @@
             // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(43, 182);
+            this.radLabel6.Location = new System.Drawing.Point(47, 182);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(49, 18);
             this.radLabel6.TabIndex = 4;
@@ -237,7 +270,7 @@
             // 
             // aa_tb_username
             // 
-            this.aa_tb_username.Location = new System.Drawing.Point(98, 245);
+            this.aa_tb_username.Location = new System.Drawing.Point(102, 245);
             this.aa_tb_username.Name = "aa_tb_username";
             this.aa_tb_username.Size = new System.Drawing.Size(196, 20);
             this.aa_tb_username.TabIndex = 5;
@@ -245,7 +278,7 @@
             // 
             // radLabel8
             // 
-            this.radLabel8.Location = new System.Drawing.Point(33, 245);
+            this.radLabel8.Location = new System.Drawing.Point(37, 245);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(59, 18);
             this.radLabel8.TabIndex = 4;
@@ -257,7 +290,7 @@
             this.aa_rb_isjpofficer.Controls.Add(this.aa_rb_no);
             this.aa_rb_isjpofficer.Controls.Add(this.aa_rb_yes);
             this.aa_rb_isjpofficer.HeaderText = "";
-            this.aa_rb_isjpofficer.Location = new System.Drawing.Point(98, 151);
+            this.aa_rb_isjpofficer.Location = new System.Drawing.Point(102, 151);
             this.aa_rb_isjpofficer.Name = "aa_rb_isjpofficer";
             this.aa_rb_isjpofficer.Size = new System.Drawing.Size(126, 25);
             this.aa_rb_isjpofficer.TabIndex = 2;
@@ -282,7 +315,7 @@
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(13, 151);
+            this.radLabel5.Location = new System.Drawing.Point(17, 151);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(79, 18);
             this.radLabel5.TabIndex = 3;
@@ -290,7 +323,7 @@
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(47, 118);
+            this.radLabel4.Location = new System.Drawing.Point(51, 118);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(45, 18);
             this.radLabel4.TabIndex = 2;
@@ -298,14 +331,14 @@
             // 
             // aa_tb_lname
             // 
-            this.aa_tb_lname.Location = new System.Drawing.Point(98, 91);
+            this.aa_tb_lname.Location = new System.Drawing.Point(102, 91);
             this.aa_tb_lname.Name = "aa_tb_lname";
             this.aa_tb_lname.Size = new System.Drawing.Size(263, 20);
             this.aa_tb_lname.TabIndex = 3;
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(31, 91);
+            this.radLabel3.Location = new System.Drawing.Point(35, 91);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(61, 18);
             this.radLabel3.TabIndex = 2;
@@ -313,14 +346,14 @@
             // 
             // aa_tb_fname
             // 
-            this.aa_tb_fname.Location = new System.Drawing.Point(98, 65);
+            this.aa_tb_fname.Location = new System.Drawing.Point(102, 65);
             this.aa_tb_fname.Name = "aa_tb_fname";
             this.aa_tb_fname.Size = new System.Drawing.Size(263, 20);
             this.aa_tb_fname.TabIndex = 3;
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(29, 65);
+            this.radLabel2.Location = new System.Drawing.Point(33, 65);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(63, 18);
             this.radLabel2.TabIndex = 2;
@@ -328,7 +361,8 @@
             // 
             // aa_tb_studno
             // 
-            this.aa_tb_studno.Location = new System.Drawing.Point(98, 39);
+            this.aa_tb_studno.Location = new System.Drawing.Point(102, 39);
+            this.aa_tb_studno.MaxLength = 8;
             this.aa_tb_studno.Name = "aa_tb_studno";
             this.aa_tb_studno.Size = new System.Drawing.Size(196, 20);
             this.aa_tb_studno.TabIndex = 1;
@@ -336,7 +370,7 @@
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(34, 39);
+            this.radLabel1.Location = new System.Drawing.Point(38, 39);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(58, 18);
             this.radLabel1.TabIndex = 0;
@@ -345,13 +379,16 @@
             // radGroupBox4
             // 
             this.radGroupBox4.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radGroupBox4.Controls.Add(this.rgv_registeredaccounts);
-            this.radGroupBox4.HeaderText = "radGroupBox4";
+            this.radGroupBox4.HeaderText = "Data Box";
             this.radGroupBox4.Location = new System.Drawing.Point(402, 13);
             this.radGroupBox4.Name = "radGroupBox4";
             this.radGroupBox4.Size = new System.Drawing.Size(430, 350);
             this.radGroupBox4.TabIndex = 1;
-            this.radGroupBox4.Text = "radGroupBox4";
+            this.radGroupBox4.Text = "Data Box";
             // 
             // rgv_registeredaccounts
             // 
@@ -366,60 +403,13 @@
             this.rgv_registeredaccounts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.rgv_registeredaccounts.MasterTemplate.EnableGrouping = false;
             this.rgv_registeredaccounts.MasterTemplate.ShowRowHeaderColumn = false;
-            this.rgv_registeredaccounts.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.rgv_registeredaccounts.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.rgv_registeredaccounts.Name = "rgv_registeredaccounts";
             this.rgv_registeredaccounts.ReadOnly = true;
             this.rgv_registeredaccounts.Size = new System.Drawing.Size(426, 330);
             this.rgv_registeredaccounts.TabIndex = 1;
             this.rgv_registeredaccounts.Text = "radGridView1";
-            // 
-            // radGroupBox5
-            // 
-            this.radGroupBox5.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox5.Controls.Add(this.aa_btn_delete);
-            this.radGroupBox5.Controls.Add(this.aa_btn_update);
-            this.radGroupBox5.Controls.Add(this.aa_btn_register);
-            this.radGroupBox5.Controls.Add(this.aa_btn_clear);
-            this.radGroupBox5.HeaderText = "Controls";
-            this.radGroupBox5.Location = new System.Drawing.Point(12, 369);
-            this.radGroupBox5.Name = "radGroupBox5";
-            this.radGroupBox5.Size = new System.Drawing.Size(481, 66);
-            this.radGroupBox5.TabIndex = 2;
-            this.radGroupBox5.Text = "Controls";
-            // 
-            // aa_btn_delete
-            // 
-            this.aa_btn_delete.Location = new System.Drawing.Point(361, 21);
-            this.aa_btn_delete.Name = "aa_btn_delete";
-            this.aa_btn_delete.Size = new System.Drawing.Size(110, 40);
-            this.aa_btn_delete.TabIndex = 2;
-            this.aa_btn_delete.Text = "Delete";
-            // 
-            // aa_btn_update
-            // 
-            this.aa_btn_update.Location = new System.Drawing.Point(245, 21);
-            this.aa_btn_update.Name = "aa_btn_update";
-            this.aa_btn_update.Size = new System.Drawing.Size(110, 40);
-            this.aa_btn_update.TabIndex = 1;
-            this.aa_btn_update.Text = "Update";
-            // 
-            // aa_btn_register
-            // 
-            this.aa_btn_register.Location = new System.Drawing.Point(129, 21);
-            this.aa_btn_register.Name = "aa_btn_register";
-            this.aa_btn_register.Size = new System.Drawing.Size(110, 40);
-            this.aa_btn_register.TabIndex = 1;
-            this.aa_btn_register.Text = "Register";
-            this.aa_btn_register.Click += new System.EventHandler(this.aa_btn_register_Click);
-            // 
-            // aa_btn_clear
-            // 
-            this.aa_btn_clear.Location = new System.Drawing.Point(13, 21);
-            this.aa_btn_clear.Name = "aa_btn_clear";
-            this.aa_btn_clear.Size = new System.Drawing.Size(110, 40);
-            this.aa_btn_clear.TabIndex = 0;
-            this.aa_btn_clear.Text = "Clear";
-            this.aa_btn_clear.Click += new System.EventHandler(this.aa_btn_clear_Click);
+            this.rgv_registeredaccounts.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.rgv_registeredaccounts_CellDoubleClick);
             // 
             // aa_timer_studno
             // 
@@ -436,6 +426,7 @@
             this.lbltestgen.Size = new System.Drawing.Size(52, 18);
             this.lbltestgen.TabIndex = 3;
             this.lbltestgen.Text = "label test";
+            this.lbltestgen.Visible = false;
             // 
             // lbltestisjp
             // 
@@ -444,6 +435,7 @@
             this.lbltestisjp.Size = new System.Drawing.Size(61, 18);
             this.lbltestisjp.TabIndex = 4;
             this.lbltestisjp.Text = "radLabel11";
+            this.lbltestisjp.Visible = false;
             // 
             // fq
             // 
@@ -452,6 +444,7 @@
             this.fq.Size = new System.Drawing.Size(61, 18);
             this.fq.TabIndex = 5;
             this.fq.Text = "radLabel10";
+            this.fq.Visible = false;
             // 
             // AddAccount
             // 
@@ -461,7 +454,6 @@
             this.Controls.Add(this.fq);
             this.Controls.Add(this.lbltestisjp);
             this.Controls.Add(this.lbltestgen);
-            this.Controls.Add(this.radGroupBox5);
             this.Controls.Add(this.radGroupBox4);
             this.Controls.Add(this.radGroupBox1);
             this.Name = "AddAccount";
@@ -469,6 +461,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddAccount";
             this.Load += new System.EventHandler(this.AddAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
@@ -481,6 +474,10 @@
             this.aa_rb_gender.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_female)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_male)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
+            this.radGroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_tb_repass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_tb_password)).EndInit();
@@ -506,12 +503,6 @@
             this.radGroupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredaccounts.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredaccounts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
-            this.radGroupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_delete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_update)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbltestgen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbltestisjp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fq)).EndInit();
@@ -549,8 +540,6 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox4;
         private Telerik.WinControls.UI.RadGridView rgv_registeredaccounts;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox5;
-        private Telerik.WinControls.UI.RadButton aa_btn_delete;
-        private Telerik.WinControls.UI.RadButton aa_btn_update;
         private Telerik.WinControls.UI.RadButton aa_btn_register;
         private Telerik.WinControls.UI.RadButton aa_btn_clear;
         private Telerik.WinControls.UI.RadLabel aa_lbl_usernamestat;

@@ -23,6 +23,8 @@ namespace JPCS_Registration
         string isofficerstat;
         int timerusername = 0;
         int studnotimeer = 0;
+        string storeusername, storestudno;
+
         public AddAccount()
         {
             InitializeComponent();
@@ -30,7 +32,47 @@ namespace JPCS_Registration
 
         private void AddAccount_Load(object sender, EventArgs e)
         {
+            load_registered_auth_accounts();
+            aa_lbl_studnostat.ForeColor = Color.Gold;
+            aa_lbl_usernamestat.ForeColor = Color.Gold;
+        }
 
+        private void load_registered_auth_accounts()
+        {
+            conn = new MySqlConnection();
+
+            MySqlCommand command = new MySqlCommand();
+            conn.ConnectionString = gc.conn;
+            MySqlDataReader reader = default(MySqlDataReader);
+            DataTable dbdataset = new DataTable();
+            BindingSource bsource = new BindingSource();
+            MySqlDataAdapter sda = new MySqlDataAdapter();
+
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                query = "SELECT studno as 'Student #', fname as 'First Name', lname as 'Last Name', gender as 'Gender', isofficer as 'Officer?', address as 'Address' FROM auth_accounts";
+                command = new MySqlCommand(query, conn);
+                sda.SelectCommand = command;
+                sda.Fill(dbdataset);
+                bsource.DataSource = dbdataset;
+                rgv_registeredaccounts.DataSource = bsource;
+                sda.Update(dbdataset);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Dispose();
+            }
         }
 
         private void aa_btn_clear_Click(object sender, EventArgs e)
@@ -47,6 +89,10 @@ namespace JPCS_Registration
             aa_tb_password.Clear();
             aa_tb_repass.Clear();
             aa_tb_studno.Focus();
+            aa_lbl_usernamestat.Text = "Status";
+            aa_lbl_studnostat.Text = "Status";
+            aa_lbl_studnostat.ForeColor = Color.Gold;
+            aa_lbl_usernamestat.ForeColor = Color.Gold;
         }
 
         private void aa_btn_register_Click(object sender, EventArgs e)
@@ -102,6 +148,7 @@ namespace JPCS_Registration
 
                                 RadMessageBox.Show(this, "Successfully Registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                                 conn.Close();
+                                load_registered_auth_accounts();
                             }
                         }
                     }
@@ -265,9 +312,47 @@ namespace JPCS_Registration
 
         private void aa_tb_studno_TextChanged(object sender, EventArgs e)
         {
-            aa_timer_studno.Start();
-            fq.Text = aa_tb_studno.Text;
+                aa_timer_studno.Start();
         }
 
+        private void rgv_registeredaccounts_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        {
+            conn = new MySqlConnection();
+            MySqlCommand command = gc.command;
+            conn.ConnectionString = gc.conn;
+            MySqlDataReader reader = default(MySqlDataReader);
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    Telerik.WinControls.UI.GridViewRowInfo row = this.rgv_registeredaccounts.Rows[e.RowIndex];
+                    row = this.rgv_registeredaccounts.Rows[e.RowIndex];
+                    storestudno = row.Cells["Student #"].Value.ToString();
+
+                    delYn = RadMessageBox.Show(this, "Are you sure you want to delete this selected account?", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+                    if (delYn == DialogResult.Yes)
+                    {
+                        conn.Open();
+
+                        query = "DELETE FROM auth_accounts WHERE studno=@studno";
+                        command = new MySqlCommand(query, conn);
+                        command.Parameters.AddWithValue("studno", storestudno);
+                        reader = command.ExecuteReader();
+
+                        RadMessageBox.Show(this, "Successfully Deleted!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                        conn.Close();
+                        load_registered_auth_accounts();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Dispose();
+            }
+        }
     }
 }

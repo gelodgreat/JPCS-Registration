@@ -89,6 +89,7 @@
             // reg_tb_studno
             // 
             this.reg_tb_studno.Location = new System.Drawing.Point(123, 68);
+            this.reg_tb_studno.MaxLength = 8;
             this.reg_tb_studno.Name = "reg_tb_studno";
             this.reg_tb_studno.Size = new System.Drawing.Size(122, 20);
             this.reg_tb_studno.TabIndex = 1;
@@ -186,12 +187,16 @@
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.reg_name);
             this.Controls.Add(this.reg_cb_coursesect);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Main";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reg_cb_coursesect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();

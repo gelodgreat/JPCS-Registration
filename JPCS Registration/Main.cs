@@ -19,6 +19,7 @@ namespace JPCS_Registration
         globalconfig gc = new globalconfig();
         DialogResult addYn;
         public string query;
+        
 
         public Main()
         {
@@ -168,6 +169,12 @@ namespace JPCS_Registration
             }
         }
 
-
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            Login login = new Login();
+            login.Show();
+            
+        }
     }
 }

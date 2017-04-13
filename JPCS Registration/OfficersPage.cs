@@ -215,5 +215,12 @@ namespace JPCS_Registration
             ac.ShowDialog();
           
         }
+
+        private void OfficersPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Login log = new Login();
+            log.Show();
+            this.Dispose();
+        }
     }
 }

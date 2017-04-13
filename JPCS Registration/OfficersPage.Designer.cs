@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgv_registeredmembers = new Telerik.WinControls.UI.RadGridView();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.rgb_courses = new Telerik.WinControls.UI.RadGroupBox();
@@ -72,7 +72,7 @@
             this.rgv_registeredmembers.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.rgv_registeredmembers.MasterTemplate.EnableGrouping = false;
             this.rgv_registeredmembers.MasterTemplate.ShowRowHeaderColumn = false;
-            this.rgv_registeredmembers.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.rgv_registeredmembers.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.rgv_registeredmembers.Name = "rgv_registeredmembers";
             this.rgv_registeredmembers.ReadOnly = true;
             this.rgv_registeredmembers.Size = new System.Drawing.Size(1028, 341);
@@ -82,6 +82,9 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radGroupBox1.Controls.Add(this.rgv_registeredmembers);
             this.radGroupBox1.HeaderText = "Registered Members";
             this.radGroupBox1.Location = new System.Drawing.Point(12, 47);
@@ -93,6 +96,7 @@
             // rgb_courses
             // 
             this.rgb_courses.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.rgb_courses.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rgb_courses.Controls.Add(this.op_rb_bscpe);
             this.rgb_courses.Controls.Add(this.op_rb_bscs);
             this.rgb_courses.Controls.Add(this.op_rb_bsit);
@@ -134,6 +138,7 @@
             // 
             // radLabel1
             // 
+            this.radLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radLabel1.Location = new System.Drawing.Point(210, 23);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(38, 18);
@@ -142,6 +147,7 @@
             // 
             // radLabel2
             // 
+            this.radLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radLabel2.Location = new System.Drawing.Point(484, 20);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(50, 18);
@@ -150,6 +156,7 @@
             // 
             // radButton1
             // 
+            this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton1.Location = new System.Drawing.Point(897, 414);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(147, 81);
@@ -158,6 +165,7 @@
             // 
             // op_cb_combosections
             // 
+            this.op_cb_combosections.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.op_cb_combosections.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.op_cb_combosections.Location = new System.Drawing.Point(540, 18);
             this.op_cb_combosections.Name = "op_cb_combosections";
@@ -167,6 +175,7 @@
             // 
             // op_btn_clearselection
             // 
+            this.op_btn_clearselection.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.op_btn_clearselection.Location = new System.Drawing.Point(422, 13);
             this.op_btn_clearselection.Name = "op_btn_clearselection";
             this.op_btn_clearselection.Size = new System.Drawing.Size(56, 30);
@@ -176,6 +185,7 @@
             // 
             // op_btn_add_account
             // 
+            this.op_btn_add_account.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.op_btn_add_account.Location = new System.Drawing.Point(744, 414);
             this.op_btn_add_account.Name = "op_btn_add_account";
             this.op_btn_add_account.Size = new System.Drawing.Size(147, 81);
@@ -201,7 +211,9 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OfficersPage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OfficersPage_FormClosed);
             this.Load += new System.EventHandler(this.OfficersPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredmembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredmembers)).EndInit();
