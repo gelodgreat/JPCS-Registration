@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="memberlist" msprop:Generator_TableClassName="memberlistDataTable" msprop:Generator_TableVarName="tablememberlist" msprop:Generator_TablePropName="memberlist" msprop:Generator_RowDeletingName="memberlistRowDeleting" msprop:Generator_RowChangingName="memberlistRowChanging" msprop:Generator_RowEvHandlerName="memberlistRowChangeEventHandler" msprop:Generator_RowDeletedName="memberlistRowDeleted" msprop:Generator_UserTableName="memberlist" msprop:Generator_RowChangedName="memberlistRowChanged" msprop:Generator_RowEvArgName="memberlistRowChangeEvent" msprop:Generator_RowClassName="memberlistRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="studno" msprop:Generator_ColumnVarNameInTable="columnstudno" msprop:Generator_ColumnPropNameInRow="studno" msprop:Generator_ColumnPropNameInTable="studnoColumn" msprop:Generator_UserColumnName="studno" type="xs:string" minOccurs="0" />
+              <xs:element name="fname" msprop:Generator_ColumnVarNameInTable="columnfname" msprop:Generator_ColumnPropNameInRow="fname" msprop:Generator_ColumnPropNameInTable="fnameColumn" msprop:Generator_UserColumnName="fname" type="xs:string" minOccurs="0" />
+              <xs:element name="lname" msprop:Generator_ColumnVarNameInTable="columnlname" msprop:Generator_ColumnPropNameInRow="lname" msprop:Generator_ColumnPropNameInTable="lnameColumn" msprop:Generator_UserColumnName="lname" type="xs:string" minOccurs="0" />
+              <xs:element name="courseyearsection" msprop:Generator_ColumnVarNameInTable="columncourseyearsection" msprop:Generator_ColumnPropNameInRow="courseyearsection" msprop:Generator_ColumnPropNameInTable="courseyearsectionColumn" msprop:Generator_UserColumnName="courseyearsection" type="xs:string" minOccurs="0" />
+              <xs:element name="contactnumber" msprop:Generator_ColumnVarNameInTable="columncontactnumber" msprop:Generator_ColumnPropNameInRow="contactnumber" msprop:Generator_ColumnPropNameInTable="contactnumberColumn" msprop:Generator_UserColumnName="contactnumber" type="xs:string" minOccurs="0" />
+              <xs:element name="emailaddress" msprop:Generator_ColumnVarNameInTable="columnemailaddress" msprop:Generator_ColumnPropNameInRow="emailaddress" msprop:Generator_ColumnPropNameInTable="emailaddressColumn" msprop:Generator_UserColumnName="emailaddress" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
