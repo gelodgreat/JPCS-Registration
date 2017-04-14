@@ -44,7 +44,9 @@ namespace JPCS_Registration
         }
         private void Main_Load(object sender, EventArgs e)
         {
-                    ManageCourses();
+            ManageCourses();
+            reg_tb_slotnum.Focus();
+            
         }
 
         private void ManageCourses()
@@ -76,7 +78,7 @@ namespace JPCS_Registration
             }
             try
             {
-                if ((string.IsNullOrEmpty(reg_tb_studno.Text)) | ((string.IsNullOrEmpty(reg_name.Text)) | ((string.IsNullOrEmpty(reg_address.Text)) | ((string.IsNullOrEmpty(reg_cn.Text))| (string.IsNullOrEmpty(reg_cb_coursesect.Text))))))
+                if ((string.IsNullOrEmpty(reg_tb_slotnum.Text)) | (string.IsNullOrEmpty(reg_tb_ornumber.Text)) | (string.IsNullOrEmpty(reg_tb_studno.Text)) | ((string.IsNullOrEmpty(reg_tb_lname.Text)) | ((string.IsNullOrEmpty(reg_tb_fname.Text)) | ((string.IsNullOrEmpty(reg_tb_mname.Text))| (string.IsNullOrEmpty(reg_cb_coursesect.Text)) |  ((string.IsNullOrEmpty(reg_tb_cityaddress.Text)) | ((string.IsNullOrEmpty(reg_tb_contactnum.Text)) | ((string.IsNullOrEmpty(reg_tb_emergencycontactname.Text)) | ((string.IsNullOrEmpty(reg_tb_emergenctcontactnumber.Text)) ))))))))
                 {
                     MessageBox.Show("Please fill all fields");
 
@@ -84,7 +86,7 @@ namespace JPCS_Registration
                 else
                 {                  
                         conn.Open();
-                        query = "SELECT * FROM registration WHERE studno=@studno";
+                        query = "SELECT * FROM memberlist WHERE studno=@studno";
                         command = new MySqlCommand(query, conn);
                         command.Parameters.AddWithValue("studno", reg_tb_studno.Text);
                         reader = command.ExecuteReader();
@@ -108,22 +110,42 @@ namespace JPCS_Registration
                         if (addYn == DialogResult.Yes)
                         {
                             conn.Open();
-                            query = "INSERT INTO registration VALUES (@studno,@name,@section,@address,@cn)";
+                            query = "INSERT INTO memberlist VALUES (@slotnum, @ornum, @studno, @lname, @fname, @mname, @section, @emailaddress, @birthday, @nationality, @cityaddress, @provinceaddress, @contactnumber, @emergencycontactname, @emergencycontactnumber);";
                             command = new MySqlCommand(query, conn);
+                            command.Parameters.AddWithValue("slotnum", reg_tb_slotnum.Text);
+                            command.Parameters.AddWithValue("ornum", reg_tb_ornumber.Text);
                             command.Parameters.AddWithValue("studno", reg_tb_studno.Text);
-                            command.Parameters.AddWithValue("name", reg_name.Text);
+                            command.Parameters.AddWithValue("lname", reg_tb_lname.Text);
+                            command.Parameters.AddWithValue("fname", reg_tb_fname.Text);
+                            command.Parameters.AddWithValue("mname", reg_tb_mname.Text);                      
                             command.Parameters.AddWithValue("section", reg_cb_coursesect.Text);
-                            command.Parameters.AddWithValue("address", reg_address.Text);
-                            command.Parameters.AddWithValue("cn", reg_cn.Text);
-                            reader = command.ExecuteReader();
+                            command.Parameters.AddWithValue("emailaddress", reg_tb_email.Text);
+                            command.Parameters.AddWithValue("birthday", reg_tb_bday.Text);
+                            command.Parameters.AddWithValue("nationality", reg_tb_nationality.Text);
+                            command.Parameters.AddWithValue("cityaddress", reg_tb_cityaddress.Text);
+                            command.Parameters.AddWithValue("provinceaddress", reg_tb_provaddress.Text);
+                            command.Parameters.AddWithValue("contactnumber", reg_tb_contactnum.Text);
+                            command.Parameters.AddWithValue("emergencycontactname", reg_tb_emergencycontactname.Text);
+                            command.Parameters.AddWithValue("emergencycontactnumber", reg_tb_emergenctcontactnumber.Text);
+                            //reader = command.ExecuteReader();
+                            command.ExecuteNonQuery();
 
                             RadMessageBox.Show(this, "Successfully Registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
-                            reg_tb_studno.Clear();
-                            reg_tb_studno.Focus();
-                            reg_name.Clear();
+                            reg_tb_slotnum.Clear();
+                            reg_tb_ornumber.Clear();
+                            reg_tb_studno.Text = "00-00000";
+                            reg_tb_slotnum.Focus();
+                            reg_tb_lname.Clear();
+                            reg_tb_fname.Clear();
                             reg_cb_coursesect.SelectedIndex = -1;
-                            reg_address.Clear();
-                            reg_cn.Clear();
+                            reg_tb_email.Clear();
+                            reg_tb_bday.Value=Convert.ToDateTime("1970-01-01");
+                            reg_tb_nationality.Clear();
+                            reg_tb_cityaddress.Clear();
+                            reg_tb_provaddress.Clear();
+                            reg_tb_contactnum.Clear();
+                            reg_tb_emergencycontactname.Clear();
+                            reg_tb_emergenctcontactnumber.Clear();
                             
                             conn.Close();
                         }

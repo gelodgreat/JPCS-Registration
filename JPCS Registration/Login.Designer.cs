@@ -59,6 +59,7 @@
             this.log_btn_login.Size = new System.Drawing.Size(317, 41);
             this.log_btn_login.TabIndex = 0;
             this.log_btn_login.Text = "Officer Login";
+            this.log_btn_login.ThemeName = "VisualStudio2012Dark";
             this.log_btn_login.Click += new System.EventHandler(this.log_btn_login_Click);
             // 
             // log_btn_main
@@ -68,6 +69,7 @@
             this.log_btn_main.Size = new System.Drawing.Size(154, 67);
             this.log_btn_main.TabIndex = 1;
             this.log_btn_main.Text = "Member Registration";
+            this.log_btn_main.ThemeName = "VisualStudio2012Dark";
             this.log_btn_main.Click += new System.EventHandler(this.log_btn_main_Click);
             // 
             // radGroupBox1
@@ -86,6 +88,7 @@
             this.radGroupBox1.Size = new System.Drawing.Size(327, 255);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "Login Box";
+            this.radGroupBox1.ThemeName = "VisualStudio2012Dark";
             // 
             // log_btn_forgotpass
             // 
@@ -94,6 +97,7 @@
             this.log_btn_forgotpass.Size = new System.Drawing.Size(157, 67);
             this.log_btn_forgotpass.TabIndex = 4;
             this.log_btn_forgotpass.Text = "Forgot Password?\r\n";
+            this.log_btn_forgotpass.ThemeName = "VisualStudio2012Dark";
             this.log_btn_forgotpass.Click += new System.EventHandler(this.log_btn_forgotpass_Click);
             // 
             // log_tb_password
@@ -101,15 +105,17 @@
             this.log_tb_password.Location = new System.Drawing.Point(88, 85);
             this.log_tb_password.Name = "log_tb_password";
             this.log_tb_password.PasswordChar = '*';
-            this.log_tb_password.Size = new System.Drawing.Size(216, 20);
+            this.log_tb_password.Size = new System.Drawing.Size(216, 24);
             this.log_tb_password.TabIndex = 3;
+            this.log_tb_password.ThemeName = "VisualStudio2012Dark";
             // 
             // log_tb_username
             // 
             this.log_tb_username.Location = new System.Drawing.Point(88, 38);
             this.log_tb_username.Name = "log_tb_username";
-            this.log_tb_username.Size = new System.Drawing.Size(216, 20);
+            this.log_tb_username.Size = new System.Drawing.Size(216, 24);
             this.log_tb_username.TabIndex = 2;
+            this.log_tb_username.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel2
             // 
@@ -118,6 +124,7 @@
             this.radLabel2.Size = new System.Drawing.Size(56, 18);
             this.radLabel2.TabIndex = 1;
             this.radLabel2.Text = "Password:";
+            this.radLabel2.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel1
             // 
@@ -126,6 +133,7 @@
             this.radLabel1.Size = new System.Drawing.Size(59, 18);
             this.radLabel1.TabIndex = 0;
             this.radLabel1.Text = "Username:";
+            this.radLabel1.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel3
             // 
@@ -134,6 +142,7 @@
             this.radLabel3.Size = new System.Drawing.Size(74, 18);
             this.radLabel3.TabIndex = 3;
             this.radLabel3.Text = "Bypass BITCH";
+            this.radLabel3.ThemeName = "VisualStudio2012Dark";
             this.radLabel3.Click += new System.EventHandler(this.radLabel3_Click);
             // 
             // Login
@@ -151,6 +160,8 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.ThemeName = "VisualStudio2012Dark";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_login)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_main)).EndInit();
