@@ -106,5 +106,11 @@ namespace JPCS_Registration
         {
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
         }
+
+        private void log_btn_forgotpass_Click(object sender, EventArgs e)
+        {
+            ForgotPasswordPage fpp = new ForgotPasswordPage();
+            fpp.ShowDialog();
+        }
     }
 }

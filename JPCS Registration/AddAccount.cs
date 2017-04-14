@@ -15,10 +15,10 @@ namespace JPCS_Registration
     {
         MySqlConnection conn;
         globalconfig gc = new globalconfig();
+        public string query;
         DialogResult addYn;
         DialogResult delYn;
         DialogResult updYn;
-        public string query;
         string gender;
         string isofficerstat;
         int timerusername = 0;
@@ -109,7 +109,7 @@ namespace JPCS_Registration
                 conn.Close();
             }
 
-                if ((string.IsNullOrEmpty(aa_tb_studno.Text)) | ((string.IsNullOrEmpty(aa_tb_fname.Text)) | ((string.IsNullOrEmpty(aa_tb_lname.Text)) | ((string.IsNullOrEmpty(aa_tb_address.Text)) | ((string.IsNullOrEmpty(aa_tb_password.Text)) | ((string.IsNullOrEmpty(aa_tb_repass.Text)) | (string.IsNullOrEmpty(aa_tb_username.Text))))))))
+                if ((string.IsNullOrEmpty(aa_tb_studno.Text)) | (string.IsNullOrEmpty(aa_tb_fname.Text)) | (string.IsNullOrEmpty(aa_tb_lname.Text)) | (string.IsNullOrEmpty(aa_tb_address.Text)) | (string.IsNullOrEmpty(aa_tb_password.Text)) | (string.IsNullOrEmpty(aa_tb_repass.Text)) | (aa_cb_security_ques.SelectedIndex ==-1) | (string.IsNullOrEmpty(aa_tb_security_ans.Text)) |(string.IsNullOrEmpty(aa_tb_username.Text)))
                 {
                     MessageBox.Show("Please fill all fields");
                 }
@@ -134,7 +134,7 @@ namespace JPCS_Registration
                             {
                                 conn.Open();
 
-                                query = "INSERT INTO auth_accounts VALUES (@studno,@fname,@lname,@gender,@isofficer,@address,@username,@password)";
+                                query = "INSERT INTO auth_accounts VALUES (@studno,@fname,@lname,@gender,@isofficer,@address,@username,@password,@securityquestion,@securityanswer)";
                                 command = new MySqlCommand(query, conn);
                                 command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
                                 command.Parameters.AddWithValue("fname", aa_tb_fname.Text);
@@ -144,6 +144,8 @@ namespace JPCS_Registration
                                 command.Parameters.AddWithValue("address", aa_tb_address.Text);
                                 command.Parameters.AddWithValue("username", aa_tb_username.Text);
                                 command.Parameters.AddWithValue("password", aa_tb_password.Text);
+                                command.Parameters.AddWithValue("securityquestion", aa_cb_security_ques.Text);
+                                command.Parameters.AddWithValue("securityanswer", aa_tb_security_ans.Text);
                                 reader = command.ExecuteReader();
 
                                 RadMessageBox.Show(this, "Successfully Registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);

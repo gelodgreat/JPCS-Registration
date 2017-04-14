@@ -31,7 +31,7 @@
             this.log_btn_login = new Telerik.WinControls.UI.RadButton();
             this.log_btn_main = new Telerik.WinControls.UI.RadButton();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.log_btn_forgotpass = new Telerik.WinControls.UI.RadButton();
             this.log_tb_password = new Telerik.WinControls.UI.RadTextBox();
             this.log_tb_username = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -43,7 +43,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.log_btn_forgotpass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_tb_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_tb_username)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -73,7 +73,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.radButton1);
+            this.radGroupBox1.Controls.Add(this.log_btn_forgotpass);
             this.radGroupBox1.Controls.Add(this.log_btn_main);
             this.radGroupBox1.Controls.Add(this.log_tb_password);
             this.radGroupBox1.Controls.Add(this.log_btn_login);
@@ -87,13 +87,14 @@
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "Login Box";
             // 
-            // radButton1
+            // log_btn_forgotpass
             // 
-            this.radButton1.Location = new System.Drawing.Point(165, 176);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(157, 67);
-            this.radButton1.TabIndex = 4;
-            this.radButton1.Text = "Forgot Password?\r\n";
+            this.log_btn_forgotpass.Location = new System.Drawing.Point(165, 176);
+            this.log_btn_forgotpass.Name = "log_btn_forgotpass";
+            this.log_btn_forgotpass.Size = new System.Drawing.Size(157, 67);
+            this.log_btn_forgotpass.TabIndex = 4;
+            this.log_btn_forgotpass.Text = "Forgot Password?\r\n";
+            this.log_btn_forgotpass.Click += new System.EventHandler(this.log_btn_forgotpass_Click);
             // 
             // log_tb_password
             // 
@@ -156,7 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.log_btn_forgotpass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_tb_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_tb_username)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
@@ -173,7 +174,7 @@
         private Telerik.WinControls.UI.RadButton log_btn_login;
         private Telerik.WinControls.UI.RadButton log_btn_main;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
-        private Telerik.WinControls.UI.RadButton radButton1;
+        private Telerik.WinControls.UI.RadButton log_btn_forgotpass;
         private Telerik.WinControls.UI.RadTextBox log_tb_password;
         private Telerik.WinControls.UI.RadTextBox log_tb_username;
         private Telerik.WinControls.UI.RadLabel radLabel2;
