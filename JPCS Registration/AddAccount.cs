@@ -134,7 +134,7 @@ namespace JPCS_Registration
                             {
                                 conn.Open();
 
-                                query = "INSERT INTO auth_accounts VALUES (@studno,@fname,@lname,@gender,@isofficer,@address,@username,@password,@securityquestion,@securityanswer)";
+                                query = "INSERT INTO auth_accounts VALUES (@studno,@fname,@lname,@gender,@isofficer,@address,@username,sha2(@password, 512),@securityquestion,@securityanswer)";
                                 command = new MySqlCommand(query, conn);
                                 command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
                                 command.Parameters.AddWithValue("fname", aa_tb_fname.Text);

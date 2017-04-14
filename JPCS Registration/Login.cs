@@ -43,11 +43,12 @@ namespace JPCS_Registration
                     if ((string.IsNullOrEmpty(log_tb_username.Text)) | (string.IsNullOrEmpty(log_tb_password.Text)))
                     {
                         MessageBox.Show("Please fill all fields");
+                        
                     }
                     else
                     {
                         conn.Open();
-                        query = "SELECT * FROM auth_accounts WHERE studno=@studno OR username=@username AND password=@password";
+                        query = "SELECT * FROM auth_accounts WHERE studno=@studno OR username=@username AND password=sha2(@password, 512);";
                         command = new MySqlCommand(query, conn);
                         command.Parameters.AddWithValue("studno", log_tb_username.Text);
                         command.Parameters.AddWithValue("username", log_tb_username.Text);
@@ -111,6 +112,11 @@ namespace JPCS_Registration
         {
             ForgotPasswordPage fpp = new ForgotPasswordPage();
             fpp.ShowDialog();
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
