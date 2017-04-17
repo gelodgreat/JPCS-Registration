@@ -12,6 +12,13 @@ namespace JPCS_Registration
         public MySqlCommand command;
         public MySqlDataReader reader;
         public MySqlDataAdapter adapter;
+
+        private static Boolean DebugMode;
+        public static Boolean ConsoleIsShown
+        {
+            get { return DebugMode; }
+            set { DebugMode = value; }
+        }
      
     }
 }

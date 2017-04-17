@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.rgv_registeredmembers = new Telerik.WinControls.UI.RadGridView();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.rgb_courses = new Telerik.WinControls.UI.RadGroupBox();
@@ -61,6 +61,7 @@
             // 
             // rgv_registeredmembers
             // 
+            this.rgv_registeredmembers.AutoSizeRows = true;
             this.rgv_registeredmembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rgv_registeredmembers.Location = new System.Drawing.Point(2, 18);
             // 
@@ -72,7 +73,7 @@
             this.rgv_registeredmembers.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.rgv_registeredmembers.MasterTemplate.EnableGrouping = false;
             this.rgv_registeredmembers.MasterTemplate.ShowRowHeaderColumn = false;
-            this.rgv_registeredmembers.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.rgv_registeredmembers.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_registeredmembers.Name = "rgv_registeredmembers";
             this.rgv_registeredmembers.ReadOnly = true;
             this.rgv_registeredmembers.Size = new System.Drawing.Size(1028, 341);

@@ -59,7 +59,7 @@ namespace JPCS_Registration
             try
             {
                 conn.Open();
-                query = "SELECT studno as 'Studen No.' , name as 'Student Name', section as 'Course', address as 'Address', contactno as 'Contact No.' FROM registration";
+                query = "SELECT ornumber AS 'OR Number', studno AS 'Student Number', lname AS 'Last Name', fname AS 'First Name', mname AS 'Middle Name', courseyearsection AS 'Course, Year and Section', emailaddress AS 'E-mail Address', birthday AS 'Birthday', nationality AS 'Nationality', cityaddress AS 'City Address', provinceaddress AS 'Province Address', contactnumber AS 'Contact Number', emergencycontactname 'Emergency Contact Name', emergencycontactnumber AS 'Emergency Contact Number' FROM memberlist;";
                 command = new MySqlCommand(query, conn);
                 sda.SelectCommand = command;
                 sda.Fill(dbdataset);
@@ -122,7 +122,7 @@ namespace JPCS_Registration
             {
 
                 conn.Open();
-                query = "SELECT studno as 'Studen No.' , name as 'Student Name', section as 'Course', address as 'Address', contactno as 'Contact No.' FROM registration";
+                query = "SELECT ornumber AS 'OR Number', studno AS 'Student Number', lname AS 'Last Name', fname AS 'First Name', mname AS 'Middle Name', courseyearsection AS 'Course, Year and Section', emailaddress AS 'E-mail Address', birthday AS 'Birthday', nationality AS 'Nationality', cityaddress AS 'City Address', provinceaddress AS 'Province Address', contactnumber AS 'Contact Number', emergencycontactname 'Emergency Contact Name', emergencycontactnumber AS 'Emergency Contact Number' FROM memberlist;";
                 command = new MySqlCommand(query, conn);
                 sda.SelectCommand = command;
                 sda.Fill(dbdataset);
@@ -186,7 +186,7 @@ namespace JPCS_Registration
             {
 
                 conn.Open();
-                query = "SELECT studno as 'Studen No.' , name as 'Student Name', section as 'Course', address as 'Address', contactno as 'Contact No.' FROM registration";
+                query = "SELECT ornumber AS 'OR Number', studno AS 'Student Number', lname AS 'Last Name', fname AS 'First Name', mname AS 'Middle Name', courseyearsection AS 'Course, Year and Section', emailaddress AS 'E-mail Address', birthday AS 'Birthday', nationality AS 'Nationality', cityaddress AS 'City Address', provinceaddress AS 'Province Address', contactnumber AS 'Contact Number', emergencycontactname 'Emergency Contact Name', emergencycontactnumber AS 'Emergency Contact Number' FROM memberlist;";
                 command = new MySqlCommand(query, conn);
                 sda.SelectCommand = command;
                 sda.Fill(dbdataset);

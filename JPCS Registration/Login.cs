@@ -8,16 +8,25 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using MySql.Data.MySqlClient;
 using Telerik.WinControls.UI;
+using System.Runtime.InteropServices;
 
 namespace JPCS_Registration
 {
     public partial class Login : Telerik.WinControls.UI.RadForm
     {
+
+        [DllImport("kernel32.dll")]
+        public static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll")]
+        public static extern bool FreeConsole();
+
         MySqlConnection conn;
         globalconfig gc = new globalconfig();
         public string query;
         Main MainForm = new Main();
         OfficersPage op = new OfficersPage();
+        string[] args = Environment.GetCommandLineArgs();
         public Login()
         {
             InitializeComponent();
@@ -25,8 +34,6 @@ namespace JPCS_Registration
 
         private void log_btn_login_Click(object sender, EventArgs e)
         {
-
-
             try
             {
                 conn = new MySqlConnection();
@@ -43,7 +50,6 @@ namespace JPCS_Registration
                     if ((string.IsNullOrEmpty(log_tb_username.Text)) | (string.IsNullOrEmpty(log_tb_password.Text)))
                     {
                         MessageBox.Show("Please fill all fields");
-                        
                     }
                     else
                     {
@@ -101,11 +107,31 @@ namespace JPCS_Registration
         {
             op.Show();
             this.Hide();
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Action: Bypass button Clicked.");
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
+            if (!globalconfig.ConsoleIsShown)
+            {
+                for (int i = 0; i < args.Length; i++)
+                {
+
+                    if (args[i] == "ShamWoWDebug")
+                    {
+                        AllocConsole();
+                        Console.WriteLine("Welcome to JPCS Mebership Registration System!");
+                        Console.WriteLine("The System has detected a CommandLine Argument \"ShamWoWDebug\". This will lauch the System in Debug mode");
+                        Console.WriteLine("Please do not Close this Console Window because it will also close the GUI application");
+                        globalconfig.ConsoleIsShown = true;
+                    }
+                }
+            }
+            
         }
 
         private void log_btn_forgotpass_Click(object sender, EventArgs e)

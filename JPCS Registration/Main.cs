@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using MySql.Data.MySqlClient;
+using System.Data.Common;
 
 namespace JPCS_Registration
 {
@@ -141,6 +142,18 @@ namespace JPCS_Registration
                             command.Parameters.AddWithValue("contactnumber", reg_tb_contactnum.Text);
                             command.Parameters.AddWithValue("emergencycontactname", reg_tb_emergencycontactname.Text);
                             command.Parameters.AddWithValue("emergencycontactnumber", reg_tb_emergenctcontactnumber.Text);
+                            Console.WriteLine(PrintQuery(command));
+                            if (globalconfig.ConsoleIsShown)
+                            {
+                                string a;
+                                do
+                                {
+                                    Console.WriteLine("Proceed to SQL Insert?");
+                                    a = Console.ReadLine();
+                                    Console.WriteLine(a);
+                                } while (a == "Y" | a == "y");
+
+                            }
                             //reader = command.ExecuteReader();
                             command.ExecuteNonQuery();
 
@@ -258,5 +271,18 @@ namespace JPCS_Registration
             dateTimePicker1.Value = reg_tb_bday.Value;
             reg_tb_bday.Focus();
         }
+
+        public string PrintQuery(IDbCommand cmd)
+        {
+            StringBuilder result = new StringBuilder(cmd.CommandText);
+            result.Append(System.Environment.NewLine + System.Environment.NewLine + "--Data to be inserted List: ");
+            foreach (DbParameter p in cmd.Parameters)
+            {
+                result.AppendFormat("{0}--({1} —— {2})", System.Environment.NewLine, p.ParameterName, p.Value);
+            }
+            return result.ToString();
+            
+        }
+
     }
 }
