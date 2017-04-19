@@ -59,9 +59,11 @@
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
-            this.reg_tb_slotnum = new Telerik.WinControls.UI.RadTextBox();
-            this.reg_tb_ornumber = new Telerik.WinControls.UI.RadTextBox();
-            this.reg_tb_studno = new Telerik.WinControls.UI.RadTextBox();
+            this.reg_tb_ornumber = new System.Windows.Forms.MaskedTextBox();
+            this.reg_tb_studno = new System.Windows.Forms.MaskedTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
+            this.reg_tb_slotnum = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.reg_cb_coursesect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -92,8 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reg_tb_slotnum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reg_tb_ornumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reg_tb_studno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,11 +233,13 @@
             this.reg_tb_bday.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.reg_tb_bday.Name = "reg_tb_bday";
             this.reg_tb_bday.NullText = "YYYY-MM-dd";
-            this.reg_tb_bday.Size = new System.Drawing.Size(163, 28);
+            this.reg_tb_bday.ShowUpDown = true;
+            this.reg_tb_bday.Size = new System.Drawing.Size(148, 26);
             this.reg_tb_bday.TabIndex = 8;
             this.reg_tb_bday.TabStop = false;
             this.reg_tb_bday.ThemeName = "VisualStudio2012Dark";
             this.reg_tb_bday.Value = new System.DateTime(((long)(0)));
+            this.reg_tb_bday.ValueChanged += new System.EventHandler(this.reg_tb_bday_ValueChanged);
             // 
             // reg_tb_nationality
             // 
@@ -397,41 +399,67 @@
             this.radLabel15.Text = "OR Number: ";
             this.radLabel15.ThemeName = "VisualStudio2012Dark";
             // 
-            // reg_tb_slotnum
-            // 
-            this.reg_tb_slotnum.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.reg_tb_slotnum.Location = new System.Drawing.Point(188, 10);
-            this.reg_tb_slotnum.Name = "reg_tb_slotnum";
-            this.reg_tb_slotnum.Size = new System.Drawing.Size(164, 28);
-            this.reg_tb_slotnum.TabIndex = 0;
-            this.reg_tb_slotnum.ThemeName = "VisualStudio2012Dark";
-            // 
             // reg_tb_ornumber
             // 
+            this.reg_tb_ornumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.reg_tb_ornumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.reg_tb_ornumber.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.reg_tb_ornumber.Location = new System.Drawing.Point(188, 44);
+            this.reg_tb_ornumber.ForeColor = System.Drawing.Color.White;
+            this.reg_tb_ornumber.Location = new System.Drawing.Point(188, 42);
+            this.reg_tb_ornumber.Mask = "JP\\CS\\-0000";
             this.reg_tb_ornumber.Name = "reg_tb_ornumber";
-            this.reg_tb_ornumber.Size = new System.Drawing.Size(164, 28);
+            this.reg_tb_ornumber.PromptChar = 'x';
+            this.reg_tb_ornumber.Size = new System.Drawing.Size(113, 29);
             this.reg_tb_ornumber.TabIndex = 1;
-            this.reg_tb_ornumber.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_tb_studno
             // 
+            this.reg_tb_studno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.reg_tb_studno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.reg_tb_studno.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.reg_tb_studno.Location = new System.Drawing.Point(188, 78);
+            this.reg_tb_studno.ForeColor = System.Drawing.Color.White;
+            this.reg_tb_studno.Location = new System.Drawing.Point(187, 78);
+            this.reg_tb_studno.Mask = "00\\-00000";
             this.reg_tb_studno.Name = "reg_tb_studno";
-            this.reg_tb_studno.Size = new System.Drawing.Size(164, 28);
-            this.reg_tb_studno.TabIndex = 33;
-            this.reg_tb_studno.ThemeName = "VisualStudio2012Dark";
+            this.reg_tb_studno.PromptChar = 'x';
+            this.reg_tb_studno.Size = new System.Drawing.Size(114, 29);
+            this.reg_tb_studno.TabIndex = 2;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(234, 285);
+            this.dateTimePicker1.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(117, 25);
+            this.dateTimePicker1.TabIndex = 33;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // reg_tb_slotnum
+            // 
+            this.reg_tb_slotnum.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_slotnum.ForeColor = System.Drawing.Color.White;
+            this.reg_tb_slotnum.Location = new System.Drawing.Point(187, 11);
+            this.reg_tb_slotnum.Name = "reg_tb_slotnum";
+            this.reg_tb_slotnum.Size = new System.Drawing.Size(144, 25);
+            this.reg_tb_slotnum.TabIndex = 34;
+            this.reg_tb_slotnum.Text = "reg_tb_slotnumber";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(545, 694);
+            this.Controls.Add(this.reg_tb_slotnum);
+            this.Controls.Add(this.reg_tb_bday);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.reg_tb_studno);
             this.Controls.Add(this.reg_tb_ornumber);
-            this.Controls.Add(this.reg_tb_slotnum);
             this.Controls.Add(this.radLabel15);
             this.Controls.Add(this.radLabel6);
             this.Controls.Add(this.reg_btn_save);
@@ -450,7 +478,6 @@
             this.Controls.Add(this.reg_tb_provaddress);
             this.Controls.Add(this.reg_tb_cityaddress);
             this.Controls.Add(this.reg_tb_nationality);
-            this.Controls.Add(this.reg_tb_bday);
             this.Controls.Add(this.reg_tb_mname);
             this.Controls.Add(this.reg_tb_fname);
             this.Controls.Add(this.reg_tb_lname);
@@ -504,8 +531,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reg_tb_slotnum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reg_tb_ornumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reg_tb_studno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -544,8 +569,10 @@
         private Telerik.WinControls.UI.RadLabel radLabel14;
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadLabel radLabel15;
-        private Telerik.WinControls.UI.RadTextBox reg_tb_slotnum;
-        private Telerik.WinControls.UI.RadTextBox reg_tb_ornumber;
-        private Telerik.WinControls.UI.RadTextBox reg_tb_studno;
+        private System.Windows.Forms.MaskedTextBox reg_tb_ornumber;
+        private System.Windows.Forms.MaskedTextBox reg_tb_studno;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Telerik.WinControls.RadThemeManager radThemeManager1;
+        private Telerik.WinControls.UI.RadLabel reg_tb_slotnum;
     }
 }

@@ -18,11 +18,6 @@ namespace JPCS_Registration
 
         private void Printing_Load(object sender, EventArgs e)
         {
-
-            this.reportViewer1.RefreshReport();
-            this.reportViewer2.RefreshReport();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
     }
