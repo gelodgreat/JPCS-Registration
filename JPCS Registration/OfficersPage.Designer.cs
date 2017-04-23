@@ -41,6 +41,10 @@
             this.op_cb_combosections = new Telerik.WinControls.UI.RadDropDownList();
             this.op_btn_clearselection = new Telerik.WinControls.UI.RadButton();
             this.op_btn_add_account = new Telerik.WinControls.UI.RadButton();
+            this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
+            this.rmi_btn_dbbackup = new Telerik.WinControls.UI.RadMenuItem();
+            this.rmi_btn_dbrestore = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredmembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredmembers.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -56,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.op_cb_combosections)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.op_btn_clearselection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.op_btn_add_account)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +81,7 @@
             this.rgv_registeredmembers.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.rgv_registeredmembers.Name = "rgv_registeredmembers";
             this.rgv_registeredmembers.ReadOnly = true;
-            this.rgv_registeredmembers.Size = new System.Drawing.Size(1028, 341);
+            this.rgv_registeredmembers.Size = new System.Drawing.Size(1028, 351);
             this.rgv_registeredmembers.TabIndex = 0;
             this.rgv_registeredmembers.Text = "radGridView1";
             this.rgv_registeredmembers.ThemeName = "VisualStudio2012Dark";
@@ -89,9 +94,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radGroupBox1.Controls.Add(this.rgv_registeredmembers);
             this.radGroupBox1.HeaderText = "Registered Members";
-            this.radGroupBox1.Location = new System.Drawing.Point(12, 47);
+            this.radGroupBox1.Location = new System.Drawing.Point(15, 60);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(1032, 361);
+            this.radGroupBox1.Size = new System.Drawing.Size(1032, 371);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "Registered Members";
             this.radGroupBox1.ThemeName = "VisualStudio2012Dark";
@@ -104,7 +109,7 @@
             this.rgb_courses.Controls.Add(this.op_rb_bscs);
             this.rgb_courses.Controls.Add(this.op_rb_bsit);
             this.rgb_courses.HeaderText = "";
-            this.rgb_courses.Location = new System.Drawing.Point(254, 12);
+            this.rgb_courses.Location = new System.Drawing.Point(257, 25);
             this.rgb_courses.Name = "rgb_courses";
             this.rgb_courses.Size = new System.Drawing.Size(162, 31);
             this.rgb_courses.TabIndex = 2;
@@ -146,7 +151,7 @@
             // radLabel1
             // 
             this.radLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.radLabel1.Location = new System.Drawing.Point(210, 23);
+            this.radLabel1.Location = new System.Drawing.Point(213, 36);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(38, 18);
             this.radLabel1.TabIndex = 3;
@@ -156,7 +161,7 @@
             // radLabel2
             // 
             this.radLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.radLabel2.Location = new System.Drawing.Point(484, 20);
+            this.radLabel2.Location = new System.Drawing.Point(487, 33);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(50, 18);
             this.radLabel2.TabIndex = 5;
@@ -166,7 +171,7 @@
             // radButton1
             // 
             this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.radButton1.Location = new System.Drawing.Point(897, 414);
+            this.radButton1.Location = new System.Drawing.Point(876, 437);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(147, 81);
             this.radButton1.TabIndex = 6;
@@ -177,7 +182,7 @@
             // 
             this.op_cb_combosections.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.op_cb_combosections.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.op_cb_combosections.Location = new System.Drawing.Point(540, 18);
+            this.op_cb_combosections.Location = new System.Drawing.Point(543, 31);
             this.op_cb_combosections.Name = "op_cb_combosections";
             this.op_cb_combosections.Size = new System.Drawing.Size(327, 24);
             this.op_cb_combosections.TabIndex = 7;
@@ -187,7 +192,7 @@
             // op_btn_clearselection
             // 
             this.op_btn_clearselection.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.op_btn_clearselection.Location = new System.Drawing.Point(422, 13);
+            this.op_btn_clearselection.Location = new System.Drawing.Point(425, 26);
             this.op_btn_clearselection.Name = "op_btn_clearselection";
             this.op_btn_clearselection.Size = new System.Drawing.Size(56, 30);
             this.op_btn_clearselection.TabIndex = 7;
@@ -198,7 +203,7 @@
             // op_btn_add_account
             // 
             this.op_btn_add_account.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.op_btn_add_account.Location = new System.Drawing.Point(744, 414);
+            this.op_btn_add_account.Location = new System.Drawing.Point(723, 437);
             this.op_btn_add_account.Name = "op_btn_add_account";
             this.op_btn_add_account.Size = new System.Drawing.Size(147, 81);
             this.op_btn_add_account.TabIndex = 7;
@@ -206,11 +211,41 @@
             this.op_btn_add_account.ThemeName = "VisualStudio2012Dark";
             this.op_btn_add_account.Click += new System.EventHandler(this.op_btn_add_account_Click);
             // 
+            // radMenu1
+            // 
+            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem1});
+            this.radMenu1.Location = new System.Drawing.Point(0, 0);
+            this.radMenu1.Name = "radMenu1";
+            this.radMenu1.Size = new System.Drawing.Size(1056, 20);
+            this.radMenu1.TabIndex = 8;
+            this.radMenu1.Text = "radMenu1";
+            this.radMenu1.ThemeName = "VisualStudio2012Dark";
+            // 
+            // radMenuItem1
+            // 
+            this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.rmi_btn_dbbackup,
+            this.rmi_btn_dbrestore});
+            this.radMenuItem1.Name = "radMenuItem1";
+            this.radMenuItem1.Text = "Database Options";
+            // 
+            // rmi_btn_dbbackup
+            // 
+            this.rmi_btn_dbbackup.Name = "rmi_btn_dbbackup";
+            this.rmi_btn_dbbackup.Text = "Database Backup";
+            // 
+            // rmi_btn_dbrestore
+            // 
+            this.rmi_btn_dbrestore.Name = "rmi_btn_dbrestore";
+            this.rmi_btn_dbrestore.Text = "Database Restore";
+            // 
             // OfficersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 618);
+            this.ClientSize = new System.Drawing.Size(1056, 530);
+            this.Controls.Add(this.radMenu1);
             this.Controls.Add(this.op_btn_add_account);
             this.Controls.Add(this.op_btn_clearselection);
             this.Controls.Add(this.op_cb_combosections);
@@ -245,6 +280,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.op_cb_combosections)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.op_btn_clearselection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.op_btn_add_account)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -265,5 +301,9 @@
         private Telerik.WinControls.UI.RadDropDownList op_cb_combosections;
         private Telerik.WinControls.UI.RadButton op_btn_clearselection;
         private Telerik.WinControls.UI.RadButton op_btn_add_account;
+        private Telerik.WinControls.UI.RadMenu radMenu1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
+        private Telerik.WinControls.UI.RadMenuItem rmi_btn_dbbackup;
+        private Telerik.WinControls.UI.RadMenuItem rmi_btn_dbrestore;
     }
 }

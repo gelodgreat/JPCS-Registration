@@ -257,7 +257,7 @@ namespace JPCS_Registration
                         aa_lbl_usernamestat.Text = "Not Available";
                         aa_tb_username.Clear();
                         aa_tb_username.Focus();
-                     }
+                     } 
                     else
                     {
                         aa_lbl_usernamestat.ForeColor = Color.Green;
@@ -277,8 +277,8 @@ namespace JPCS_Registration
             finally
             {
                 conn.Dispose();
-              
             }
+
         }
 
 
