@@ -79,6 +79,7 @@
             this.rgv_registeredmembers.Size = new System.Drawing.Size(1028, 341);
             this.rgv_registeredmembers.TabIndex = 0;
             this.rgv_registeredmembers.Text = "radGridView1";
+            this.rgv_registeredmembers.ThemeName = "VisualStudio2012Dark";
             // 
             // radGroupBox1
             // 
@@ -93,6 +94,7 @@
             this.radGroupBox1.Size = new System.Drawing.Size(1032, 361);
             this.radGroupBox1.TabIndex = 1;
             this.radGroupBox1.Text = "Registered Members";
+            this.radGroupBox1.ThemeName = "VisualStudio2012Dark";
             // 
             // rgb_courses
             // 
@@ -106,35 +108,39 @@
             this.rgb_courses.Name = "rgb_courses";
             this.rgb_courses.Size = new System.Drawing.Size(162, 31);
             this.rgb_courses.TabIndex = 2;
+            this.rgb_courses.ThemeName = "VisualStudio2012Dark";
             // 
             // op_rb_bscpe
             // 
             this.op_rb_bscpe.Location = new System.Drawing.Point(106, 8);
             this.op_rb_bscpe.Name = "op_rb_bscpe";
-            this.op_rb_bscpe.Size = new System.Drawing.Size(52, 18);
+            this.op_rb_bscpe.Size = new System.Drawing.Size(55, 18);
             this.op_rb_bscpe.TabIndex = 1;
             this.op_rb_bscpe.TabStop = false;
             this.op_rb_bscpe.Text = "BSCPE";
+            this.op_rb_bscpe.ThemeName = "VisualStudio2012Dark";
             this.op_rb_bscpe.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.op_rb_bsit_ToggleStateChanged);
             // 
             // op_rb_bscs
             // 
             this.op_rb_bscs.Location = new System.Drawing.Point(54, 8);
             this.op_rb_bscs.Name = "op_rb_bscs";
-            this.op_rb_bscs.Size = new System.Drawing.Size(46, 18);
+            this.op_rb_bscs.Size = new System.Drawing.Size(49, 18);
             this.op_rb_bscs.TabIndex = 1;
             this.op_rb_bscs.TabStop = false;
             this.op_rb_bscs.Text = "BSCS";
+            this.op_rb_bscs.ThemeName = "VisualStudio2012Dark";
             this.op_rb_bscs.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.op_rb_bscs_ToggleStateChanged);
             // 
             // op_rb_bsit
             // 
             this.op_rb_bsit.Location = new System.Drawing.Point(6, 8);
             this.op_rb_bsit.Name = "op_rb_bsit";
-            this.op_rb_bsit.Size = new System.Drawing.Size(42, 18);
+            this.op_rb_bsit.Size = new System.Drawing.Size(45, 18);
             this.op_rb_bsit.TabIndex = 0;
             this.op_rb_bsit.TabStop = false;
             this.op_rb_bsit.Text = "BSIT";
+            this.op_rb_bsit.ThemeName = "VisualStudio2012Dark";
             this.op_rb_bsit.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.op_rb_bsit_ToggleStateChanged);
             // 
             // radLabel1
@@ -145,6 +151,7 @@
             this.radLabel1.Size = new System.Drawing.Size(38, 18);
             this.radLabel1.TabIndex = 3;
             this.radLabel1.Text = "Filters:";
+            this.radLabel1.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel2
             // 
@@ -154,6 +161,7 @@
             this.radLabel2.Size = new System.Drawing.Size(50, 18);
             this.radLabel2.TabIndex = 5;
             this.radLabel2.Text = "Sections:";
+            this.radLabel2.ThemeName = "VisualStudio2012Dark";
             // 
             // radButton1
             // 
@@ -163,6 +171,7 @@
             this.radButton1.Size = new System.Drawing.Size(147, 81);
             this.radButton1.TabIndex = 6;
             this.radButton1.Text = "Print";
+            this.radButton1.ThemeName = "VisualStudio2012Dark";
             // 
             // op_cb_combosections
             // 
@@ -170,8 +179,9 @@
             this.op_cb_combosections.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.op_cb_combosections.Location = new System.Drawing.Point(540, 18);
             this.op_cb_combosections.Name = "op_cb_combosections";
-            this.op_cb_combosections.Size = new System.Drawing.Size(327, 20);
+            this.op_cb_combosections.Size = new System.Drawing.Size(327, 24);
             this.op_cb_combosections.TabIndex = 7;
+            this.op_cb_combosections.ThemeName = "VisualStudio2012Dark";
             this.op_cb_combosections.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.op_cb_combosections_SelectedIndexChanged);
             // 
             // op_btn_clearselection
@@ -182,6 +192,7 @@
             this.op_btn_clearselection.Size = new System.Drawing.Size(56, 30);
             this.op_btn_clearselection.TabIndex = 7;
             this.op_btn_clearselection.Text = "Clear";
+            this.op_btn_clearselection.ThemeName = "VisualStudio2012Dark";
             this.op_btn_clearselection.Click += new System.EventHandler(this.op_btn_clearselection_Click);
             // 
             // op_btn_add_account
@@ -192,6 +203,7 @@
             this.op_btn_add_account.Size = new System.Drawing.Size(147, 81);
             this.op_btn_add_account.TabIndex = 7;
             this.op_btn_add_account.Text = "Add New Authorized \r\nAccount";
+            this.op_btn_add_account.ThemeName = "VisualStudio2012Dark";
             this.op_btn_add_account.Click += new System.EventHandler(this.op_btn_add_account_Click);
             // 
             // OfficersPage
@@ -214,6 +226,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OfficersPage";
+            this.ThemeName = "VisualStudio2012Dark";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OfficersPage_FormClosed);
             this.Load += new System.EventHandler(this.OfficersPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rgv_registeredmembers.MasterTemplate)).EndInit();

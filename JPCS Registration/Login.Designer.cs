@@ -30,7 +30,7 @@
         {
             this.log_btn_login = new Telerik.WinControls.UI.RadButton();
             this.log_btn_main = new Telerik.WinControls.UI.RadButton();
-            this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.log_rgb_container = new Telerik.WinControls.UI.RadGroupBox();
             this.log_btn_forgotpass = new Telerik.WinControls.UI.RadButton();
             this.log_tb_password = new Telerik.WinControls.UI.RadTextBox();
             this.log_tb_username = new Telerik.WinControls.UI.RadTextBox();
@@ -39,16 +39,20 @@
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
+            this.log_btn_settings = new Telerik.WinControls.UI.RadButton();
+            this.log_server_status = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_login)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_main)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
-            this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.log_rgb_container)).BeginInit();
+            this.log_rgb_container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_forgotpass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_tb_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_tb_username)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.log_btn_settings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.log_server_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,23 +76,24 @@
             this.log_btn_main.ThemeName = "VisualStudio2012Dark";
             this.log_btn_main.Click += new System.EventHandler(this.log_btn_main_Click);
             // 
-            // radGroupBox1
+            // log_rgb_container
             // 
-            this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.log_btn_forgotpass);
-            this.radGroupBox1.Controls.Add(this.log_btn_main);
-            this.radGroupBox1.Controls.Add(this.log_tb_password);
-            this.radGroupBox1.Controls.Add(this.log_btn_login);
-            this.radGroupBox1.Controls.Add(this.log_tb_username);
-            this.radGroupBox1.Controls.Add(this.radLabel2);
-            this.radGroupBox1.Controls.Add(this.radLabel1);
-            this.radGroupBox1.HeaderText = "Login Box";
-            this.radGroupBox1.Location = new System.Drawing.Point(13, 49);
-            this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(327, 255);
-            this.radGroupBox1.TabIndex = 2;
-            this.radGroupBox1.Text = "Login Box";
-            this.radGroupBox1.ThemeName = "VisualStudio2012Dark";
+            this.log_rgb_container.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.log_rgb_container.Controls.Add(this.log_btn_forgotpass);
+            this.log_rgb_container.Controls.Add(this.log_btn_main);
+            this.log_rgb_container.Controls.Add(this.log_tb_password);
+            this.log_rgb_container.Controls.Add(this.log_btn_login);
+            this.log_rgb_container.Controls.Add(this.log_tb_username);
+            this.log_rgb_container.Controls.Add(this.radLabel2);
+            this.log_rgb_container.Controls.Add(this.radLabel1);
+            this.log_rgb_container.HeaderText = "Login Box";
+            this.log_rgb_container.Location = new System.Drawing.Point(13, 49);
+            this.log_rgb_container.Name = "log_rgb_container";
+            this.log_rgb_container.Size = new System.Drawing.Size(327, 255);
+            this.log_rgb_container.TabIndex = 2;
+            this.log_rgb_container.Text = "Login Box";
+            this.log_rgb_container.ThemeName = "VisualStudio2012Dark";
+            this.log_rgb_container.Enter += new System.EventHandler(this.log_rgb_container_Enter);
             // 
             // log_btn_forgotpass
             // 
@@ -137,7 +142,7 @@
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(261, 25);
+            this.radLabel3.Location = new System.Drawing.Point(166, 25);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(74, 18);
             this.radLabel3.TabIndex = 3;
@@ -145,13 +150,34 @@
             this.radLabel3.ThemeName = "VisualStudio2012Dark";
             this.radLabel3.Click += new System.EventHandler(this.radLabel3_Click);
             // 
+            // log_btn_settings
+            // 
+            this.log_btn_settings.Location = new System.Drawing.Point(246, 13);
+            this.log_btn_settings.Name = "log_btn_settings";
+            this.log_btn_settings.Size = new System.Drawing.Size(89, 30);
+            this.log_btn_settings.TabIndex = 1;
+            this.log_btn_settings.Text = "Settings";
+            this.log_btn_settings.ThemeName = "VisualStudio2012Dark";
+            this.log_btn_settings.Click += new System.EventHandler(this.log_btn_settings_Click);
+            // 
+            // log_server_status
+            // 
+            this.log_server_status.Location = new System.Drawing.Point(18, 12);
+            this.log_server_status.Name = "log_server_status";
+            this.log_server_status.Size = new System.Drawing.Size(71, 18);
+            this.log_server_status.TabIndex = 4;
+            this.log_server_status.Text = "Server Status";
+            this.log_server_status.ThemeName = "VisualStudio2012Dark";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 308);
+            this.Controls.Add(this.log_server_status);
+            this.Controls.Add(this.log_btn_settings);
             this.Controls.Add(this.radLabel3);
-            this.Controls.Add(this.radGroupBox1);
+            this.Controls.Add(this.log_rgb_container);
             this.MaximizeBox = false;
             this.Name = "Login";
             // 
@@ -165,15 +191,17 @@
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_login)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_main)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
-            this.radGroupBox1.ResumeLayout(false);
-            this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.log_rgb_container)).EndInit();
+            this.log_rgb_container.ResumeLayout(false);
+            this.log_rgb_container.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.log_btn_forgotpass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_tb_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.log_tb_username)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.log_btn_settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.log_server_status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,7 +212,7 @@
 
         private Telerik.WinControls.UI.RadButton log_btn_login;
         private Telerik.WinControls.UI.RadButton log_btn_main;
-        private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
+        private Telerik.WinControls.UI.RadGroupBox log_rgb_container;
         private Telerik.WinControls.UI.RadButton log_btn_forgotpass;
         private Telerik.WinControls.UI.RadTextBox log_tb_password;
         private Telerik.WinControls.UI.RadTextBox log_tb_username;
@@ -193,5 +221,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
+        private Telerik.WinControls.UI.RadButton log_btn_settings;
+        private Telerik.WinControls.UI.RadLabel log_server_status;
     }
 }

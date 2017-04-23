@@ -63,7 +63,7 @@ namespace JPCS_Registration
                 }
             } else
             {
-                MessageBox.Show("Empty Fields");
+                RadMessageBox.Show("Empty Fields" ,"JPCS Registration");
             }
         }
 
@@ -182,7 +182,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
             finally
             {

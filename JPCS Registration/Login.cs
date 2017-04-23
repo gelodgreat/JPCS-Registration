@@ -27,6 +27,7 @@ namespace JPCS_Registration
         Main MainForm = new Main();
         OfficersPage op = new OfficersPage();
         string[] args = Environment.GetCommandLineArgs();
+        bool constate;
         public Login()
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace JPCS_Registration
                 {
                     if ((string.IsNullOrEmpty(log_tb_username.Text)) | (string.IsNullOrEmpty(log_tb_password.Text)))
                     {
-                        MessageBox.Show("Please fill all fields");
+                        RadMessageBox.Show("Please fill all fields", "JPCS Registration");
                     }
                     else
                     {
@@ -78,7 +79,7 @@ namespace JPCS_Registration
                         }
                         else
                         {
-                            MessageBox.Show("Account not found or not Registered!");
+                            RadMessageBox.Show("Account not found or not Registered!", "JPCS Registration");
                             log_tb_password.Clear();
                             log_tb_username.Clear();
                             log_tb_username.Focus();
@@ -89,7 +90,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
             finally
             {
@@ -101,6 +102,43 @@ namespace JPCS_Registration
         {
             MainForm.Show();
             this.Hide();
+
+        }
+
+        public void checkdbstat()
+        {
+            conn = new MySqlConnection();
+            MySqlCommand command = gc.command;
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            constate = false;
+            conn.ConnectionString = gc.conn;
+            conn.Open();
+            constate = true;
+            conn.Close();
+            }
+            catch(Exception ex)
+            {
+                RadMessageBox.Show("Please correct your connection configuration", "JPCS Registration");
+            }
+            finally
+            {
+                conn.Dispose();
+                if (constate == true)
+                {
+                    log_server_status.Text = "Online";
+                    log_server_status.ForeColor = Color.Green;
+                }
+                else
+                {
+                    log_server_status.Text = "Offline";
+                    log_server_status.ForeColor = Color.Red;
+                }
+            }
         }
 
         private void radLabel3_Click(object sender, EventArgs e)
@@ -116,6 +154,7 @@ namespace JPCS_Registration
         private void Login_Load(object sender, EventArgs e)
         {
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
+          
             if (!globalconfig.ConsoleIsShown)
             {
                 for (int i = 0; i < args.Length; i++)
@@ -131,6 +170,15 @@ namespace JPCS_Registration
                     }
                 }
             }
+
+            try
+            {
+                checkdbstat();
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
+            }
             
         }
 
@@ -143,6 +191,20 @@ namespace JPCS_Registration
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void log_btn_settings_Click(object sender, EventArgs e)
+        {
+
+            Settings settings = new Settings();
+            this.Hide();
+            settings.ShowDialog();
+          
+        }
+
+        private void log_rgb_container_Enter(object sender, EventArgs e)
+        {
+            AcceptButton = log_btn_login;
         }
     }
 }

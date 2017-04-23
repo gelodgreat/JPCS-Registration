@@ -70,7 +70,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
             finally
             {
@@ -133,7 +133,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
             finally
             {
@@ -142,26 +142,45 @@ namespace JPCS_Registration
 
             if (op_rb_bsit.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
             {
-                string bsit = "BSIT";
-                DataView DV = new DataView(dbdataset);
-                DV.RowFilter = string.Format("Course Like '%{0}%'", bsit);
-                rgv_registeredmembers.DataSource = DV;
-
+                if (rgv_registeredmembers.Rows.Count == 0)
+                {
+                    RadMessageBox.Show("Data is empty","JPCS Registration");
+                }
+                else
+                {
+                    string bsit = "BSIT";
+                    DataView DV = new DataView(dbdataset);
+                    DV.RowFilter = string.Format("Course Like '%{0}%'", bsit);
+                    rgv_registeredmembers.DataSource = DV;
+                }
             }
             else if (op_rb_bscs.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
             {
-
-                string bscs = "BSCS";
-                DataView DV = new DataView(dbdataset);
-                DV.RowFilter = string.Format("Course Like '%{0}%'", bscs);
-                rgv_registeredmembers.DataSource = DV;
+                if (rgv_registeredmembers.Rows.Count == 0)
+                {
+                    RadMessageBox.Show("Data is empty","JPCS Registration");
+                }
+                else
+                {
+                    string bscs = "BSCS";
+                    DataView DV = new DataView(dbdataset);
+                    DV.RowFilter = string.Format("Course Like '%{0}%'", bscs);
+                    rgv_registeredmembers.DataSource = DV;
+                }
             }
             else
             {
-                string bscpe = "BSCPE";
-                DataView DV = new DataView(dbdataset);
-                DV.RowFilter = string.Format("Course Like '%{0}%'", bscpe);
-                rgv_registeredmembers.DataSource = DV;
+                if (rgv_registeredmembers.Rows.Count == 0)
+                {
+                    RadMessageBox.Show("Data is empty","JPCS Registration");
+                }
+                else
+                {
+                    string bscpe = "BSCPE";
+                    DataView DV = new DataView(dbdataset);
+                    DV.RowFilter = string.Format("Course Like '%{0}%'", bscpe);
+                    rgv_registeredmembers.DataSource = DV;
+                }
             }
 
         }
@@ -197,15 +216,23 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message,"JPCS Registration");
             }
             finally
             {
                 conn.Dispose();
             }
-            DataView DV = new DataView(dbdataset);
-            DV.RowFilter = string.Format("Course Like '%{0}%'", op_cb_combosections.Text);
-            rgv_registeredmembers.DataSource = DV;
+            if (rgv_registeredmembers.Rows.Count == 0)
+            {
+                RadMessageBox.Show("Data is empty","JPCS Registration");
+            }
+            else
+            {
+                DataView DV = new DataView(dbdataset);
+                DV.RowFilter = string.Format("Course Like '%{0}%'", op_cb_combosections.Text);
+                rgv_registeredmembers.DataSource = DV;
+            }
+            
 
         }
 

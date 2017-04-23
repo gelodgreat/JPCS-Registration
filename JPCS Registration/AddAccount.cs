@@ -67,7 +67,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
             finally
             {
@@ -111,20 +111,20 @@ namespace JPCS_Registration
 
                 if ((string.IsNullOrEmpty(aa_tb_studno.Text)) | (string.IsNullOrEmpty(aa_tb_fname.Text)) | (string.IsNullOrEmpty(aa_tb_lname.Text)) | (string.IsNullOrEmpty(aa_tb_address.Text)) | (string.IsNullOrEmpty(aa_tb_password.Text)) | (string.IsNullOrEmpty(aa_tb_repass.Text)) | (aa_cb_security_ques.SelectedIndex ==-1) | (string.IsNullOrEmpty(aa_tb_security_ans.Text)) |(string.IsNullOrEmpty(aa_tb_username.Text)))
                 {
-                    MessageBox.Show("Please fill all fields");
+                    RadMessageBox.Show("Please fill all fields", "JPCS Registration");
                 }
                 else
                 {
 
                     if (aa_lbl_studnostat.Text == "Not Available" | aa_lbl_usernamestat.Text == "Not Available")
                     {
-                        MessageBox.Show("Please check either your username or your student number!");
+                        RadMessageBox.Show("Please check either your username or your student number!", "JPCS Registration");
                     }
                     else
                     {
                         if (aa_tb_password.Text != aa_tb_repass.Text)
                         {
-                            MessageBox.Show("Password doesn't match!");
+                            RadMessageBox.Show("Password doesn't match!", "JPCS Registration");
                         }
                         else
                         {
@@ -158,7 +158,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
             finally
             {
@@ -215,7 +215,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
             finally
             {
@@ -271,7 +271,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
 
             finally
@@ -349,7 +349,7 @@ namespace JPCS_Registration
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RadMessageBox.Show(ex.Message, "JPCS Registration");
             }
             finally
             {

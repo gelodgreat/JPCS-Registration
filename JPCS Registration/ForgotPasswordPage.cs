@@ -100,7 +100,7 @@ namespace JPCS_Registration
 
             if (fp_cb_securityques.SelectedIndex == -1 | (string.IsNullOrEmpty(fp_tb_securityans.Text)))
             {
-                MessageBox.Show("Please complete the fields!");
+                RadMessageBox.Show("Please complete the fields!", "JPCS Registration");
             }
             else
             {
@@ -129,7 +129,7 @@ namespace JPCS_Registration
                     else
                     {
                         fp_rgb_changepass.Visible = false;
-                        MessageBox.Show("Wrong Question or Answer!");
+                        RadMessageBox.Show("Wrong Question or Answer!", "JPCS Registration");
                     }
                 }
             }
@@ -149,13 +149,13 @@ namespace JPCS_Registration
             else
             {
                 if ((string.IsNullOrEmpty(fp_tb_new_pass.Text)) | (string.IsNullOrEmpty(fp_tb_conf_new_pass.Text))){
-                    MessageBox.Show("Please fill all fields");
+                    RadMessageBox.Show("Please fill all fields", "JPCS Registration");
                 }
                 else
                 {
                     if (fp_tb_new_pass.Text != fp_tb_conf_new_pass.Text)
                     {
-                        MessageBox.Show("Password doesn't match!");
+                        RadMessageBox.Show("Password doesn't match!", "JPCS Registration");
                     }
                     else
                     {

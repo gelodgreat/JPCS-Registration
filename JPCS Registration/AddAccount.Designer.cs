@@ -29,24 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
+            this.aa_tb_security_ans = new Telerik.WinControls.UI.RadTextBox();
+            this.aa_tb_repass = new Telerik.WinControls.UI.RadTextBox();
+            this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
+            this.aa_btn_register = new Telerik.WinControls.UI.RadButton();
+            this.aa_btn_clear = new Telerik.WinControls.UI.RadButton();
+            this.aa_cb_security_ques = new Telerik.WinControls.UI.RadDropDownList();
+            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
+            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.aa_lbl_usernamestat = new Telerik.WinControls.UI.RadLabel();
             this.aa_lbl_studnostat = new Telerik.WinControls.UI.RadLabel();
             this.aa_rb_gender = new Telerik.WinControls.UI.RadGroupBox();
             this.aa_rb_female = new Telerik.WinControls.UI.RadRadioButton();
             this.aa_rb_male = new Telerik.WinControls.UI.RadRadioButton();
-            this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
-            this.aa_btn_register = new Telerik.WinControls.UI.RadButton();
-            this.aa_btn_clear = new Telerik.WinControls.UI.RadButton();
-            this.aa_tb_repass = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.aa_tb_password = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.aa_tb_address = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
@@ -70,30 +79,30 @@
             this.lbltestgen = new Telerik.WinControls.UI.RadLabel();
             this.lbltestisjp = new Telerik.WinControls.UI.RadLabel();
             this.fq = new Telerik.WinControls.UI.RadLabel();
-            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
-            this.aa_tb_security_ans = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
-            this.aa_cb_security_ques = new Telerik.WinControls.UI.RadDropDownList();
-            this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_tb_security_ans)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_tb_repass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
+            this.radGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_cb_security_ques)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_usernamestat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_studnostat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_gender)).BeginInit();
             this.aa_rb_gender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_female)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_male)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
-            this.radGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_tb_repass)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_tb_password)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_tb_address)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
@@ -118,15 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lbltestgen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbltestisjp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fq)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_tb_security_ans)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_cb_security_ques)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,56 +169,65 @@
             this.radGroupBox1.Location = new System.Drawing.Point(12, 12);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.radGroupBox1.Size = new System.Drawing.Size(403, 477);
+            this.radGroupBox1.Size = new System.Drawing.Size(403, 527);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.Text = "&Registration &Box";
+            this.radGroupBox1.ThemeName = "VisualStudio2012Dark";
             // 
-            // aa_lbl_usernamestat
+            // radLabel15
             // 
-            this.aa_lbl_usernamestat.Location = new System.Drawing.Point(325, 227);
-            this.aa_lbl_usernamestat.Name = "aa_lbl_usernamestat";
-            this.aa_lbl_usernamestat.Size = new System.Drawing.Size(37, 18);
-            this.aa_lbl_usernamestat.TabIndex = 11;
-            this.aa_lbl_usernamestat.Text = "Status";
+            this.radLabel15.Location = new System.Drawing.Point(71, 367);
+            this.radLabel15.Name = "radLabel15";
+            this.radLabel15.Size = new System.Drawing.Size(45, 18);
+            this.radLabel15.TabIndex = 14;
+            this.radLabel15.Text = "Answer:";
+            this.radLabel15.ThemeName = "VisualStudio2012Dark";
             // 
-            // aa_lbl_studnostat
+            // radLabel11
             // 
-            this.aa_lbl_studnostat.Location = new System.Drawing.Point(325, 21);
-            this.aa_lbl_studnostat.Name = "aa_lbl_studnostat";
-            this.aa_lbl_studnostat.Size = new System.Drawing.Size(37, 18);
-            this.aa_lbl_studnostat.TabIndex = 10;
-            this.aa_lbl_studnostat.Text = "Status";
+            this.radLabel11.Location = new System.Drawing.Point(71, 367);
+            this.radLabel11.Name = "radLabel11";
+            this.radLabel11.Size = new System.Drawing.Size(45, 18);
+            this.radLabel11.TabIndex = 14;
+            this.radLabel11.Text = "Answer:";
+            this.radLabel11.ThemeName = "VisualStudio2012Dark";
             // 
-            // aa_rb_gender
+            // radLabel14
             // 
-            this.aa_rb_gender.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.aa_rb_gender.Controls.Add(this.aa_rb_female);
-            this.aa_rb_gender.Controls.Add(this.aa_rb_male);
-            this.aa_rb_gender.HeaderText = "";
-            this.aa_rb_gender.Location = new System.Drawing.Point(122, 100);
-            this.aa_rb_gender.Name = "aa_rb_gender";
-            this.aa_rb_gender.Size = new System.Drawing.Size(126, 25);
-            this.aa_rb_gender.TabIndex = 1;
+            this.radLabel14.Location = new System.Drawing.Point(19, 337);
+            this.radLabel14.Name = "radLabel14";
+            this.radLabel14.Size = new System.Drawing.Size(97, 18);
+            this.radLabel14.TabIndex = 13;
+            this.radLabel14.Text = "Security Question:";
+            this.radLabel14.ThemeName = "VisualStudio2012Dark";
             // 
-            // aa_rb_female
+            // radLabel10
             // 
-            this.aa_rb_female.Location = new System.Drawing.Point(57, 2);
-            this.aa_rb_female.Name = "aa_rb_female";
-            this.aa_rb_female.Size = new System.Drawing.Size(56, 18);
-            this.aa_rb_female.TabIndex = 1;
-            this.aa_rb_female.TabStop = false;
-            this.aa_rb_female.Text = "Female";
-            this.aa_rb_female.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_female_ToggleStateChanged);
+            this.radLabel10.Location = new System.Drawing.Point(19, 337);
+            this.radLabel10.Name = "radLabel10";
+            this.radLabel10.Size = new System.Drawing.Size(97, 18);
+            this.radLabel10.TabIndex = 13;
+            this.radLabel10.Text = "Security Question:";
+            this.radLabel10.ThemeName = "VisualStudio2012Dark";
             // 
-            // aa_rb_male
+            // aa_tb_security_ans
             // 
-            this.aa_rb_male.Location = new System.Drawing.Point(6, 3);
-            this.aa_rb_male.Name = "aa_rb_male";
-            this.aa_rb_male.Size = new System.Drawing.Size(45, 18);
-            this.aa_rb_male.TabIndex = 0;
-            this.aa_rb_male.TabStop = false;
-            this.aa_rb_male.Text = "Male";
-            this.aa_rb_male.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_male_ToggleStateChanged);
+            this.aa_tb_security_ans.AutoSize = false;
+            this.aa_tb_security_ans.Location = new System.Drawing.Point(122, 367);
+            this.aa_tb_security_ans.Multiline = true;
+            this.aa_tb_security_ans.Name = "aa_tb_security_ans";
+            this.aa_tb_security_ans.Size = new System.Drawing.Size(263, 57);
+            this.aa_tb_security_ans.TabIndex = 6;
+            this.aa_tb_security_ans.ThemeName = "VisualStudio2012Dark";
+            // 
+            // aa_tb_repass
+            // 
+            this.aa_tb_repass.Location = new System.Drawing.Point(122, 307);
+            this.aa_tb_repass.Name = "aa_tb_repass";
+            this.aa_tb_repass.PasswordChar = '*';
+            this.aa_tb_repass.Size = new System.Drawing.Size(263, 24);
+            this.aa_tb_repass.TabIndex = 9;
+            this.aa_tb_repass.ThemeName = "VisualStudio2012Dark";
             // 
             // radGroupBox5
             // 
@@ -228,11 +237,12 @@
             this.radGroupBox5.Controls.Add(this.aa_btn_register);
             this.radGroupBox5.Controls.Add(this.aa_btn_clear);
             this.radGroupBox5.HeaderText = "Controls";
-            this.radGroupBox5.Location = new System.Drawing.Point(82, 394);
+            this.radGroupBox5.Location = new System.Drawing.Point(80, 449);
             this.radGroupBox5.Name = "radGroupBox5";
-            this.radGroupBox5.Size = new System.Drawing.Size(238, 72);
+            this.radGroupBox5.Size = new System.Drawing.Size(238, 77);
             this.radGroupBox5.TabIndex = 2;
             this.radGroupBox5.Text = "Controls";
+            this.radGroupBox5.ThemeName = "VisualStudio2012Dark";
             // 
             // aa_btn_register
             // 
@@ -241,6 +251,7 @@
             this.aa_btn_register.Size = new System.Drawing.Size(110, 40);
             this.aa_btn_register.TabIndex = 1;
             this.aa_btn_register.Text = "Register";
+            this.aa_btn_register.ThemeName = "VisualStudio2012Dark";
             this.aa_btn_register.Click += new System.EventHandler(this.aa_btn_register_Click);
             // 
             // aa_btn_clear
@@ -250,72 +261,169 @@
             this.aa_btn_clear.Size = new System.Drawing.Size(110, 40);
             this.aa_btn_clear.TabIndex = 0;
             this.aa_btn_clear.Text = "Clear";
+            this.aa_btn_clear.ThemeName = "VisualStudio2012Dark";
             this.aa_btn_clear.Click += new System.EventHandler(this.aa_btn_clear_Click);
             // 
-            // aa_tb_repass
+            // aa_cb_security_ques
             // 
-            this.aa_tb_repass.Location = new System.Drawing.Point(122, 279);
-            this.aa_tb_repass.Name = "aa_tb_repass";
-            this.aa_tb_repass.PasswordChar = '*';
-            this.aa_tb_repass.Size = new System.Drawing.Size(263, 20);
-            this.aa_tb_repass.TabIndex = 9;
+            this.aa_cb_security_ques.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            radListDataItem1.Text = "What is your Mother\'s maiden name?";
+            radListDataItem2.Text = "What is your dream job?";
+            radListDataItem3.Text = "Who is your favorite artist?";
+            radListDataItem4.Text = "What is your favorite song?";
+            radListDataItem5.Text = "What is your favorite programming language?";
+            this.aa_cb_security_ques.Items.Add(radListDataItem1);
+            this.aa_cb_security_ques.Items.Add(radListDataItem2);
+            this.aa_cb_security_ques.Items.Add(radListDataItem3);
+            this.aa_cb_security_ques.Items.Add(radListDataItem4);
+            this.aa_cb_security_ques.Items.Add(radListDataItem5);
+            this.aa_cb_security_ques.Location = new System.Drawing.Point(122, 337);
+            this.aa_cb_security_ques.Name = "aa_cb_security_ques";
+            this.aa_cb_security_ques.Size = new System.Drawing.Size(263, 24);
+            this.aa_cb_security_ques.TabIndex = 12;
+            this.aa_cb_security_ques.ThemeName = "VisualStudio2012Dark";
+            // 
+            // radDropDownList1
+            // 
+            this.radDropDownList1.Location = new System.Drawing.Point(122, 337);
+            this.radDropDownList1.Name = "radDropDownList1";
+            this.radDropDownList1.Size = new System.Drawing.Size(263, 24);
+            this.radDropDownList1.TabIndex = 12;
+            this.radDropDownList1.ThemeName = "VisualStudio2012Dark";
+            // 
+            // radLabel13
+            // 
+            this.radLabel13.Location = new System.Drawing.Point(17, 309);
+            this.radLabel13.Name = "radLabel13";
+            this.radLabel13.Size = new System.Drawing.Size(99, 18);
+            this.radLabel13.TabIndex = 8;
+            this.radLabel13.Text = "Confirm Password:";
+            this.radLabel13.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel9
             // 
-            this.radLabel9.Location = new System.Drawing.Point(17, 281);
+            this.radLabel9.Location = new System.Drawing.Point(17, 309);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(99, 18);
             this.radLabel9.TabIndex = 8;
             this.radLabel9.Text = "Confirm Password:";
+            this.radLabel9.ThemeName = "VisualStudio2012Dark";
+            // 
+            // aa_lbl_usernamestat
+            // 
+            this.aa_lbl_usernamestat.Location = new System.Drawing.Point(325, 244);
+            this.aa_lbl_usernamestat.Name = "aa_lbl_usernamestat";
+            this.aa_lbl_usernamestat.Size = new System.Drawing.Size(37, 18);
+            this.aa_lbl_usernamestat.TabIndex = 11;
+            this.aa_lbl_usernamestat.Text = "Status";
+            this.aa_lbl_usernamestat.ThemeName = "VisualStudio2012Dark";
+            // 
+            // aa_lbl_studnostat
+            // 
+            this.aa_lbl_studnostat.Location = new System.Drawing.Point(325, 30);
+            this.aa_lbl_studnostat.Name = "aa_lbl_studnostat";
+            this.aa_lbl_studnostat.Size = new System.Drawing.Size(37, 18);
+            this.aa_lbl_studnostat.TabIndex = 10;
+            this.aa_lbl_studnostat.Text = "Status";
+            this.aa_lbl_studnostat.ThemeName = "VisualStudio2012Dark";
+            // 
+            // aa_rb_gender
+            // 
+            this.aa_rb_gender.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.aa_rb_gender.Controls.Add(this.aa_rb_female);
+            this.aa_rb_gender.Controls.Add(this.aa_rb_male);
+            this.aa_rb_gender.HeaderText = "";
+            this.aa_rb_gender.Location = new System.Drawing.Point(122, 120);
+            this.aa_rb_gender.Name = "aa_rb_gender";
+            this.aa_rb_gender.Size = new System.Drawing.Size(126, 25);
+            this.aa_rb_gender.TabIndex = 1;
+            this.aa_rb_gender.ThemeName = "VisualStudio2012Dark";
+            // 
+            // aa_rb_female
+            // 
+            this.aa_rb_female.Location = new System.Drawing.Point(57, 2);
+            this.aa_rb_female.Name = "aa_rb_female";
+            this.aa_rb_female.Size = new System.Drawing.Size(59, 18);
+            this.aa_rb_female.TabIndex = 1;
+            this.aa_rb_female.TabStop = false;
+            this.aa_rb_female.Text = "Female";
+            this.aa_rb_female.ThemeName = "VisualStudio2012Dark";
+            this.aa_rb_female.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_female_ToggleStateChanged);
+            // 
+            // aa_rb_male
+            // 
+            this.aa_rb_male.Location = new System.Drawing.Point(6, 3);
+            this.aa_rb_male.Name = "aa_rb_male";
+            this.aa_rb_male.Size = new System.Drawing.Size(48, 18);
+            this.aa_rb_male.TabIndex = 0;
+            this.aa_rb_male.TabStop = false;
+            this.aa_rb_male.Text = "Male";
+            this.aa_rb_male.ThemeName = "VisualStudio2012Dark";
+            this.aa_rb_male.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_male_ToggleStateChanged);
             // 
             // aa_tb_password
             // 
-            this.aa_tb_password.Location = new System.Drawing.Point(122, 253);
+            this.aa_tb_password.Location = new System.Drawing.Point(122, 277);
             this.aa_tb_password.Name = "aa_tb_password";
             this.aa_tb_password.PasswordChar = '*';
-            this.aa_tb_password.Size = new System.Drawing.Size(263, 20);
+            this.aa_tb_password.Size = new System.Drawing.Size(263, 24);
             this.aa_tb_password.TabIndex = 7;
+            this.aa_tb_password.ThemeName = "VisualStudio2012Dark";
+            // 
+            // radLabel12
+            // 
+            this.radLabel12.Location = new System.Drawing.Point(60, 275);
+            this.radLabel12.Name = "radLabel12";
+            this.radLabel12.Size = new System.Drawing.Size(56, 18);
+            this.radLabel12.TabIndex = 6;
+            this.radLabel12.Text = "Password:";
+            this.radLabel12.ThemeName = "VisualStudio2012Dark";
             // 
             // aa_tb_address
             // 
             this.aa_tb_address.AutoSize = false;
-            this.aa_tb_address.Location = new System.Drawing.Point(122, 164);
+            this.aa_tb_address.Location = new System.Drawing.Point(122, 184);
             this.aa_tb_address.Multiline = true;
             this.aa_tb_address.Name = "aa_tb_address";
             this.aa_tb_address.Size = new System.Drawing.Size(263, 57);
             this.aa_tb_address.TabIndex = 5;
+            this.aa_tb_address.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel7
             // 
-            this.radLabel7.Location = new System.Drawing.Point(60, 253);
+            this.radLabel7.Location = new System.Drawing.Point(60, 275);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(56, 18);
             this.radLabel7.TabIndex = 6;
             this.radLabel7.Text = "Password:";
+            this.radLabel7.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(67, 164);
+            this.radLabel6.Location = new System.Drawing.Point(67, 184);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(49, 18);
             this.radLabel6.TabIndex = 4;
             this.radLabel6.Text = "Address:";
+            this.radLabel6.ThemeName = "VisualStudio2012Dark";
             // 
             // aa_tb_username
             // 
-            this.aa_tb_username.Location = new System.Drawing.Point(122, 225);
+            this.aa_tb_username.Location = new System.Drawing.Point(122, 247);
             this.aa_tb_username.Name = "aa_tb_username";
-            this.aa_tb_username.Size = new System.Drawing.Size(196, 20);
+            this.aa_tb_username.Size = new System.Drawing.Size(196, 24);
             this.aa_tb_username.TabIndex = 5;
+            this.aa_tb_username.ThemeName = "VisualStudio2012Dark";
             this.aa_tb_username.TextChanged += new System.EventHandler(this.aa_tb_username_TextChanged);
             // 
             // radLabel8
             // 
-            this.radLabel8.Location = new System.Drawing.Point(57, 227);
+            this.radLabel8.Location = new System.Drawing.Point(57, 247);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(59, 18);
             this.radLabel8.TabIndex = 4;
             this.radLabel8.Text = "Username:";
+            this.radLabel8.ThemeName = "VisualStudio2012Dark";
             // 
             // aa_rb_isjpofficer
             // 
@@ -323,91 +431,102 @@
             this.aa_rb_isjpofficer.Controls.Add(this.aa_rb_no);
             this.aa_rb_isjpofficer.Controls.Add(this.aa_rb_yes);
             this.aa_rb_isjpofficer.HeaderText = "";
-            this.aa_rb_isjpofficer.Location = new System.Drawing.Point(122, 133);
+            this.aa_rb_isjpofficer.Location = new System.Drawing.Point(122, 153);
             this.aa_rb_isjpofficer.Name = "aa_rb_isjpofficer";
             this.aa_rb_isjpofficer.Size = new System.Drawing.Size(126, 25);
             this.aa_rb_isjpofficer.TabIndex = 2;
+            this.aa_rb_isjpofficer.ThemeName = "VisualStudio2012Dark";
             // 
             // aa_rb_no
             // 
             this.aa_rb_no.Location = new System.Drawing.Point(57, 2);
             this.aa_rb_no.Name = "aa_rb_no";
-            this.aa_rb_no.Size = new System.Drawing.Size(35, 18);
+            this.aa_rb_no.Size = new System.Drawing.Size(38, 18);
             this.aa_rb_no.TabIndex = 1;
             this.aa_rb_no.Text = "No";
+            this.aa_rb_no.ThemeName = "VisualStudio2012Dark";
             this.aa_rb_no.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_no_ToggleStateChanged);
             // 
             // aa_rb_yes
             // 
             this.aa_rb_yes.Location = new System.Drawing.Point(6, 2);
             this.aa_rb_yes.Name = "aa_rb_yes";
-            this.aa_rb_yes.Size = new System.Drawing.Size(37, 18);
+            this.aa_rb_yes.Size = new System.Drawing.Size(40, 18);
             this.aa_rb_yes.TabIndex = 0;
             this.aa_rb_yes.Text = "Yes";
+            this.aa_rb_yes.ThemeName = "VisualStudio2012Dark";
             this.aa_rb_yes.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.aa_rb_yes_ToggleStateChanged);
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(37, 133);
+            this.radLabel5.Location = new System.Drawing.Point(37, 153);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(79, 18);
             this.radLabel5.TabIndex = 3;
             this.radLabel5.Text = "is JPCS Officer:";
+            this.radLabel5.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(71, 100);
+            this.radLabel4.Location = new System.Drawing.Point(71, 120);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(45, 18);
             this.radLabel4.TabIndex = 2;
             this.radLabel4.Text = "Gender:";
+            this.radLabel4.ThemeName = "VisualStudio2012Dark";
             // 
             // aa_tb_lname
             // 
-            this.aa_tb_lname.Location = new System.Drawing.Point(122, 73);
+            this.aa_tb_lname.Location = new System.Drawing.Point(122, 90);
             this.aa_tb_lname.Name = "aa_tb_lname";
-            this.aa_tb_lname.Size = new System.Drawing.Size(263, 20);
+            this.aa_tb_lname.Size = new System.Drawing.Size(263, 24);
             this.aa_tb_lname.TabIndex = 3;
+            this.aa_tb_lname.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(55, 73);
+            this.radLabel3.Location = new System.Drawing.Point(55, 90);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(61, 18);
             this.radLabel3.TabIndex = 2;
             this.radLabel3.Text = "Last Name:";
+            this.radLabel3.ThemeName = "VisualStudio2012Dark";
             // 
             // aa_tb_fname
             // 
-            this.aa_tb_fname.Location = new System.Drawing.Point(122, 47);
+            this.aa_tb_fname.Location = new System.Drawing.Point(122, 60);
             this.aa_tb_fname.Name = "aa_tb_fname";
-            this.aa_tb_fname.Size = new System.Drawing.Size(263, 20);
+            this.aa_tb_fname.Size = new System.Drawing.Size(263, 24);
             this.aa_tb_fname.TabIndex = 3;
+            this.aa_tb_fname.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(53, 47);
+            this.radLabel2.Location = new System.Drawing.Point(53, 60);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(63, 18);
             this.radLabel2.TabIndex = 2;
             this.radLabel2.Text = "First Name:";
+            this.radLabel2.ThemeName = "VisualStudio2012Dark";
             // 
             // aa_tb_studno
             // 
-            this.aa_tb_studno.Location = new System.Drawing.Point(122, 21);
+            this.aa_tb_studno.Location = new System.Drawing.Point(122, 30);
             this.aa_tb_studno.MaxLength = 8;
             this.aa_tb_studno.Name = "aa_tb_studno";
-            this.aa_tb_studno.Size = new System.Drawing.Size(196, 20);
+            this.aa_tb_studno.Size = new System.Drawing.Size(196, 24);
             this.aa_tb_studno.TabIndex = 1;
+            this.aa_tb_studno.ThemeName = "VisualStudio2012Dark";
             this.aa_tb_studno.TextChanged += new System.EventHandler(this.aa_tb_studno_TextChanged);
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(58, 21);
+            this.radLabel1.Location = new System.Drawing.Point(58, 30);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(58, 18);
             this.radLabel1.TabIndex = 0;
             this.radLabel1.Text = "Student #:";
+            this.radLabel1.ThemeName = "VisualStudio2012Dark";
             // 
             // radGroupBox4
             // 
@@ -422,6 +541,7 @@
             this.radGroupBox4.Size = new System.Drawing.Size(444, 454);
             this.radGroupBox4.TabIndex = 1;
             this.radGroupBox4.Text = "Data Box";
+            this.radGroupBox4.ThemeName = "VisualStudio2012Dark";
             // 
             // rgv_registeredaccounts
             // 
@@ -442,6 +562,7 @@
             this.rgv_registeredaccounts.Size = new System.Drawing.Size(440, 434);
             this.rgv_registeredaccounts.TabIndex = 1;
             this.rgv_registeredaccounts.Text = "radGridView1";
+            this.rgv_registeredaccounts.ThemeName = "VisualStudio2012Dark";
             this.rgv_registeredaccounts.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.rgv_registeredaccounts_CellDoubleClick);
             // 
             // aa_timer_studno
@@ -459,6 +580,7 @@
             this.lbltestgen.Size = new System.Drawing.Size(52, 18);
             this.lbltestgen.TabIndex = 3;
             this.lbltestgen.Text = "label test";
+            this.lbltestgen.ThemeName = "VisualStudio2012Dark";
             this.lbltestgen.Visible = false;
             // 
             // lbltestisjp
@@ -468,6 +590,7 @@
             this.lbltestisjp.Size = new System.Drawing.Size(61, 18);
             this.lbltestisjp.TabIndex = 4;
             this.lbltestisjp.Text = "radLabel11";
+            this.lbltestisjp.ThemeName = "VisualStudio2012Dark";
             this.lbltestisjp.Visible = false;
             // 
             // fq
@@ -477,89 +600,8 @@
             this.fq.Size = new System.Drawing.Size(61, 18);
             this.fq.TabIndex = 5;
             this.fq.Text = "radLabel10";
+            this.fq.ThemeName = "VisualStudio2012Dark";
             this.fq.Visible = false;
-            // 
-            // radDropDownList1
-            // 
-            this.radDropDownList1.Location = new System.Drawing.Point(122, 305);
-            this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.Size = new System.Drawing.Size(263, 20);
-            this.radDropDownList1.TabIndex = 12;
-            // 
-            // aa_tb_security_ans
-            // 
-            this.aa_tb_security_ans.AutoSize = false;
-            this.aa_tb_security_ans.Location = new System.Drawing.Point(122, 331);
-            this.aa_tb_security_ans.Multiline = true;
-            this.aa_tb_security_ans.Name = "aa_tb_security_ans";
-            this.aa_tb_security_ans.Size = new System.Drawing.Size(263, 57);
-            this.aa_tb_security_ans.TabIndex = 6;
-            // 
-            // radLabel10
-            // 
-            this.radLabel10.Location = new System.Drawing.Point(19, 305);
-            this.radLabel10.Name = "radLabel10";
-            this.radLabel10.Size = new System.Drawing.Size(97, 18);
-            this.radLabel10.TabIndex = 13;
-            this.radLabel10.Text = "Security Question:";
-            // 
-            // radLabel11
-            // 
-            this.radLabel11.Location = new System.Drawing.Point(71, 331);
-            this.radLabel11.Name = "radLabel11";
-            this.radLabel11.Size = new System.Drawing.Size(45, 18);
-            this.radLabel11.TabIndex = 14;
-            this.radLabel11.Text = "Answer:";
-            // 
-            // radLabel12
-            // 
-            this.radLabel12.Location = new System.Drawing.Point(60, 253);
-            this.radLabel12.Name = "radLabel12";
-            this.radLabel12.Size = new System.Drawing.Size(56, 18);
-            this.radLabel12.TabIndex = 6;
-            this.radLabel12.Text = "Password:";
-            // 
-            // radLabel13
-            // 
-            this.radLabel13.Location = new System.Drawing.Point(17, 281);
-            this.radLabel13.Name = "radLabel13";
-            this.radLabel13.Size = new System.Drawing.Size(99, 18);
-            this.radLabel13.TabIndex = 8;
-            this.radLabel13.Text = "Confirm Password:";
-            // 
-            // aa_cb_security_ques
-            // 
-            this.aa_cb_security_ques.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem1.Text = "What is your Mother\'s maiden name?";
-            radListDataItem2.Text = "What is your dream job?";
-            radListDataItem3.Text = "Who is your favorite artist?";
-            radListDataItem4.Text = "What is your favorite song?";
-            radListDataItem5.Text = "What is your favorite programming language?";
-            this.aa_cb_security_ques.Items.Add(radListDataItem1);
-            this.aa_cb_security_ques.Items.Add(radListDataItem2);
-            this.aa_cb_security_ques.Items.Add(radListDataItem3);
-            this.aa_cb_security_ques.Items.Add(radListDataItem4);
-            this.aa_cb_security_ques.Items.Add(radListDataItem5);
-            this.aa_cb_security_ques.Location = new System.Drawing.Point(122, 305);
-            this.aa_cb_security_ques.Name = "aa_cb_security_ques";
-            this.aa_cb_security_ques.Size = new System.Drawing.Size(263, 20);
-            this.aa_cb_security_ques.TabIndex = 12;
-            // 
-            // radLabel14
-            // 
-            this.radLabel14.Location = new System.Drawing.Point(19, 305);
-            this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(97, 18);
-            this.radLabel14.TabIndex = 13;
-            this.radLabel14.Text = "Security Question:";
-            // 
-            // radLabel15
-            // 
-            this.radLabel15.Location = new System.Drawing.Point(71, 331);
-            this.radLabel15.Name = "radLabel15";
-            this.radLabel15.Size = new System.Drawing.Size(45, 18);
-            this.radLabel15.TabIndex = 14;
-            this.radLabel15.Text = "Answer:";
             // 
             // AddAccount
             // 
@@ -578,10 +620,25 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddAccount";
+            this.ThemeName = "VisualStudio2012Dark";
             this.Load += new System.EventHandler(this.AddAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_tb_security_ans)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_tb_repass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
+            this.radGroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aa_cb_security_ques)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_usernamestat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_lbl_studnostat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_gender)).EndInit();
@@ -589,13 +646,8 @@
             this.aa_rb_gender.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_female)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_rb_male)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
-            this.radGroupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_register)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_btn_clear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_tb_repass)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_tb_password)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aa_tb_address)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
@@ -621,15 +673,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lbltestgen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbltestisjp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fq)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_tb_security_ans)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aa_cb_security_ques)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
