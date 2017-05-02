@@ -154,22 +154,6 @@ namespace JPCS_Registration
         private void Login_Load(object sender, EventArgs e)
         {
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
-          
-            if (!globalconfig.ConsoleIsShown)
-            {
-                for (int i = 0; i < args.Length; i++)
-                {
-
-                    if (args[i] == "ShamWoWDebug")
-                    {
-                        AllocConsole();
-                        Console.WriteLine("Welcome to JPCS Mebership Registration System!");
-                        Console.WriteLine("The System has detected a CommandLine Argument \"ShamWoWDebug\". This will lauch the System in Debug mode");
-                        Console.WriteLine("Please do not Close this Console Window because it will also close the GUI application");
-                        globalconfig.ConsoleIsShown = true;
-                    }
-                }
-            }
 
             try
             {
