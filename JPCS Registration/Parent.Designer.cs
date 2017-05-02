@@ -33,12 +33,14 @@
             this.MemberManage = new Telerik.WinControls.UI.RadMenuItem();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
-            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radMenuItem1
             // 
+            this.radMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.MemberAdd,
             this.MemberManage});
@@ -56,22 +58,32 @@
             this.MemberManage.Name = "MemberManage";
             this.MemberManage.Text = "&Manage";
             // 
+            // radMenu1
+            // 
+            this.radMenu1.AllowShowFocusCues = true;
+            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem1,
+            this.radMenuItem2});
+            this.radMenu1.Location = new System.Drawing.Point(0, 0);
+            this.radMenu1.Name = "radMenu1";
+            this.radMenu1.Size = new System.Drawing.Size(794, 27);
+            this.radMenu1.TabIndex = 0;
+            this.radMenu1.Text = "radMenu1";
+            this.radMenu1.ThemeName = "VisualStudio2012Dark";
+            // 
+            // radMenuItem2
+            // 
+            this.radMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radMenuItem2.Name = "radMenuItem2";
+            this.radMenuItem2.Text = "Tools";
+            // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::JPCS_Registration.Properties.Resources.jpcs1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(794, 515);
-            // 
-            // radMenu1
-            // 
-            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem1});
-            this.radMenu1.Location = new System.Drawing.Point(0, 0);
-            this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(794, 18);
-            this.radMenu1.TabIndex = 0;
-            this.radMenu1.Text = "radMenu1";
-            this.radMenu1.ThemeName = "VisualStudio2012Dark";
             this.Controls.Add(this.radMenu1);
             this.IsMdiContainer = true;
             this.Name = "Parent";
@@ -96,5 +108,6 @@
         private Telerik.WinControls.UI.RadMenuItem MemberManage;
         private Telerik.WinControls.UI.RadMenu radMenu1;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
     }
 }

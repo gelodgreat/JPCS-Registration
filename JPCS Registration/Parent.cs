@@ -3,28 +3,48 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using MySql.Data.MySqlClient;
 
 namespace JPCS_Registration
 {
     public partial class Parent : Telerik.WinControls.UI.RadForm
     {
+        [DllImport("kernel32.dll")]
+        public static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll")]
+        public static extern bool FreeConsole();
         MdiClient ctlMDI;
-        Main m = new Main();
-        
+        //Main register = new Main();
+        Settings settings = new Settings();
+        globalconfig gc=new globalconfig();
+        MySqlConnection conn;
+        MySqlCommand comm=new MySqlCommand();
+        Boolean constate = false;
+        String[] args = Environment.GetCommandLineArgs();
         public Parent()
         {
             InitializeComponent();
+            
         }
 
         private void Parent_Load(object sender, EventArgs e)
         {
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
-            
+
             // Loop through all of the form's controls looking
             // for the control of type MdiClient.
+
+            Boolean check = checkdbstat();
+            while (check=false)
+            {
+                settings.Show();
+                check = checkdbstat();
+            }
             foreach (Control ctl in this.Controls)
             {
                 try
@@ -40,18 +60,88 @@ namespace JPCS_Registration
                     // Catch and ignore the error if casting failed.
                 }
             }
+            if (!globalconfig.ConsoleIsShown)
+            {
+                for (int i = 0; i < args.Length; i++)
+                {
 
-            // Display a child form to show this is still an MDI application.
-            //Form2 frm = new Form2();
-            //frm.MdiParent = this;
-            //frm.Show();
+                    if (args[i] == "ShamWoWDebug")
+                    {
+                        AllocConsole();
+                        globalconfig.Logger("Welcome to JPCS Mebership Registration System!");
+                        globalconfig.Logger("The System has detected a CommandLine Argument \"ShamWoWDebug\". This will lauch the System in Debug mode");
+                        globalconfig.Logger("Please do not Close this Console Window because it will also close the GUI application");
+                        globalconfig.ConsoleIsShown = true;
+                    }
+                }
+            }
+
         }
 
         private void MemberAdd_Click(object sender, EventArgs e)
         {
-            // Display a child form to show this is still an MDI application.
-            m.MdiParent = this;
-            m.Show();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Main)
+                {
+                    f.Dispose();
+                    return;
+                }
+            }
+
+            Main register = new Main();
+            register.MdiParent = this;
+            register.Show();
         }
+        public Boolean checkdbstat()
+        {
+            Boolean loopstopper=false;
+            conn = new MySqlConnection();
+            MySqlCommand command = gc.command;
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                constate = false;
+                loopstopper = true;
+                conn.ConnectionString = gc.conn;
+                conn.Open();
+                constate = true;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show("Please correct your connection configuration", "JPCS Registration");
+                settings.ShowDialog();
+            }
+            finally
+            {
+                MessageBox.Show("Test");
+                conn.Dispose();
+                if (constate == true)
+                {
+                    //log_server_status.Text = "Online";
+                    //log_server_status.ForeColor = Color.Green;
+                }
+                else
+                {
+                    //log_server_status.Text = "Offline";
+                    //log_server_status.ForeColor = Color.Red;
+                }
+            }
+            return loopstopper;
+        }
+
+        private void Parent_Move(object sender, EventArgs e)
+        {
+            Console.WriteLine(this.Location);
+        }
+
+        // Display a child form to show this is still an MDI application.
+        //Form2 frm = new Form2();
+        //frm.MdiParent = this;
+        //frm.Show();
     }
 }

@@ -14,13 +14,6 @@ namespace JPCS_Registration
 {
     public partial class Login : Telerik.WinControls.UI.RadForm
     {
-
-        [DllImport("kernel32.dll")]
-        public static extern bool AllocConsole();
-
-        [DllImport("kernel32.dll")]
-        public static extern bool FreeConsole();
-
         MySqlConnection conn;
         globalconfig gc = new globalconfig();
         public string query;
@@ -104,43 +97,6 @@ namespace JPCS_Registration
             this.Hide();
 
         }
-
-        public void checkdbstat()
-        {
-            conn = new MySqlConnection();
-            MySqlCommand command = gc.command;
-            try
-            {
-                if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-            constate = false;
-            conn.ConnectionString = gc.conn;
-            conn.Open();
-            constate = true;
-            conn.Close();
-            }
-            catch(Exception ex)
-            {
-                RadMessageBox.Show("Please correct your connection configuration", "JPCS Registration");
-            }
-            finally
-            {
-                conn.Dispose();
-                if (constate == true)
-                {
-                    log_server_status.Text = "Online";
-                    log_server_status.ForeColor = Color.Green;
-                }
-                else
-                {
-                    log_server_status.Text = "Offline";
-                    log_server_status.ForeColor = Color.Red;
-                }
-            }
-        }
-
         private void radLabel3_Click(object sender, EventArgs e)
         {
             op.Show();
@@ -157,7 +113,7 @@ namespace JPCS_Registration
 
             try
             {
-                checkdbstat();
+                //checkdbstat();
             }
             catch (Exception ex)
             {

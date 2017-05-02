@@ -45,6 +45,7 @@ namespace JPCS_Registration
                     Properties.Settings.Default.db_password = set_tb_password.Text;
                     Properties.Settings.Default.Save();   
                     RadMessageBox.Show("Succesfully Saved!", "JPCS Registration");
+                    this.Dispose();
                 }
             }
         }

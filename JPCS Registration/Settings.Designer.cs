@@ -160,7 +160,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Server Connection";
             this.ThemeName = "VisualStudio2012Dark";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Settings_FormClosed);
             this.Enter += new System.EventHandler(this.Settings_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.set_tb_server)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();

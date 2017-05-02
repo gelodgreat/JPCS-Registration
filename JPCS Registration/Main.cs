@@ -47,7 +47,7 @@ namespace JPCS_Registration
         private void Main_Load(object sender, EventArgs e)
         {
             ManageCourses();
-            get_member_ranks_for_the_slot_number();
+            //get_member_ranks_for_the_slot_number();
             reg_tb_ornumber.Focus();
         }
 
@@ -80,7 +80,7 @@ namespace JPCS_Registration
             }
             try
             {
-                if ((string.IsNullOrEmpty(reg_tb_slotnum.Text)) | (string.IsNullOrEmpty(reg_tb_ornumber.Text)) | (string.IsNullOrEmpty(reg_tb_studno.Text)) | ((string.IsNullOrEmpty(reg_tb_lname.Text)) | ((string.IsNullOrEmpty(reg_tb_fname.Text)) | ((string.IsNullOrEmpty(reg_tb_mname.Text)) | (string.IsNullOrEmpty(reg_cb_coursesect.Text)) | ((string.IsNullOrEmpty(reg_tb_cityaddress.Text)) | ((string.IsNullOrEmpty(reg_tb_contactnum.Text)) | ((string.IsNullOrEmpty(reg_tb_emergencycontactname.Text)) | ((string.IsNullOrEmpty(reg_tb_emergenctcontactnumber.Text)) | (!reg_tb_studno.MaskCompleted) | (!reg_tb_ornumber.MaskCompleted) | (reg_tb_bday.Text.Length==0)))))))))
+                if ((string.IsNullOrEmpty(reg_tb_ornumber.Text)) | (string.IsNullOrEmpty(reg_tb_studno.Text)) | ((string.IsNullOrEmpty(reg_tb_lname.Text)) | ((string.IsNullOrEmpty(reg_tb_fname.Text)) | ((string.IsNullOrEmpty(reg_tb_mname.Text)) | (string.IsNullOrEmpty(reg_cb_coursesect.Text)) | ((string.IsNullOrEmpty(reg_tb_cityaddress.Text)) | ((string.IsNullOrEmpty(reg_tb_contactnum.Text)) | ((string.IsNullOrEmpty(reg_tb_emergencycontactname.Text)) | ((string.IsNullOrEmpty(reg_tb_emergenctcontactnumber.Text)) | (!reg_tb_studno.MaskCompleted) | (!reg_tb_ornumber.MaskCompleted) | (reg_tb_bday.Text.Length==0)))))))))
                 {
                     RadMessageBox.Show(this, "Please fill-up all fileds Properly!" + System.Environment.NewLine +""+System.Environment.NewLine+"Check if you have entered the correct format in the OR number and the Student Number.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
 
@@ -125,9 +125,8 @@ namespace JPCS_Registration
                         if (addYn == DialogResult.Yes)
                         {
                             conn.Open();
-                            query = "INSERT INTO memberlist VALUES (@slotnum, @ornum, @studno, @lname, @fname, @mname, @section, @emailaddress, @birthday, @nationality, @cityaddress, @provinceaddress, @contactnumber, @emergencycontactname, @emergencycontactnumber);";
+                            query = "INSERT INTO memberlist VALUES (@ornum, @studno, @lname, @fname, @mname, @section, @emailaddress, @birthday, @nationality, @cityaddress, @provinceaddress, @contactnumber, @emergencycontactname, @emergencycontactnumber);";
                             command = new MySqlCommand(query, conn);
-                            command.Parameters.AddWithValue("slotnum", reg_tb_slotnum.Text);
                             command.Parameters.AddWithValue("ornum", reg_tb_ornumber.Text);
                             command.Parameters.AddWithValue("studno", reg_tb_studno.Text);
                             command.Parameters.AddWithValue("lname", reg_tb_lname.Text);
@@ -142,25 +141,15 @@ namespace JPCS_Registration
                             command.Parameters.AddWithValue("contactnumber", reg_tb_contactnum.Text);
                             command.Parameters.AddWithValue("emergencycontactname", reg_tb_emergencycontactname.Text);
                             command.Parameters.AddWithValue("emergencycontactnumber", reg_tb_emergenctcontactnumber.Text);
-                            Console.WriteLine(PrintQuery(command));
-                            if (globalconfig.ConsoleIsShown)
-                            {
-                                string a;
-                                do
-                                {
-                                    Console.WriteLine("Proceed to SQL Insert?");
-                                    a = Console.ReadLine();
-                                    Console.WriteLine(a);
-                                } while (a == "Y" | a == "y");
-
-                            }
-                            //reader = command.ExecuteReader();
+                            globalconfig.Logger(PrintQuery(command));
+                            
                             command.ExecuteNonQuery();
 
                             RadMessageBox.Show(this, "Successfully Registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                             reg_tb_ornumber.Clear();
                             reg_tb_studno.Clear();
-                            reg_tb_slotnum.Focus();
+                            //reg_tb_slotnum.Focus();
+                            reg_tb_ornumber.Focus();
                             reg_tb_lname.Clear();
                             reg_tb_mname.Clear();
                             reg_tb_fname.Clear();
@@ -188,7 +177,7 @@ namespace JPCS_Registration
             {
                 conn.Dispose();
             }
-            get_member_ranks_for_the_slot_number();
+            //get_member_ranks_for_the_slot_number();
 
         }
 
@@ -218,45 +207,45 @@ namespace JPCS_Registration
             }
         }
 
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Dispose();
-            Login login = new Login();
-            login.Show();
+        //private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    this.Dispose();
+        //    Login login = new Login();
+        //    login.Show();
             
-        }
-        public void get_member_ranks_for_the_slot_number() //This is to automatically assign a slot number for the registered student.
-        {
-            conn = new MySqlConnection();
-            MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn + "Allow User Variables=True;";
-            MySqlDataReader reader = default(MySqlDataReader);
-            try
-            {
-                conn.Open();
-                query = "SET @rank=0;SELECT @rank:=@rank+1 AS slot FROM memberlist ORDER BY @rank:=@rank+1 DESC LIMIT 1;";
-                command = new MySqlCommand(query, conn);
-                reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        int compute = reader.GetInt32("slot");
-                        compute++;
-                        reg_tb_slotnum.Text = compute.ToString();
-                    }
-                }else
-                {
-                    reg_tb_slotnum.Text = "1";
-                }
-            }catch (Exception ex)
-            {
-                RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
-            }finally
-            {
-                conn.Dispose();
-            }
-        }
+        //}
+        //public void get_member_ranks_for_the_slot_number() //This is to automatically assign a slot number for the registered student.
+        //{
+        //    conn = new MySqlConnection();
+        //    MySqlCommand command = gc.command;
+        //    conn.ConnectionString = gc.conn + "Allow User Variables=True;";
+        //    MySqlDataReader reader = default(MySqlDataReader);
+        //    try
+        //    {
+        //        conn.Open();
+        //        query = "SET @rank=0;SELECT @rank:=@rank+1 AS slot FROM memberlist ORDER BY @rank:=@rank+1 DESC LIMIT 1;";
+        //        command = new MySqlCommand(query, conn);
+        //        reader = command.ExecuteReader();
+        //        if (reader.HasRows)
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                int compute = reader.GetInt32("slot");
+        //                compute++;
+        //                reg_tb_slotnum.Text = compute.ToString();
+        //            }
+        //        }else
+        //        {
+        //            reg_tb_slotnum.Text = "1";
+        //        }
+        //    }catch (Exception ex)
+        //    {
+        //        RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+        //    }finally
+        //    {
+        //        conn.Dispose();
+        //    }
+        //}
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
