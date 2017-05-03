@@ -80,7 +80,12 @@ namespace JPCS_Registration
 
         private void MemberAdd_Click(object sender, EventArgs e)
         {
-            foreach (Form f in Application.OpenForms)
+                foreach (Form frm in this.MdiChildren)
+                {
+                    frm.Close();
+
+                }
+                foreach (Form f in Application.OpenForms)
             {
                 if (f is Main)
                 {
@@ -133,10 +138,26 @@ namespace JPCS_Registration
             }
             return loopstopper;
         }
-
-        private void Parent_Move(object sender, EventArgs e)
+        private void MemberManage_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(this.Location);
+            foreach(Form frm in this.MdiChildren)
+            {
+                frm.Close();
+
+            }
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is ViewMembers)
+                {
+                    f.Dispose();
+                    return;
+                }
+            }
+
+            ViewMembers members = new ViewMembers();
+            members.MdiParent = this;
+            members.Show();
         }
 
         // Display a child form to show this is still an MDI application.

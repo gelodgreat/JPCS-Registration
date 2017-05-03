@@ -149,6 +149,12 @@
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ViewMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewMembers.Designer.cs">
+      <DependentUpon>ViewMembers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddAccount.resx">
       <DependentUpon>AddAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +189,9 @@
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewMembers.resx">
+      <DependentUpon>ViewMembers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="DataSet1.xsc">

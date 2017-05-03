@@ -14,7 +14,7 @@ namespace JPCS_Registration
         static String path = "Log" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".txt";
 
         //public string conn = "SERVER=localhost;PORT=3306; DATABASE=jpcsregistration; USERNAME=root; PASSWORD=root;";
-        public MySqlCommand command;
+        public MySqlCommand command=new MySqlCommand();
         public MySqlDataReader reader;
         public MySqlDataAdapter adapter;
 

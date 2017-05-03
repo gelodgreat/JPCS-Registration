@@ -57,6 +57,7 @@
             // 
             this.MemberManage.Name = "MemberManage";
             this.MemberManage.Text = "&Manage";
+            this.MemberManage.Click += new System.EventHandler(this.MemberManage_Click);
             // 
             // radMenu1
             // 

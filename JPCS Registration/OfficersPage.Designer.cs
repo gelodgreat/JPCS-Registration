@@ -217,7 +217,7 @@
             this.radMenuItem1});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(1056, 20);
+            this.radMenu1.Size = new System.Drawing.Size(1056, 18);
             this.radMenu1.TabIndex = 8;
             this.radMenu1.Text = "radMenu1";
             this.radMenu1.ThemeName = "VisualStudio2012Dark";
