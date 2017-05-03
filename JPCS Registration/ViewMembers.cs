@@ -38,6 +38,7 @@ namespace JPCS_Registration
                 MySQLConn.Open();
                 MySqlCommand comm = gc.command;
                 comm = new MySqlCommand("SELECT ornumber AS 'OR #', studno AS 'Student #', lname AS 'Last Name', fname AS 'First Name', mname AS 'Middle Name', courseyearsection AS 'Course, Year and Section', emailaddress AS 'E-mail Address', birthday AS 'Birthday', nationality AS 'Nationality', cityaddress AS 'City Address', provinceaddress AS 'Province Address', contactnumber AS 'Contact #', emergencycontactname 'Emergency Contact', emergencycontactnumber AS 'Emergency Contact Number' FROM `memberlist`;", MySQLConn);
+				//comm = new MySqlCommand("SELECT * FROM memberlist WHERE studno IN (SELECT * FROM test);", MySQLConn);
                 adapter.SelectCommand = comm;
                 adapter.Fill(dbdataset);
                 radGridMembers.DataSource = dbdataset;
