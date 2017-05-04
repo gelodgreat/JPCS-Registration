@@ -21,15 +21,15 @@ namespace JPCS_Registration
         MdiClient ctlMDI;
         //Main register = new Main();
         Settings settings = new Settings();
-        globalconfig gc=new globalconfig();
+        globalconfig gc = new globalconfig();
         MySqlConnection conn;
-        MySqlCommand comm=new MySqlCommand();
+        MySqlCommand comm = new MySqlCommand();
         Boolean constate = false;
         String[] args = Environment.GetCommandLineArgs();
         public Parent()
         {
             InitializeComponent();
-            
+
         }
 
         private void Parent_Load(object sender, EventArgs e)
@@ -40,7 +40,8 @@ namespace JPCS_Registration
             // for the control of type MdiClient.
 
             Boolean check = checkdbstat();
-            while (check=false)
+            globalconfig gc = new globalconfig();
+            while (check = false)
             {
                 settings.Show();
                 check = checkdbstat();
@@ -80,12 +81,12 @@ namespace JPCS_Registration
 
         private void MemberAdd_Click(object sender, EventArgs e)
         {
-                foreach (Form frm in this.MdiChildren)
-                {
-                    frm.Close();
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
 
-                }
-                foreach (Form f in Application.OpenForms)
+            }
+            foreach (Form f in Application.OpenForms)
             {
                 if (f is Main)
                 {
@@ -100,7 +101,7 @@ namespace JPCS_Registration
         }
         public Boolean checkdbstat()
         {
-            Boolean loopstopper=false;
+            Boolean loopstopper = false;
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
             try
@@ -123,7 +124,7 @@ namespace JPCS_Registration
             }
             finally
             {
-                MessageBox.Show("Test");
+                
                 conn.Dispose();
                 if (constate == true)
                 {
@@ -140,7 +141,7 @@ namespace JPCS_Registration
         }
         private void MemberManage_Click(object sender, EventArgs e)
         {
-            foreach(Form frm in this.MdiChildren)
+            foreach (Form frm in this.MdiChildren)
             {
                 frm.Close();
 
@@ -159,7 +160,27 @@ namespace JPCS_Registration
             members.MdiParent = this;
             members.Show();
         }
+        public void get_schoolyear()
+        {
+            MySqlConnection MySQLConn = new MySqlConnection();
+            MySQLConn.ConnectionString = gc.conn;
+            try
+            {
+                MySQLConn.Open();
+                MySqlCommand comm = new MySqlCommand("SELECT schoolyear FROM `schoolyear` WHERE isActive=1", MySQLConn);
+                MySqlDataReader reader;
+                reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    globalconfig.schoolyearactive = reader.GetString("schoolyear");
+                }
+                MySQLConn.Close();
+                
+            }catch (Exception ex)
+            {
 
+            }
+        }
         // Display a child form to show this is still an MDI application.
         //Form2 frm = new Form2();
         //frm.MdiParent = this;

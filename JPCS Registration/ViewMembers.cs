@@ -12,7 +12,8 @@ namespace JPCS_Registration
 {
     public partial class ViewMembers : Telerik.WinControls.UI.RadForm
     {
-        globalconfig gc = new globalconfig();
+        public globalconfig gc = new globalconfig();
+       
         MySqlConnection MySQLConn = new MySqlConnection();
         public ViewMembers()
         {
@@ -37,7 +38,7 @@ namespace JPCS_Registration
             {
                 MySQLConn.Open();
                 MySqlCommand comm = gc.command;
-                comm = new MySqlCommand("SELECT ornumber AS 'OR #', studno AS 'Student #', lname AS 'Last Name', fname AS 'First Name', mname AS 'Middle Name', courseyearsection AS 'Course, Year and Section', emailaddress AS 'E-mail Address', birthday AS 'Birthday', nationality AS 'Nationality', cityaddress AS 'City Address', provinceaddress AS 'Province Address', contactnumber AS 'Contact #', emergencycontactname 'Emergency Contact', emergencycontactnumber AS 'Emergency Contact Number' FROM `memberlist`;", MySQLConn);
+                comm = new MySqlCommand("SELECT ornum, memberlist.studno, memberlist.lname, memberlist.fname, memberlist.mname, memberlist.courseyearsection, memberlist.emailaddress, memberlist.birthday, memberlist.nationality, memberlist.cityaddress, memberlist.provinceaddress, memberlist.contactnumber, memberlist.emergencycontactname, memberlist.emergencycontactnumber FROM `"+globalconfig.schoolyearactive+"` INNER JOIN memberlist ON `20162017`.studno=memberlist.studno ORDER BY ornum ASC;", MySQLConn);
 				//comm = new MySqlCommand("SELECT * FROM memberlist WHERE studno IN (SELECT * FROM test);", MySQLConn);
                 adapter.SelectCommand = comm;
                 adapter.Fill(dbdataset);

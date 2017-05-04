@@ -14,7 +14,7 @@ namespace JPCS_Registration
         static String path = "Log" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".txt";
 
         //public string conn = "SERVER=localhost;PORT=3306; DATABASE=jpcsregistration; USERNAME=root; PASSWORD=root;";
-        public MySqlCommand command=new MySqlCommand();
+        public MySqlCommand command = new MySqlCommand();
         public MySqlDataReader reader;
         public MySqlDataAdapter adapter;
 
@@ -24,6 +24,13 @@ namespace JPCS_Registration
             get { return DebugMode; }
             set { DebugMode = value; }
         }
+        private static string active;
+        public static String schoolyearactive
+        {
+            get { return active; }
+            set { active = value; }
+        }
+
         public static void Logger(String msg)
         {
             if (ConsoleIsShown)

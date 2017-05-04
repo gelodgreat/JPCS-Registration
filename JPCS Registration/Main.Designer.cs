@@ -57,8 +57,6 @@
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
-            this.reg_tb_ornumber = new System.Windows.Forms.MaskedTextBox();
             this.reg_tb_studno = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
@@ -89,54 +87,53 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // reg_cb_coursesect
             // 
             this.reg_cb_coursesect.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.reg_cb_coursesect.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_cb_coursesect.Location = new System.Drawing.Point(181, 179);
+            this.reg_cb_coursesect.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_cb_coursesect.Location = new System.Drawing.Point(181, 143);
             this.reg_cb_coursesect.Name = "reg_cb_coursesect";
-            this.reg_cb_coursesect.Size = new System.Drawing.Size(164, 27);
+            this.reg_cb_coursesect.Size = new System.Drawing.Size(164, 31);
             this.reg_cb_coursesect.TabIndex = 6;
             this.reg_cb_coursesect.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel1
             // 
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel1.Location = new System.Drawing.Point(92, 46);
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel1.Location = new System.Drawing.Point(92, 10);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(69, 21);
+            this.radLabel1.Size = new System.Drawing.Size(83, 25);
             this.radLabel1.TabIndex = 2;
             this.radLabel1.Text = "Student #:";
             this.radLabel1.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel2
             // 
-            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel2.Location = new System.Drawing.Point(87, 80);
+            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel2.Location = new System.Drawing.Point(87, 44);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(74, 21);
+            this.radLabel2.Size = new System.Drawing.Size(88, 25);
             this.radLabel2.TabIndex = 3;
             this.radLabel2.Text = "Last Name:";
             this.radLabel2.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel3
             // 
-            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel3.Location = new System.Drawing.Point(23, 185);
+            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel3.Location = new System.Drawing.Point(23, 149);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(127, 21);
+            this.radLabel3.Size = new System.Drawing.Size(152, 25);
             this.radLabel3.TabIndex = 3;
             this.radLabel3.Text = "Course and Section:";
             this.radLabel3.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_btn_save
             // 
-            this.reg_btn_save.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_btn_save.Location = new System.Drawing.Point(181, 561);
+            this.reg_btn_save.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_btn_save.Location = new System.Drawing.Point(181, 525);
             this.reg_btn_save.Name = "reg_btn_save";
             this.reg_btn_save.Size = new System.Drawing.Size(194, 29);
             this.reg_btn_save.TabIndex = 15;
@@ -146,8 +143,8 @@
             // 
             // reg_btn_secnotfound
             // 
-            this.reg_btn_secnotfound.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_btn_secnotfound.Location = new System.Drawing.Point(360, 179);
+            this.reg_btn_secnotfound.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_btn_secnotfound.Location = new System.Drawing.Point(360, 143);
             this.reg_btn_secnotfound.Name = "reg_btn_secnotfound";
             this.reg_btn_secnotfound.Size = new System.Drawing.Size(164, 31);
             this.reg_btn_secnotfound.TabIndex = 6;
@@ -163,20 +160,20 @@
             // 
             // radLabel4
             // 
-            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel4.Location = new System.Drawing.Point(85, 114);
+            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel4.Location = new System.Drawing.Point(85, 78);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(75, 21);
+            this.radLabel4.Size = new System.Drawing.Size(90, 25);
             this.radLabel4.TabIndex = 10;
             this.radLabel4.Text = "First Name:";
             this.radLabel4.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel5
             // 
-            this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel5.Location = new System.Drawing.Point(65, 148);
+            this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel5.Location = new System.Drawing.Point(65, 112);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(92, 21);
+            this.radLabel5.Size = new System.Drawing.Size(110, 25);
             this.radLabel5.TabIndex = 11;
             this.radLabel5.Text = "Middle Name:";
             this.radLabel5.ThemeName = "VisualStudio2012Dark";
@@ -184,53 +181,53 @@
             // reg_tb_lname
             // 
             this.reg_tb_lname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.reg_tb_lname.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_lname.Location = new System.Drawing.Point(181, 77);
+            this.reg_tb_lname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_lname.Location = new System.Drawing.Point(181, 41);
             this.reg_tb_lname.Name = "reg_tb_lname";
-            this.reg_tb_lname.Size = new System.Drawing.Size(164, 24);
+            this.reg_tb_lname.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_lname.TabIndex = 3;
             this.reg_tb_lname.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_tb_fname
             // 
             this.reg_tb_fname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.reg_tb_fname.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_fname.Location = new System.Drawing.Point(181, 111);
+            this.reg_tb_fname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_fname.Location = new System.Drawing.Point(181, 75);
             this.reg_tb_fname.Name = "reg_tb_fname";
-            this.reg_tb_fname.Size = new System.Drawing.Size(165, 24);
+            this.reg_tb_fname.Size = new System.Drawing.Size(165, 28);
             this.reg_tb_fname.TabIndex = 4;
             this.reg_tb_fname.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_tb_mname
             // 
             this.reg_tb_mname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.reg_tb_mname.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_mname.Location = new System.Drawing.Point(181, 145);
+            this.reg_tb_mname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_mname.Location = new System.Drawing.Point(181, 109);
             this.reg_tb_mname.Name = "reg_tb_mname";
-            this.reg_tb_mname.Size = new System.Drawing.Size(164, 24);
+            this.reg_tb_mname.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_mname.TabIndex = 5;
             this.reg_tb_mname.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_tb_email
             // 
-            this.reg_tb_email.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_email.Location = new System.Drawing.Point(181, 216);
+            this.reg_tb_email.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_email.Location = new System.Drawing.Point(181, 180);
             this.reg_tb_email.Name = "reg_tb_email";
-            this.reg_tb_email.Size = new System.Drawing.Size(164, 24);
+            this.reg_tb_email.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_email.TabIndex = 7;
             this.reg_tb_email.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_tb_bday
             // 
             this.reg_tb_bday.CustomFormat = "yyyy-MM-dd";
-            this.reg_tb_bday.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.reg_tb_bday.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_bday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.reg_tb_bday.Location = new System.Drawing.Point(182, 250);
+            this.reg_tb_bday.Location = new System.Drawing.Point(182, 214);
             this.reg_tb_bday.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.reg_tb_bday.Name = "reg_tb_bday";
             this.reg_tb_bday.NullText = "YYYY-MM-dd";
             this.reg_tb_bday.ShowUpDown = true;
-            this.reg_tb_bday.Size = new System.Drawing.Size(148, 24);
+            this.reg_tb_bday.Size = new System.Drawing.Size(148, 26);
             this.reg_tb_bday.TabIndex = 8;
             this.reg_tb_bday.TabStop = false;
             this.reg_tb_bday.ThemeName = "VisualStudio2012Dark";
@@ -239,18 +236,18 @@
             // 
             // reg_tb_nationality
             // 
-            this.reg_tb_nationality.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_nationality.Location = new System.Drawing.Point(182, 284);
+            this.reg_tb_nationality.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_nationality.Location = new System.Drawing.Point(182, 248);
             this.reg_tb_nationality.Name = "reg_tb_nationality";
-            this.reg_tb_nationality.Size = new System.Drawing.Size(164, 24);
+            this.reg_tb_nationality.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_nationality.TabIndex = 9;
             this.reg_tb_nationality.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_tb_cityaddress
             // 
             this.reg_tb_cityaddress.AutoSize = false;
-            this.reg_tb_cityaddress.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_cityaddress.Location = new System.Drawing.Point(181, 318);
+            this.reg_tb_cityaddress.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_cityaddress.Location = new System.Drawing.Point(181, 282);
             this.reg_tb_cityaddress.Multiline = true;
             this.reg_tb_cityaddress.Name = "reg_tb_cityaddress";
             this.reg_tb_cityaddress.Size = new System.Drawing.Size(334, 53);
@@ -260,8 +257,8 @@
             // reg_tb_provaddress
             // 
             this.reg_tb_provaddress.AutoSize = false;
-            this.reg_tb_provaddress.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_provaddress.Location = new System.Drawing.Point(181, 377);
+            this.reg_tb_provaddress.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_provaddress.Location = new System.Drawing.Point(181, 341);
             this.reg_tb_provaddress.Multiline = true;
             this.reg_tb_provaddress.Name = "reg_tb_provaddress";
             this.reg_tb_provaddress.Size = new System.Drawing.Size(334, 53);
@@ -270,145 +267,122 @@
             // 
             // reg_tb_contactnum
             // 
-            this.reg_tb_contactnum.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_contactnum.Location = new System.Drawing.Point(182, 436);
+            this.reg_tb_contactnum.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_contactnum.Location = new System.Drawing.Point(182, 400);
             this.reg_tb_contactnum.Name = "reg_tb_contactnum";
-            this.reg_tb_contactnum.Size = new System.Drawing.Size(164, 24);
+            this.reg_tb_contactnum.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_contactnum.TabIndex = 12;
             this.reg_tb_contactnum.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_tb_emergencycontactname
             // 
-            this.reg_tb_emergencycontactname.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_emergencycontactname.Location = new System.Drawing.Point(243, 485);
+            this.reg_tb_emergencycontactname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_emergencycontactname.Location = new System.Drawing.Point(243, 449);
             this.reg_tb_emergencycontactname.Name = "reg_tb_emergencycontactname";
-            this.reg_tb_emergencycontactname.Size = new System.Drawing.Size(194, 24);
+            this.reg_tb_emergencycontactname.Size = new System.Drawing.Size(194, 28);
             this.reg_tb_emergencycontactname.TabIndex = 13;
             this.reg_tb_emergencycontactname.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_tb_emergenctcontactnumber
             // 
-            this.reg_tb_emergenctcontactnumber.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_emergenctcontactnumber.Location = new System.Drawing.Point(243, 520);
+            this.reg_tb_emergenctcontactnumber.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.reg_tb_emergenctcontactnumber.Location = new System.Drawing.Point(243, 484);
             this.reg_tb_emergenctcontactnumber.Name = "reg_tb_emergenctcontactnumber";
-            this.reg_tb_emergenctcontactnumber.Size = new System.Drawing.Size(194, 24);
+            this.reg_tb_emergenctcontactnumber.Size = new System.Drawing.Size(194, 28);
             this.reg_tb_emergenctcontactnumber.TabIndex = 14;
             this.reg_tb_emergenctcontactnumber.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel7
             // 
-            this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel7.Location = new System.Drawing.Point(55, 219);
+            this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel7.Location = new System.Drawing.Point(55, 183);
             this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(100, 21);
+            this.radLabel7.Size = new System.Drawing.Size(120, 25);
             this.radLabel7.TabIndex = 23;
             this.radLabel7.Text = "E-mail Address:";
             this.radLabel7.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel8
             // 
-            this.radLabel8.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel8.Location = new System.Drawing.Point(103, 253);
+            this.radLabel8.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel8.Location = new System.Drawing.Point(103, 217);
             this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(60, 21);
+            this.radLabel8.Size = new System.Drawing.Size(72, 25);
             this.radLabel8.TabIndex = 24;
             this.radLabel8.Text = "Birthday:";
             this.radLabel8.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel9
             // 
-            this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel9.Location = new System.Drawing.Point(84, 287);
+            this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel9.Location = new System.Drawing.Point(84, 251);
             this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(76, 21);
+            this.radLabel9.Size = new System.Drawing.Size(91, 25);
             this.radLabel9.TabIndex = 25;
             this.radLabel9.Text = "Nationality:";
             this.radLabel9.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel10
             // 
-            this.radLabel10.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel10.Location = new System.Drawing.Point(73, 321);
+            this.radLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel10.Location = new System.Drawing.Point(73, 285);
             this.radLabel10.Name = "radLabel10";
-            this.radLabel10.Size = new System.Drawing.Size(85, 21);
+            this.radLabel10.Size = new System.Drawing.Size(102, 25);
             this.radLabel10.TabIndex = 26;
             this.radLabel10.Text = "City Address:";
             this.radLabel10.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel11
             // 
-            this.radLabel11.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel11.Location = new System.Drawing.Point(31, 377);
+            this.radLabel11.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel11.Location = new System.Drawing.Point(31, 341);
             this.radLabel11.Name = "radLabel11";
-            this.radLabel11.Size = new System.Drawing.Size(120, 21);
+            this.radLabel11.Size = new System.Drawing.Size(144, 25);
             this.radLabel11.TabIndex = 27;
             this.radLabel11.Text = "Provincial Address:";
             this.radLabel11.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel12
             // 
-            this.radLabel12.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel12.Location = new System.Drawing.Point(43, 436);
+            this.radLabel12.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel12.Location = new System.Drawing.Point(43, 400);
             this.radLabel12.Name = "radLabel12";
-            this.radLabel12.Size = new System.Drawing.Size(111, 21);
+            this.radLabel12.Size = new System.Drawing.Size(132, 25);
             this.radLabel12.TabIndex = 28;
             this.radLabel12.Text = "Contact Number:";
             this.radLabel12.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel13
             // 
-            this.radLabel13.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel13.Location = new System.Drawing.Point(23, 466);
+            this.radLabel13.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel13.Location = new System.Drawing.Point(23, 430);
             this.radLabel13.Name = "radLabel13";
-            this.radLabel13.Size = new System.Drawing.Size(176, 39);
+            this.radLabel13.Size = new System.Drawing.Size(211, 47);
             this.radLabel13.TabIndex = 29;
             this.radLabel13.Text = "Name of person to contact\r\nin case of Emergency:";
             this.radLabel13.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel14
             // 
-            this.radLabel14.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel14.Location = new System.Drawing.Point(23, 523);
+            this.radLabel14.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel14.Location = new System.Drawing.Point(23, 487);
             this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(179, 21);
+            this.radLabel14.Size = new System.Drawing.Size(214, 25);
             this.radLabel14.TabIndex = 30;
             this.radLabel14.Text = "Emergency Contact number:";
             this.radLabel14.ThemeName = "VisualStudio2012Dark";
-            // 
-            // radLabel15
-            // 
-            this.radLabel15.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel15.Location = new System.Drawing.Point(73, 12);
-            this.radLabel15.Name = "radLabel15";
-            this.radLabel15.Size = new System.Drawing.Size(86, 21);
-            this.radLabel15.TabIndex = 32;
-            this.radLabel15.Text = "OR Number: ";
-            this.radLabel15.ThemeName = "VisualStudio2012Dark";
-            // 
-            // reg_tb_ornumber
-            // 
-            this.reg_tb_ornumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.reg_tb_ornumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reg_tb_ornumber.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_ornumber.ForeColor = System.Drawing.Color.White;
-            this.reg_tb_ornumber.Location = new System.Drawing.Point(182, 7);
-            this.reg_tb_ornumber.Mask = "JP\\CS\\-0000";
-            this.reg_tb_ornumber.Name = "reg_tb_ornumber";
-            this.reg_tb_ornumber.PromptChar = 'x';
-            this.reg_tb_ornumber.Size = new System.Drawing.Size(113, 25);
-            this.reg_tb_ornumber.TabIndex = 1;
             // 
             // reg_tb_studno
             // 
             this.reg_tb_studno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.reg_tb_studno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reg_tb_studno.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.reg_tb_studno.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_studno.ForeColor = System.Drawing.Color.White;
-            this.reg_tb_studno.Location = new System.Drawing.Point(181, 43);
+            this.reg_tb_studno.Location = new System.Drawing.Point(181, 7);
             this.reg_tb_studno.Mask = "00\\-00000";
             this.reg_tb_studno.Name = "reg_tb_studno";
             this.reg_tb_studno.PromptChar = 'x';
-            this.reg_tb_studno.Size = new System.Drawing.Size(114, 25);
+            this.reg_tb_studno.Size = new System.Drawing.Size(114, 29);
             this.reg_tb_studno.TabIndex = 2;
             // 
             // dateTimePicker1
@@ -417,12 +391,12 @@
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.White;
             this.dateTimePicker1.Checked = false;
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(228, 250);
+            this.dateTimePicker1.Location = new System.Drawing.Point(228, 214);
             this.dateTimePicker1.MinDate = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(117, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(117, 25);
             this.dateTimePicker1.TabIndex = 33;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -430,12 +404,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 591);
+            this.ClientSize = new System.Drawing.Size(545, 557);
             this.Controls.Add(this.reg_tb_bday);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.reg_tb_studno);
-            this.Controls.Add(this.reg_tb_ornumber);
-            this.Controls.Add(this.radLabel15);
             this.Controls.Add(this.reg_btn_save);
             this.Controls.Add(this.reg_tb_emergencycontactname);
             this.Controls.Add(this.reg_tb_email);
@@ -501,7 +473,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -538,8 +509,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel12;
         private Telerik.WinControls.UI.RadLabel radLabel13;
         private Telerik.WinControls.UI.RadLabel radLabel14;
-        private Telerik.WinControls.UI.RadLabel radLabel15;
-        private System.Windows.Forms.MaskedTextBox reg_tb_ornumber;
         private System.Windows.Forms.MaskedTextBox reg_tb_studno;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Telerik.WinControls.RadThemeManager radThemeManager1;
