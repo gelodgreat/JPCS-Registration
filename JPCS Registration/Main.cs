@@ -48,7 +48,7 @@ namespace JPCS_Registration
         {
             ManageCourses();
             //get_member_ranks_for_the_slot_number();
-            reg_tb_ornumber.Focus();
+            //reg_tb_ornumber.Focus();
         }
 
         private void ManageCourses()
@@ -80,7 +80,7 @@ namespace JPCS_Registration
             }
             try
             {
-                if ((string.IsNullOrEmpty(reg_tb_ornumber.Text)) | (string.IsNullOrEmpty(reg_tb_studno.Text)) | ((string.IsNullOrEmpty(reg_tb_lname.Text)) | ((string.IsNullOrEmpty(reg_tb_fname.Text)) | ((string.IsNullOrEmpty(reg_tb_mname.Text)) | (string.IsNullOrEmpty(reg_cb_coursesect.Text)) | ((string.IsNullOrEmpty(reg_tb_cityaddress.Text)) | ((string.IsNullOrEmpty(reg_tb_contactnum.Text)) | ((string.IsNullOrEmpty(reg_tb_emergencycontactname.Text)) | ((string.IsNullOrEmpty(reg_tb_emergenctcontactnumber.Text)) | (!reg_tb_studno.MaskCompleted) | (!reg_tb_ornumber.MaskCompleted) | (reg_tb_bday.Text.Length==0)))))))))
+                if ((string.IsNullOrEmpty(reg_tb_studno.Text)) | ((string.IsNullOrEmpty(reg_tb_lname.Text)) | ((string.IsNullOrEmpty(reg_tb_fname.Text)) | ((string.IsNullOrEmpty(reg_tb_mname.Text)) | (string.IsNullOrEmpty(reg_cb_coursesect.Text)) | ((string.IsNullOrEmpty(reg_tb_cityaddress.Text)) | ((string.IsNullOrEmpty(reg_tb_contactnum.Text)) | ((string.IsNullOrEmpty(reg_tb_emergencycontactname.Text)) | ((string.IsNullOrEmpty(reg_tb_emergenctcontactnumber.Text)) | (!reg_tb_studno.MaskCompleted) | (reg_tb_bday.Text.Length==0)))))))))
                 {
                     RadMessageBox.Show(this, "Please fill-up all fileds Properly!" + System.Environment.NewLine +""+System.Environment.NewLine+"Check if you have entered the correct format in the OR number and the Student Number.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
 
@@ -108,7 +108,6 @@ namespace JPCS_Registration
                         conn.Open();
                         query = "SELECT * FROM memberlist where ornumber=@ornumber;";
                         command = new MySqlCommand(query, conn);
-                        command.Parameters.AddWithValue("ornumber", reg_tb_ornumber.Text);
                         reader = command.ExecuteReader();
                         count = 0;
                         while (reader.Read())
