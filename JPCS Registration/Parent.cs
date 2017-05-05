@@ -35,6 +35,7 @@ namespace JPCS_Registration
         private void Parent_Load(object sender, EventArgs e)
         {
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
+            get_schoolyear();
 
             // Loop through all of the form's controls looking
             // for the control of type MdiClient.

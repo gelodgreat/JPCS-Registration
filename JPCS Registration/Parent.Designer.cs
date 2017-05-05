@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parent));
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.MemberAdd = new Telerik.WinControls.UI.RadMenuItem();
             this.MemberManage = new Telerik.WinControls.UI.RadMenuItem();
@@ -86,6 +87,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(794, 515);
             this.Controls.Add(this.radMenu1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Parent";
             // 

@@ -105,50 +105,31 @@ namespace JPCS_Registration
                         else
                         {
                         conn.Close();
-                        conn.Open();
-                        query = "SELECT * FROM memberlist where ornumber=@ornumber;";
-                        command = new MySqlCommand(query, conn);
-                        reader = command.ExecuteReader();
-                        count = 0;
-                        while (reader.Read())
-                        {
-                            count += 1;
-                        }
-                        conn.Close();
-                        if (count >= 1)
-                        {
-                            RadMessageBox.Show(this, "OR Number " + reg_tb_ornumber.Text + " is already registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
-                            return;
-                        }
-                        addYn = RadMessageBox.Show(this, "Are you sure you want to register?", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
-                        if (addYn == DialogResult.Yes)
-                        {
+                        
+                        
                             conn.Open();
-                            query = "INSERT INTO memberlist VALUES (@ornum, @studno, @lname, @fname, @mname, @section, @emailaddress, @birthday, @nationality, @cityaddress, @provinceaddress, @contactnumber, @emergencycontactname, @emergencycontactnumber);";
+                        //query = "INSERT INTO memberlist VALUES (@studno, @lname, @fname, @mname, @section, @emailaddress, @birthday, @nationality, @cityaddress, @provinceaddress, @contactnumber, @emergencycontactname, @emergencycontactnumber);";
+                        query = "CALL addmember(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, 13);";
                             command = new MySqlCommand(query, conn);
-                            command.Parameters.AddWithValue("ornum", reg_tb_ornumber.Text);
-                            command.Parameters.AddWithValue("studno", reg_tb_studno.Text);
-                            command.Parameters.AddWithValue("lname", reg_tb_lname.Text);
-                            command.Parameters.AddWithValue("fname", reg_tb_fname.Text);
-                            command.Parameters.AddWithValue("mname", reg_tb_mname.Text);                      
-                            command.Parameters.AddWithValue("section", reg_cb_coursesect.Text);
-                            command.Parameters.AddWithValue("emailaddress", reg_tb_email.Text);
-                            command.Parameters.AddWithValue("birthday", reg_tb_bday.Text);
-                            command.Parameters.AddWithValue("nationality", reg_tb_nationality.Text);
-                            command.Parameters.AddWithValue("cityaddress", reg_tb_cityaddress.Text);
-                            command.Parameters.AddWithValue("provinceaddress", reg_tb_provaddress.Text);
-                            command.Parameters.AddWithValue("contactnumber", reg_tb_contactnum.Text);
-                            command.Parameters.AddWithValue("emergencycontactname", reg_tb_emergencycontactname.Text);
-                            command.Parameters.AddWithValue("emergencycontactnumber", reg_tb_emergenctcontactnumber.Text);
+                            command.Parameters.AddWithValue("1", reg_tb_studno.Text);
+                            command.Parameters.AddWithValue("2", reg_tb_lname.Text);
+                            command.Parameters.AddWithValue("3", reg_tb_fname.Text);
+                            command.Parameters.AddWithValue("4", reg_tb_mname.Text);                      
+                            command.Parameters.AddWithValue("5", reg_cb_coursesect.Text);
+                            command.Parameters.AddWithValue("6", reg_tb_email.Text);
+                            command.Parameters.AddWithValue("7", reg_tb_bday.Text);
+                            command.Parameters.AddWithValue("8", reg_tb_nationality.Text);
+                            command.Parameters.AddWithValue("9", reg_tb_cityaddress.Text);
+                            command.Parameters.AddWithValue("10", reg_tb_provaddress.Text);
+                            command.Parameters.AddWithValue("11", reg_tb_contactnum.Text);
+                            command.Parameters.AddWithValue("12", reg_tb_emergencycontactname.Text);
+                            command.Parameters.AddWithValue("13", reg_tb_emergenctcontactnumber.Text);
                             globalconfig.Logger(PrintQuery(command));
                             
                             command.ExecuteNonQuery();
 
                             RadMessageBox.Show(this, "Successfully Registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
-                            reg_tb_ornumber.Clear();
                             reg_tb_studno.Clear();
-                            //reg_tb_slotnum.Focus();
-                            reg_tb_ornumber.Focus();
                             reg_tb_lname.Clear();
                             reg_tb_mname.Clear();
                             reg_tb_fname.Clear();
@@ -165,8 +146,6 @@ namespace JPCS_Registration
                             conn.Close();
                         }
                     }
-                }
-
             }
             catch (Exception ex)
             {

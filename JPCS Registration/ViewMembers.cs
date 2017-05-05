@@ -38,7 +38,8 @@ namespace JPCS_Registration
             {
                 MySQLConn.Open();
                 MySqlCommand comm = gc.command;
-                comm = new MySqlCommand("SELECT ornum, memberlist.studno, memberlist.lname, memberlist.fname, memberlist.mname, memberlist.courseyearsection, memberlist.emailaddress, memberlist.birthday, memberlist.nationality, memberlist.cityaddress, memberlist.provinceaddress, memberlist.contactnumber, memberlist.emergencycontactname, memberlist.emergencycontactnumber FROM `"+globalconfig.schoolyearactive+"` INNER JOIN memberlist ON `20162017`.studno=memberlist.studno ORDER BY ornum ASC;", MySQLConn);
+                comm = new MySqlCommand("CALL show_current_members(@schoolyear);", MySQLConn);
+                comm.Parameters.AddWithValue("schoolyear", globalconfig.schoolyearactive);
 				//comm = new MySqlCommand("SELECT * FROM memberlist WHERE studno IN (SELECT * FROM test);", MySQLConn);
                 adapter.SelectCommand = comm;
                 adapter.Fill(dbdataset);

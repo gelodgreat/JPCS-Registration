@@ -87,7 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radGridMembers.AutoScroll = true;
             this.radGridMembers.BeginEditMode = Telerik.WinControls.RadGridViewBeginEditMode.BeginEditProgrammatically;
-            this.radGridMembers.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radGridMembers.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.radGridMembers.Location = new System.Drawing.Point(0, 118);
             // 
             // 

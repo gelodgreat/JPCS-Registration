@@ -48,9 +48,9 @@ namespace JPCS_Registration
                     else
                     {
                         conn.Open();
-                        query = "SELECT * FROM auth_accounts WHERE studno=@studno OR username=@username AND password=sha2(@password, 512);";
+                        //query = "SELECT * FROM auth_accounts WHERE studno=@studno OR username=@username AND password=sha2(@password, 512);";
+                        query = "CALL login(@username, @password);";
                         command = new MySqlCommand(query, conn);
-                        command.Parameters.AddWithValue("studno", log_tb_username.Text);
                         command.Parameters.AddWithValue("username", log_tb_username.Text);
                         command.Parameters.AddWithValue("password", log_tb_password.Text);
                         reader = command.ExecuteReader();

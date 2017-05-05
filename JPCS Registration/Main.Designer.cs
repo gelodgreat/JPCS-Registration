@@ -135,7 +135,7 @@
             this.reg_btn_save.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_btn_save.Location = new System.Drawing.Point(181, 525);
             this.reg_btn_save.Name = "reg_btn_save";
-            this.reg_btn_save.Size = new System.Drawing.Size(194, 29);
+            this.reg_btn_save.Size = new System.Drawing.Size(194, 51);
             this.reg_btn_save.TabIndex = 15;
             this.reg_btn_save.Text = "Register";
             this.reg_btn_save.ThemeName = "VisualStudio2012Dark";
@@ -404,7 +404,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 557);
+            this.ClientSize = new System.Drawing.Size(545, 588);
             this.Controls.Add(this.reg_tb_bday);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.reg_tb_studno);
