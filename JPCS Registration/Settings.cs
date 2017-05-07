@@ -11,7 +11,7 @@ namespace JPCS_Registration
 {
     public partial class Settings : Telerik.WinControls.UI.RadForm
     {
-        Login log = new Login();
+        //Login log = new Login();
         public Settings()
         {
             InitializeComponent();
@@ -58,7 +58,6 @@ namespace JPCS_Registration
         private void Settings_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
-            log.ShowDialog();
         }
     }
 }

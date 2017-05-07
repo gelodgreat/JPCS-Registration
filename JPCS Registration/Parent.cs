@@ -34,19 +34,11 @@ namespace JPCS_Registration
 
         private void Parent_Load(object sender, EventArgs e)
         {
-            ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
+            
             get_schoolyear();
 
             // Loop through all of the form's controls looking
             // for the control of type MdiClient.
-
-            Boolean check = checkdbstat();
-            globalconfig gc = new globalconfig();
-            while (check = false)
-            {
-                settings.Show();
-                check = checkdbstat();
-            }
             foreach (Control ctl in this.Controls)
             {
                 try
@@ -77,6 +69,7 @@ namespace JPCS_Registration
                     }
                 }
             }
+            lbl_User.Text = globalconfig.fullname;
 
         }
 
@@ -100,66 +93,32 @@ namespace JPCS_Registration
             register.MdiParent = this;
             register.Show();
         }
-        public Boolean checkdbstat()
-        {
-            Boolean loopstopper = false;
-            conn = new MySqlConnection();
-            MySqlCommand command = gc.command;
-            try
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-                constate = false;
-                loopstopper = true;
-                conn.ConnectionString = gc.conn;
-                conn.Open();
-                constate = true;
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                RadMessageBox.Show("Please correct your connection configuration", "JPCS Registration");
-                settings.ShowDialog();
-            }
-            finally
-            {
-                
-                conn.Dispose();
-                if (constate == true)
-                {
-                    //log_server_status.Text = "Online";
-                    //log_server_status.ForeColor = Color.Green;
-                }
-                else
-                {
-                    //log_server_status.Text = "Offline";
-                    //log_server_status.ForeColor = Color.Red;
-                }
-            }
-            return loopstopper;
-        }
+        
         private void MemberManage_Click(object sender, EventArgs e)
         {
-            foreach (Form frm in this.MdiChildren)
+            if (globalconfig.isAuthenticated)
             {
-                frm.Close();
-
-            }
-
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f is ViewMembers)
+                foreach (Form frm in this.MdiChildren)
                 {
-                    f.Dispose();
-                    return;
-                }
-            }
+                    frm.Close();
 
-            ViewMembers members = new ViewMembers();
-            members.MdiParent = this;
-            members.Show();
+                }
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f is ViewMembers)
+                    {
+                        f.Dispose();
+                        return;
+                    }
+                }
+
+                ViewMembers vm = new ViewMembers();
+                vm.MdiParent = this;
+                vm.Show();
+            }else
+            {
+                RadMessageBox.Show(this, "Elevated mode is required to access Member Management. To enter elevated mode, close the Main Window and enter your correct account credentials. ", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
         public void get_schoolyear()
         {
@@ -181,6 +140,19 @@ namespace JPCS_Registration
             {
 
             }
+        }
+
+        private void MemberRenew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Parent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            Login login = new Login();
+            login.Show();
+
         }
         // Display a child form to show this is still an MDI application.
         //Form2 frm = new Form2();

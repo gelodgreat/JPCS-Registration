@@ -30,7 +30,24 @@ namespace JPCS_Registration
             get { return active; }
             set { active = value; }
         }
-
+        private static Boolean auth;
+        public static Boolean isAuthenticated
+        {
+            get { return auth; }
+            set { auth = value; }
+        }
+        private static string action;
+        public static string AuthAction
+        {
+            get { return action; }
+            set { action = value; }
+        }
+        private static string uname;
+        public static string fullname
+        {
+            get { return uname; }
+            set { uname = value; }
+        }
         public static void Logger(String msg)
         {
             if (ConsoleIsShown)

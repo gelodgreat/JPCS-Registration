@@ -72,7 +72,7 @@
             this.log_btn_main.Name = "log_btn_main";
             this.log_btn_main.Size = new System.Drawing.Size(154, 67);
             this.log_btn_main.TabIndex = 1;
-            this.log_btn_main.Text = "Member Registration";
+            this.log_btn_main.Text = "Guest Access";
             this.log_btn_main.ThemeName = "VisualStudio2012Dark";
             this.log_btn_main.Click += new System.EventHandler(this.log_btn_main_Click);
             // 

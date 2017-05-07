@@ -15,6 +15,7 @@ namespace JPCS_Registration
     
     public partial class Main : Telerik.WinControls.UI.RadForm
     {
+        public string[] quote_entry = new string[20];
         public string[] course_section = new string[13];
         MySqlConnection conn;
         globalconfig gc = new globalconfig();
@@ -44,6 +45,7 @@ namespace JPCS_Registration
             course_section[11] = "BSCPE-4A";
             course_section[12] = "BSCPE-5A";
         }
+        
         private void Main_Load(object sender, EventArgs e)
         {
             ManageCourses();

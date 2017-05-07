@@ -14,7 +14,8 @@ namespace JPCS_Registration
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Parent());
+            globalconfig.fullname = "Guest Mode";
+            Application.Run(new Login());
         }
     }
 }
