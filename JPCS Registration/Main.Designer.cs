@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             this.reg_cb_coursesect = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.reg_btn_save = new Telerik.WinControls.UI.RadButton();
-            this.reg_btn_secnotfound = new Telerik.WinControls.UI.RadButton();
             this.timersec = new System.Windows.Forms.Timer(this.components);
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
@@ -65,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reg_btn_save)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reg_btn_secnotfound)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reg_tb_lname)).BeginInit();
@@ -94,9 +95,15 @@
             // 
             this.reg_cb_coursesect.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.reg_cb_coursesect.Font = new System.Drawing.Font("Segoe UI", 12F);
+            radListDataItem1.Text = "Information Technology";
+            radListDataItem2.Text = "Computer Science";
+            radListDataItem3.Text = "Computer Engineering";
+            this.reg_cb_coursesect.Items.Add(radListDataItem1);
+            this.reg_cb_coursesect.Items.Add(radListDataItem2);
+            this.reg_cb_coursesect.Items.Add(radListDataItem3);
             this.reg_cb_coursesect.Location = new System.Drawing.Point(181, 143);
             this.reg_cb_coursesect.Name = "reg_cb_coursesect";
-            this.reg_cb_coursesect.Size = new System.Drawing.Size(164, 31);
+            this.reg_cb_coursesect.Size = new System.Drawing.Size(164, 27);
             this.reg_cb_coursesect.TabIndex = 6;
             this.reg_cb_coursesect.ThemeName = "VisualStudio2012Dark";
             // 
@@ -123,11 +130,11 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel3.Location = new System.Drawing.Point(23, 149);
+            this.radLabel3.Location = new System.Drawing.Point(23, 143);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(152, 25);
+            this.radLabel3.Size = new System.Drawing.Size(136, 25);
             this.radLabel3.TabIndex = 3;
-            this.radLabel3.Text = "Course and Section:";
+            this.radLabel3.Text = "Course / Program";
             this.radLabel3.ThemeName = "VisualStudio2012Dark";
             // 
             // reg_btn_save
@@ -140,18 +147,6 @@
             this.reg_btn_save.Text = "Register";
             this.reg_btn_save.ThemeName = "VisualStudio2012Dark";
             this.reg_btn_save.Click += new System.EventHandler(this.reg_btn_save_Click);
-            // 
-            // reg_btn_secnotfound
-            // 
-            this.reg_btn_secnotfound.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.reg_btn_secnotfound.Location = new System.Drawing.Point(360, 143);
-            this.reg_btn_secnotfound.Name = "reg_btn_secnotfound";
-            this.reg_btn_secnotfound.Size = new System.Drawing.Size(164, 31);
-            this.reg_btn_secnotfound.TabIndex = 6;
-            this.reg_btn_secnotfound.TabStop = false;
-            this.reg_btn_secnotfound.Text = "Section Not Found?";
-            this.reg_btn_secnotfound.ThemeName = "VisualStudio2012Dark";
-            this.reg_btn_secnotfound.Click += new System.EventHandler(this.reg_btn_secnotfound_Click);
             // 
             // timersec
             // 
@@ -184,7 +179,7 @@
             this.reg_tb_lname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_lname.Location = new System.Drawing.Point(181, 41);
             this.reg_tb_lname.Name = "reg_tb_lname";
-            this.reg_tb_lname.Size = new System.Drawing.Size(164, 28);
+            this.reg_tb_lname.Size = new System.Drawing.Size(164, 27);
             this.reg_tb_lname.TabIndex = 3;
             this.reg_tb_lname.ThemeName = "VisualStudio2012Dark";
             // 
@@ -194,7 +189,7 @@
             this.reg_tb_fname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_fname.Location = new System.Drawing.Point(181, 75);
             this.reg_tb_fname.Name = "reg_tb_fname";
-            this.reg_tb_fname.Size = new System.Drawing.Size(165, 28);
+            this.reg_tb_fname.Size = new System.Drawing.Size(165, 27);
             this.reg_tb_fname.TabIndex = 4;
             this.reg_tb_fname.ThemeName = "VisualStudio2012Dark";
             // 
@@ -204,7 +199,7 @@
             this.reg_tb_mname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_mname.Location = new System.Drawing.Point(181, 109);
             this.reg_tb_mname.Name = "reg_tb_mname";
-            this.reg_tb_mname.Size = new System.Drawing.Size(164, 28);
+            this.reg_tb_mname.Size = new System.Drawing.Size(164, 27);
             this.reg_tb_mname.TabIndex = 5;
             this.reg_tb_mname.ThemeName = "VisualStudio2012Dark";
             // 
@@ -213,7 +208,7 @@
             this.reg_tb_email.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_email.Location = new System.Drawing.Point(181, 180);
             this.reg_tb_email.Name = "reg_tb_email";
-            this.reg_tb_email.Size = new System.Drawing.Size(164, 28);
+            this.reg_tb_email.Size = new System.Drawing.Size(164, 27);
             this.reg_tb_email.TabIndex = 7;
             this.reg_tb_email.ThemeName = "VisualStudio2012Dark";
             // 
@@ -227,7 +222,7 @@
             this.reg_tb_bday.Name = "reg_tb_bday";
             this.reg_tb_bday.NullText = "YYYY-MM-dd";
             this.reg_tb_bday.ShowUpDown = true;
-            this.reg_tb_bday.Size = new System.Drawing.Size(148, 26);
+            this.reg_tb_bday.Size = new System.Drawing.Size(148, 27);
             this.reg_tb_bday.TabIndex = 8;
             this.reg_tb_bday.TabStop = false;
             this.reg_tb_bday.ThemeName = "VisualStudio2012Dark";
@@ -239,7 +234,7 @@
             this.reg_tb_nationality.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_nationality.Location = new System.Drawing.Point(182, 248);
             this.reg_tb_nationality.Name = "reg_tb_nationality";
-            this.reg_tb_nationality.Size = new System.Drawing.Size(164, 28);
+            this.reg_tb_nationality.Size = new System.Drawing.Size(164, 27);
             this.reg_tb_nationality.TabIndex = 9;
             this.reg_tb_nationality.ThemeName = "VisualStudio2012Dark";
             // 
@@ -270,7 +265,7 @@
             this.reg_tb_contactnum.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_contactnum.Location = new System.Drawing.Point(182, 400);
             this.reg_tb_contactnum.Name = "reg_tb_contactnum";
-            this.reg_tb_contactnum.Size = new System.Drawing.Size(164, 28);
+            this.reg_tb_contactnum.Size = new System.Drawing.Size(164, 27);
             this.reg_tb_contactnum.TabIndex = 12;
             this.reg_tb_contactnum.ThemeName = "VisualStudio2012Dark";
             // 
@@ -279,7 +274,7 @@
             this.reg_tb_emergencycontactname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_emergencycontactname.Location = new System.Drawing.Point(243, 449);
             this.reg_tb_emergencycontactname.Name = "reg_tb_emergencycontactname";
-            this.reg_tb_emergencycontactname.Size = new System.Drawing.Size(194, 28);
+            this.reg_tb_emergencycontactname.Size = new System.Drawing.Size(194, 27);
             this.reg_tb_emergencycontactname.TabIndex = 13;
             this.reg_tb_emergencycontactname.ThemeName = "VisualStudio2012Dark";
             // 
@@ -288,7 +283,7 @@
             this.reg_tb_emergenctcontactnumber.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_emergenctcontactnumber.Location = new System.Drawing.Point(243, 484);
             this.reg_tb_emergenctcontactnumber.Name = "reg_tb_emergenctcontactnumber";
-            this.reg_tb_emergenctcontactnumber.Size = new System.Drawing.Size(194, 28);
+            this.reg_tb_emergenctcontactnumber.Size = new System.Drawing.Size(194, 27);
             this.reg_tb_emergenctcontactnumber.TabIndex = 14;
             this.reg_tb_emergenctcontactnumber.ThemeName = "VisualStudio2012Dark";
             // 
@@ -429,7 +424,6 @@
             this.Controls.Add(this.reg_tb_lname);
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.radLabel4);
-            this.Controls.Add(this.reg_btn_secnotfound);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
@@ -451,7 +445,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reg_btn_save)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reg_btn_secnotfound)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reg_tb_lname)).EndInit();
@@ -486,7 +479,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadButton reg_btn_save;
-        private Telerik.WinControls.UI.RadButton reg_btn_secnotfound;
         private System.Windows.Forms.Timer timersec;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadLabel radLabel5;

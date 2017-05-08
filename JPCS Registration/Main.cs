@@ -27,28 +27,9 @@ namespace JPCS_Registration
         public Main()
         {
             InitializeComponent();
-        }
-
-        public void courses()
-        {
-            course_section[0] = "BSIT-1A";
-            course_section[1] = "BSIT-2A";
-            course_section[2] = "BSIT-3A";
-            course_section[3] = "BSIT-4A";
-            course_section[4] = "BSCS-1A";
-            course_section[5] = "BSCS-2A";
-            course_section[6] = "BSCS-3A";
-            course_section[7] = "BSCS-4A";
-            course_section[8] = "BSCPE-1A";
-            course_section[9] = "BSCPE-2A";
-            course_section[10] = "BSCPE-3A";
-            course_section[11] = "BSCPE-4A";
-            course_section[12] = "BSCPE-5A";
-        }
-        
+        }        
         private void Main_Load(object sender, EventArgs e)
         {
-            ManageCourses();
             //get_member_ranks_for_the_slot_number();
             //reg_tb_ornumber.Focus();
         }

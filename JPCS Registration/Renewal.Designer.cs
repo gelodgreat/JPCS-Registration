@@ -28,59 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reg_tb_ornumber = new System.Windows.Forms.MaskedTextBox();
+            this.mtbOrNum = new System.Windows.Forms.MaskedTextBox();
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
-            this.reg_tb_studno = new System.Windows.Forms.MaskedTextBox();
+            this.mtbStudNum = new System.Windows.Forms.MaskedTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.txt_payment = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
+            this.btnRegister = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_payment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // reg_tb_ornumber
+            // mtbOrNum
             // 
-            this.reg_tb_ornumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.reg_tb_ornumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reg_tb_ornumber.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.reg_tb_ornumber.ForeColor = System.Drawing.Color.White;
-            this.reg_tb_ornumber.Location = new System.Drawing.Point(151, 93);
-            this.reg_tb_ornumber.Mask = "JP\\CS\\-0000";
-            this.reg_tb_ornumber.Name = "reg_tb_ornumber";
-            this.reg_tb_ornumber.PromptChar = 'x';
-            this.reg_tb_ornumber.Size = new System.Drawing.Size(113, 29);
-            this.reg_tb_ornumber.TabIndex = 33;
+            this.mtbOrNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.mtbOrNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mtbOrNum.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mtbOrNum.ForeColor = System.Drawing.Color.White;
+            this.mtbOrNum.Location = new System.Drawing.Point(209, 125);
+            this.mtbOrNum.Mask = "JP\\CS\\-0000";
+            this.mtbOrNum.Name = "mtbOrNum";
+            this.mtbOrNum.PromptChar = 'x';
+            this.mtbOrNum.Size = new System.Drawing.Size(113, 29);
+            this.mtbOrNum.TabIndex = 33;
             // 
             // radLabel15
             // 
             this.radLabel15.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel15.Location = new System.Drawing.Point(43, 94);
+            this.radLabel15.Location = new System.Drawing.Point(101, 125);
             this.radLabel15.Name = "radLabel15";
             this.radLabel15.Size = new System.Drawing.Size(103, 25);
             this.radLabel15.TabIndex = 34;
             this.radLabel15.Text = "OR Number: ";
             this.radLabel15.ThemeName = "VisualStudio2012Dark";
             // 
-            // reg_tb_studno
+            // mtbStudNum
             // 
-            this.reg_tb_studno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.reg_tb_studno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reg_tb_studno.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.reg_tb_studno.ForeColor = System.Drawing.Color.White;
-            this.reg_tb_studno.Location = new System.Drawing.Point(152, 44);
-            this.reg_tb_studno.Mask = "00\\-00000";
-            this.reg_tb_studno.Name = "reg_tb_studno";
-            this.reg_tb_studno.PromptChar = 'x';
-            this.reg_tb_studno.Size = new System.Drawing.Size(114, 29);
-            this.reg_tb_studno.TabIndex = 35;
+            this.mtbStudNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.mtbStudNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mtbStudNum.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mtbStudNum.ForeColor = System.Drawing.Color.White;
+            this.mtbStudNum.Location = new System.Drawing.Point(210, 76);
+            this.mtbStudNum.Mask = "00\\-00000";
+            this.mtbStudNum.Name = "mtbStudNum";
+            this.mtbStudNum.PromptChar = 'x';
+            this.mtbStudNum.Size = new System.Drawing.Size(114, 29);
+            this.mtbStudNum.TabIndex = 35;
             // 
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel1.Location = new System.Drawing.Point(63, 47);
+            this.radLabel1.Location = new System.Drawing.Point(121, 76);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(83, 25);
             this.radLabel1.TabIndex = 36;
@@ -90,7 +96,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel2.Location = new System.Drawing.Point(43, 142);
+            this.radLabel2.Location = new System.Drawing.Point(121, 208);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(75, 25);
             this.radLabel2.TabIndex = 34;
@@ -100,22 +106,52 @@
             // txt_payment
             // 
             this.txt_payment.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_payment.Location = new System.Drawing.Point(151, 142);
+            this.txt_payment.Location = new System.Drawing.Point(209, 208);
             this.txt_payment.Name = "txt_payment";
-            this.txt_payment.Size = new System.Drawing.Size(113, 28);
+            this.txt_payment.Size = new System.Drawing.Size(113, 27);
             this.txt_payment.TabIndex = 37;
             this.txt_payment.ThemeName = "VisualStudio2012Dark";
             this.txt_payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_payment_KeyPress);
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel3.Location = new System.Drawing.Point(8, 167);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(188, 25);
+            this.radLabel3.TabIndex = 38;
+            this.radLabel3.Text = "Course, Year and Section";
+            // 
+            // radTextBox1
+            // 
+            this.radTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radTextBox1.Location = new System.Drawing.Point(207, 167);
+            this.radTextBox1.Name = "radTextBox1";
+            this.radTextBox1.Size = new System.Drawing.Size(115, 27);
+            this.radTextBox1.TabIndex = 39;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnRegister.Location = new System.Drawing.Point(160, 301);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(117, 31);
+            this.btnRegister.TabIndex = 40;
+            this.btnRegister.Text = "Update";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // Renewal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 265);
+            this.ClientSize = new System.Drawing.Size(449, 375);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.radTextBox1);
+            this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.txt_payment);
-            this.Controls.Add(this.reg_tb_studno);
+            this.Controls.Add(this.mtbStudNum);
             this.Controls.Add(this.radLabel1);
-            this.Controls.Add(this.reg_tb_ornumber);
+            this.Controls.Add(this.mtbOrNum);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel15);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -124,13 +160,16 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Renewal";
+            this.Text = "Update";
             this.ThemeName = "VisualStudio2012Dark";
             this.Load += new System.EventHandler(this.Renewal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_payment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,11 +178,14 @@
 
         #endregion
 
-        private System.Windows.Forms.MaskedTextBox reg_tb_ornumber;
+        private System.Windows.Forms.MaskedTextBox mtbOrNum;
         private Telerik.WinControls.UI.RadLabel radLabel15;
-        private System.Windows.Forms.MaskedTextBox reg_tb_studno;
+        private System.Windows.Forms.MaskedTextBox mtbStudNum;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadTextBox txt_payment;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Telerik.WinControls.UI.RadTextBox radTextBox1;
+        private Telerik.WinControls.UI.RadButton btnRegister;
     }
 }

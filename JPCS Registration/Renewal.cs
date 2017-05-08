@@ -34,5 +34,13 @@ namespace JPCS_Registration
 
             }
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            if (mtbStudNum.MaskCompleted | mtbOrNum.MaskCompleted | (string.IsNullOrEmpty(txt_payment.Text)))
+            {
+
+            }
+        }
     }
 }
