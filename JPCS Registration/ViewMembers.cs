@@ -13,6 +13,7 @@ namespace JPCS_Registration
     public partial class ViewMembers : Telerik.WinControls.UI.RadForm
     {
         public globalconfig gc = new globalconfig();
+        String connstring = globalconfig.connstring;
        
         MySqlConnection MySQLConn = new MySqlConnection();
         public ViewMembers()
@@ -33,7 +34,7 @@ namespace JPCS_Registration
                 MySQLConn.Close();
             }
 
-            MySQLConn.ConnectionString = gc.conn;
+            MySQLConn.ConnectionString = connstring;
             try
             {
                 MySQLConn.Open();

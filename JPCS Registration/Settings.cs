@@ -43,7 +43,16 @@ namespace JPCS_Registration
                     Properties.Settings.Default.db_port = set_tb_port.Text;
                     Properties.Settings.Default.db_username = set_tb_username.Text;
                     Properties.Settings.Default.db_password = set_tb_password.Text;
-                    Properties.Settings.Default.Save();   
+                    Properties.Settings.Default.Save();
+
+                    String server = Properties.Settings.Default.db_server;
+                    String username = Properties.Settings.Default.db_username;
+                    String port = Properties.Settings.Default.db_port;
+                    String password = Properties.Settings.Default.db_password;
+                    String database = Properties.Settings.Default.db_database;
+
+
+                    globalconfig.connstring = "server=" + server + ";port=" + port + ";username=" + username + ";password" + password + ";database=" + database + ";";
                     RadMessageBox.Show("Succesfully Saved!", "JPCS Registration");
                     this.Dispose();
                 }

@@ -21,6 +21,7 @@ namespace JPCS_Registration
         MdiClient ctlMDI;
         //Main register = new Main();
         Settings settings = new Settings();
+        String connstring = globalconfig.connstring;
         globalconfig gc = new globalconfig();
         MySqlConnection conn;
         MySqlCommand comm = new MySqlCommand();
@@ -123,7 +124,7 @@ namespace JPCS_Registration
         public void get_schoolyear()
         {
             MySqlConnection MySQLConn = new MySqlConnection();
-            MySQLConn.ConnectionString = gc.conn;
+            MySQLConn.ConnectionString = connstring;
             try
             {
                 MySQLConn.Open();

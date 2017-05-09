@@ -19,6 +19,7 @@ namespace JPCS_Registration
         public string[] course_section = new string[13];
         MySqlConnection conn;
         globalconfig gc = new globalconfig();
+        String connstring = globalconfig.connstring;
         DialogResult addYn;
         public string query;
         Boolean bdayValue = false;
@@ -34,27 +35,12 @@ namespace JPCS_Registration
             //reg_tb_ornumber.Focus();
         }
 
-        private void ManageCourses()
-        {
-            courses();
-            reg_cb_coursesect.Items.Clear();
-            if (reg_cb_coursesect.SelectedIndex <= 1) {
-                foreach (string courses in course_section)
-                {
-                   
-                    reg_cb_coursesect.Items.Add(courses);
-                }
-            } else
-            {
-                RadMessageBox.Show("Empty Fields" ,"JPCS Registration");
-            }
-        }
 
         private void reg_btn_save_Click(object sender, EventArgs e)
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = connstring;
             MySqlDataReader reader = default(MySqlDataReader);
 
             if (conn.State == ConnectionState.Open)
@@ -233,6 +219,18 @@ namespace JPCS_Registration
             return result.ToString();
             
         }
+        public void get_coyesec()
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            conn.ConnectionString = connstring;
+            try
+                conn.Open();
+            MySqlCommand comm = new MySqlCommand("CALL show_registered_coyesec();", conn);
+            MySqlDataReader reader = comm.ExecuteQuery();
 
+        }
     }
 }

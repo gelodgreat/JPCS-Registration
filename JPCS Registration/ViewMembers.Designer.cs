@@ -61,6 +61,7 @@
             this.radPageView1.Size = new System.Drawing.Size(969, 512);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.Text = "All";
+            this.radPageView1.ThemeName = "VisualStudio2012Dark";
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Near;
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Fill;
@@ -74,10 +75,10 @@
             this.radPageViewPage1.Controls.Add(this.lbl_schoolyear);
             this.radPageViewPage1.Controls.Add(this.radLabel2);
             this.radPageViewPage1.Controls.Add(this.radLabel1);
-            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(547F, 35F);
-            this.radPageViewPage1.Location = new System.Drawing.Point(10, 44);
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(553F, 31F);
+            this.radPageViewPage1.Location = new System.Drawing.Point(5, 37);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(948, 457);
+            this.radPageViewPage1.Size = new System.Drawing.Size(959, 470);
             this.radPageViewPage1.Text = "Current Members List";
             // 
             // radGridMembers
@@ -102,17 +103,19 @@
             this.radGridMembers.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.radGridMembers.Name = "radGridMembers";
             this.radGridMembers.ReadOnly = true;
-            this.radGridMembers.Size = new System.Drawing.Size(948, 354);
+            this.radGridMembers.Size = new System.Drawing.Size(959, 367);
             this.radGridMembers.TabIndex = 9;
             this.radGridMembers.Text = "radGridView1";
+            this.radGridMembers.ThemeName = "VisualStudio2012Dark";
             // 
             // radTextBox1
             // 
             this.radTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radTextBox1.Location = new System.Drawing.Point(135, 63);
             this.radTextBox1.Name = "radTextBox1";
-            this.radTextBox1.Size = new System.Drawing.Size(153, 27);
+            this.radTextBox1.Size = new System.Drawing.Size(153, 28);
             this.radTextBox1.TabIndex = 8;
+            this.radTextBox1.ThemeName = "VisualStudio2012Dark";
             // 
             // lbl_schoolyear
             // 
@@ -122,6 +125,7 @@
             this.lbl_schoolyear.Size = new System.Drawing.Size(117, 25);
             this.lbl_schoolyear.TabIndex = 7;
             this.lbl_schoolyear.Text = "lbl_schoolyear";
+            this.lbl_schoolyear.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel2
             // 
@@ -131,6 +135,7 @@
             this.radLabel2.Size = new System.Drawing.Size(126, 25);
             this.radLabel2.TabIndex = 6;
             this.radLabel2.Text = "Search Member:";
+            this.radLabel2.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel1
             // 
@@ -140,10 +145,11 @@
             this.radLabel1.Size = new System.Drawing.Size(97, 25);
             this.radLabel1.TabIndex = 5;
             this.radLabel1.Text = "School Year:";
+            this.radLabel1.ThemeName = "VisualStudio2012Dark";
             // 
             // radPageViewPage2
             // 
-            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(409F, 35F);
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(415F, 31F);
             this.radPageViewPage2.Location = new System.Drawing.Point(10, 44);
             this.radPageViewPage2.Name = "radPageViewPage2";
             this.radPageViewPage2.Size = new System.Drawing.Size(948, 457);
@@ -163,6 +169,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewMembers";
+            this.ThemeName = "VisualStudio2012Dark";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ViewMembers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();

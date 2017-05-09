@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using MySql.Data.MySqlClient;
 
 namespace JPCS_Registration
 {
     public partial class Renewal : Telerik.WinControls.UI.RadForm
     {
+
+        MySqlConnection conn;
+        globalconfig gc = new globalconfig();
         public Renewal()
         {
             InitializeComponent();
@@ -37,10 +41,34 @@ namespace JPCS_Registration
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (mtbStudNum.MaskCompleted | mtbOrNum.MaskCompleted | (string.IsNullOrEmpty(txt_payment.Text)))
+
+            MySqlDataReader reader = default(MySqlDataReader);
+            if (conn.State == ConnectionState.Open)
             {
+                conn.Close();
+            }
+            conn.ConnectionString = globalconfig.connstring;
+            try
+            {
+                conn.Open();
+                MySqlCommand comm = new MySqlCommand("CALL show_registered_coyesec();", conn);
+                reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    ddlCoyesec.Items.Add(reader.GetString("coyesec"));
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
 
             }
+            finally
+            {
+                conn.Dispose();
+            }
+        
         }
     }
 }

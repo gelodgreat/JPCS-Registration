@@ -16,6 +16,7 @@ namespace JPCS_Registration
     {
         MySqlConnection conn;
         globalconfig gc = new globalconfig();
+        String connstring = globalconfig.connstring;
         public string query;
         ViewMembers vm = new ViewMembers();
         string[] args = Environment.GetCommandLineArgs();
@@ -33,7 +34,7 @@ namespace JPCS_Registration
             {
                 conn = new MySqlConnection();
                 MySqlCommand command = gc.command;
-                conn.ConnectionString = gc.conn;
+                conn.ConnectionString = connstring;
                 MySqlDataReader reader = default(MySqlDataReader);
 
                 if (conn.State == ConnectionState.Open)
@@ -164,7 +165,7 @@ namespace JPCS_Registration
                 }
                 constate = false;
                 loopstopper = true;
-                conn.ConnectionString = gc.conn;
+                conn.ConnectionString = connstring;
                 conn.Open();
                 constate = true;
                 conn.Close();

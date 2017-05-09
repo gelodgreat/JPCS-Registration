@@ -103,7 +103,7 @@
             this.reg_cb_coursesect.Items.Add(radListDataItem3);
             this.reg_cb_coursesect.Location = new System.Drawing.Point(181, 143);
             this.reg_cb_coursesect.Name = "reg_cb_coursesect";
-            this.reg_cb_coursesect.Size = new System.Drawing.Size(164, 27);
+            this.reg_cb_coursesect.Size = new System.Drawing.Size(164, 31);
             this.reg_cb_coursesect.TabIndex = 6;
             this.reg_cb_coursesect.ThemeName = "VisualStudio2012Dark";
             // 
@@ -179,7 +179,7 @@
             this.reg_tb_lname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_lname.Location = new System.Drawing.Point(181, 41);
             this.reg_tb_lname.Name = "reg_tb_lname";
-            this.reg_tb_lname.Size = new System.Drawing.Size(164, 27);
+            this.reg_tb_lname.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_lname.TabIndex = 3;
             this.reg_tb_lname.ThemeName = "VisualStudio2012Dark";
             // 
@@ -189,7 +189,7 @@
             this.reg_tb_fname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_fname.Location = new System.Drawing.Point(181, 75);
             this.reg_tb_fname.Name = "reg_tb_fname";
-            this.reg_tb_fname.Size = new System.Drawing.Size(165, 27);
+            this.reg_tb_fname.Size = new System.Drawing.Size(165, 28);
             this.reg_tb_fname.TabIndex = 4;
             this.reg_tb_fname.ThemeName = "VisualStudio2012Dark";
             // 
@@ -199,7 +199,7 @@
             this.reg_tb_mname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_mname.Location = new System.Drawing.Point(181, 109);
             this.reg_tb_mname.Name = "reg_tb_mname";
-            this.reg_tb_mname.Size = new System.Drawing.Size(164, 27);
+            this.reg_tb_mname.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_mname.TabIndex = 5;
             this.reg_tb_mname.ThemeName = "VisualStudio2012Dark";
             // 
@@ -208,7 +208,7 @@
             this.reg_tb_email.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_email.Location = new System.Drawing.Point(181, 180);
             this.reg_tb_email.Name = "reg_tb_email";
-            this.reg_tb_email.Size = new System.Drawing.Size(164, 27);
+            this.reg_tb_email.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_email.TabIndex = 7;
             this.reg_tb_email.ThemeName = "VisualStudio2012Dark";
             // 
@@ -222,7 +222,7 @@
             this.reg_tb_bday.Name = "reg_tb_bday";
             this.reg_tb_bday.NullText = "YYYY-MM-dd";
             this.reg_tb_bday.ShowUpDown = true;
-            this.reg_tb_bday.Size = new System.Drawing.Size(148, 27);
+            this.reg_tb_bday.Size = new System.Drawing.Size(148, 26);
             this.reg_tb_bday.TabIndex = 8;
             this.reg_tb_bday.TabStop = false;
             this.reg_tb_bday.ThemeName = "VisualStudio2012Dark";
@@ -234,7 +234,7 @@
             this.reg_tb_nationality.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_nationality.Location = new System.Drawing.Point(182, 248);
             this.reg_tb_nationality.Name = "reg_tb_nationality";
-            this.reg_tb_nationality.Size = new System.Drawing.Size(164, 27);
+            this.reg_tb_nationality.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_nationality.TabIndex = 9;
             this.reg_tb_nationality.ThemeName = "VisualStudio2012Dark";
             // 
@@ -265,7 +265,7 @@
             this.reg_tb_contactnum.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_contactnum.Location = new System.Drawing.Point(182, 400);
             this.reg_tb_contactnum.Name = "reg_tb_contactnum";
-            this.reg_tb_contactnum.Size = new System.Drawing.Size(164, 27);
+            this.reg_tb_contactnum.Size = new System.Drawing.Size(164, 28);
             this.reg_tb_contactnum.TabIndex = 12;
             this.reg_tb_contactnum.ThemeName = "VisualStudio2012Dark";
             // 
@@ -274,7 +274,7 @@
             this.reg_tb_emergencycontactname.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_emergencycontactname.Location = new System.Drawing.Point(243, 449);
             this.reg_tb_emergencycontactname.Name = "reg_tb_emergencycontactname";
-            this.reg_tb_emergencycontactname.Size = new System.Drawing.Size(194, 27);
+            this.reg_tb_emergencycontactname.Size = new System.Drawing.Size(194, 28);
             this.reg_tb_emergencycontactname.TabIndex = 13;
             this.reg_tb_emergencycontactname.ThemeName = "VisualStudio2012Dark";
             // 
@@ -283,7 +283,7 @@
             this.reg_tb_emergenctcontactnumber.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.reg_tb_emergenctcontactnumber.Location = new System.Drawing.Point(243, 484);
             this.reg_tb_emergenctcontactnumber.Name = "reg_tb_emergenctcontactnumber";
-            this.reg_tb_emergenctcontactnumber.Size = new System.Drawing.Size(194, 27);
+            this.reg_tb_emergenctcontactnumber.Size = new System.Drawing.Size(194, 28);
             this.reg_tb_emergenctcontactnumber.TabIndex = 14;
             this.reg_tb_emergenctcontactnumber.ThemeName = "VisualStudio2012Dark";
             // 

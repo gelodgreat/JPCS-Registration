@@ -9,14 +9,27 @@ namespace JPCS_Registration
 {
     public class globalconfig
     {
-        public string conn = "SERVER='" + Properties.Settings.Default.db_server + "'; PORT='" + Properties.Settings.Default.db_port + "'; DATABASE='" + Properties.Settings.Default.db_database + "'; USERNAME='" + Properties.Settings.Default.db_username + "'; PASSWORD='" + Properties.Settings.Default.db_password + "';";
+        //public string conn = "SERVER='" + Properties.Settings.Default.db_server + "'; PORT='" + Properties.Settings.Default.db_port + "'; DATABASE='" + Properties.Settings.Default.db_database + "'; USERNAME='" + Properties.Settings.Default.db_username + "'; PASSWORD='" + Properties.Settings.Default.db_password + "';";
         static StreamWriter logfile;
+        private static string connectionstring;
+        public static string connstring
+        {
+            get { return connectionstring; }
+            set { connectionstring = value; }
+        }
         static String path = "Log" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".txt";
 
         //public string conn = "SERVER=localhost;PORT=3306; DATABASE=jpcsregistration; USERNAME=root; PASSWORD=root;";
         public MySqlCommand command = new MySqlCommand();
+        private static MySqlConnection sqlconnection;
         public MySqlDataReader reader;
         public MySqlDataAdapter adapter;
+        private static string sy;
+        public static string schoolyear
+        {
+            get { return schoolyear; }
+            set { schoolyear = value; }
+        }
 
         private static Boolean DebugMode;
         public static Boolean ConsoleIsShown
