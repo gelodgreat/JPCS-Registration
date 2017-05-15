@@ -25,7 +25,7 @@ namespace JPCS_Registration
         private void load_sections()
         {
             op_cb_combosections.Items.Clear();
-            main.courses();
+            //main.courses();
             foreach (string courses in main.course_section)
             {
            
@@ -45,7 +45,7 @@ namespace JPCS_Registration
             conn = new MySqlConnection();
             
             MySqlCommand command = new MySqlCommand();
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             DataTable dbdataset = new DataTable();
             BindingSource bsource = new BindingSource();
@@ -107,7 +107,7 @@ namespace JPCS_Registration
             conn = new MySqlConnection();
 
             MySqlCommand command = new MySqlCommand();
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             DataTable dbdataset = new DataTable();
             BindingSource bsource = new BindingSource();
@@ -190,7 +190,7 @@ namespace JPCS_Registration
             conn = new MySqlConnection();
 
             MySqlCommand command = new MySqlCommand();
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             DataTable dbdataset = new DataTable();
             BindingSource bsource = new BindingSource();

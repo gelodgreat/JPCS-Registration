@@ -42,7 +42,7 @@ namespace JPCS_Registration
             conn = new MySqlConnection();
 
             MySqlCommand command = new MySqlCommand();
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             DataTable dbdataset = new DataTable();
             BindingSource bsource = new BindingSource();
@@ -100,7 +100,7 @@ namespace JPCS_Registration
 
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             try
             {
@@ -171,7 +171,7 @@ namespace JPCS_Registration
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
 
             try
@@ -228,7 +228,7 @@ namespace JPCS_Registration
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
 
             try
@@ -321,7 +321,7 @@ namespace JPCS_Registration
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             try
             {

@@ -101,7 +101,7 @@ namespace JPCS_Registration
         private void log_btn_main_Click(object sender, EventArgs e)
         {
             p.Show();
-            this.Dispose();
+            this.Hide();
 
         }
         private void radLabel3_Click(object sender, EventArgs e)

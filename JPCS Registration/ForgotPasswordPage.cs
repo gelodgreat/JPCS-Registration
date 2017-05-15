@@ -43,7 +43,7 @@ namespace JPCS_Registration
             userpasstimer++;
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             if (conn.State == ConnectionState.Open)
             {
@@ -95,7 +95,7 @@ namespace JPCS_Registration
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
 
             if (fp_cb_securityques.SelectedIndex == -1 | (string.IsNullOrEmpty(fp_tb_securityans.Text)))
@@ -139,7 +139,7 @@ namespace JPCS_Registration
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
 
             if (conn.State == ConnectionState.Open)

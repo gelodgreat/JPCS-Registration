@@ -20,7 +20,7 @@ namespace JPCS_Registration
             String port = Properties.Settings.Default.db_port;
             String password = Properties.Settings.Default.db_password;
             String database = Properties.Settings.Default.db_database;
-            globalconfig.connstring = "server="+server+ ";port="+port+";username="+username+ ";password" +password+";database="+database+";";
+            globalconfig.connstring = "server="+server+ ";port="+port+";username="+username+ ";password=" +password+";database="+database+";";
             Application.Run(new Login());
         }
     }
