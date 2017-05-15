@@ -62,7 +62,7 @@ namespace JPCS_Registration
                         while (reader.Read())
                         {
                             count += 1;
-                            fullname = reader.GetString("fname") + " " + reader.GetString("mname") + " " + reader.GetString("lname");
+                            fullname = reader.GetString("fname")+ " " + reader.GetString("lname");
                         }
 
                         if (count >= 1)
@@ -73,7 +73,7 @@ namespace JPCS_Registration
 
                             globalconfig.isAuthenticated = true;
                             globalconfig.fullname = fullname;
-                            this.Dispose();
+                            this.Hide();
                             p.Show();
                             
                         }

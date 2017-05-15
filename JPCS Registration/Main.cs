@@ -199,13 +199,14 @@ namespace JPCS_Registration
             if (dateTimePicker1.Focus())
             {
                 reg_tb_bday.Value = dateTimePicker1.Value;
+
             }
         }
 
         private void reg_tb_bday_ValueChanged(object sender, EventArgs e)
         {
             dateTimePicker1.Value = reg_tb_bday.Value;
-            reg_tb_bday.Focus();
+            //reg_tb_bday.Focus();
         }
 
         public string PrintQuery(IDbCommand cmd)

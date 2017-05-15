@@ -78,7 +78,7 @@
             this.radMenuItem2});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(794, 27);
+            this.radMenu1.Size = new System.Drawing.Size(794, 33);
             this.radMenu1.TabIndex = 0;
             this.radMenu1.Text = "radMenu1";
             this.radMenu1.ThemeName = "VisualStudio2012Dark";
@@ -93,15 +93,15 @@
             // 
             this.lbl_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_User.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.lbl_User.Location = new System.Drawing.Point(12, 462);
+            this.lbl_User.Location = new System.Drawing.Point(12, 452);
             this.lbl_User.Name = "lbl_User";
-            this.lbl_User.Size = new System.Drawing.Size(103, 41);
+            this.lbl_User.Size = new System.Drawing.Size(129, 51);
             this.lbl_User.TabIndex = 2;
             this.lbl_User.Text = "lbl_user";
             // 
             // Parent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JPCS_Registration.Properties.Resources.jpcs1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -118,6 +118,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Junior Philippine Computer Society Student Records Management System";
             this.ThemeName = "VisualStudio2012Dark";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Parent_FormClosed);
             this.Load += new System.EventHandler(this.Parent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
