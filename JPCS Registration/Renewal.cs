@@ -70,5 +70,29 @@ namespace JPCS_Registration
             }
         
         }
+        public void list_coyesec()
+        {
+            ddlCoyesec.Items.Clear();
+            MySqlConnection MySQLConn=new MySqlConnection();
+            MySQLConn.ConnectionString = globalconfig.connstring;
+            try
+            {
+                MySQLConn.Open();
+                MySqlCommand comm = new MySqlCommand("", MySQLConn);
+                MySqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    ddlCoyesec.Items.Add(reader.GetString("coyesec"));
+                }
+                MySQLConn.Close();
+            }catch (Exception ex)
+            {
+                RadMessageBox.Show(this, ex.Message, "JPCS Registration");
+            }
+            finally
+            {
+                MySQLConn.Dispose();
+            }
+        }
     }
 }

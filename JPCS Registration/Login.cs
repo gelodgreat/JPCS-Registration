@@ -100,6 +100,7 @@ namespace JPCS_Registration
 
         private void log_btn_main_Click(object sender, EventArgs e)
         {
+            globalconfig.fullname = "Guest Mode";
             p.Show();
             this.Hide();
 
@@ -120,7 +121,7 @@ namespace JPCS_Registration
 
             Boolean check = checkdbstat();
             globalconfig gc = new globalconfig();
-            while (check = false)
+            while (check == false)
             {
                 settings.Show();
                 check = checkdbstat();

@@ -20,7 +20,10 @@ namespace JPCS_Registration
         public static extern bool FreeConsole();
         MdiClient ctlMDI;
         //Main register = new Main();
+
         Settings settings = new Settings();
+        
+
         String connstring = globalconfig.connstring;
         globalconfig gc = new globalconfig();
         MySqlConnection conn;
@@ -145,7 +148,9 @@ namespace JPCS_Registration
 
         private void MemberRenew_Click(object sender, EventArgs e)
         {
-
+            Renewal ren = new Renewal();
+            ren.MdiParent = this;
+            ren.Show();
         }
 
         private void Parent_FormClosed(object sender, FormClosedEventArgs e)

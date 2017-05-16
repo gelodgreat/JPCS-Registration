@@ -57,9 +57,12 @@ namespace JPCS_Registration
                 else
                 {
                     conn.Open();
-                    query = "SELECT * FROM memberlist WHERE studno=@studno";
+                    query = "SELECT * FROM student_pis WHERE studno=@studno";
                     command = new MySqlCommand(query, conn);
                     command.Parameters.AddWithValue("studno", reg_tb_studno.Text);
+
+
+
                     reader = command.ExecuteReader();
                     int count = 0;
                     while (reader.Read())
