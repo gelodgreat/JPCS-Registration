@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
             this.reg_cb_coursesect = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
@@ -95,12 +95,12 @@
             // 
             this.reg_cb_coursesect.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.reg_cb_coursesect.Font = new System.Drawing.Font("Segoe UI", 12F);
-            radListDataItem1.Text = "Information Technology";
-            radListDataItem2.Text = "Computer Science";
-            radListDataItem3.Text = "Computer Engineering";
-            this.reg_cb_coursesect.Items.Add(radListDataItem1);
-            this.reg_cb_coursesect.Items.Add(radListDataItem2);
-            this.reg_cb_coursesect.Items.Add(radListDataItem3);
+            radListDataItem4.Text = "Information Technology";
+            radListDataItem5.Text = "Computer Science";
+            radListDataItem6.Text = "Computer Engineering";
+            this.reg_cb_coursesect.Items.Add(radListDataItem4);
+            this.reg_cb_coursesect.Items.Add(radListDataItem5);
+            this.reg_cb_coursesect.Items.Add(radListDataItem6);
             this.reg_cb_coursesect.Location = new System.Drawing.Point(227, 191);
             this.reg_cb_coursesect.Name = "reg_cb_coursesect";
             this.reg_cb_coursesect.Size = new System.Drawing.Size(272, 36);
@@ -140,7 +140,7 @@
             // reg_btn_save
             // 
             this.reg_btn_save.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.reg_btn_save.Location = new System.Drawing.Point(181, 676);
+            this.reg_btn_save.Location = new System.Drawing.Point(251, 690);
             this.reg_btn_save.Name = "reg_btn_save";
             this.reg_btn_save.Size = new System.Drawing.Size(194, 51);
             this.reg_btn_save.TabIndex = 15;
@@ -253,10 +253,10 @@
             // 
             this.reg_tb_provaddress.AutoSize = false;
             this.reg_tb_provaddress.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.reg_tb_provaddress.Location = new System.Drawing.Point(217, 450);
+            this.reg_tb_provaddress.Location = new System.Drawing.Point(233, 450);
             this.reg_tb_provaddress.Multiline = true;
             this.reg_tb_provaddress.Name = "reg_tb_provaddress";
-            this.reg_tb_provaddress.Size = new System.Drawing.Size(334, 53);
+            this.reg_tb_provaddress.Size = new System.Drawing.Size(318, 53);
             this.reg_tb_provaddress.TabIndex = 11;
             this.reg_tb_provaddress.ThemeName = "VisualStudio2012Dark";
             // 

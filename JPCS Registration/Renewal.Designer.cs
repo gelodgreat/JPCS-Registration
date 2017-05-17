@@ -97,7 +97,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel2.Location = new System.Drawing.Point(160, 231);
+            this.radLabel2.Location = new System.Drawing.Point(160, 240);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(93, 31);
             this.radLabel2.TabIndex = 34;
@@ -107,12 +107,13 @@
             // txt_payment
             // 
             this.txt_payment.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_payment.Location = new System.Drawing.Point(255, 231);
+            this.txt_payment.Location = new System.Drawing.Point(255, 240);
             this.txt_payment.Name = "txt_payment";
             this.txt_payment.Size = new System.Drawing.Size(113, 33);
             this.txt_payment.TabIndex = 3;
             this.txt_payment.ThemeName = "VisualStudio2012Dark";
             this.txt_payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_payment_KeyPress);
+            this.txt_payment.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txt_payment_PreviewKeyDown);
             // 
             // radLabel3
             // 
@@ -127,7 +128,7 @@
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnRegister.Location = new System.Drawing.Point(169, 324);
+            this.btnRegister.Location = new System.Drawing.Point(194, 326);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(117, 31);
             this.btnRegister.TabIndex = 4;
@@ -137,6 +138,7 @@
             // 
             // ddlCoyesec
             // 
+            this.ddlCoyesec.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlCoyesec.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ddlCoyesec.Location = new System.Drawing.Point(256, 190);
             this.ddlCoyesec.Name = "ddlCoyesec";
@@ -167,6 +169,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update";
             this.ThemeName = "VisualStudio2012Dark";
             this.Load += new System.EventHandler(this.Renewal_Load);

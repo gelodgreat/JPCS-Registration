@@ -14,7 +14,7 @@ namespace JPCS_Registration
     {
 
         MySqlConnection conn;
-        globalconfig gc = new globalconfig();
+        globalconfig gc = new globalconfig();   
         public Renewal()
         {
             InitializeComponent();
@@ -22,19 +22,29 @@ namespace JPCS_Registration
         
         private void Renewal_Load(object sender, EventArgs e)
         {
-
+            list_coyesec();
         }
 
         private void txt_payment_KeyPress(object sender, KeyPressEventArgs e)
         {
-            String deci = ".";
+
+            //if (txt_payment.Text.Contains("."))
+            //{
+            //    e.Handled = !(char.IsDigit(e.KeyChar));
+            //}
+            //else
+            //{
+            //    e.Handled = (char.IsDigit(e.KeyChar).Equals(false) | (e.KeyChar=Convert.ToChar(deci)).Equals(false));
+
+            //}
+
             if (txt_payment.Text.Contains("."))
             {
                 e.Handled = !(char.IsDigit(e.KeyChar));
             }
             else
             {
-                e.Handled = (char.IsDigit(e.KeyChar).Equals(false) | (e.KeyChar=Convert.ToChar(deci)).Equals(false));
+                e.Handled = !(char.IsDigit(e.KeyChar) | e.KeyChar == '.');
 
             }
         }
@@ -42,32 +52,32 @@ namespace JPCS_Registration
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
-            MySqlDataReader reader = default(MySqlDataReader);
-            if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-            conn.ConnectionString = globalconfig.connstring;
-            try
-            {
-                conn.Open();
-                MySqlCommand comm = new MySqlCommand("CALL show_registered_coyesec();", conn);
-                reader = comm.ExecuteReader();
-                while (reader.Read())
-                {
-                    ddlCoyesec.Items.Add(reader.GetString("coyesec"));
-                }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            //MySqlDataReader reader = default(MySqlDataReader);
+            //if (conn.State == ConnectionState.Open)
+            //{
+            //    conn.Close();
+            //}
+            //conn.ConnectionString = globalconfig.connstring;
+            //try
+            //{
+            //    conn.Open();
+            //    MySqlCommand comm = new MySqlCommand("CALL show_registered_coyesec();", conn);
+            //    reader = comm.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        ddlCoyesec.Items.Add(reader.GetString("coyesec"));
+            //    }
+            //    conn.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
 
-            }
-            finally
-            {
-                conn.Dispose();
-            }
+            //}
+            //finally
+            //{
+            //    conn.Dispose();
+            //}
         
         }
         public void list_coyesec()
@@ -78,11 +88,11 @@ namespace JPCS_Registration
             try
             {
                 MySQLConn.Open();
-                MySqlCommand comm = new MySqlCommand("", MySQLConn);
+                MySqlCommand comm = new MySqlCommand("CALL show_registered_courseyearsection()", MySQLConn);
                 MySqlDataReader reader = comm.ExecuteReader();
                 while (reader.Read())
                 {
-                    ddlCoyesec.Items.Add(reader.GetString("coyesec"));
+                    ddlCoyesec.Items.Add(reader.GetString("Course, Year and Section"));
                 }
                 MySQLConn.Close();
             }catch (Exception ex)
@@ -92,6 +102,19 @@ namespace JPCS_Registration
             finally
             {
                 MySQLConn.Dispose();
+            }
+        }
+
+        private void txt_payment_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                if (txt_payment.Text.Length > 0)
+                {
+                    txt_payment.Text = txt_payment.Text.Substring(0, txt_payment.Text.Length - 1);
+                    txt_payment.Select(txt_payment.Text.Length, 0);
+                }
+
             }
         }
     }

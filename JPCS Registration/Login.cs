@@ -100,6 +100,7 @@ namespace JPCS_Registration
 
         private void log_btn_main_Click(object sender, EventArgs e)
         {
+            globalconfig.isAuthenticated = false;
             globalconfig.fullname = "Guest Mode";
             p.Show();
             this.Hide();
