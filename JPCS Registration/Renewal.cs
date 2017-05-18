@@ -14,7 +14,8 @@ namespace JPCS_Registration
     {
 
         MySqlConnection conn;
-        globalconfig gc = new globalconfig();   
+        globalconfig gc = new globalconfig();
+        DialogResult notreg; 
         public Renewal()
         {
             InitializeComponent();
@@ -52,32 +53,35 @@ namespace JPCS_Registration
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
-            //MySqlDataReader reader = default(MySqlDataReader);
-            //if (conn.State == ConnectionState.Open)
-            //{
-            //    conn.Close();
-            //}
-            //conn.ConnectionString = globalconfig.connstring;
-            //try
-            //{
-            //    conn.Open();
-            //    MySqlCommand comm = new MySqlCommand("CALL show_registered_coyesec();", conn);
-            //    reader = comm.ExecuteReader();
-            //    while (reader.Read())
-            //    {
-            //        ddlCoyesec.Items.Add(reader.GetString("coyesec"));
-            //    }
-            //    conn.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-
-            //}
-            //finally
-            //{
-            //    conn.Dispose();
-            //}
+            MySqlConnection MySQLConn=new MySqlConnection();
+            MySQLConn.ConnectionString = globalconfig.connstring;
+            Boolean success=false;
+            try
+            {
+                
+                MySQLConn.Open();
+                MySqlCommand comm = new MySqlCommand("CALL renew(@studno, @ornum, @coyesec, @payment, @schoolyear);", MySQLConn);
+                comm.Parameters.AddWithValue("studno", mtbStudNum.Text);
+                comm.Parameters.AddWithValue("ornum", mtbOrNum.Text);
+                comm.Parameters.AddWithValue("coyesec", ddlCoyesec.Text);
+                comm.Parameters.AddWithValue("payment", txt_payment.Text);
+                comm.Parameters.AddWithValue("schoolyear", globalconfig.schoolyearactive);
+                comm.ExecuteNonQuery();
+                MySQLConn.Close();
+            }catch (Exception ex)
+            {
+                if (ex.Message.Contains("foreign"))
+                {
+                    RadMessageBox.Show(this, "You are not yet registered to the student list. Please register first!", "JPCS REgistration");
+                }
+                else
+                {
+                    RadMessageBox.Show(this, "A MySQL Exception has occured. Please send a feedback to the Develpers ASAP!", "JPCS Registration");
+                }
+            }finally
+            {
+                MySQLConn.Dispose();
+            }
         
         }
         public void list_coyesec()

@@ -111,7 +111,7 @@ namespace JPCS_Registration
                 else
                 {
                     conn.Open();
-                    query = "SELECT * FROM auth_accounts WHERE securityquestion=@securityquestion AND securityanswer=@securityanswer";
+                    query = "CALL get_security(@securityquestion, @securityanswer);";
                     command = new MySqlCommand(query, conn);
                     command.Parameters.AddWithValue("securityquestion", fp_cb_securityques.Text);
                     command.Parameters.AddWithValue("securityanswer", fp_tb_securityans.Text);
@@ -138,7 +138,7 @@ namespace JPCS_Registration
         private void fp_btn_changepass_Click(object sender, EventArgs e)
         {
             conn = new MySqlConnection();
-            MySqlCommand command = gc.command;
+            
             conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
 
@@ -160,8 +160,8 @@ namespace JPCS_Registration
                     else
                     {
                         conn.Open();
-                        query = "UPDATE auth_accounts  SET password=@password WHERE username=@studuser OR studno=@studuser";
-                        command = new MySqlCommand(query, conn);
+                        query = "CALL forgot_password(@password, @studuser);";
+                        MySqlCommand command = new MySqlCommand(query, conn);
                         command.Parameters.AddWithValue("studuser", fp_tb_userstudno.Text);
                         command.Parameters.AddWithValue("password", fp_tb_new_pass.Text);
                         reader = command.ExecuteReader();

@@ -24,13 +24,6 @@ namespace JPCS_Registration
         private static MySqlConnection sqlconnection;
         public MySqlDataReader reader;
         public MySqlDataAdapter adapter;
-        private static string sy;
-        public static string schoolyear
-        {
-            get { return schoolyear; }
-            set { schoolyear = value; }
-        }
-
         private static Boolean DebugMode;
         public static Boolean ConsoleIsShown
         {

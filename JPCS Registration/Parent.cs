@@ -142,7 +142,11 @@ namespace JPCS_Registration
                 
             }catch (Exception ex)
             {
-
+                RadMessageBox.Show(this, ex.Message);
+            }
+            finally
+            {
+                MySQLConn.Dispose();
             }
         }
 
