@@ -24,6 +24,7 @@ namespace JPCS_Registration
         private void ViewMembers_Load(object sender, EventArgs e)
         {
             load_memberlist();
+            lbl_schoolyear.Text = globalconfig.schoolyearactive;
         }
         public void load_memberlist()
         {
