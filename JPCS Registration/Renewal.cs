@@ -24,6 +24,7 @@ namespace JPCS_Registration
         private void Renewal_Load(object sender, EventArgs e)
         {
             list_coyesec();
+            AcceptButton = btnRegister;
         }
 
         private void txt_payment_KeyPress(object sender, KeyPressEventArgs e)
@@ -52,7 +53,11 @@ namespace JPCS_Registration
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-
+            if (!(mtbStudNum.MaskCompleted) | !(mtbOrNum.MaskCompleted))
+            {
+                RadMessageBox.Show(this, "Please Complete Student Number and OR number.");
+                return;
+            }
             MySqlConnection MySQLConn=new MySqlConnection();
             MySQLConn.ConnectionString = globalconfig.connstring;
             Boolean success=false;
@@ -68,16 +73,20 @@ namespace JPCS_Registration
                 comm.Parameters.AddWithValue("schoolyear", globalconfig.schoolyearactive);
                 comm.ExecuteNonQuery();
                 MySQLConn.Close();
-            }catch (Exception ex)
+                RadMessageBox.Show(this, "Successfully Registered!. You may now proceed to Advising section.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+            }
+            catch (Exception ex)
             {
                 if (ex.Message.Contains("foreign"))
                 {
-                    RadMessageBox.Show(this, "You are not yet registered to the student list. Please register first!", "JPCS REgistration");
+                    RadMessageBox.Show(this, "You are not yet registered to the student list. Please register first!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                 }
                 else
                 {
-                    RadMessageBox.Show(this, "A MySQL Exception has occured. Please send a feedback to the Develpers ASAP!", "JPCS Registration");
+                    RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
                 }
+                
+                
             }finally
             {
                 MySQLConn.Dispose();

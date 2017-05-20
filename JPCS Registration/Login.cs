@@ -158,6 +158,7 @@ namespace JPCS_Registration
         {
             Boolean loopstopper = false;
             conn = new MySqlConnection();
+            conn.ConnectionString = globalconfig.connstring;
             MySqlCommand command = gc.command;
             try
             {
@@ -183,13 +184,13 @@ namespace JPCS_Registration
                 conn.Dispose();
                 if (constate == true)
                 {
-                    //log_server_status.Text = "Online";
-                    //log_server_status.ForeColor = Color.Green;
+                    log_server_status.Text = "Online";
+                    log_server_status.ForeColor = Color.Green;
                 }
                 else
                 {
-                    //log_server_status.Text = "Offline";
-                    //log_server_status.ForeColor = Color.Red;
+                    log_server_status.Text = "Offline";
+                    log_server_status.ForeColor = Color.Red;
                 }
             }
             return loopstopper;

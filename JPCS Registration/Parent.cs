@@ -164,6 +164,34 @@ namespace JPCS_Registration
             login.Show();
 
         }
+
+        private void radMenuSchoolYear_Click(object sender, EventArgs e)
+        {
+            if (globalconfig.isAuthenticated)
+            {
+                foreach (Form frm in this.MdiChildren)
+                {
+                    frm.Close();
+
+                }
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f is SchoolYearManagement)
+                    {
+                        f.Dispose();
+                        return;
+                    }
+                }
+
+                SchoolYearManagement symgmt = new SchoolYearManagement();
+                symgmt.MdiParent = this;
+                symgmt.Show();
+            }
+            else
+            {
+                RadMessageBox.Show(this, "Elevated mode is required to access Member Management. To enter elevated mode, close the Main Window and enter your correct account credentials. ", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
         // Display a child form to show this is still an MDI application.
         //Form2 frm = new Form2();
         //frm.MdiParent = this;

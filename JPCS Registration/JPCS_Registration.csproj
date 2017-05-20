@@ -154,6 +154,12 @@
     <Compile Include="Renewal.Designer.cs">
       <DependentUpon>Renewal.cs</DependentUpon>
     </Compile>
+    <Compile Include="SchoolYearManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchoolYearManagement.Designer.cs">
+      <DependentUpon>SchoolYearManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </Compile>
     <EmbeddedResource Include="Renewal.resx">
       <DependentUpon>Renewal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchoolYearManagement.resx">
+      <DependentUpon>SchoolYearManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

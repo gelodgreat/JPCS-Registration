@@ -52,9 +52,11 @@ namespace JPCS_Registration
                     String database = Properties.Settings.Default.db_database;
 
 
-                    globalconfig.connstring = "server=" + server + ";port=" + port + ";username=" + username + ";password" + password + ";database=" + database + ";";
+                    globalconfig.connstring = "server=" + server + ";port=" + port + ";username=" + username + ";password=" + password + ";database=" + database + ";";
                     RadMessageBox.Show("Succesfully Saved!", "JPCS Registration");
                     this.Dispose();
+                    Login log = new Login();
+                    log.Show();
                 }
             }
         }
@@ -66,7 +68,27 @@ namespace JPCS_Registration
 
         private void Settings_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
+            Login log = new Login();
+            this.Dispose();
+            log.Show();
+        }
+
+        private void set_tb_port_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar));
+        }
+
+        private void set_tb_port_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                if (set_tb_port.Text.Length > 0)
+                {
+                    set_tb_port.Text = set_tb_port.Text.Substring(0, set_tb_port.Text.Length - 1);
+                    set_tb_port.Select(set_tb_port.Text.Length, 0);
+                }
+
+            }
         }
     }
 }
