@@ -42,7 +42,7 @@ namespace JPCS_Registration
             conn = new MySqlConnection();
 
             MySqlCommand command = new MySqlCommand();
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             DataTable dbdataset = new DataTable();
             BindingSource bsource = new BindingSource();
@@ -56,7 +56,7 @@ namespace JPCS_Registration
             try
             {
                 conn.Open();
-                query = "SELECT studno as 'Student #', fname as 'First Name', lname as 'Last Name', gender as 'Gender', isofficer as 'Officer?', address as 'Address' FROM auth_accounts";
+                query = "CALL GET_Accounts();";
                 command = new MySqlCommand(query, conn);
                 sda.SelectCommand = command;
                 sda.Fill(dbdataset);
@@ -100,7 +100,7 @@ namespace JPCS_Registration
 
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             try
             {
@@ -134,7 +134,7 @@ namespace JPCS_Registration
                             {
                                 conn.Open();
 
-                                query = "INSERT INTO auth_accounts VALUES (@studno,@fname,@lname,@gender,@isofficer,@address,@username,sha2(@password, 512),@securityquestion,@securityanswer)";
+                                query = "CALL Add_Account(@studno, @fname, @lname, @gender, @isofficer, @address, @username, @password, @securityquestion, @securityanswer)";
                                 command = new MySqlCommand(query, conn);
                                 command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
                                 command.Parameters.AddWithValue("fname", aa_tb_fname.Text);
@@ -171,7 +171,7 @@ namespace JPCS_Registration
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
 
             try
@@ -181,7 +181,7 @@ namespace JPCS_Registration
                 if (studnotimeer == 20)
                 {
                     conn.Open();
-                    query = "SELECT * FROM auth_accounts WHERE studno=@studno";
+                    query = "CALL Get_used_studno(@studno);";
                     command = new MySqlCommand(query, conn);
                     command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
                     reader = command.ExecuteReader();
@@ -194,7 +194,7 @@ namespace JPCS_Registration
 
                     if (count >= 1)
                     {
-                        RadMessageBox.Show(this, "Student # " + aa_tb_studno.Text + " is already in used!", "JPCS Registration", MessageBoxButtons.OK,
+                        RadMessageBox.Show(this, "Student # " + aa_tb_studno.Text + " is already used!", "JPCS Registration", MessageBoxButtons.OK,
                             RadMessageIcon.Error);
                         aa_lbl_studnostat.ForeColor = Color.Red;
                         aa_lbl_studnostat.Text = "Not Available";
@@ -228,7 +228,7 @@ namespace JPCS_Registration
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
 
             try
@@ -238,7 +238,7 @@ namespace JPCS_Registration
                 if (timerusername == 20)
                 {
                     conn.Open();
-                    query = "SELECT * FROM auth_accounts WHERE username=@username";
+                    query = "CALL Get_used_uname(@username)";
                     command = new MySqlCommand(query, conn);
                     command.Parameters.AddWithValue("username", aa_tb_username.Text);
                     reader = command.ExecuteReader();
@@ -312,16 +312,16 @@ namespace JPCS_Registration
             aa_timer_username.Start();
         }
 
-        private void aa_tb_studno_TextChanged(object sender, EventArgs e)
+        private void aa_tb_studno_KeyDown(object sender, KeyEventArgs e)
         {
-                aa_timer_studno.Start();
+            aa_timer_studno.Start();
         }
 
         private void rgv_registeredaccounts_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
-            conn.ConnectionString = gc.conn;
+            conn.ConnectionString = globalconfig.connstring;
             MySqlDataReader reader = default(MySqlDataReader);
             try
             {

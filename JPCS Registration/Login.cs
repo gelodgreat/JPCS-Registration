@@ -14,19 +14,14 @@ namespace JPCS_Registration
 {
     public partial class Login : Telerik.WinControls.UI.RadForm
     {
-
-        [DllImport("kernel32.dll")]
-        public static extern bool AllocConsole();
-
-        [DllImport("kernel32.dll")]
-        public static extern bool FreeConsole();
-
         MySqlConnection conn;
         globalconfig gc = new globalconfig();
+        String connstring = globalconfig.connstring;
         public string query;
-        Main MainForm = new Main();
-        OfficersPage op = new OfficersPage();
+        ViewMembers vm = new ViewMembers();
         string[] args = Environment.GetCommandLineArgs();
+        Parent p = new Parent();
+        Settings settings = new Settings();
         bool constate;
         public Login()
         {
@@ -39,7 +34,7 @@ namespace JPCS_Registration
             {
                 conn = new MySqlConnection();
                 MySqlCommand command = gc.command;
-                conn.ConnectionString = gc.conn;
+                conn.ConnectionString = connstring;
                 MySqlDataReader reader = default(MySqlDataReader);
 
                 if (conn.State == ConnectionState.Open)
@@ -55,16 +50,19 @@ namespace JPCS_Registration
                     else
                     {
                         conn.Open();
-                        query = "SELECT * FROM auth_accounts WHERE studno=@studno OR username=@username AND password=sha2(@password, 512);";
+                        //query = "SELECT * FROM auth_accounts WHERE studno=@studno OR username=@username AND password=sha2(@password, 512);";
+                        query = "CALL login(@1, @2);";
+                        
                         command = new MySqlCommand(query, conn);
-                        command.Parameters.AddWithValue("studno", log_tb_username.Text);
-                        command.Parameters.AddWithValue("username", log_tb_username.Text);
-                        command.Parameters.AddWithValue("password", log_tb_password.Text);
+                        command.Parameters.AddWithValue("1", log_tb_username.Text);
+                        command.Parameters.AddWithValue("2", log_tb_password.Text);
                         reader = command.ExecuteReader();
+                        String fullname = "";
                         int count = 0;
                         while (reader.Read())
                         {
                             count += 1;
+                            fullname = reader.GetString("fname")+ " " + reader.GetString("lname");
                         }
 
                         if (count >= 1)
@@ -73,9 +71,11 @@ namespace JPCS_Registration
                             log_tb_username.Clear();
                             log_tb_username.Focus();
 
-
-                            op.Show();
+                            globalconfig.isAuthenticated = true;
+                            globalconfig.fullname = fullname;
                             this.Hide();
+                            p.Show();
+                            
                         }
                         else
                         {
@@ -100,86 +100,34 @@ namespace JPCS_Registration
 
         private void log_btn_main_Click(object sender, EventArgs e)
         {
-            MainForm.Show();
+            globalconfig.isAuthenticated = false;
+            globalconfig.fullname = "Guest Mode";
+            p.Show();
             this.Hide();
 
         }
-
-        public void checkdbstat()
-        {
-            conn = new MySqlConnection();
-            MySqlCommand command = gc.command;
-            try
-            {
-                if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-            constate = false;
-            conn.ConnectionString = gc.conn;
-            conn.Open();
-            constate = true;
-            conn.Close();
-            }
-            catch(Exception ex)
-            {
-                RadMessageBox.Show("Please correct your connection configuration", "JPCS Registration");
-            }
-            finally
-            {
-                conn.Dispose();
-                if (constate == true)
-                {
-                    log_server_status.Text = "Online";
-                    log_server_status.ForeColor = Color.Green;
-                }
-                else
-                {
-                    log_server_status.Text = "Offline";
-                    log_server_status.ForeColor = Color.Red;
-                }
-            }
-        }
-
         private void radLabel3_Click(object sender, EventArgs e)
         {
-            op.Show();
-            this.Hide();
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("Action: Bypass button Clicked.");
+            //op.Show();
+            //this.Hide();
+            //Console.WriteLine("");
+            //Console.WriteLine("");
+            //Console.WriteLine("");
+            //Console.WriteLine("Action: Bypass button Clicked.");
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
-          
-            if (!globalconfig.ConsoleIsShown)
-            {
-                for (int i = 0; i < args.Length; i++)
-                {
 
-                    if (args[i] == "ShamWoWDebug")
-                    {
-                        AllocConsole();
-                        Console.WriteLine("Welcome to JPCS Mebership Registration System!");
-                        Console.WriteLine("The System has detected a CommandLine Argument \"ShamWoWDebug\". This will lauch the System in Debug mode");
-                        Console.WriteLine("Please do not Close this Console Window because it will also close the GUI application");
-                        globalconfig.ConsoleIsShown = true;
-                    }
-                }
+            Boolean check = checkdbstat();
+            globalconfig gc = new globalconfig();
+            while (check == false)
+            {
+                settings.Show();
+                check = checkdbstat();
             }
 
-            try
-            {
-                checkdbstat();
-            }
-            catch (Exception ex)
-            {
-                RadMessageBox.Show(ex.Message, "JPCS Registration");
-            }
-            
         }
 
         private void log_btn_forgotpass_Click(object sender, EventArgs e)
@@ -205,6 +153,47 @@ namespace JPCS_Registration
         private void log_rgb_container_Enter(object sender, EventArgs e)
         {
             AcceptButton = log_btn_login;
+        }
+        public Boolean checkdbstat()
+        {
+            Boolean loopstopper = false;
+            conn = new MySqlConnection();
+            conn.ConnectionString = globalconfig.connstring;
+            MySqlCommand command = gc.command;
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                constate = false;
+                loopstopper = true;
+                conn.ConnectionString = connstring;
+                conn.Open();
+                constate = true;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show("Please correct your connection configuration", "JPCS Registration");
+                settings.ShowDialog();
+            }
+            finally
+            {
+
+                conn.Dispose();
+                if (constate == true)
+                {
+                    log_server_status.Text = "Online";
+                    log_server_status.ForeColor = Color.Green;
+                }
+                else
+                {
+                    log_server_status.Text = "Offline";
+                    log_server_status.ForeColor = Color.Red;
+                }
+            }
+            return loopstopper;
         }
     }
 }
