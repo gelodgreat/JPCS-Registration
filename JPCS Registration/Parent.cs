@@ -131,7 +131,7 @@ namespace JPCS_Registration
             try
             {
                 MySQLConn.Open();
-                MySqlCommand comm = new MySqlCommand("SELECT schoolyear FROM `schoolyear` WHERE isActive=1", MySQLConn);
+                MySqlCommand comm = new MySqlCommand("CALL get_active_schoolyear()", MySQLConn);
                 MySqlDataReader reader;
                 reader = comm.ExecuteReader();
                 while (reader.Read())
@@ -152,6 +152,21 @@ namespace JPCS_Registration
 
         private void MemberRenew_Click(object sender, EventArgs e)
         {
+
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+
+            }
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is Renewal)
+                {
+                    f.Dispose();
+                    return;
+                }
+            }
             Renewal ren = new Renewal();
             ren.MdiParent = this;
             ren.Show();
@@ -186,6 +201,34 @@ namespace JPCS_Registration
                 SchoolYearManagement symgmt = new SchoolYearManagement();
                 symgmt.MdiParent = this;
                 symgmt.Show();
+            }
+            else
+            {
+                RadMessageBox.Show(this, "Elevated mode is required to access Member Management. To enter elevated mode, close the Main Window and enter your correct account credentials. ", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void radMenuManageAccount_Click(object sender, EventArgs e)
+        {
+            if (globalconfig.isAuthenticated)
+            {
+                foreach (Form frm in this.MdiChildren)
+                {
+                    frm.Close();
+
+                }
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f is AddAccount)
+                    {
+                        f.Dispose();
+                        return;
+                    }
+                }
+
+                AddAccount acctmgmt = new AddAccount();
+                acctmgmt.MdiParent = this;
+                acctmgmt.Show();
             }
             else
             {

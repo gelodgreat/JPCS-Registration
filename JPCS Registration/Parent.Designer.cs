@@ -36,8 +36,9 @@
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
-            this.lbl_User = new Telerik.WinControls.UI.RadLabel();
             this.radMenuSchoolYear = new Telerik.WinControls.UI.RadMenuItem();
+            this.lbl_User = new Telerik.WinControls.UI.RadLabel();
+            this.radMenuManageAccount = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -88,9 +89,16 @@
             // 
             this.radMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radMenuItem2.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuManageAccount,
             this.radMenuSchoolYear});
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "Tools";
+            // 
+            // radMenuSchoolYear
+            // 
+            this.radMenuSchoolYear.Name = "radMenuSchoolYear";
+            this.radMenuSchoolYear.Text = "Manage School Year";
+            this.radMenuSchoolYear.Click += new System.EventHandler(this.radMenuSchoolYear_Click);
             // 
             // lbl_User
             // 
@@ -102,11 +110,11 @@
             this.lbl_User.TabIndex = 2;
             this.lbl_User.Text = "lbl_user";
             // 
-            // radMenuSchoolYear
+            // radMenuManageAccount
             // 
-            this.radMenuSchoolYear.Name = "radMenuSchoolYear";
-            this.radMenuSchoolYear.Text = "Manage School Year";
-            this.radMenuSchoolYear.Click += new System.EventHandler(this.radMenuSchoolYear_Click);
+            this.radMenuManageAccount.Name = "radMenuManageAccount";
+            this.radMenuManageAccount.Text = "Manage Accounts";
+            this.radMenuManageAccount.Click += new System.EventHandler(this.radMenuManageAccount_Click);
             // 
             // Parent
             // 
@@ -148,5 +156,6 @@
         private Telerik.WinControls.UI.RadMenuItem MemberRenew;
         private Telerik.WinControls.UI.RadLabel lbl_User;
         private Telerik.WinControls.UI.RadMenuItem radMenuSchoolYear;
+        private Telerik.WinControls.UI.RadMenuItem radMenuManageAccount;
     }
 }

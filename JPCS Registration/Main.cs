@@ -28,6 +28,7 @@ namespace JPCS_Registration
         public Main()
         {
             InitializeComponent();
+            AcceptButton = reg_btn_save;
         }
         private void Main_Load(object sender, EventArgs e)
         {

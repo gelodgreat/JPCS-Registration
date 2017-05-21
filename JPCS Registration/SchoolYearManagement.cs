@@ -19,9 +19,11 @@ namespace JPCS_Registration
 
         private void SchoolYearManagement_Load(object sender, EventArgs e)
         {
-            get_schoolyear();
+            get_schoolyear_list();
+            lvSchoolYear.SelectedIndex = 0;
+            lblActiveSchoolYear.Text = globalconfig.schoolyearactive;
         }
-        public void get_schoolyear()
+        public void get_schoolyear_list()
         {
             MySqlConnection MySQLConn = new MySqlConnection();
             MySQLConn.ConnectionString = globalconfig.connstring;
@@ -40,6 +42,123 @@ namespace JPCS_Registration
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "JPCS Registration");
+            }
+            finally
+            {
+                MySQLConn.Dispose();
+            }
+        }
+
+        private void btnActivate_Click(object sender, EventArgs e)
+        {
+            MySqlConnection MySQLConn = new MySqlConnection();
+            MySQLConn.ConnectionString = globalconfig.connstring;
+            try
+            {
+
+                MySQLConn.Open();
+                MySqlCommand comm = new MySqlCommand("CALL ChangeSchoolYear(@schoolyear)", MySQLConn);
+                comm.Parameters.AddWithValue("schoolyear", lvSchoolYear.SelectedItem.ToString());
+                comm.ExecuteNonQuery();
+                RadMessageBox.Show(this, "The School Year has been successfully Changed!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                MySQLConn.Close();
+                get_schoolyear();
+                lblActiveSchoolYear.Text = globalconfig.schoolyearactive;
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+            finally
+            {
+                MySQLConn.Dispose();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(lvSchoolYear.Text);
+            DialogResult ConfirmDelete = RadMessageBox.Show(this, "Are you sure you want to delete the selected School Year? Deleting a School Year Deletes all members registered for the Scpecific School Year. This action cannot be undone.", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+            if (ConfirmDelete == DialogResult.Yes)
+            {
+                MySqlConnection MySQLConn = new MySqlConnection();
+                MySQLConn.ConnectionString = globalconfig.connstring;
+                try
+                {
+
+                    MySQLConn.Open();
+                    MySqlCommand comm = new MySqlCommand("CALL Delete_schoolyear(@schoolyear)", MySQLConn);
+                    comm.Parameters.AddWithValue("schoolyear", lvSchoolYear.Text);
+                    comm.ExecuteNonQuery();
+                    RadMessageBox.Show(this, "The School Year has been successfully Deleted!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    MySQLConn.Close();
+                    lblActiveSchoolYear.Text = globalconfig.schoolyearactive;
+                }
+                catch (Exception ex)
+                {
+                    RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                }
+                finally
+                {
+                    MySQLConn.Dispose();
+                    get_schoolyear_list();
+                }
+
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (mtbSchoolYear.MaskCompleted)
+            {
+                MySqlConnection MySQLConn = new MySqlConnection();
+                MySQLConn.ConnectionString = globalconfig.connstring;
+                try
+                {
+
+                    MySQLConn.Open();
+                    MySqlCommand comm = new MySqlCommand("CALL AddSchoolYear(@schoolyear)", MySQLConn);
+                    comm.Parameters.AddWithValue("schoolyear", mtbSchoolYear.Text);
+                    comm.ExecuteNonQuery();
+                    RadMessageBox.Show(this, "The School Year has been successfully Changed!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    MySQLConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                }
+                finally
+                {
+                    MySQLConn.Dispose();
+                }
+                get_schoolyear_list();
+            }else
+            {
+                RadMessageBox.Show(this, "Please tye a School Year in a correct Format (YYYY-YYYY)", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+            
+
+        }
+        public void get_schoolyear()
+        {
+            MySqlConnection MySQLConn = new MySqlConnection();
+            MySQLConn.ConnectionString = globalconfig.connstring;
+            try
+            {
+                MySQLConn.Open();
+                MySqlCommand comm = new MySqlCommand("CALL get_active_schoolyear()", MySQLConn);
+                MySqlDataReader reader;
+                reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    globalconfig.schoolyearactive = reader.GetString("schoolyear");
+                }
+                MySQLConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(this, ex.Message);
             }
             finally
             {

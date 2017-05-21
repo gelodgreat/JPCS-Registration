@@ -56,7 +56,7 @@ namespace JPCS_Registration
             try
             {
                 conn.Open();
-                query = "SELECT studno as 'Student #', fname as 'First Name', lname as 'Last Name', gender as 'Gender', isofficer as 'Officer?', address as 'Address' FROM auth_accounts";
+                query = "CALL GET_Accounts();";
                 command = new MySqlCommand(query, conn);
                 sda.SelectCommand = command;
                 sda.Fill(dbdataset);
@@ -134,7 +134,7 @@ namespace JPCS_Registration
                             {
                                 conn.Open();
 
-                                query = "INSERT INTO auth_accounts VALUES (@studno,@fname,@lname,@gender,@isofficer,@address,@username,sha2(@password, 512),@securityquestion,@securityanswer)";
+                                query = "CALL AddAccount(@studno, @fname, @lname, @gender, @isofficer, @address, @username, @password, @securityquestion, @securityanswer";
                                 command = new MySqlCommand(query, conn);
                                 command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
                                 command.Parameters.AddWithValue("fname", aa_tb_fname.Text);
