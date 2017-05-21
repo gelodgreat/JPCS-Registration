@@ -60,7 +60,7 @@
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
-            this.reg_tb_studno = new System.Windows.Forms.MaskedTextBox();
+            this.aa_tb_studo = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             ((System.ComponentModel.ISupportInitialize)(this.reg_cb_coursesect)).BeginInit();
@@ -369,18 +369,18 @@
             this.radLabel14.Text = "Emergency Contact number:";
             this.radLabel14.ThemeName = "VisualStudio2012Dark";
             // 
-            // reg_tb_studno
+            // aa_tb_studo
             // 
-            this.reg_tb_studno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.reg_tb_studno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reg_tb_studno.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.reg_tb_studno.ForeColor = System.Drawing.Color.White;
-            this.reg_tb_studno.Location = new System.Drawing.Point(227, 7);
-            this.reg_tb_studno.Mask = "00\\-00000";
-            this.reg_tb_studno.Name = "reg_tb_studno";
-            this.reg_tb_studno.PromptChar = 'x';
-            this.reg_tb_studno.Size = new System.Drawing.Size(161, 30);
-            this.reg_tb_studno.TabIndex = 2;
+            this.aa_tb_studo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.aa_tb_studo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aa_tb_studo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.aa_tb_studo.ForeColor = System.Drawing.Color.White;
+            this.aa_tb_studo.Location = new System.Drawing.Point(227, 7);
+            this.aa_tb_studo.Mask = "00\\-00000";
+            this.aa_tb_studo.Name = "aa_tb_studo";
+            this.aa_tb_studo.PromptChar = 'x';
+            this.aa_tb_studo.Size = new System.Drawing.Size(161, 30);
+            this.aa_tb_studo.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -405,7 +405,7 @@
             this.ClientSize = new System.Drawing.Size(687, 637);
             this.Controls.Add(this.reg_tb_bday);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.reg_tb_studno);
+            this.Controls.Add(this.aa_tb_studo);
             this.Controls.Add(this.reg_btn_save);
             this.Controls.Add(this.reg_tb_emergencycontactname);
             this.Controls.Add(this.reg_tb_email);
@@ -505,7 +505,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel12;
         private Telerik.WinControls.UI.RadLabel radLabel13;
         private Telerik.WinControls.UI.RadLabel radLabel14;
-        private System.Windows.Forms.MaskedTextBox reg_tb_studno;
+        private System.Windows.Forms.MaskedTextBox aa_tb_studo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Telerik.WinControls.RadThemeManager radThemeManager1;
     }

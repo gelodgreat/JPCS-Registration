@@ -134,7 +134,7 @@ namespace JPCS_Registration
                             {
                                 conn.Open();
 
-                                query = "CALL AddAccount(@studno, @fname, @lname, @gender, @isofficer, @address, @username, @password, @securityquestion, @securityanswer";
+                                query = "CALL Add_Account(@studno, @fname, @lname, @gender, @isofficer, @address, @username, @password, @securityquestion, @securityanswer)";
                                 command = new MySqlCommand(query, conn);
                                 command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
                                 command.Parameters.AddWithValue("fname", aa_tb_fname.Text);
@@ -181,7 +181,7 @@ namespace JPCS_Registration
                 if (studnotimeer == 20)
                 {
                     conn.Open();
-                    query = "SELECT * FROM auth_accounts WHERE studno=@studno";
+                    query = "CALL Get_used_studno(@studno);";
                     command = new MySqlCommand(query, conn);
                     command.Parameters.AddWithValue("studno", aa_tb_studno.Text);
                     reader = command.ExecuteReader();
@@ -194,7 +194,7 @@ namespace JPCS_Registration
 
                     if (count >= 1)
                     {
-                        RadMessageBox.Show(this, "Student # " + aa_tb_studno.Text + " is already in used!", "JPCS Registration", MessageBoxButtons.OK,
+                        RadMessageBox.Show(this, "Student # " + aa_tb_studno.Text + " is already used!", "JPCS Registration", MessageBoxButtons.OK,
                             RadMessageIcon.Error);
                         aa_lbl_studnostat.ForeColor = Color.Red;
                         aa_lbl_studnostat.Text = "Not Available";
@@ -238,7 +238,7 @@ namespace JPCS_Registration
                 if (timerusername == 20)
                 {
                     conn.Open();
-                    query = "SELECT * FROM auth_accounts WHERE username=@username";
+                    query = "CALL Get_used_uname(@username)";
                     command = new MySqlCommand(query, conn);
                     command.Parameters.AddWithValue("username", aa_tb_username.Text);
                     reader = command.ExecuteReader();
@@ -312,9 +312,9 @@ namespace JPCS_Registration
             aa_timer_username.Start();
         }
 
-        private void aa_tb_studno_TextChanged(object sender, EventArgs e)
+        private void aa_tb_studno_KeyDown(object sender, KeyEventArgs e)
         {
-                aa_timer_studno.Start();
+            aa_timer_studno.Start();
         }
 
         private void rgv_registeredaccounts_CellDoubleClick(object sender, GridViewCellEventArgs e)

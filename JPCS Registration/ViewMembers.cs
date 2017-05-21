@@ -15,7 +15,8 @@ namespace JPCS_Registration
     {
         public globalconfig gc = new globalconfig();
         String connstring = globalconfig.connstring;
-        public DataTable dbdataset = new DataTable();
+        public DataTable dbdataset_current = new DataTable();
+        public DataTable dbdataset_all = new DataTable();
 
         MySqlConnection MySQLConn = new MySqlConnection();
         public ViewMembers()
@@ -25,6 +26,7 @@ namespace JPCS_Registration
 
         private void ViewMembers_Load(object sender, EventArgs e)
         {
+            load_all_members();
             load_memberlist();
             lbl_schoolyear.Text = globalconfig.schoolyearactive;
         }
@@ -40,15 +42,16 @@ namespace JPCS_Registration
             MySQLConn.ConnectionString = connstring;
             try
             {
+                dbdataset_current.Clear();
                 MySQLConn.Open();
                 MySqlCommand comm = gc.command;
                 comm = new MySqlCommand("CALL show_current_members(@schoolyear);", MySQLConn);
                 comm.Parameters.AddWithValue("schoolyear", globalconfig.schoolyearactive);
 				//comm = new MySqlCommand("SELECT * FROM memberlist WHERE studno IN (SELECT * FROM test);", MySQLConn);
                 adapter.SelectCommand = comm;
-                adapter.Fill(dbdataset);
-                radGridMembers.DataSource = dbdataset;
-                adapter.Update(dbdataset);
+                adapter.Fill(dbdataset_current);
+                radGridMembers.DataSource = dbdataset_current;
+                adapter.Update(dbdataset_current);
                 MySQLConn.Close();
             }
             catch (Exception ex)
@@ -63,7 +66,6 @@ namespace JPCS_Registration
         public void load_all_members()
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            DataTable dbdataset = new DataTable();
             if (MySQLConn.State == ConnectionState.Open)
             {
                 MySQLConn.Close();
@@ -72,14 +74,15 @@ namespace JPCS_Registration
             MySQLConn.ConnectionString = connstring;
             try
             {
+                dbdataset_all.Clear();
                 MySQLConn.Open();
                 MySqlCommand comm = gc.command;
                 comm = new MySqlCommand("CALL show_all_members();", MySQLConn);
                 //comm = new MySqlCommand("SELECT * FROM memberlist WHERE studno IN (SELECT * FROM test);", MySQLConn);
                 adapter.SelectCommand = comm;
-                adapter.Fill(dbdataset);
-                radGridMembers.DataSource = dbdataset;
-                adapter.Update(dbdataset);
+                adapter.Fill(dbdataset_all);
+                radGridAllMembers.DataSource = dbdataset_all;
+                adapter.Update(dbdataset_all);
                 MySQLConn.Close();
             }
             catch (Exception ex)
@@ -147,6 +150,39 @@ namespace JPCS_Registration
             {
                 RadMessageBox.Show(this, "No Charaters allowed other than Letters!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
             }
+        }
+
+        private void txtSearch_All_TextChanged(object sender, EventArgs e)
+        {
+            if (this.ValidateChildren())
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = radGridAllMembers.DataSource;
+                bs.Filter = "LastName LIKE '%" + txtSearch_All.Text + "%'";
+                radGridAllMembers.DataSource = bs;
+            }
+        }
+
+        private void txtSearch_All_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtSearch_All.Text == "")
+            {
+                return;
+            }
+            if (!Regex.IsMatch(txtSearch_All.Text, @"^[a-zA-Z]+$"))
+            {
+                RadMessageBox.Show(this, "No Charaters allowed other than Letters!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+            }
+        }
+
+        private void radPageViewPage1_Enter(object sender, EventArgs e)
+        {
+            load_memberlist();
+        }
+
+        private void radPageViewPage2_Enter(object sender, EventArgs e)
+        {
+            load_all_members();
         }
     }
 }
