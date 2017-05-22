@@ -25,6 +25,7 @@ namespace JPCS_Registration
         {
             list_coyesec();
             AcceptButton = btnRegister;
+            lblSchoolYear.Text = "S.Y. " + globalconfig.schoolyearactive;
         }
 
         private void txt_payment_KeyPress(object sender, KeyPressEventArgs e)
