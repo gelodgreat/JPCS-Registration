@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
@@ -42,6 +42,8 @@
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.txtSearch_All = new Telerik.WinControls.UI.RadTextBox();
             this.radGridAllMembers = new Telerik.WinControls.UI.RadGridView();
+            this.btnEdit = new Telerik.WinControls.UI.RadButton();
+            this.btnDelete = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewPage1.SuspendLayout();
@@ -57,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch_All)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,8 +72,8 @@
             this.radPageView1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage1;
-            this.radPageView1.Size = new System.Drawing.Size(969, 482);
+            this.radPageView1.SelectedPage = this.radPageViewPage2;
+            this.radPageView1.Size = new System.Drawing.Size(969, 476);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.Text = "All";
             this.radPageView1.ThemeName = "VisualStudio2012Dark";
@@ -90,7 +94,7 @@
             this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(571F, 37F);
             this.radPageViewPage1.Location = new System.Drawing.Point(5, 43);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(959, 434);
+            this.radPageViewPage1.Size = new System.Drawing.Size(959, 428);
             this.radPageViewPage1.Text = "Current Members List";
             this.radPageViewPage1.Enter += new System.EventHandler(this.radPageViewPage1_Enter);
             // 
@@ -123,10 +127,10 @@
             this.radGridMembers.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.radGridMembers.MasterTemplate.EnableAlternatingRowColor = true;
             this.radGridMembers.MasterTemplate.ShowRowHeaderColumn = false;
-            this.radGridMembers.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.radGridMembers.MasterTemplate.ViewDefinition = tableViewDefinition7;
             this.radGridMembers.Name = "radGridMembers";
             this.radGridMembers.ReadOnly = true;
-            this.radGridMembers.Size = new System.Drawing.Size(959, 274);
+            this.radGridMembers.Size = new System.Drawing.Size(970, 281);
             this.radGridMembers.TabIndex = 9;
             this.radGridMembers.Text = "radGridView1";
             this.radGridMembers.ThemeName = "VisualStudio2012Dark";
@@ -176,20 +180,22 @@
             // 
             // radPageViewPage2
             // 
+            this.radPageViewPage2.Controls.Add(this.btnDelete);
+            this.radPageViewPage2.Controls.Add(this.btnEdit);
             this.radPageViewPage2.Controls.Add(this.radLabel4);
             this.radPageViewPage2.Controls.Add(this.txtSearch_All);
             this.radPageViewPage2.Controls.Add(this.radGridAllMembers);
             this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(398F, 37F);
             this.radPageViewPage2.Location = new System.Drawing.Point(5, 43);
             this.radPageViewPage2.Name = "radPageViewPage2";
-            this.radPageViewPage2.Size = new System.Drawing.Size(959, 434);
+            this.radPageViewPage2.Size = new System.Drawing.Size(959, 428);
             this.radPageViewPage2.Text = "All";
             this.radPageViewPage2.Enter += new System.EventHandler(this.radPageViewPage2_Enter);
             // 
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel4.Location = new System.Drawing.Point(7, 43);
+            this.radLabel4.Location = new System.Drawing.Point(7, 20);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(74, 31);
             this.radLabel4.TabIndex = 12;
@@ -199,7 +205,7 @@
             // txtSearch_All
             // 
             this.txtSearch_All.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtSearch_All.Location = new System.Drawing.Point(97, 43);
+            this.txtSearch_All.Location = new System.Drawing.Point(97, 20);
             this.txtSearch_All.Name = "txtSearch_All";
             this.txtSearch_All.Size = new System.Drawing.Size(220, 33);
             this.txtSearch_All.TabIndex = 11;
@@ -226,19 +232,42 @@
             this.radGridAllMembers.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.radGridAllMembers.MasterTemplate.EnableAlternatingRowColor = true;
             this.radGridAllMembers.MasterTemplate.ShowRowHeaderColumn = false;
-            this.radGridAllMembers.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.radGridAllMembers.MasterTemplate.ViewDefinition = tableViewDefinition8;
             this.radGridAllMembers.Name = "radGridAllMembers";
             this.radGridAllMembers.ReadOnly = true;
-            this.radGridAllMembers.Size = new System.Drawing.Size(959, 305);
+            this.radGridAllMembers.Size = new System.Drawing.Size(959, 310);
             this.radGridAllMembers.TabIndex = 10;
             this.radGridAllMembers.Text = "radGridView1";
             this.radGridAllMembers.ThemeName = "VisualStudio2012Dark";
+            this.radGridAllMembers.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridAllMembers_CellClick);
+            this.radGridAllMembers.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridAllMembers_CellDoubleClick);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnEdit.Location = new System.Drawing.Point(8, 76);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(137, 30);
+            this.btnEdit.TabIndex = 13;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.ThemeName = "VisualStudio2012Dark";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(165, 76);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(137, 30);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.ThemeName = "VisualStudio2012Dark";
             // 
             // ViewMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 482);
+            this.ClientSize = new System.Drawing.Size(969, 476);
             this.Controls.Add(this.radPageView1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Name = "ViewMembers";
@@ -268,6 +297,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch_All)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -287,5 +318,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadTextBox txtSearch_All;
+        private Telerik.WinControls.UI.RadButton btnDelete;
+        private Telerik.WinControls.UI.RadButton btnEdit;
     }
 }

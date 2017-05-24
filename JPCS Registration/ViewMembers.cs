@@ -19,6 +19,7 @@ namespace JPCS_Registration
         public DataTable dbdataset_all = new DataTable();
 
         MySqlConnection MySQLConn = new MySqlConnection();
+        public String selected;
         public ViewMembers()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace JPCS_Registration
         }
         public void load_memberlist()
         {
+            selected = "";
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             
             if (MySQLConn.State == ConnectionState.Open)
@@ -65,6 +67,7 @@ namespace JPCS_Registration
         }
         public void load_all_members()
         {
+            selected = "";
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             if (MySQLConn.State == ConnectionState.Open)
             {
@@ -84,6 +87,7 @@ namespace JPCS_Registration
                 radGridAllMembers.DataSource = dbdataset_all;
                 adapter.Update(dbdataset_all);
                 MySQLConn.Close();
+                radGridAllMembers.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -184,5 +188,52 @@ namespace JPCS_Registration
         {
             load_all_members();
         }
+
+        private void radGridAllMembers_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            //String studno;
+            //if (e.RowIndex>0)
+            //{
+            //    Telerik.WinControls.UI.GridViewRowInfo row = this.radGridAllMembers.Rows[e.RowIndex];
+
+            //    row = this.radGridAllMembers.Rows[e.RowIndex];
+            //    studno = row.Cells["Student Number"].Value.ToString();
+
+
+
+            }
+
+        private void radGridAllMembers_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            globalconfig.selection = "";
+            if (e.RowIndex >= 0)
+            {
+                Telerik.WinControls.UI.GridViewRowInfo row = this.radGridAllMembers.Rows[e.RowIndex];
+
+
+                row = this.radGridAllMembers.Rows[e.RowIndex];
+                selected = row.Cells["Student Number"].Value.ToString();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (selected != "")
+            {
+                globalconfig.selection = selected;
+                Main edit = new Main();
+                edit.MdiParent = this.MdiParent;
+                globalconfig.Mainaction = "edit";
+                edit.WindowState = FormWindowState.Normal;
+                edit.StartPosition = FormStartPosition.CenterParent;
+                edit.Show();
+                edit.WindowState = FormWindowState.Normal;
+                this.Dispose();
+            }
+            else
+            {
+                RadMessageBox.Show(this, "Please select a student first!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
     }
-}
+ }

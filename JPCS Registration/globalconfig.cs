@@ -54,6 +54,22 @@ namespace JPCS_Registration
             get { return uname; }
             set { uname = value; }
         }
+        private static string actiontext;
+        public static string Mainaction
+        {
+            get { return actiontext; }
+            set { actiontext = value; }
+        }
+
+
+        //This is the variable that will be used on Editing or deleting a Student.
+        private static string selectedstudent;
+        public static string selection
+        {
+            get { return selectedstudent; }
+            set { selectedstudent = value; }
+        }
+        //End
         public static void Logger(String msg)
         {
             if (ConsoleIsShown)

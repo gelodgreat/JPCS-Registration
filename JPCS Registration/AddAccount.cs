@@ -336,10 +336,10 @@ namespace JPCS_Registration
                     {
                         conn.Open();
 
-                        query = "DELETE FROM auth_accounts WHERE studno=@studno";
+                        query = "CALL Delete_account(@studno)";
                         command = new MySqlCommand(query, conn);
                         command.Parameters.AddWithValue("studno", storestudno);
-                        reader = command.ExecuteReader();
+                        command.ExecuteNonQuery();
 
                         RadMessageBox.Show(this, "Successfully Deleted!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                         conn.Close();
