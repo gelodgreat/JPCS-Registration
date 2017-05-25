@@ -70,6 +70,13 @@ namespace JPCS_Registration
             set { selectedstudent = value; }
         }
         //End
+
+        private static double money;
+        public static double totalMoney
+        {
+            get { return money; }
+            set { money = value; }
+        }
         public static void Logger(String msg)
         {
             if (ConsoleIsShown)

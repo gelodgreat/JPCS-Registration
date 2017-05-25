@@ -69,9 +69,14 @@ namespace JPCS_Registration
             {
                 try
                 {
-                    if ((string.IsNullOrEmpty(aa_tb_studo.Text)) | ((string.IsNullOrEmpty(reg_tb_lname.Text)) | ((string.IsNullOrEmpty(reg_tb_fname.Text)) | ((string.IsNullOrEmpty(reg_tb_mname.Text)) | (string.IsNullOrEmpty(reg_cb_coursesect.Text)) | ((string.IsNullOrEmpty(reg_tb_cityaddress.Text)) | ((string.IsNullOrEmpty(reg_tb_contactnum.Text)) | ((string.IsNullOrEmpty(reg_tb_emergencycontactname.Text)) | ((string.IsNullOrEmpty(reg_tb_emergenctcontactnumber.Text)) | (!aa_tb_studo.MaskCompleted) | (reg_tb_bday.Text.Length == 0)))))))))
+                    if (!aa_tb_studo.MaskCompleted)
                     {
-                        RadMessageBox.Show(this, "Please fill-up all fileds Properly!" + System.Environment.NewLine + "" + System.Environment.NewLine + "Check if you have entered the correct format for the Student Number.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        RadMessageBox.Show(this, "Please enter the correct format for the Student Number!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                        return;
+                    }
+                    if ((string.IsNullOrEmpty(reg_tb_lname.Text)) | ((string.IsNullOrEmpty(reg_tb_fname.Text)) | ((string.IsNullOrEmpty(reg_tb_mname.Text)) | (string.IsNullOrEmpty(reg_cb_coursesect.Text)) | ((string.IsNullOrEmpty(reg_tb_cityaddress.Text)) | ((string.IsNullOrEmpty(reg_tb_contactnum.Text)) | ((string.IsNullOrEmpty(reg_tb_emergencycontactname.Text)) | ((string.IsNullOrEmpty(reg_tb_emergenctcontactnumber.Text)) | (!aa_tb_studo.MaskCompleted) | (reg_tb_bday.Text.Length == 0))))))))
+                    {
+                        RadMessageBox.Show(this, "Please fill-up all fileds Properly!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
 
                     }
                     else
@@ -79,7 +84,7 @@ namespace JPCS_Registration
 
                         conn.Open();
                         //query = "INSERT INTO memberlist VALUES (@studno, @lname, @fname, @mname, @section, @emailaddress, @birthday, @nationality, @cityaddress, @provinceaddress, @contactnumber, @emergencycontactname, @emergencycontactnumber);";
-                        query = "CALL addmember(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, 13);";
+                        query = "CALL addmember(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13);";
                         command = new MySqlCommand(query, conn);
                         command.Parameters.AddWithValue("1", aa_tb_studo.Text);
                         command.Parameters.AddWithValue("2", reg_tb_lname.Text);
@@ -133,9 +138,41 @@ namespace JPCS_Registration
                 }
             }else if (globalconfig.Mainaction=="edit")
             {
-                conn.Open();
-                MySqlCommand comm = new MySqlCommand("query", conn);
-                comm.Parameters.AddWithValue("studno", );
+                try
+                {
+                    conn.Open();
+                    MySqlCommand comm = new MySqlCommand("CALL Editmember(@studno, @lname, @fname, @mname, @coyesec, @email, @birthday, @nationality, @cityaddress, @provaddress, @contactnum, @emergencycontactname, @emergencycontactnum);", conn);
+                    comm.Parameters.AddWithValue("studno", globalconfig.selection);
+                    comm.Parameters.AddWithValue("lname", reg_tb_lname.Text);
+                    comm.Parameters.AddWithValue("fname", reg_tb_fname.Text);
+                    comm.Parameters.AddWithValue("mname", reg_tb_mname.Text);
+                    comm.Parameters.AddWithValue("coyesec", reg_cb_coursesect.Text);
+                    comm.Parameters.AddWithValue("email", reg_tb_email.Text);
+                    comm.Parameters.AddWithValue("birthday", reg_tb_bday.Text);
+                    comm.Parameters.AddWithValue("nationality", reg_tb_nationality.Text);
+                    comm.Parameters.AddWithValue("cityaddress", reg_tb_cityaddress.Text);
+                    comm.Parameters.AddWithValue("provaddress", reg_tb_provaddress.Text);
+                    comm.Parameters.AddWithValue("contactnum", reg_tb_contactnum.Text);
+                    comm.Parameters.AddWithValue("emergencycontactname", reg_tb_emergencycontactname.Text);
+                    comm.Parameters.AddWithValue("emergencycontactnum", reg_tb_emergenctcontactnumber.Text);
+                    comm.ExecuteNonQuery();
+                    conn.Close();
+
+
+                    RadMessageBox.Show(this, "Saved!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+
+                }catch (Exception ex)
+                {
+                    RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                }finally
+                {
+                    conn.Dispose();
+                }
+
+
+            }else
+            {
+                RadMessageBox.Show(this, "The System has encountered a fatal error! Please report to the Develpoers immediately.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
             }
             
 

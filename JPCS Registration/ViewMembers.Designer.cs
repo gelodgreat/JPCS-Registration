@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
@@ -39,11 +39,15 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.btnDelete = new Telerik.WinControls.UI.RadButton();
+            this.btnEdit = new Telerik.WinControls.UI.RadButton();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.txtSearch_All = new Telerik.WinControls.UI.RadTextBox();
             this.radGridAllMembers = new Telerik.WinControls.UI.RadGridView();
-            this.btnEdit = new Telerik.WinControls.UI.RadButton();
-            this.btnDelete = new Telerik.WinControls.UI.RadButton();
+            this.btnCopyRows = new Telerik.WinControls.UI.RadButton();
+            this.btnStatCurrent = new Telerik.WinControls.UI.RadButton();
+            this.btnViewRecords = new Telerik.WinControls.UI.RadButton();
+            this.btnExcel = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewPage1.SuspendLayout();
@@ -55,12 +59,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             this.radPageViewPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch_All)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCopyRows)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStatCurrent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewRecords)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,8 +80,8 @@
             this.radPageView1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage2;
-            this.radPageView1.Size = new System.Drawing.Size(969, 476);
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
+            this.radPageView1.Size = new System.Drawing.Size(969, 464);
             this.radPageView1.TabIndex = 0;
             this.radPageView1.Text = "All";
             this.radPageView1.ThemeName = "VisualStudio2012Dark";
@@ -85,6 +93,8 @@
             // 
             // radPageViewPage1
             // 
+            this.radPageViewPage1.Controls.Add(this.btnStatCurrent);
+            this.radPageViewPage1.Controls.Add(this.btnCopyRows);
             this.radPageViewPage1.Controls.Add(this.radLabel3);
             this.radPageViewPage1.Controls.Add(this.radGridMembers);
             this.radPageViewPage1.Controls.Add(this.txtSearch);
@@ -94,7 +104,7 @@
             this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(571F, 37F);
             this.radPageViewPage1.Location = new System.Drawing.Point(5, 43);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(959, 428);
+            this.radPageViewPage1.Size = new System.Drawing.Size(959, 416);
             this.radPageViewPage1.Text = "Current Members List";
             this.radPageViewPage1.Enter += new System.EventHandler(this.radPageViewPage1_Enter);
             // 
@@ -125,12 +135,13 @@
             this.radGridMembers.MasterTemplate.AllowDragToGroup = false;
             this.radGridMembers.MasterTemplate.AllowEditRow = false;
             this.radGridMembers.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.radGridMembers.MasterTemplate.ClipboardCopyMode = Telerik.WinControls.UI.GridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.radGridMembers.MasterTemplate.EnableAlternatingRowColor = true;
             this.radGridMembers.MasterTemplate.ShowRowHeaderColumn = false;
-            this.radGridMembers.MasterTemplate.ViewDefinition = tableViewDefinition7;
+            this.radGridMembers.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.radGridMembers.Name = "radGridMembers";
             this.radGridMembers.ReadOnly = true;
-            this.radGridMembers.Size = new System.Drawing.Size(970, 281);
+            this.radGridMembers.Size = new System.Drawing.Size(970, 269);
             this.radGridMembers.TabIndex = 9;
             this.radGridMembers.Text = "radGridView1";
             this.radGridMembers.ThemeName = "VisualStudio2012Dark";
@@ -180,6 +191,8 @@
             // 
             // radPageViewPage2
             // 
+            this.radPageViewPage2.Controls.Add(this.btnExcel);
+            this.radPageViewPage2.Controls.Add(this.btnViewRecords);
             this.radPageViewPage2.Controls.Add(this.btnDelete);
             this.radPageViewPage2.Controls.Add(this.btnEdit);
             this.radPageViewPage2.Controls.Add(this.radLabel4);
@@ -188,9 +201,31 @@
             this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(398F, 37F);
             this.radPageViewPage2.Location = new System.Drawing.Point(5, 43);
             this.radPageViewPage2.Name = "radPageViewPage2";
-            this.radPageViewPage2.Size = new System.Drawing.Size(959, 428);
+            this.radPageViewPage2.Size = new System.Drawing.Size(959, 416);
             this.radPageViewPage2.Text = "All";
             this.radPageViewPage2.Enter += new System.EventHandler(this.radPageViewPage2_Enter);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(316, 76);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(137, 30);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.ThemeName = "VisualStudio2012Dark";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnEdit.Location = new System.Drawing.Point(8, 76);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(137, 30);
+            this.btnEdit.TabIndex = 13;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.ThemeName = "VisualStudio2012Dark";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // radLabel4
             // 
@@ -230,44 +265,70 @@
             this.radGridAllMembers.MasterTemplate.AllowDragToGroup = false;
             this.radGridAllMembers.MasterTemplate.AllowEditRow = false;
             this.radGridAllMembers.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.radGridAllMembers.MasterTemplate.ClipboardCopyMode = Telerik.WinControls.UI.GridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.radGridAllMembers.MasterTemplate.EnableAlternatingRowColor = true;
             this.radGridAllMembers.MasterTemplate.ShowRowHeaderColumn = false;
-            this.radGridAllMembers.MasterTemplate.ViewDefinition = tableViewDefinition8;
+            this.radGridAllMembers.MasterTemplate.ViewDefinition = tableViewDefinition4;
             this.radGridAllMembers.Name = "radGridAllMembers";
             this.radGridAllMembers.ReadOnly = true;
-            this.radGridAllMembers.Size = new System.Drawing.Size(959, 310);
+            this.radGridAllMembers.Size = new System.Drawing.Size(959, 298);
             this.radGridAllMembers.TabIndex = 10;
             this.radGridAllMembers.Text = "radGridView1";
             this.radGridAllMembers.ThemeName = "VisualStudio2012Dark";
             this.radGridAllMembers.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridAllMembers_CellClick);
             this.radGridAllMembers.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridAllMembers_CellDoubleClick);
+            this.radGridAllMembers.Click += new System.EventHandler(this.radGridAllMembers_Click);
             // 
-            // btnEdit
+            // btnCopyRows
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnEdit.Location = new System.Drawing.Point(8, 76);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(137, 30);
-            this.btnEdit.TabIndex = 13;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.ThemeName = "VisualStudio2012Dark";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnCopyRows.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnCopyRows.Location = new System.Drawing.Point(362, 122);
+            this.btnCopyRows.Name = "btnCopyRows";
+            this.btnCopyRows.Size = new System.Drawing.Size(178, 30);
+            this.btnCopyRows.TabIndex = 1;
+            this.btnCopyRows.Text = "Open Excel File";
+            this.btnCopyRows.ThemeName = "VisualStudio2012Dark";
+            this.btnCopyRows.Click += new System.EventHandler(this.btnCopyRows_Click);
             // 
-            // btnDelete
+            // btnStatCurrent
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnDelete.Location = new System.Drawing.Point(165, 76);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(137, 30);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.ThemeName = "VisualStudio2012Dark";
+            this.btnStatCurrent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStatCurrent.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnStatCurrent.Location = new System.Drawing.Point(806, 23);
+            this.btnStatCurrent.Name = "btnStatCurrent";
+            this.btnStatCurrent.Size = new System.Drawing.Size(137, 30);
+            this.btnStatCurrent.TabIndex = 11;
+            this.btnStatCurrent.Text = "Statistics";
+            this.btnStatCurrent.ThemeName = "VisualStudio2012Dark";
+            this.btnStatCurrent.Click += new System.EventHandler(this.btnStatCurrent_Click);
+            // 
+            // btnViewRecords
+            // 
+            this.btnViewRecords.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnViewRecords.Location = new System.Drawing.Point(162, 76);
+            this.btnViewRecords.Name = "btnViewRecords";
+            this.btnViewRecords.Size = new System.Drawing.Size(137, 30);
+            this.btnViewRecords.TabIndex = 15;
+            this.btnViewRecords.Text = "View Records";
+            this.btnViewRecords.ThemeName = "VisualStudio2012Dark";
+            this.btnViewRecords.Click += new System.EventHandler(this.btnViewRecords_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnExcel.Location = new System.Drawing.Point(541, 76);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(178, 30);
+            this.btnExcel.TabIndex = 16;
+            this.btnExcel.Text = "Open Excel File";
+            this.btnExcel.ThemeName = "VisualStudio2012Dark";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // ViewMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 476);
+            this.ClientSize = new System.Drawing.Size(969, 464);
             this.Controls.Add(this.radPageView1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Name = "ViewMembers";
@@ -293,12 +354,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             this.radPageViewPage2.ResumeLayout(false);
             this.radPageViewPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch_All)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCopyRows)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStatCurrent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewRecords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -320,5 +385,9 @@
         private Telerik.WinControls.UI.RadTextBox txtSearch_All;
         private Telerik.WinControls.UI.RadButton btnDelete;
         private Telerik.WinControls.UI.RadButton btnEdit;
+        private Telerik.WinControls.UI.RadButton btnCopyRows;
+        private Telerik.WinControls.UI.RadButton btnStatCurrent;
+        private Telerik.WinControls.UI.RadButton btnViewRecords;
+        private Telerik.WinControls.UI.RadButton btnExcel;
     }
 }
