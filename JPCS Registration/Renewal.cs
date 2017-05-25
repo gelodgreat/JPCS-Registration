@@ -75,6 +75,9 @@ namespace JPCS_Registration
                 comm.ExecuteNonQuery();
                 MySQLConn.Close();
                 RadMessageBox.Show(this, "Successfully Registered!. You may now proceed to Advising section.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                mtbStudNum.Clear();
+                mtbOrNum.Clear();
+                txt_payment.Clear();
             }
             catch (Exception ex)
             {

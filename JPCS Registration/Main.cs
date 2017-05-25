@@ -160,7 +160,7 @@ namespace JPCS_Registration
 
 
                     RadMessageBox.Show(this, "Saved!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
-
+                    this.Dispose();
                 }catch (Exception ex)
                 {
                     RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
