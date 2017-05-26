@@ -77,6 +77,12 @@ namespace JPCS_Registration
             get { return money; }
             set { money = value; }
         }
+        private static int studentcount;
+        public static int currentTotal
+        {
+            get { return studentcount; }
+            set { studentcount = value; }
+        }
         public static void Logger(String msg)
         {
             if (ConsoleIsShown)

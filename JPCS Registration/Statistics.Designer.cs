@@ -34,11 +34,13 @@
             this.lblTotalCash = new Telerik.WinControls.UI.RadLabel();
             this.radGridStat = new Telerik.WinControls.UI.RadGridView();
             this.lblSchoolYear = new Telerik.WinControls.UI.RadLabel();
+            this.lblTotalRows = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTotalCash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridStat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridStat.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblSchoolYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblTotalRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,11 +102,21 @@
             this.lblSchoolYear.Text = "lblSchoolYear";
             this.lblSchoolYear.ThemeName = "VisualStudio2012Dark";
             // 
+            // lblTotalRows
+            // 
+            this.lblTotalRows.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblTotalRows.Location = new System.Drawing.Point(13, 81);
+            this.lblTotalRows.Name = "lblTotalRows";
+            this.lblTotalRows.Size = new System.Drawing.Size(125, 31);
+            this.lblTotalRows.TabIndex = 12;
+            this.lblTotalRows.Text = "lblTotalRows";
+            // 
             // Statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 488);
+            this.Controls.Add(this.lblTotalRows);
             this.Controls.Add(this.lblSchoolYear);
             this.Controls.Add(this.radGridStat);
             this.Controls.Add(this.lblTotalCash);
@@ -127,6 +139,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridStat.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridStat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblSchoolYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblTotalRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,5 +152,6 @@
         private Telerik.WinControls.UI.RadLabel lblTotalCash;
         private Telerik.WinControls.UI.RadGridView radGridStat;
         private Telerik.WinControls.UI.RadLabel lblSchoolYear;
+        private Telerik.WinControls.UI.RadLabel lblTotalRows;
     }
 }

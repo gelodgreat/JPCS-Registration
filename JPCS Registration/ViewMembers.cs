@@ -332,6 +332,7 @@ namespace JPCS_Registration
             {
                 totalMoney += Convert.ToInt32(radGridMembers.Rows[i].Cells["Payment"].Value);
             }
+            globalconfig.currentTotal = radGridMembers.Rows.Count;
             globalconfig.totalMoney = totalMoney;
             Statistics stat = new Statistics();
             stat.ShowDialog();

@@ -52,7 +52,7 @@
             // set_tb_server
             // 
             this.set_tb_server.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.set_tb_server.Location = new System.Drawing.Point(100, 53);
+            this.set_tb_server.Location = new System.Drawing.Point(100, 29);
             this.set_tb_server.Name = "set_tb_server";
             this.set_tb_server.Size = new System.Drawing.Size(242, 33);
             this.set_tb_server.TabIndex = 0;
@@ -61,7 +61,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel1.Location = new System.Drawing.Point(37, 53);
+            this.radLabel1.Location = new System.Drawing.Point(30, 29);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(70, 31);
             this.radLabel1.TabIndex = 1;
@@ -82,7 +82,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel2.Location = new System.Drawing.Point(52, 88);
+            this.radLabel2.Location = new System.Drawing.Point(43, 77);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(51, 31);
             this.radLabel2.TabIndex = 4;
@@ -92,7 +92,7 @@
             // set_tb_port
             // 
             this.set_tb_port.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.set_tb_port.Location = new System.Drawing.Point(100, 86);
+            this.set_tb_port.Location = new System.Drawing.Point(100, 75);
             this.set_tb_port.Name = "set_tb_port";
             this.set_tb_port.Size = new System.Drawing.Size(242, 33);
             this.set_tb_port.TabIndex = 1;
@@ -103,7 +103,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel3.Location = new System.Drawing.Point(9, 121);
+            this.radLabel3.Location = new System.Drawing.Point(9, 116);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(105, 31);
             this.radLabel3.TabIndex = 6;
@@ -113,7 +113,7 @@
             // set_tb_username
             // 
             this.set_tb_username.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.set_tb_username.Location = new System.Drawing.Point(100, 119);
+            this.set_tb_username.Location = new System.Drawing.Point(117, 114);
             this.set_tb_username.Name = "set_tb_username";
             this.set_tb_username.Size = new System.Drawing.Size(242, 33);
             this.set_tb_username.TabIndex = 2;
@@ -122,7 +122,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel4.Location = new System.Drawing.Point(14, 154);
+            this.radLabel4.Location = new System.Drawing.Point(14, 160);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(99, 31);
             this.radLabel4.TabIndex = 6;
@@ -132,7 +132,7 @@
             // set_tb_password
             // 
             this.set_tb_password.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.set_tb_password.Location = new System.Drawing.Point(100, 152);
+            this.set_tb_password.Location = new System.Drawing.Point(116, 158);
             this.set_tb_password.Name = "set_tb_password";
             this.set_tb_password.Size = new System.Drawing.Size(242, 33);
             this.set_tb_password.TabIndex = 3;
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 266);
+            this.ClientSize = new System.Drawing.Size(418, 266);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.set_tb_password);

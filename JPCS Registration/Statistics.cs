@@ -42,6 +42,7 @@ namespace JPCS_Registration
                 radGridStat.DataSource = dbdataset;
                 adapter.Update(dbdataset);
                 MySQLConn.Close();
+                lblTotalRows.Text = globalconfig.currentTotal.ToString();
             }catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
