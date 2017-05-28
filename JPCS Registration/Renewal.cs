@@ -25,6 +25,7 @@ namespace JPCS_Registration
         {
             list_coyesec();
             AcceptButton = btnRegister;
+            lblSchoolYear.Text = "S.Y. " + globalconfig.schoolyearactive;
         }
 
         private void txt_payment_KeyPress(object sender, KeyPressEventArgs e)
@@ -74,6 +75,9 @@ namespace JPCS_Registration
                 comm.ExecuteNonQuery();
                 MySQLConn.Close();
                 RadMessageBox.Show(this, "Successfully Registered!. You may now proceed to Advising section.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                mtbStudNum.Clear();
+                mtbOrNum.Clear();
+                txt_payment.Clear();
             }
             catch (Exception ex)
             {

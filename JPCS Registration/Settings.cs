@@ -53,10 +53,10 @@ namespace JPCS_Registration
 
 
                     globalconfig.connstring = "server=" + server + ";port=" + port + ";username=" + username + ";password=" + password + ";database=" + database + ";";
-                    RadMessageBox.Show("Succesfully Saved!", "JPCS Registration");
+                    RadMessageBox.Show("Succesfully Saved! Please Restart the Application", "JPCS Registration");
                     this.Dispose();
-                    Login log = new Login();
-                    log.Show();
+                    Application.Restart();
+                    
                 }
             }
         }

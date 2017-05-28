@@ -79,6 +79,7 @@ namespace JPCS_Registration
 
         private void MemberAdd_Click(object sender, EventArgs e)
         {
+            globalconfig.Mainaction = "add";
             foreach (Form frm in this.MdiChildren)
             {
                 frm.Close();
