@@ -36,11 +36,14 @@
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuSchoolYear = new Telerik.WinControls.UI.RadMenuItem();
-            this.lbl_User = new Telerik.WinControls.UI.RadLabel();
             this.radMenuManageAccount = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSchoolYear = new Telerik.WinControls.UI.RadMenuItem();
+            this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
+            this.radLabelMode = new Telerik.WinControls.UI.RadLabelElement();
+            this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.radLabelServer = new Telerik.WinControls.UI.RadLabelElement();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_User)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,27 +97,52 @@
             this.radMenuItem2.Name = "radMenuItem2";
             this.radMenuItem2.Text = "Tools";
             // 
+            // radMenuManageAccount
+            // 
+            this.radMenuManageAccount.Name = "radMenuManageAccount";
+            this.radMenuManageAccount.Text = "Manage Accounts";
+            this.radMenuManageAccount.Click += new System.EventHandler(this.radMenuManageAccount_Click);
+            // 
             // radMenuSchoolYear
             // 
             this.radMenuSchoolYear.Name = "radMenuSchoolYear";
             this.radMenuSchoolYear.Text = "Manage School Year";
             this.radMenuSchoolYear.Click += new System.EventHandler(this.radMenuSchoolYear_Click);
             // 
-            // lbl_User
+            // radStatusStrip1
             // 
-            this.lbl_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_User.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.lbl_User.Location = new System.Drawing.Point(12, 452);
-            this.lbl_User.Name = "lbl_User";
-            this.lbl_User.Size = new System.Drawing.Size(129, 51);
-            this.lbl_User.TabIndex = 2;
-            this.lbl_User.Text = "lbl_user";
+            this.radStatusStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radStatusStrip1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radLabelMode,
+            this.commandBarSeparator1,
+            this.radLabelServer});
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 476);
+            this.radStatusStrip1.Name = "radStatusStrip1";
+            this.radStatusStrip1.Size = new System.Drawing.Size(794, 39);
+            this.radStatusStrip1.TabIndex = 4;
+            this.radStatusStrip1.Text = "radStatusStrip1";
+            this.radStatusStrip1.ThemeName = "VisualStudio2012Dark";
             // 
-            // radMenuManageAccount
+            // radLabelMode
             // 
-            this.radMenuManageAccount.Name = "radMenuManageAccount";
-            this.radMenuManageAccount.Text = "Manage Accounts";
-            this.radMenuManageAccount.Click += new System.EventHandler(this.radMenuManageAccount_Click);
+            this.radLabelMode.Name = "radLabelMode";
+            this.radStatusStrip1.SetSpring(this.radLabelMode, false);
+            this.radLabelMode.Text = "radLabelMode";
+            this.radLabelMode.TextWrap = true;
+            // 
+            // commandBarSeparator1
+            // 
+            this.commandBarSeparator1.Name = "commandBarSeparator1";
+            this.radStatusStrip1.SetSpring(this.commandBarSeparator1, false);
+            this.commandBarSeparator1.Text = "";
+            this.commandBarSeparator1.VisibleInOverflowMenu = false;
+            // 
+            // radLabelServer
+            // 
+            this.radLabelServer.Name = "radLabelServer";
+            this.radStatusStrip1.SetSpring(this.radLabelServer, false);
+            this.radLabelServer.Text = "radLabelServer";
+            this.radLabelServer.TextWrap = true;
             // 
             // Parent
             // 
@@ -123,7 +151,7 @@
             this.BackgroundImage = global::JPCS_Registration.Properties.Resources.jpcs1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(794, 515);
-            this.Controls.Add(this.lbl_User);
+            this.Controls.Add(this.radStatusStrip1);
             this.Controls.Add(this.radMenu1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -139,7 +167,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Parent_FormClosed);
             this.Load += new System.EventHandler(this.Parent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbl_User)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,8 +182,11 @@
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
         private Telerik.WinControls.UI.RadMenuItem MemberRenew;
-        private Telerik.WinControls.UI.RadLabel lbl_User;
         private Telerik.WinControls.UI.RadMenuItem radMenuSchoolYear;
         private Telerik.WinControls.UI.RadMenuItem radMenuManageAccount;
+        private Telerik.WinControls.UI.RadStatusStrip radStatusStrip1;
+        private Telerik.WinControls.UI.RadLabelElement radLabelMode;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator1;
+        private Telerik.WinControls.UI.RadLabelElement radLabelServer;
     }
 }

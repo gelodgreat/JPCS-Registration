@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.set_tb_server = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.set_btn_save = new Telerik.WinControls.UI.RadButton();
@@ -152,6 +153,7 @@
             this.Controls.Add(this.set_btn_save);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.set_tb_server);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Settings";
