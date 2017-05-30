@@ -53,7 +53,7 @@ namespace JPCS_Registration
                     // Set the BackColor of the MdiClient control.
                     ctlMDI.BackColor = this.BackColor;
                 }
-                catch (InvalidCastException exc)
+                catch (InvalidCastException ex)
                 {
                     // Catch and ignore the error if casting failed.
                 }
@@ -73,7 +73,8 @@ namespace JPCS_Registration
                     }
                 }
             }
-            lbl_User.Text = globalconfig.fullname;
+            radLabelMode.Text = globalconfig.fullname;
+            radLabelServer.Text = "Server: "+Properties.Settings.Default.db_server;
 
         }
 

@@ -20,6 +20,7 @@ namespace JPCS_Registration
 
         MySqlConnection MySQLConn = new MySqlConnection();
         public String selected;
+        public string CurrentMemberRowSelection;
         public ViewMembers()
         {
             InitializeComponent();
@@ -101,38 +102,7 @@ namespace JPCS_Registration
 
         private void radGridMembers_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
-            String OrNum = radGridMembers.MasterView.CurrentRow.Cells["OR Number"].Value.ToString();
-
-
-            DialogResult ConfirmDelete = RadMessageBox.Show(this, "Are you sure you want to delete the selected student for this semester? This action cannot be undone.", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
-
-            if (ConfirmDelete == DialogResult.Yes)
-            {
-                if (MySQLConn.State == ConnectionState.Open)
-                {
-                    MySQLConn.Close();
-                }
-                MySQLConn.ConnectionString = globalconfig.connstring;
-                try
-                {
-                    MySQLConn.Open();
-                    MySqlCommand comm = new MySqlCommand("CALL Delete_membership(@ornum, @schoolyear);", MySQLConn);
-                    comm.Parameters.AddWithValue("ornum", OrNum);
-                    comm.Parameters.AddWithValue("schoolyear", globalconfig.schoolyearactive);
-                    comm.ExecuteNonQuery();
-                    RadMessageBox.Show(this, "The Membership has been deleted Successfully!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
-                    MySQLConn.Close();
-                }
-                catch (Exception ex)
-                {
-                    RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                }
-                finally
-                {
-                    MySQLConn.Dispose();
-                }
-                load_memberlist();
-            }
+            
         }
 
         private void radTextBox1_TextChanged(object sender, EventArgs e)
@@ -305,8 +275,11 @@ namespace JPCS_Registration
                         MySqlCommand comm = new MySqlCommand("CALL Delete_student(@studno);", MySQLConn);
                         comm.Parameters.AddWithValue("studno", globalconfig.selection);
                         comm.ExecuteNonQuery();
-                        RadMessageBox.Show(this, "The student has been successfully removed from the records.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        RadMessageBox.Show(this, "The student has been successfully removed from the records.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                         MySQLConn.Close();
+                        globalconfig.selection = "";
+                        selected = "";
+                        load_all_members();
 
                     }
                     catch (Exception ex)
@@ -381,6 +354,56 @@ namespace JPCS_Registration
         private void radGridAllMembers_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radGridMembers_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            CurrentMemberRowSelection = "";
+            if (e.RowIndex >= 0)
+            {
+                Telerik.WinControls.UI.GridViewRowInfo row = this.radGridMembers.Rows[e.RowIndex];
+
+
+                row = this.radGridMembers.Rows[e.RowIndex];
+                CurrentMemberRowSelection = row.Cells["OR Number"].Value.ToString();
+            }
+        }
+
+        private void btnDeleteMembership_Click(object sender, EventArgs e)
+        {
+            if (CurrentMemberRowSelection!="")
+            {
+                DialogResult ConfirmDelete = RadMessageBox.Show(this, "Are you sure you want to delete the record with OR Number '"+ CurrentMemberRowSelection +"' for this semester? This action cannot be undone.", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+
+                if (ConfirmDelete == DialogResult.Yes)
+                {
+                    if (MySQLConn.State == ConnectionState.Open)
+                    {
+                        MySQLConn.Close();
+                    }
+                    MySQLConn.ConnectionString = globalconfig.connstring;
+                    try
+                    {
+                        MySQLConn.Open();
+                        MySqlCommand comm = new MySqlCommand("CALL Delete_membership(@ornum, @schoolyear);", MySQLConn);
+                        comm.Parameters.AddWithValue("ornum", CurrentMemberRowSelection);
+                        comm.Parameters.AddWithValue("schoolyear", globalconfig.schoolyearactive);
+                        comm.ExecuteNonQuery();
+                        RadMessageBox.Show(this, "The Membership has been deleted Successfully!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                        MySQLConn.Close();
+                        CurrentMemberRowSelection = "";
+                    }
+                    catch (Exception ex)
+                    {
+                        RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    }
+                    finally
+                    {
+                        MySQLConn.Dispose();
+                    }
+                    load_memberlist();
+                }
+            }
         }
     }
 }

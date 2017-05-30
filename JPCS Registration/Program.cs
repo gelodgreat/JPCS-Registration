@@ -16,6 +16,7 @@ namespace JPCS_Registration
             Application.SetCompatibleTextRenderingDefault(false);
             globalconfig.fullname = "Guest Mode";
             String server = Properties.Settings.Default.db_server;
+            String bahalaka;
             String username = Properties.Settings.Default.db_username;
             String port = Properties.Settings.Default.db_port;
             String password = Properties.Settings.Default.db_password;

@@ -165,6 +165,8 @@
             this.Controls.Add(this.radLabel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SchoolYearManagement";
             // 
             // 

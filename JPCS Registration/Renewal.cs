@@ -15,7 +15,8 @@ namespace JPCS_Registration
 
         MySqlConnection conn;
         globalconfig gc = new globalconfig();
-        DialogResult notreg; 
+        DialogResult notreg;
+
         public Renewal()
         {
             InitializeComponent();
@@ -54,6 +55,7 @@ namespace JPCS_Registration
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            DialogResult registerResponse=new DialogResult();
             if (!(mtbStudNum.MaskCompleted) | !(mtbOrNum.MaskCompleted))
             {
                 RadMessageBox.Show(this, "Please Complete Student Number and OR number.");
@@ -83,7 +85,7 @@ namespace JPCS_Registration
             {
                 if (ex.Message.Contains("foreign"))
                 {
-                    RadMessageBox.Show(this, "You are not yet registered to the student list. Please register first!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    registerResponse=RadMessageBox.Show(this, "You are not yet registered to the student list. Please register first!", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Exclamation);
                 }
                 else
                 {
@@ -94,6 +96,14 @@ namespace JPCS_Registration
             }finally
             {
                 MySQLConn.Dispose();
+            }
+            if (registerResponse == DialogResult.Yes)
+            {
+                globalconfig.Mainaction = "add";
+                Main norecord = new Main();
+                norecord.MdiParent = this.MdiParent;
+                norecord.Show();
+                this.Dispose();
             }
         
         }

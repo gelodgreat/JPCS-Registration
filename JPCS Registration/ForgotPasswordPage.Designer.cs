@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem7 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem8 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem9 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem10 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPasswordPage));
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.fp_tb_userstudno = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
@@ -77,7 +78,7 @@
             // 
             this.radLabel1.Location = new System.Drawing.Point(20, 36);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(77, 33);
+            this.radLabel1.Size = new System.Drawing.Size(95, 40);
             this.radLabel1.TabIndex = 0;
             this.radLabel1.Text = "Student # or \r\nUsername:";
             this.radLabel1.ThemeName = "VisualStudio2012Dark";
@@ -86,7 +87,7 @@
             // 
             this.fp_tb_userstudno.Location = new System.Drawing.Point(103, 49);
             this.fp_tb_userstudno.Name = "fp_tb_userstudno";
-            this.fp_tb_userstudno.Size = new System.Drawing.Size(263, 24);
+            this.fp_tb_userstudno.Size = new System.Drawing.Size(263, 25);
             this.fp_tb_userstudno.TabIndex = 1;
             this.fp_tb_userstudno.ThemeName = "VisualStudio2012Dark";
             this.fp_tb_userstudno.TextChanged += new System.EventHandler(this.fp_tb_userstudno_TextChanged);
@@ -95,7 +96,7 @@
             // 
             this.radLabel15.Location = new System.Drawing.Point(59, 64);
             this.radLabel15.Name = "radLabel15";
-            this.radLabel15.Size = new System.Drawing.Size(45, 18);
+            this.radLabel15.Size = new System.Drawing.Size(56, 22);
             this.radLabel15.TabIndex = 18;
             this.radLabel15.Text = "Answer:";
             this.radLabel15.ThemeName = "VisualStudio2012Dark";
@@ -104,7 +105,7 @@
             // 
             this.radLabel14.Location = new System.Drawing.Point(7, 34);
             this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(97, 18);
+            this.radLabel14.Size = new System.Drawing.Size(120, 22);
             this.radLabel14.TabIndex = 17;
             this.radLabel14.Text = "Security Question:";
             this.radLabel14.ThemeName = "VisualStudio2012Dark";
@@ -122,19 +123,19 @@
             // fp_cb_securityques
             // 
             this.fp_cb_securityques.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            radListDataItem6.Text = "What is your Mother\'s maiden name?";
-            radListDataItem7.Text = "What is your dream job?";
-            radListDataItem8.Text = "Who is your favorite artist?";
-            radListDataItem9.Text = "What is your favorite song?";
-            radListDataItem10.Text = "What is your favorite programming language?";
-            this.fp_cb_securityques.Items.Add(radListDataItem6);
-            this.fp_cb_securityques.Items.Add(radListDataItem7);
-            this.fp_cb_securityques.Items.Add(radListDataItem8);
-            this.fp_cb_securityques.Items.Add(radListDataItem9);
-            this.fp_cb_securityques.Items.Add(radListDataItem10);
+            radListDataItem1.Text = "What is your Mother\'s maiden name?";
+            radListDataItem2.Text = "What is your dream job?";
+            radListDataItem3.Text = "Who is your favorite artist?";
+            radListDataItem4.Text = "What is your favorite song?";
+            radListDataItem5.Text = "What is your favorite programming language?";
+            this.fp_cb_securityques.Items.Add(radListDataItem1);
+            this.fp_cb_securityques.Items.Add(radListDataItem2);
+            this.fp_cb_securityques.Items.Add(radListDataItem3);
+            this.fp_cb_securityques.Items.Add(radListDataItem4);
+            this.fp_cb_securityques.Items.Add(radListDataItem5);
             this.fp_cb_securityques.Location = new System.Drawing.Point(110, 34);
             this.fp_cb_securityques.Name = "fp_cb_securityques";
-            this.fp_cb_securityques.Size = new System.Drawing.Size(263, 24);
+            this.fp_cb_securityques.Size = new System.Drawing.Size(263, 28);
             this.fp_cb_securityques.TabIndex = 16;
             this.fp_cb_securityques.ThemeName = "VisualStudio2012Dark";
             // 
@@ -142,7 +143,7 @@
             // 
             this.fp_lbl_status.Location = new System.Drawing.Point(265, 25);
             this.fp_lbl_status.Name = "fp_lbl_status";
-            this.fp_lbl_status.Size = new System.Drawing.Size(37, 18);
+            this.fp_lbl_status.Size = new System.Drawing.Size(45, 22);
             this.fp_lbl_status.TabIndex = 19;
             this.fp_lbl_status.Text = "Status";
             this.fp_lbl_status.ThemeName = "VisualStudio2012Dark";
@@ -161,7 +162,7 @@
             // 
             this.radLabel2.Location = new System.Drawing.Point(23, 32);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(81, 18);
+            this.radLabel2.Size = new System.Drawing.Size(101, 22);
             this.radLabel2.TabIndex = 22;
             this.radLabel2.Text = "New Password:";
             this.radLabel2.ThemeName = "VisualStudio2012Dark";
@@ -171,7 +172,7 @@
             this.fp_tb_new_pass.Location = new System.Drawing.Point(110, 30);
             this.fp_tb_new_pass.Name = "fp_tb_new_pass";
             this.fp_tb_new_pass.PasswordChar = '*';
-            this.fp_tb_new_pass.Size = new System.Drawing.Size(263, 24);
+            this.fp_tb_new_pass.Size = new System.Drawing.Size(263, 25);
             this.fp_tb_new_pass.TabIndex = 21;
             this.fp_tb_new_pass.ThemeName = "VisualStudio2012Dark";
             // 
@@ -179,7 +180,7 @@
             // 
             this.radLabel3.Location = new System.Drawing.Point(5, 62);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(99, 18);
+            this.radLabel3.Size = new System.Drawing.Size(123, 22);
             this.radLabel3.TabIndex = 24;
             this.radLabel3.Text = "Confirm Password:";
             this.radLabel3.ThemeName = "VisualStudio2012Dark";
@@ -189,7 +190,7 @@
             this.fp_tb_conf_new_pass.Location = new System.Drawing.Point(110, 60);
             this.fp_tb_conf_new_pass.Name = "fp_tb_conf_new_pass";
             this.fp_tb_conf_new_pass.PasswordChar = '*';
-            this.fp_tb_conf_new_pass.Size = new System.Drawing.Size(263, 24);
+            this.fp_tb_conf_new_pass.Size = new System.Drawing.Size(263, 25);
             this.fp_tb_conf_new_pass.TabIndex = 23;
             this.fp_tb_conf_new_pass.ThemeName = "VisualStudio2012Dark";
             // 
@@ -257,12 +258,13 @@
             // 
             // ForgotPasswordPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 478);
             this.Controls.Add(this.fp_rgb_changepass);
             this.Controls.Add(this.radGroupBox2);
             this.Controls.Add(this.fp_rgb_secmeas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ForgotPasswordPage";
             // 
             // 

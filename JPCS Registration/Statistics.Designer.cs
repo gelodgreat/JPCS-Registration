@@ -57,7 +57,7 @@
             // lblTotalCash
             // 
             this.lblTotalCash.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lblTotalCash.Location = new System.Drawing.Point(126, 140);
+            this.lblTotalCash.Location = new System.Drawing.Point(112, 140);
             this.lblTotalCash.Name = "lblTotalCash";
             this.lblTotalCash.Size = new System.Drawing.Size(120, 31);
             this.lblTotalCash.TabIndex = 1;
@@ -110,6 +110,7 @@
             this.lblTotalRows.Size = new System.Drawing.Size(125, 31);
             this.lblTotalRows.TabIndex = 12;
             this.lblTotalRows.Text = "lblTotalRows";
+            this.lblTotalRows.ThemeName = "VisualStudio2012Dark";
             // 
             // Statistics
             // 
