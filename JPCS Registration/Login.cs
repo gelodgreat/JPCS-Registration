@@ -127,6 +127,7 @@ namespace JPCS_Registration
                 settings.Show();
                 check = checkdbstat();
             }
+            log_tb_username.Focus();
 
         }
 

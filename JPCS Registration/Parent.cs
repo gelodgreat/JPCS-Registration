@@ -271,43 +271,41 @@ namespace JPCS_Registration
             }
             if (Locals.Contains(Properties.Settings.Default.db_server))
             {
-                MessageBox.Show("Local");
-            }else
+                //MessageBox.Show("Local");
+                radLabelServer.Text = radLabelServer.Text + "(Local)";
+            }
+            else
             {
-                MessageBox.Show("Remote");
+                //MessageBox.Show("Remote");
+                radLabelServer.Text = radLabelServer.Text + "(Remote)";
             }
         }
 
         private void radLabelServer_Click(object sender, EventArgs e)
         {
-            if (globalconfig.isAuthenticated)
-            {
-                foreach (Form frm in this.MdiChildren)
-                {
-                    frm.Close();
 
-                }
-                foreach (Form f in Application.OpenForms)
-                {
-                    if (f is AddAccount)
-                    {
-                        f.Dispose();
-                        return;
-                    }
-                }
-
-                AddAccount acctmgmt = new AddAccount();
-                acctmgmt.MdiParent = this;
-                acctmgmt.Show();
-            }
-            else
+            foreach (Form frm in this.MdiChildren)
             {
-                RadMessageBox.Show(this, "Elevated mode is required to access Member Management. To enter elevated mode, close the Main Window and enter your correct account credentials. ", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1);
+                frm.Close();
+
             }
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is AddAccount)
+                {
+                    f.Dispose();
+                    return;
+                }
+            }
+
+            DatabaseConnection DBConn = new DatabaseConnection();
+            DBConn.MdiParent = this;
+            DBConn.Show();
         }
-        // Display a child form to show this is still an MDI application.
-        //Form2 frm = new Form2();
-        //frm.MdiParent = this;
-        //frm.Show();
+
     }
+    // Display a child form to show this is still an MDI application.
+    //Form2 frm = new Form2();
+    //frm.MdiParent = this;
+    //frm.Show();
 }
