@@ -25,6 +25,10 @@ namespace JPCS_Registration
         public MySqlDataReader reader;
         public MySqlDataAdapter adapter;
         private static Boolean DebugMode;
+        //public List<string> Locals
+        //{
+        //    get;set;
+        //}
         public static Boolean ConsoleIsShown
         {
             get { return DebugMode; }
@@ -60,7 +64,13 @@ namespace JPCS_Registration
             get { return actiontext; }
             set { actiontext = value; }
         }
-
+        
+        private static string Connection;
+        public static string ConnectionType
+        {
+            get { return Connection; }
+            set { Connection = value; }
+        }
 
         //This is the variable that will be used on Editing or deleting a Student.
         private static string selectedstudent;
@@ -69,6 +79,13 @@ namespace JPCS_Registration
             get { return selectedstudent; }
             set { selectedstudent = value; }
         }
+        private static List<String>  Locals;
+        public static List<String> LocalConnections
+        {
+            get { return Locals; }
+            set { Locals = value; }
+        }
+
         //End
 
         private static double money;

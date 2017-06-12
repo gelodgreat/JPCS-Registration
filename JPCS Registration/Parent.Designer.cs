@@ -134,7 +134,6 @@
             // 
             this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.radStatusStrip1.SetSpring(this.commandBarSeparator1, false);
-            this.commandBarSeparator1.Text = "";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
             // 
             // radLabelServer
@@ -143,6 +142,7 @@
             this.radStatusStrip1.SetSpring(this.radLabelServer, false);
             this.radLabelServer.Text = "radLabelServer";
             this.radLabelServer.TextWrap = true;
+            this.radLabelServer.Click += new System.EventHandler(this.radLabelServer_Click);
             // 
             // Parent
             // 
