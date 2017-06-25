@@ -27,9 +27,7 @@ namespace JPCS_Registration
 
         String connstring = globalconfig.connstring;
         globalconfig gc = new globalconfig();
-        MySqlConnection conn;
         MySqlCommand comm = new MySqlCommand();
-        Boolean constate = false;
         String[] args = Environment.GetCommandLineArgs();
         public Parent()
         {
@@ -245,7 +243,7 @@ namespace JPCS_Registration
 
         public void check_connection_type()
         {
-            String ConnectionType = "";
+           
             List<String> Locals = new List<String>();
 
 
@@ -260,23 +258,15 @@ namespace JPCS_Registration
                 }
                 Locals.Add("localhost");
                 Locals.Add(Environment.MachineName);
-                //if (globalconfig.LocalConnections.Contains(Properties.Settings.Default.db_server))
-                //{
-                //    MessageBox.Show("Local");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Remote");
-                //}
             }
             if (Locals.Contains(Properties.Settings.Default.db_server))
             {
-                //MessageBox.Show("Local");
+                
                 radLabelServer.Text = radLabelServer.Text + "(Local)";
             }
             else
             {
-                //MessageBox.Show("Remote");
+               
                 radLabelServer.Text = radLabelServer.Text + "(Remote)";
             }
         }
@@ -304,8 +294,4 @@ namespace JPCS_Registration
         }
 
     }
-    // Display a child form to show this is still an MDI application.
-    //Form2 frm = new Form2();
-    //frm.MdiParent = this;
-    //frm.Show();
 }

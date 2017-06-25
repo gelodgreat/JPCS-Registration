@@ -48,8 +48,8 @@ namespace JPCS_Registration
                 dbdataset_current.Clear();
                 MySQLConn.Open();
                 MySqlCommand comm = gc.command;
-                comm = new MySqlCommand("CALL show_current_members(@schoolyear);", MySQLConn);
-                comm.Parameters.AddWithValue("schoolyear", globalconfig.schoolyearactive);
+                comm = new MySqlCommand("CALL get_current_members(@1);", MySQLConn);
+                comm.Parameters.AddWithValue("1", globalconfig.schoolyearactive);
                 //comm = new MySqlCommand("SELECT * FROM memberlist WHERE studno IN (SELECT * FROM test);", MySQLConn);
                 adapter.SelectCommand = comm;
                 adapter.Fill(dbdataset_current);
@@ -81,7 +81,7 @@ namespace JPCS_Registration
                 dbdataset_all.Clear();
                 MySQLConn.Open();
                 MySqlCommand comm = gc.command;
-                comm = new MySqlCommand("CALL show_all_members();", MySQLConn);
+                comm = new MySqlCommand("CALL get_all_members();", MySQLConn);
                 //comm = new MySqlCommand("SELECT * FROM memberlist WHERE studno IN (SELECT * FROM test);", MySQLConn);
                 adapter.SelectCommand = comm;
                 adapter.Fill(dbdataset_all);
@@ -104,8 +104,7 @@ namespace JPCS_Registration
         {
             
         }
-
-        private void radTextBox1_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (this.ValidateChildren())
             {
@@ -114,7 +113,6 @@ namespace JPCS_Registration
                 bs.Filter = "LastName LIKE '%" + txtSearch.Text + "%'";
                 radGridMembers.DataSource = bs;
             }
-
         }
 
         private void txtSearch_Validating(object sender, CancelEventArgs e)
@@ -123,9 +121,12 @@ namespace JPCS_Registration
             {
                 return;
             }
-            if (!Regex.IsMatch(txtSearch.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtSearch.Text, @"[^\w\s]"))
             {
                 RadMessageBox.Show(this, "No Charaters allowed other than Letters!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                txtSearch.Text=txtSearch.Text.Remove(txtSearch.Text.Length - 1);
+                txtSearch.SelectionStart = txtSearch.Text.Length;
+                
             }
         }
 
@@ -146,7 +147,7 @@ namespace JPCS_Registration
             {
                 return;
             }
-            if (!Regex.IsMatch(txtSearch_All.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtSearch_All.Text, @"[^\w\s]"))
             {
                 RadMessageBox.Show(this, "No Charaters allowed other than Letters!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
             }
@@ -272,8 +273,8 @@ namespace JPCS_Registration
                     try
                     {
                         MySQLConn.Open();
-                        MySqlCommand comm = new MySqlCommand("CALL Delete_student(@studno);", MySQLConn);
-                        comm.Parameters.AddWithValue("studno", globalconfig.selection);
+                        MySqlCommand comm = new MySqlCommand("CALL Delete_student(@1);", MySQLConn);
+                        comm.Parameters.AddWithValue("1", globalconfig.selection);
                         comm.ExecuteNonQuery();
                         RadMessageBox.Show(this, "The student has been successfully removed from the records.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                         MySQLConn.Close();
@@ -385,9 +386,9 @@ namespace JPCS_Registration
                     try
                     {
                         MySQLConn.Open();
-                        MySqlCommand comm = new MySqlCommand("CALL Delete_membership(@ornum, @schoolyear);", MySQLConn);
-                        comm.Parameters.AddWithValue("ornum", CurrentMemberRowSelection);
-                        comm.Parameters.AddWithValue("schoolyear", globalconfig.schoolyearactive);
+                        MySqlCommand comm = new MySqlCommand("CALL Delete_membership(@1, @2);", MySQLConn);
+                        comm.Parameters.AddWithValue("1", CurrentMemberRowSelection);
+                        comm.Parameters.AddWithValue("2", globalconfig.schoolyearactive);
                         comm.ExecuteNonQuery();
                         RadMessageBox.Show(this, "The Membership has been deleted Successfully!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                         MySQLConn.Close();

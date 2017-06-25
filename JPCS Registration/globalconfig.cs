@@ -11,17 +11,50 @@ namespace JPCS_Registration
     {
         //public string conn = "SERVER='" + Properties.Settings.Default.db_server + "'; PORT='" + Properties.Settings.Default.db_port + "'; DATABASE='" + Properties.Settings.Default.db_database + "'; USERNAME='" + Properties.Settings.Default.db_username + "'; PASSWORD='" + Properties.Settings.Default.db_password + "';";
         static StreamWriter logfile;
+
+        #region ConnectionString
         private static string connectionstring;
+        private static string _host;
+        private static string _port;
+        private static string _uname;
+        private static string _pwd;
+        private static string _dbname;
+
+        public static string hostname
+        {
+            get { return _host; }
+            set { _host = value; }
+        }
+        public static string port
+        {
+            get { return _port; }
+            set { _port = value; }
+        }
+        public static string username
+        {
+            get { return _uname; }
+            set { _uname = value; }
+        }
+        public static string password
+        {
+            get { return _pwd; }
+            set { _pwd = value; }
+        }
+        public static string dbname
+        {
+            get { return _dbname; }
+            set { _dbname = value; }
+        }
         public static string connstring
         {
             get { return connectionstring; }
             set { connectionstring = value; }
         }
+        #endregion
         static String path = "Log" + DateTime.Now.ToString("MMddyyyyHHmmss") + ".txt";
 
         //public string conn = "SERVER=localhost;PORT=3306; DATABASE=jpcsregistration; USERNAME=root; PASSWORD=root;";
         public MySqlCommand command = new MySqlCommand();
-        private static MySqlConnection sqlconnection;
         public MySqlDataReader reader;
         public MySqlDataAdapter adapter;
         private static Boolean DebugMode;

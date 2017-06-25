@@ -31,24 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseConnection));
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewCurrentConnection = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radPageViewLocalhosts = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.lblHostname = new Telerik.WinControls.UI.RadLabel();
-            this.lblPort = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.lblUsername = new Telerik.WinControls.UI.RadLabel();
+            this.lblPort = new Telerik.WinControls.UI.RadLabel();
+            this.lblHostname = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.radPageViewLocalhosts = new Telerik.WinControls.UI.RadPageViewPage();
             this.lblLocalHosts = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewCurrentConnection.SuspendLayout();
-            this.radPageViewLocalhosts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblHostname)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblPort)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblPort)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblHostname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            this.radPageViewLocalhosts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblLocalHosts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             // 
             this.radPageView1.Controls.Add(this.radPageViewCurrentConnection);
             this.radPageView1.Controls.Add(this.radPageViewLocalhosts);
+            this.radPageView1.DefaultPage = this.radPageViewCurrentConnection;
             this.radPageView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPageView1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
@@ -67,10 +68,6 @@
             this.radPageView1.Text = "All";
             this.radPageView1.ThemeName = "VisualStudio2012Dark";
             ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Near;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.Fill;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).StripAlignment = Telerik.WinControls.UI.StripViewAlignment.Top;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ShowItemCloseButton = false;
             // 
             // radPageViewCurrentConnection
             // 
@@ -86,24 +83,15 @@
             this.radPageViewCurrentConnection.Size = new System.Drawing.Size(490, 327);
             this.radPageViewCurrentConnection.Text = "Current Connection Information";
             // 
-            // radPageViewLocalhosts
+            // radLabel3
             // 
-            this.radPageViewLocalhosts.Controls.Add(this.lblLocalHosts);
-            this.radPageViewLocalhosts.ItemSize = new System.Drawing.SizeF(202F, 37F);
-            this.radPageViewLocalhosts.Location = new System.Drawing.Point(5, 43);
-            this.radPageViewLocalhosts.Name = "radPageViewLocalhosts";
-            this.radPageViewLocalhosts.Size = new System.Drawing.Size(490, 327);
-            this.radPageViewLocalhosts.Text = "Host / Server Names";
-            // 
-            // radLabel1
-            // 
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel1.Location = new System.Drawing.Point(7, 84);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(192, 31);
-            this.radLabel1.TabIndex = 0;
-            this.radLabel1.Text = "Host / Server Name:";
-            this.radLabel1.ThemeName = "VisualStudio2012Dark";
+            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel3.Location = new System.Drawing.Point(87, 158);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(105, 31);
+            this.radLabel3.TabIndex = 0;
+            this.radLabel3.Text = "Username:";
+            this.radLabel3.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel2
             // 
@@ -115,25 +103,15 @@
             this.radLabel2.Text = "TCP / IP Port:";
             this.radLabel2.ThemeName = "VisualStudio2012Dark";
             // 
-            // radLabel3
+            // lblUsername
             // 
-            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.radLabel3.Location = new System.Drawing.Point(87, 158);
-            this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(105, 31);
-            this.radLabel3.TabIndex = 0;
-            this.radLabel3.Text = "Username:";
-            this.radLabel3.ThemeName = "VisualStudio2012Dark";
-            // 
-            // lblHostname
-            // 
-            this.lblHostname.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lblHostname.Location = new System.Drawing.Point(198, 84);
-            this.lblHostname.Name = "lblHostname";
-            this.lblHostname.Size = new System.Drawing.Size(124, 31);
-            this.lblHostname.TabIndex = 0;
-            this.lblHostname.Text = "lblHostname";
-            this.lblHostname.ThemeName = "VisualStudio2012Dark";
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblUsername.Location = new System.Drawing.Point(198, 158);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(123, 31);
+            this.lblUsername.TabIndex = 0;
+            this.lblUsername.Text = "lblUsername";
+            this.lblUsername.ThemeName = "VisualStudio2012Dark";
             // 
             // lblPort
             // 
@@ -145,15 +123,34 @@
             this.lblPort.Text = "lblPort";
             this.lblPort.ThemeName = "VisualStudio2012Dark";
             // 
-            // lblUsername
+            // lblHostname
             // 
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lblUsername.Location = new System.Drawing.Point(198, 158);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(123, 31);
-            this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "lblUsername";
-            this.lblUsername.ThemeName = "VisualStudio2012Dark";
+            this.lblHostname.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblHostname.Location = new System.Drawing.Point(198, 84);
+            this.lblHostname.Name = "lblHostname";
+            this.lblHostname.Size = new System.Drawing.Size(124, 31);
+            this.lblHostname.TabIndex = 0;
+            this.lblHostname.Text = "lblHostname";
+            this.lblHostname.ThemeName = "VisualStudio2012Dark";
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radLabel1.Location = new System.Drawing.Point(7, 84);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(192, 31);
+            this.radLabel1.TabIndex = 0;
+            this.radLabel1.Text = "Host / Server Name:";
+            this.radLabel1.ThemeName = "VisualStudio2012Dark";
+            // 
+            // radPageViewLocalhosts
+            // 
+            this.radPageViewLocalhosts.Controls.Add(this.lblLocalHosts);
+            this.radPageViewLocalhosts.ItemSize = new System.Drawing.SizeF(202F, 37F);
+            this.radPageViewLocalhosts.Location = new System.Drawing.Point(5, 43);
+            this.radPageViewLocalhosts.Name = "radPageViewLocalhosts";
+            this.radPageViewLocalhosts.Size = new System.Drawing.Size(490, 327);
+            this.radPageViewLocalhosts.Text = "Host / Server Names";
             // 
             // lblLocalHosts
             // 
@@ -186,14 +183,14 @@
             this.radPageView1.ResumeLayout(false);
             this.radPageViewCurrentConnection.ResumeLayout(false);
             this.radPageViewCurrentConnection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblPort)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblHostname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             this.radPageViewLocalhosts.ResumeLayout(false);
             this.radPageViewLocalhosts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblHostname)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblPort)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblLocalHosts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

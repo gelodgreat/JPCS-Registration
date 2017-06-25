@@ -34,6 +34,7 @@
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.btnStatCurrent = new Telerik.WinControls.UI.RadButton();
+            this.btnDeleteMembership = new Telerik.WinControls.UI.RadButton();
             this.btnCopyRows = new Telerik.WinControls.UI.RadButton();
             this.radGridMembers = new Telerik.WinControls.UI.RadGridView();
             this.txtSearch = new Telerik.WinControls.UI.RadTextBox();
@@ -48,11 +49,11 @@
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.txtSearch_All = new Telerik.WinControls.UI.RadTextBox();
             this.radGridAllMembers = new Telerik.WinControls.UI.RadGridView();
-            this.btnDeleteMembership = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnStatCurrent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteMembership)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCopyRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridMembers.MasterTemplate)).BeginInit();
@@ -69,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch_All)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteMembership)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,6 +121,17 @@
             this.btnStatCurrent.ThemeName = "VisualStudio2012Dark";
             this.btnStatCurrent.Click += new System.EventHandler(this.btnStatCurrent_Click);
             // 
+            // btnDeleteMembership
+            // 
+            this.btnDeleteMembership.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDeleteMembership.Location = new System.Drawing.Point(14, 122);
+            this.btnDeleteMembership.Name = "btnDeleteMembership";
+            this.btnDeleteMembership.Size = new System.Drawing.Size(200, 30);
+            this.btnDeleteMembership.TabIndex = 1;
+            this.btnDeleteMembership.Text = "Delete Membership";
+            this.btnDeleteMembership.ThemeName = "VisualStudio2012Dark";
+            this.btnDeleteMembership.Click += new System.EventHandler(this.btnDeleteMembership_Click);
+            // 
             // btnCopyRows
             // 
             this.btnCopyRows.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -169,8 +180,7 @@
             this.txtSearch.Size = new System.Drawing.Size(153, 33);
             this.txtSearch.TabIndex = 8;
             this.txtSearch.ThemeName = "VisualStudio2012Dark";
-            this.txtSearch.CausesValidationChanged += new System.EventHandler(this.radTextBox1_TextChanged);
-            this.txtSearch.TextChanged += new System.EventHandler(this.radTextBox1_TextChanged);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.Validating += new System.ComponentModel.CancelEventHandler(this.txtSearch_Validating);
             // 
             // lbl_schoolyear
@@ -313,17 +323,6 @@
             this.radGridAllMembers.ThemeName = "VisualStudio2012Dark";
             this.radGridAllMembers.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridAllMembers_CellClick);
             // 
-            // btnDeleteMembership
-            // 
-            this.btnDeleteMembership.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnDeleteMembership.Location = new System.Drawing.Point(14, 122);
-            this.btnDeleteMembership.Name = "btnDeleteMembership";
-            this.btnDeleteMembership.Size = new System.Drawing.Size(200, 30);
-            this.btnDeleteMembership.TabIndex = 1;
-            this.btnDeleteMembership.Text = "Delete Membership";
-            this.btnDeleteMembership.ThemeName = "VisualStudio2012Dark";
-            this.btnDeleteMembership.Click += new System.EventHandler(this.btnDeleteMembership_Click);
-            // 
             // ViewMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,6 +346,7 @@
             this.radPageViewPage1.ResumeLayout(false);
             this.radPageViewPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnStatCurrent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteMembership)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCopyRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridMembers)).EndInit();
@@ -364,7 +364,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch_All)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridAllMembers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteMembership)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

@@ -38,7 +38,6 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.reg_btn_save = new Telerik.WinControls.UI.RadButton();
-            this.timersec = new System.Windows.Forms.Timer(this.components);
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.reg_tb_lname = new Telerik.WinControls.UI.RadTextBox();
@@ -63,6 +62,7 @@
             this.aa_tb_studo = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
+            this.errorProviderEntries = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.reg_cb_coursesect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -89,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEntries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +108,8 @@
             this.reg_cb_coursesect.Size = new System.Drawing.Size(272, 32);
             this.reg_cb_coursesect.TabIndex = 6;
             this.reg_cb_coursesect.ThemeName = "VisualStudio2012Dark";
+            this.reg_cb_coursesect.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.reg_cb_coursesect_SelectedIndexChanged);
+            this.reg_cb_coursesect.Validating += new System.ComponentModel.CancelEventHandler(this.reg_cb_coursesect_Validating);
             // 
             // radLabel1
             // 
@@ -149,11 +152,6 @@
             this.reg_btn_save.ThemeName = "VisualStudio2012Dark";
             this.reg_btn_save.Click += new System.EventHandler(this.reg_btn_save_Click);
             // 
-            // timersec
-            // 
-            this.timersec.Enabled = true;
-            this.timersec.Tick += new System.EventHandler(this.timersec_Tick);
-            // 
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -183,6 +181,8 @@
             this.reg_tb_lname.Size = new System.Drawing.Size(272, 29);
             this.reg_tb_lname.TabIndex = 3;
             this.reg_tb_lname.ThemeName = "VisualStudio2012Dark";
+            this.reg_tb_lname.TextChanged += new System.EventHandler(this.reg_tb_lname_TextChanged);
+            this.reg_tb_lname.Validating += new System.ComponentModel.CancelEventHandler(this.reg_tb_lname_Validating);
             // 
             // reg_tb_fname
             // 
@@ -193,6 +193,8 @@
             this.reg_tb_fname.Size = new System.Drawing.Size(272, 29);
             this.reg_tb_fname.TabIndex = 4;
             this.reg_tb_fname.ThemeName = "VisualStudio2012Dark";
+            this.reg_tb_fname.TextChanged += new System.EventHandler(this.reg_tb_fname_TextChanged);
+            this.reg_tb_fname.Validating += new System.ComponentModel.CancelEventHandler(this.reg_tb_fname_Validating);
             // 
             // reg_tb_mname
             // 
@@ -203,6 +205,8 @@
             this.reg_tb_mname.Size = new System.Drawing.Size(272, 29);
             this.reg_tb_mname.TabIndex = 5;
             this.reg_tb_mname.ThemeName = "VisualStudio2012Dark";
+            this.reg_tb_mname.TextChanged += new System.EventHandler(this.reg_tb_mname_TextChanged);
+            this.reg_tb_mname.Validating += new System.ComponentModel.CancelEventHandler(this.reg_tb_mname_Validating);
             // 
             // reg_tb_email
             // 
@@ -227,9 +231,11 @@
             this.reg_tb_bday.Size = new System.Drawing.Size(148, 27);
             this.reg_tb_bday.TabIndex = 8;
             this.reg_tb_bday.TabStop = false;
+            this.reg_tb_bday.Text = "1970-01-01";
             this.reg_tb_bday.ThemeName = "VisualStudio2012Dark";
-            this.reg_tb_bday.Value = new System.DateTime(((long)(0)));
+            this.reg_tb_bday.Value = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.reg_tb_bday.ValueChanged += new System.EventHandler(this.reg_tb_bday_ValueChanged);
+            this.reg_tb_bday.Validating += new System.ComponentModel.CancelEventHandler(this.reg_tb_bday_Validating);
             // 
             // reg_tb_nationality
             // 
@@ -270,6 +276,8 @@
             this.reg_tb_contactnum.Size = new System.Drawing.Size(330, 29);
             this.reg_tb_contactnum.TabIndex = 12;
             this.reg_tb_contactnum.ThemeName = "VisualStudio2012Dark";
+            this.reg_tb_contactnum.TextChanged += new System.EventHandler(this.reg_tb_contactnum_TextChanged);
+            this.reg_tb_contactnum.Validating += new System.ComponentModel.CancelEventHandler(this.reg_tb_contactnum_Validating);
             // 
             // reg_tb_emergencycontactname
             // 
@@ -279,6 +287,8 @@
             this.reg_tb_emergencycontactname.Size = new System.Drawing.Size(328, 29);
             this.reg_tb_emergencycontactname.TabIndex = 13;
             this.reg_tb_emergencycontactname.ThemeName = "VisualStudio2012Dark";
+            this.reg_tb_emergencycontactname.TextChanged += new System.EventHandler(this.reg_tb_emergencycontactname_TextChanged);
+            this.reg_tb_emergencycontactname.Validating += new System.ComponentModel.CancelEventHandler(this.reg_tb_emergencycontactname_Validating);
             // 
             // reg_tb_emergenctcontactnumber
             // 
@@ -288,6 +298,8 @@
             this.reg_tb_emergenctcontactnumber.Size = new System.Drawing.Size(322, 29);
             this.reg_tb_emergenctcontactnumber.TabIndex = 14;
             this.reg_tb_emergenctcontactnumber.ThemeName = "VisualStudio2012Dark";
+            this.reg_tb_emergenctcontactnumber.TextChanged += new System.EventHandler(this.reg_tb_emergenctcontactnumber_TextChanged);
+            this.reg_tb_emergenctcontactnumber.Validating += new System.ComponentModel.CancelEventHandler(this.reg_tb_emergenctcontactnumber_Validating);
             // 
             // radLabel7
             // 
@@ -352,11 +364,12 @@
             // radLabel13
             // 
             this.radLabel13.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.radLabel13.Location = new System.Drawing.Point(3, 467);
+            this.radLabel13.Location = new System.Drawing.Point(22, 464);
             this.radLabel13.Name = "radLabel13";
             this.radLabel13.Size = new System.Drawing.Size(219, 48);
             this.radLabel13.TabIndex = 29;
             this.radLabel13.Text = "Name of person to contact\r\nin case of Emergency:";
+            this.radLabel13.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.radLabel13.ThemeName = "VisualStudio2012Dark";
             // 
             // radLabel14
@@ -381,6 +394,8 @@
             this.aa_tb_studo.PromptChar = 'x';
             this.aa_tb_studo.Size = new System.Drawing.Size(161, 30);
             this.aa_tb_studo.TabIndex = 2;
+            this.aa_tb_studo.TextChanged += new System.EventHandler(this.aa_tb_studo_TextChanged);
+            this.aa_tb_studo.Validating += new System.ComponentModel.CancelEventHandler(this.aa_tb_studo_Validating);
             // 
             // dateTimePicker1
             // 
@@ -396,7 +411,12 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(117, 25);
             this.dateTimePicker1.TabIndex = 33;
+            this.dateTimePicker1.Value = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // errorProviderEntries
+            // 
+            this.errorProviderEntries.ContainerControl = this;
             // 
             // Main
             // 
@@ -470,6 +490,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEntries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -483,7 +504,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadButton reg_btn_save;
-        private System.Windows.Forms.Timer timersec;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadTextBox reg_tb_lname;
@@ -508,5 +528,6 @@
         private System.Windows.Forms.MaskedTextBox aa_tb_studo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Telerik.WinControls.RadThemeManager radThemeManager1;
+        private System.Windows.Forms.ErrorProvider errorProviderEntries;
     }
 }
