@@ -13,6 +13,8 @@ namespace JPCS_Registration
 {
     public partial class ViewMembers : Telerik.WinControls.UI.RadForm
     {
+
+        #region local variables
         public globalconfig gc = new globalconfig();
         String connstring = globalconfig.connstring;
         public DataTable dbdataset_current = new DataTable();
@@ -21,17 +23,25 @@ namespace JPCS_Registration
         MySqlConnection MySQLConn = new MySqlConnection();
         public String selected;
         public string CurrentMemberRowSelection;
+        #endregion
+
+        #region ViewMembers initialize
         public ViewMembers()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Load
         private void ViewMembers_Load(object sender, EventArgs e)
         {
             load_all_members();
             load_memberlist();
             lbl_schoolyear.Text = globalconfig.schoolyearactive;
         }
+        #endregion
+
+        #region load_memberlist
         public void load_memberlist()
         {
             selected = "";
@@ -66,6 +76,9 @@ namespace JPCS_Registration
                 MySQLConn.Dispose();
             }
         }
+        #endregion
+
+        #region load_all_members
         public void load_all_members()
         {
             selected = "";
@@ -99,11 +112,11 @@ namespace JPCS_Registration
                 MySQLConn.Dispose();
             }
         }
+        #endregion
 
-        private void radGridMembers_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-            
-        }
+        #region Search
+
+        #region txtSearch events
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (this.ValidateChildren())
@@ -117,19 +130,16 @@ namespace JPCS_Registration
 
         private void txtSearch_Validating(object sender, CancelEventArgs e)
         {
-            if (txtSearch.Text == "")
-            {
-                return;
-            }
             if (Regex.IsMatch(txtSearch.Text, @"[^\w\s]"))
             {
                 RadMessageBox.Show(this, "No Charaters allowed other than Letters!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
-                txtSearch.Text=txtSearch.Text.Remove(txtSearch.Text.Length - 1);
+                txtSearch.Text = txtSearch.Text.Remove(txtSearch.Text.Length - 1);
                 txtSearch.SelectionStart = txtSearch.Text.Length;
-                
             }
         }
+        #endregion
 
+        #region txtSearch_All events
         private void txtSearch_All_TextChanged(object sender, EventArgs e)
         {
             if (this.ValidateChildren())
@@ -141,6 +151,7 @@ namespace JPCS_Registration
             }
         }
 
+
         private void txtSearch_All_Validating(object sender, CancelEventArgs e)
         {
             if (txtSearch_All.Text == "")
@@ -150,9 +161,17 @@ namespace JPCS_Registration
             if (Regex.IsMatch(txtSearch_All.Text, @"[^\w\s]"))
             {
                 RadMessageBox.Show(this, "No Charaters allowed other than Letters!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                txtSearch_All.Text = txtSearch_All.Text.Remove(txtSearch_All.Text.Length - 1);
+                txtSearch_All.SelectionStart = txtSearch_All.Text.Length;
             }
         }
+        #endregion
 
+        #endregion
+
+
+
+        #region radPageView Enter events
         private void radPageViewPage1_Enter(object sender, EventArgs e)
         {
             load_memberlist();
@@ -162,21 +181,10 @@ namespace JPCS_Registration
         {
             load_all_members();
         }
-
-        private void radGridAllMembers_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-            //String studno;
-            //if (e.RowIndex>0)
-            //{
-            //    Telerik.WinControls.UI.GridViewRowInfo row = this.radGridAllMembers.Rows[e.RowIndex];
-
-            //    row = this.radGridAllMembers.Rows[e.RowIndex];
-            //    studno = row.Cells["Student Number"].Value.ToString();
+        #endregion
 
 
-
-        }
-
+        #region radGridAllMembers Click
         private void radGridAllMembers_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
             globalconfig.selection = "";
@@ -189,7 +197,10 @@ namespace JPCS_Registration
                 selected = row.Cells["Student Number"].Value.ToString();
             }
         }
+        #endregion
 
+
+        #region btnEdit
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (selected != "")
@@ -209,11 +220,72 @@ namespace JPCS_Registration
                 RadMessageBox.Show(this, "Please select a student first!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        #endregion
 
-        private void btnStat_Click(object sender, EventArgs e)
+
+
+
+
+        #region btnStatCurrent Click
+        private void btnStatCurrent_Click(object sender, EventArgs e)
         {
+            int totalMoney = 0;
+            for (int i = 0; i < radGridMembers.Rows.Count; ++i)
+            {
+                totalMoney += Convert.ToInt32(radGridMembers.Rows[i].Cells["Payment"].Value);
+            }
+            globalconfig.currentTotal = radGridMembers.Rows.Count;
+            globalconfig.totalMoney = totalMoney;
+            Statistics stat = new Statistics();
+            stat.ShowDialog();
 
         }
+        #endregion
+
+        #region btnViewRecords
+        private void btnViewRecords_Click(object sender, EventArgs e)
+        {
+            if (selected != "")
+            {
+                globalconfig.selection = selected;
+                StudentRecord sr = new StudentRecord();
+                sr.ShowDialog();
+            }
+            else
+            {
+                RadMessageBox.Show(this, "Please select a row first!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        #endregion
+
+
+        #region Excel
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            {
+                copyAlltoClipboard();
+
+                try
+                {
+                    Microsoft.Office.Interop.Excel.Application xlexcel;
+                    Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+                    Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+                    object misValue = System.Reflection.Missing.Value;
+                    xlexcel = new Microsoft.Office.Interop.Excel.Application();
+                    xlexcel.Visible = true;
+                    xlWorkBook = xlexcel.Workbooks.Add(misValue);
+                    xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                    Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+                    CR.Select();
+                    xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+                }
+                catch (Exception ex)
+                {
+                    RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                }
+            }
+        }
+        #region CopyCurrentToClipboard
         private void copyCurrenttoClipboard()
         {
             radGridMembers.MultiSelect = true;
@@ -223,6 +295,8 @@ namespace JPCS_Registration
                 Clipboard.SetDataObject(dataObj);
             radGridMembers.MultiSelect = false;
         }
+        #endregion
+        #region copyAllToClipboard
         private void copyAlltoClipboard()
         {
             radGridAllMembers.MultiSelect = true;
@@ -232,7 +306,9 @@ namespace JPCS_Registration
                 Clipboard.SetDataObject(dataObj);
             radGridAllMembers.MultiSelect = false;
         }
+        #endregion
 
+        #region btnCopyRows
         private void btnCopyRows_Click(object sender, EventArgs e)
         {
             copyCurrenttoClipboard();
@@ -250,13 +326,16 @@ namespace JPCS_Registration
                 Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
                 CR.Select();
                 xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
             }
-            
-        }
 
+        }
+        #endregion
+
+        #region btnDelete Click
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (selected != "")
@@ -293,69 +372,17 @@ namespace JPCS_Registration
                     }
 
                 }
-            }else
+            }
+            else
             {
                 RadMessageBox.Show(this, "Please select a row first!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
             }
         }
+        #endregion
+        #endregion
 
-        private void btnStatCurrent_Click(object sender, EventArgs e)
-        {
-            int totalMoney = 0;
-            for (int i = 0; i < radGridMembers.Rows.Count; ++i)
-            {
-                totalMoney += Convert.ToInt32(radGridMembers.Rows[i].Cells["Payment"].Value);
-            }
-            globalconfig.currentTotal = radGridMembers.Rows.Count;
-            globalconfig.totalMoney = totalMoney;
-            Statistics stat = new Statistics();
-            stat.ShowDialog();
-            
-        }
 
-        private void btnViewRecords_Click(object sender, EventArgs e)
-        {
-            if (selected != "")
-            {
-                globalconfig.selection = selected;
-                StudentRecord sr = new StudentRecord();
-                sr.ShowDialog();
-            }else
-            {
-                RadMessageBox.Show(this, "Please select a row first!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
-            }
-        }
-
-        private void btnExcel_Click(object sender, EventArgs e)
-        {
-            {
-                copyAlltoClipboard();
-
-                try
-                {
-                    Microsoft.Office.Interop.Excel.Application xlexcel;
-                    Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-                    Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-                    object misValue = System.Reflection.Missing.Value;
-                    xlexcel = new Microsoft.Office.Interop.Excel.Application();
-                    xlexcel.Visible = true;
-                    xlWorkBook = xlexcel.Workbooks.Add(misValue);
-                    xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-                    Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
-                    CR.Select();
-                    xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-                }
-                catch (Exception ex)
-                {
-                    RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
-                }
-            }
-        }
-
-        private void radGridAllMembers_Click(object sender, EventArgs e)
-        {
-
-        }
+        #region radGridMembers CellClick
 
         private void radGridMembers_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
@@ -369,12 +396,15 @@ namespace JPCS_Registration
                 CurrentMemberRowSelection = row.Cells["OR Number"].Value.ToString();
             }
         }
+        #endregion
 
+
+        #region btnDeleteMembership
         private void btnDeleteMembership_Click(object sender, EventArgs e)
         {
-            if (CurrentMemberRowSelection!="")
+            if (CurrentMemberRowSelection != "")
             {
-                DialogResult ConfirmDelete = RadMessageBox.Show(this, "Are you sure you want to delete the record with OR Number '"+ CurrentMemberRowSelection +"' for this semester? This action cannot be undone.", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
+                DialogResult ConfirmDelete = RadMessageBox.Show(this, "Are you sure you want to delete the record with OR Number '" + CurrentMemberRowSelection + "' for this semester? This action cannot be undone.", "JPCS Registration", MessageBoxButtons.YesNo, RadMessageIcon.Question);
 
                 if (ConfirmDelete == DialogResult.Yes)
                 {
@@ -406,5 +436,7 @@ namespace JPCS_Registration
                 }
             }
         }
+        #endregion
+
     }
 }
