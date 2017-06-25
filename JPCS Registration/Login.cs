@@ -23,11 +23,30 @@ namespace JPCS_Registration
         Parent p = new Parent();
         Settings settings = new Settings();
         bool constate;
+        Settings _settings = new Settings();
+        Boolean SettingsFormStatus = false;
         public Login()
         {
             InitializeComponent();
         }
+        void SettigsWindow()
+        {
+            _settings.ShowDialog();
+        }
+        void CheckForm() 
+        {
+            List<Form> openForms = new List<Form>();
 
+            foreach (Form f in Application.OpenForms)
+                openForms.Add(f);
+
+            foreach (Form f in openForms)
+            {
+                if (f.Name != "Settings")
+                    SettingsFormStatus = true;
+            }
+
+        }
         private void log_btn_login_Click(object sender, EventArgs e)
         {
             try
@@ -121,13 +140,10 @@ namespace JPCS_Registration
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
 
             Boolean check = checkdbstat();
-            globalconfig gc = new globalconfig();
-            while (check == false)
+            if (check == false)
             {
-                settings.Show();
-                check = checkdbstat();
+                RadMessageBox.Show(this, "Unable to connect to MySQL database. Please fix your configuration.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
             }
-            log_tb_username.Focus();
 
         }
 
@@ -145,9 +161,7 @@ namespace JPCS_Registration
         private void log_btn_settings_Click(object sender, EventArgs e)
         {
 
-            Settings settings = new Settings();
-            this.Hide();
-            settings.ShowDialog();
+            SettigsWindow();
           
         }
 
@@ -195,6 +209,20 @@ namespace JPCS_Registration
                 }
             }
             return loopstopper;
+        }
+
+        private void Login_Activated(object sender, EventArgs e)
+        {
+
+            if (SettingsFormStatus==true)
+            {
+                return;
+            }
+            else
+            {
+                checkdbstat();
+            }
+            
         }
     }
 }

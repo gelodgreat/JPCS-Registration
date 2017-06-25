@@ -95,8 +95,6 @@ namespace JPCS_Registration
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            Login log = new Login();
-            log.Show();
         }
     }
 }
