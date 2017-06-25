@@ -104,6 +104,7 @@
             this.reg_cb_coursesect.Items.Add(radListDataItem2);
             this.reg_cb_coursesect.Items.Add(radListDataItem3);
             this.reg_cb_coursesect.Location = new System.Drawing.Point(227, 146);
+            this.reg_cb_coursesect.MaxLength = 255;
             this.reg_cb_coursesect.Name = "reg_cb_coursesect";
             this.reg_cb_coursesect.Size = new System.Drawing.Size(272, 32);
             this.reg_cb_coursesect.TabIndex = 6;
@@ -177,6 +178,7 @@
             this.reg_tb_lname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.reg_tb_lname.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_lname.Location = new System.Drawing.Point(227, 40);
+            this.reg_tb_lname.MaxLength = 255;
             this.reg_tb_lname.Name = "reg_tb_lname";
             this.reg_tb_lname.Size = new System.Drawing.Size(272, 29);
             this.reg_tb_lname.TabIndex = 3;
@@ -189,6 +191,7 @@
             this.reg_tb_fname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.reg_tb_fname.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_fname.Location = new System.Drawing.Point(227, 74);
+            this.reg_tb_fname.MaxLength = 255;
             this.reg_tb_fname.Name = "reg_tb_fname";
             this.reg_tb_fname.Size = new System.Drawing.Size(272, 29);
             this.reg_tb_fname.TabIndex = 4;
@@ -201,6 +204,7 @@
             this.reg_tb_mname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.reg_tb_mname.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_mname.Location = new System.Drawing.Point(227, 109);
+            this.reg_tb_mname.MaxLength = 255;
             this.reg_tb_mname.Name = "reg_tb_mname";
             this.reg_tb_mname.Size = new System.Drawing.Size(272, 29);
             this.reg_tb_mname.TabIndex = 5;
@@ -212,6 +216,7 @@
             // 
             this.reg_tb_email.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_email.Location = new System.Drawing.Point(227, 187);
+            this.reg_tb_email.MaxLength = 255;
             this.reg_tb_email.Name = "reg_tb_email";
             this.reg_tb_email.Size = new System.Drawing.Size(272, 29);
             this.reg_tb_email.TabIndex = 7;
@@ -241,6 +246,7 @@
             // 
             this.reg_tb_nationality.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_nationality.Location = new System.Drawing.Point(225, 264);
+            this.reg_tb_nationality.MaxLength = 255;
             this.reg_tb_nationality.Name = "reg_tb_nationality";
             this.reg_tb_nationality.Size = new System.Drawing.Size(164, 29);
             this.reg_tb_nationality.TabIndex = 9;
@@ -251,6 +257,7 @@
             this.reg_tb_cityaddress.AutoSize = false;
             this.reg_tb_cityaddress.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_cityaddress.Location = new System.Drawing.Point(221, 304);
+            this.reg_tb_cityaddress.MaxLength = 255;
             this.reg_tb_cityaddress.Multiline = true;
             this.reg_tb_cityaddress.Name = "reg_tb_cityaddress";
             this.reg_tb_cityaddress.Size = new System.Drawing.Size(334, 53);
@@ -262,6 +269,7 @@
             this.reg_tb_provaddress.AutoSize = false;
             this.reg_tb_provaddress.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_provaddress.Location = new System.Drawing.Point(221, 368);
+            this.reg_tb_provaddress.MaxLength = 255;
             this.reg_tb_provaddress.Multiline = true;
             this.reg_tb_provaddress.Name = "reg_tb_provaddress";
             this.reg_tb_provaddress.Size = new System.Drawing.Size(330, 53);
@@ -272,6 +280,7 @@
             // 
             this.reg_tb_contactnum.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_contactnum.Location = new System.Drawing.Point(221, 435);
+            this.reg_tb_contactnum.MaxLength = 255;
             this.reg_tb_contactnum.Name = "reg_tb_contactnum";
             this.reg_tb_contactnum.Size = new System.Drawing.Size(330, 29);
             this.reg_tb_contactnum.TabIndex = 12;
@@ -283,6 +292,7 @@
             // 
             this.reg_tb_emergencycontactname.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_emergencycontactname.Location = new System.Drawing.Point(227, 486);
+            this.reg_tb_emergencycontactname.MaxLength = 255;
             this.reg_tb_emergencycontactname.Name = "reg_tb_emergencycontactname";
             this.reg_tb_emergencycontactname.Size = new System.Drawing.Size(328, 29);
             this.reg_tb_emergencycontactname.TabIndex = 13;
@@ -294,6 +304,7 @@
             // 
             this.reg_tb_emergenctcontactnumber.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reg_tb_emergenctcontactnumber.Location = new System.Drawing.Point(233, 530);
+            this.reg_tb_emergenctcontactnumber.MaxLength = 255;
             this.reg_tb_emergenctcontactnumber.Name = "reg_tb_emergenctcontactnumber";
             this.reg_tb_emergenctcontactnumber.Size = new System.Drawing.Size(322, 29);
             this.reg_tb_emergenctcontactnumber.TabIndex = 14;

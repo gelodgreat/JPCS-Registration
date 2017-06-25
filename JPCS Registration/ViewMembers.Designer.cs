@@ -176,6 +176,7 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtSearch.Location = new System.Drawing.Point(166, 63);
+            this.txtSearch.MaxLength = 255;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(153, 33);
             this.txtSearch.TabIndex = 8;
@@ -287,6 +288,7 @@
             // 
             this.txtSearch_All.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtSearch_All.Location = new System.Drawing.Point(97, 20);
+            this.txtSearch_All.MaxLength = 255;
             this.txtSearch_All.Name = "txtSearch_All";
             this.txtSearch_All.Size = new System.Drawing.Size(220, 33);
             this.txtSearch_All.TabIndex = 11;

@@ -110,6 +110,7 @@
             // 
             this.txt_payment.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txt_payment.Location = new System.Drawing.Point(271, 305);
+            this.txt_payment.MaxLength = 255;
             this.txt_payment.Name = "txt_payment";
             this.txt_payment.Size = new System.Drawing.Size(113, 33);
             this.txt_payment.TabIndex = 3;

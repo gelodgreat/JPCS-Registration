@@ -56,6 +56,7 @@
             // 
             this.set_tb_server.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.set_tb_server.Location = new System.Drawing.Point(100, 29);
+            this.set_tb_server.MaxLength = 255;
             this.set_tb_server.Name = "set_tb_server";
             this.set_tb_server.Size = new System.Drawing.Size(242, 33);
             this.set_tb_server.TabIndex = 0;
@@ -96,6 +97,7 @@
             // 
             this.set_tb_port.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.set_tb_port.Location = new System.Drawing.Point(100, 75);
+            this.set_tb_port.MaxLength = 255;
             this.set_tb_port.Name = "set_tb_port";
             this.set_tb_port.Size = new System.Drawing.Size(242, 33);
             this.set_tb_port.TabIndex = 1;
@@ -117,6 +119,7 @@
             // 
             this.set_tb_username.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.set_tb_username.Location = new System.Drawing.Point(117, 114);
+            this.set_tb_username.MaxLength = 255;
             this.set_tb_username.Name = "set_tb_username";
             this.set_tb_username.Size = new System.Drawing.Size(242, 33);
             this.set_tb_username.TabIndex = 2;
@@ -136,6 +139,7 @@
             // 
             this.set_tb_password.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.set_tb_password.Location = new System.Drawing.Point(116, 158);
+            this.set_tb_password.MaxLength = 255;
             this.set_tb_password.Name = "set_tb_password";
             this.set_tb_password.Size = new System.Drawing.Size(242, 33);
             this.set_tb_password.TabIndex = 3;

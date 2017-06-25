@@ -112,6 +112,7 @@
             // 
             this.log_tb_password.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.log_tb_password.Location = new System.Drawing.Point(131, 85);
+            this.log_tb_password.MaxLength = 255;
             this.log_tb_password.Name = "log_tb_password";
             this.log_tb_password.PasswordChar = '*';
             this.log_tb_password.Size = new System.Drawing.Size(216, 33);
@@ -122,6 +123,7 @@
             // 
             this.log_tb_username.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.log_tb_username.Location = new System.Drawing.Point(131, 38);
+            this.log_tb_username.MaxLength = 255;
             this.log_tb_username.Name = "log_tb_username";
             this.log_tb_username.Size = new System.Drawing.Size(216, 33);
             this.log_tb_username.TabIndex = 2;
