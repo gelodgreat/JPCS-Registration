@@ -364,7 +364,15 @@ namespace JPCS_Registration
                     }
                     catch (Exception ex)
                     {
-                        RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        if (ex.Message.Contains("denied") | ex.Message.Contains("42000"))
+                        {
+
+                            RadMessageBox.Show(this, "Your current MySQL Server Credentials does not have the permission to delete rows. (Please change your MySQL Server Account credentials with DELETE permission.)", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
+                        else
+                        {
+                            RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
                     }
                     finally
                     {
@@ -426,7 +434,15 @@ namespace JPCS_Registration
                     }
                     catch (Exception ex)
                     {
-                        RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                        if (ex.Message.Contains("denied") | ex.Message.Contains("42000"))
+                        {
+
+                            RadMessageBox.Show(this, "Your current MySQL Server Credentials does not have the permission to delete rows. (Please change your MySQL Server Account credentials with DELETE permission.)", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
+                        else
+                        {
+                            RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                        }
                     }
                     finally
                     {

@@ -88,25 +88,25 @@ namespace JPCS_Registration
                     else
                     {
 
-                        //conn.Open()
-                        //query = "CALL Add_member(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13);";
-                        //command = new MySqlCommand(query, conn);
-                        //command.Parameters.AddWithValue("1", aa_tb_studo.Text);
-                        //command.Parameters.AddWithValue("2", reg_tb_lname.Text);
-                        //command.Parameters.AddWithValue("3", reg_tb_fname.Text);
-                        //command.Parameters.AddWithValue("4", reg_tb_mname.Text);
-                        //command.Parameters.AddWithValue("5", reg_cb_coursesect.Text);
-                        //command.Parameters.AddWithValue("6", reg_tb_email.Text);
-                        //command.Parameters.AddWithValue("7", reg_tb_bday.Text);
-                        //command.Parameters.AddWithValue("8", reg_tb_nationality.Text);
-                        //command.Parameters.AddWithValue("9", reg_tb_cityaddress.Text);
-                        //command.Parameters.AddWithValue("10", reg_tb_provaddress.Text);
-                        //command.Parameters.AddWithValue("11", reg_tb_contactnum.Text);
-                        //command.Parameters.AddWithValue("12", reg_tb_emergencycontactname.Text);
-                        //command.Parameters.AddWithValue("13", reg_tb_emergenctcontactnumber.Text);
-                        //globalconfig.Logger(PrintQuery(command));
+                        conn.Open();
+                        query = "CALL Add_member(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12, @13);";
+                        command = new MySqlCommand(query, conn);
+                        command.Parameters.AddWithValue("1", aa_tb_studo.Text);
+                        command.Parameters.AddWithValue("2", reg_tb_lname.Text);
+                        command.Parameters.AddWithValue("3", reg_tb_fname.Text);
+                        command.Parameters.AddWithValue("4", reg_tb_mname.Text);
+                        command.Parameters.AddWithValue("5", reg_cb_coursesect.Text);
+                        command.Parameters.AddWithValue("6", reg_tb_email.Text);
+                        command.Parameters.AddWithValue("7", reg_tb_bday.Text);
+                        command.Parameters.AddWithValue("8", reg_tb_nationality.Text);
+                        command.Parameters.AddWithValue("9", reg_tb_cityaddress.Text);
+                        command.Parameters.AddWithValue("10", reg_tb_provaddress.Text);
+                        command.Parameters.AddWithValue("11", reg_tb_contactnum.Text);
+                        command.Parameters.AddWithValue("12", reg_tb_emergencycontactname.Text);
+                        command.Parameters.AddWithValue("13", reg_tb_emergenctcontactnumber.Text);
+                        globalconfig.Logger(PrintQuery(command));
 
-                        //command.ExecuteNonQuery();
+                        command.ExecuteNonQuery();
 
                         RadMessageBox.Show(this, "Successfully Registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                         aa_tb_studo.Clear();
@@ -146,23 +146,23 @@ namespace JPCS_Registration
             {
                 try
                 {
-                    //conn.Open();
-                    //MySqlCommand comm = new MySqlCommand("CALL Edit_member(@1, @2, @3, @4, @5, @6 @7, @8, @9, @10, @11, @12, @13);", conn);
-                    //comm.Parameters.AddWithValue("1", globalconfig.selection);
-                    //comm.Parameters.AddWithValue("2", reg_tb_lname.Text);
-                    //comm.Parameters.AddWithValue("3", reg_tb_fname.Text);
-                    //comm.Parameters.AddWithValue("4", reg_tb_mname.Text);
-                    //comm.Parameters.AddWithValue("5", reg_cb_coursesect.Text);
-                    //comm.Parameters.AddWithValue("6", reg_tb_email.Text);
-                    //comm.Parameters.AddWithValue("7", reg_tb_bday.Text);
-                    //comm.Parameters.AddWithValue("8", reg_tb_nationality.Text);
-                    //comm.Parameters.AddWithValue("9", reg_tb_cityaddress.Text);
-                    //comm.Parameters.AddWithValue("10", reg_tb_provaddress.Text);
-                    //comm.Parameters.AddWithValue("11", reg_tb_contactnum.Text);
-                    //comm.Parameters.AddWithValue("12", reg_tb_emergencycontactname.Text);
-                    //comm.Parameters.AddWithValue("13", reg_tb_emergenctcontactnumber.Text);
-                    //comm.ExecuteNonQuery();
-                    //conn.Close();
+                    conn.Open();
+                    MySqlCommand comm = new MySqlCommand("CALL Edit_member(@1, @2, @3, @4, @5, @6 @7, @8, @9, @10, @11, @12, @13);", conn);
+                    comm.Parameters.AddWithValue("1", globalconfig.selection);
+                    comm.Parameters.AddWithValue("2", reg_tb_lname.Text);
+                    comm.Parameters.AddWithValue("3", reg_tb_fname.Text);
+                    comm.Parameters.AddWithValue("4", reg_tb_mname.Text);
+                    comm.Parameters.AddWithValue("5", reg_cb_coursesect.Text);
+                    comm.Parameters.AddWithValue("6", reg_tb_email.Text);
+                    comm.Parameters.AddWithValue("7", reg_tb_bday.Text);
+                    comm.Parameters.AddWithValue("8", reg_tb_nationality.Text);
+                    comm.Parameters.AddWithValue("9", reg_tb_cityaddress.Text);
+                    comm.Parameters.AddWithValue("10", reg_tb_provaddress.Text);
+                    comm.Parameters.AddWithValue("11", reg_tb_contactnum.Text);
+                    comm.Parameters.AddWithValue("12", reg_tb_emergencycontactname.Text);
+                    comm.Parameters.AddWithValue("13", reg_tb_emergenctcontactnumber.Text);
+                    comm.ExecuteNonQuery();
+                    conn.Close();
 
 
                     RadMessageBox.Show(this, "Saved!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
