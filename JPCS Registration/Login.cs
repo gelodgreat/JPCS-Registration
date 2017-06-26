@@ -225,10 +225,10 @@ namespace JPCS_Registration
             return loopstopper;
         }
 
-        private void Login_Activated(object sender, EventArgs e)
+        private void log_tb_username_MouseEnter(object sender, EventArgs e)
         {
-
-            if (SettingsFormStatus==true)
+            Console.WriteLine("Fire!");
+            if (SettingsFormStatus == true)
             {
                 return;
             }
@@ -236,7 +236,19 @@ namespace JPCS_Registration
             {
                 dbStatus();
             }
-            
+        }
+
+        private void log_btn_settings_MouseEnter(object sender, EventArgs e)
+        {
+            Console.WriteLine("Fire!");
+            if (SettingsFormStatus == true)
+            {
+                return;
+            }
+            else
+            {
+                dbStatus();
+            }
         }
     }
 }
