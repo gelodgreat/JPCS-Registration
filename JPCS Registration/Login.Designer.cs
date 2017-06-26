@@ -128,6 +128,7 @@
             this.log_tb_username.Size = new System.Drawing.Size(216, 33);
             this.log_tb_username.TabIndex = 2;
             this.log_tb_username.ThemeName = "VisualStudio2012Dark";
+            this.log_tb_username.MouseEnter += new System.EventHandler(this.log_tb_username_MouseEnter);
             // 
             // radLabel2
             // 
@@ -159,6 +160,7 @@
             this.log_btn_settings.Text = "Settings";
             this.log_btn_settings.ThemeName = "VisualStudio2012Dark";
             this.log_btn_settings.Click += new System.EventHandler(this.log_btn_settings_Click);
+            this.log_btn_settings.MouseEnter += new System.EventHandler(this.log_btn_settings_MouseEnter);
             // 
             // log_server_status
             // 

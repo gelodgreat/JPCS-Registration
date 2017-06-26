@@ -130,7 +130,7 @@ namespace JPCS_Registration
         public void get_schoolyear()
         {
             MySqlConnection MySQLConn = new MySqlConnection();
-            MySQLConn.ConnectionString = connstring;
+            MySQLConn.ConnectionString = globalconfig.connstring;
             try
             {
                 MySQLConn.Open();

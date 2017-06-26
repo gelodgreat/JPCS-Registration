@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using MySql.Data.MySqlClient;
 using Telerik.WinControls.UI;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace JPCS_Registration
 {
@@ -23,18 +24,48 @@ namespace JPCS_Registration
         Parent p = new Parent();
         Settings settings = new Settings();
         bool constate;
+        Settings _settings = new Settings();
+        Boolean SettingsFormStatus = false;
         public Login()
         {
             InitializeComponent();
         }
+        void SettigsWindow()
+        {
+            _settings.ShowDialog();
+        }
+        void CheckForm() 
+        {
+            List<Form> openForms = new List<Form>();
 
+            foreach (Form f in Application.OpenForms)
+                openForms.Add(f);
+
+            foreach (Form f in openForms)
+            {
+                if (f.Name != "Settings")
+                    SettingsFormStatus = true;
+            }
+
+        }
+        void dbStatus()
+        {
+            Boolean stat = false;
+            stat = checkdbstat();
+            if (stat == false)
+            {
+
+                RadMessageBox.Show(this, "Unable to connect to MySQL database. Please fix your configuration.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                SettigsWindow();
+            }
+        }
         private void log_btn_login_Click(object sender, EventArgs e)
         {
             try
             {
                 conn = new MySqlConnection();
-                MySqlCommand command = gc.command;
-                conn.ConnectionString = connstring;
+
+                conn.ConnectionString = globalconfig.connstring;
                 MySqlDataReader reader = default(MySqlDataReader);
 
                 if (conn.State == ConnectionState.Open)
@@ -53,7 +84,7 @@ namespace JPCS_Registration
                         //query = "SELECT * FROM auth_accounts WHERE studno=@studno OR username=@username AND password=sha2(@password, 512);";
                         query = "CALL login(@1, @2);";
                         
-                        command = new MySqlCommand(query, conn);
+                        MySqlCommand command = new MySqlCommand(query, conn);
                         command.Parameters.AddWithValue("1", log_tb_username.Text);
                         command.Parameters.AddWithValue("2", log_tb_password.Text);
                         reader = command.ExecuteReader();
@@ -121,13 +152,13 @@ namespace JPCS_Registration
             ThemeResolutionService.ApplicationThemeName = "VisualStudio2012Dark";
 
             Boolean check = checkdbstat();
-            globalconfig gc = new globalconfig();
-            while (check == false)
+            if (check == false)
             {
-                settings.Show();
-                check = checkdbstat();
+                RadMessageBox.Show(this, "Unable to connect to MySQL database. Please fix your configuration.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+                log_server_status.Text = "Offline";
+                log_server_status.ForeColor = Color.Red;
+                SettigsWindow();
             }
-            log_tb_username.Focus();
 
         }
 
@@ -145,9 +176,7 @@ namespace JPCS_Registration
         private void log_btn_settings_Click(object sender, EventArgs e)
         {
 
-            Settings settings = new Settings();
-            this.Hide();
-            settings.ShowDialog();
+            SettigsWindow();
           
         }
 
@@ -160,7 +189,7 @@ namespace JPCS_Registration
             Boolean loopstopper = false;
             conn = new MySqlConnection();
             conn.ConnectionString = globalconfig.connstring;
-            MySqlCommand command = gc.command;
+
             try
             {
                 if (conn.State == ConnectionState.Open)
@@ -168,16 +197,15 @@ namespace JPCS_Registration
                     conn.Close();
                 }
                 constate = false;
-                loopstopper = true;
-                conn.ConnectionString = connstring;
+                loopstopper = false;
                 conn.Open();
                 constate = true;
+                loopstopper = true;
                 conn.Close();
             }
             catch (Exception ex)
             {
-                RadMessageBox.Show("Please correct your connection configuration", "JPCS Registration");
-                settings.ShowDialog();
+                loopstopper = false;
             }
             finally
             {
@@ -195,6 +223,32 @@ namespace JPCS_Registration
                 }
             }
             return loopstopper;
+        }
+
+        private void log_tb_username_MouseEnter(object sender, EventArgs e)
+        {
+            Console.WriteLine("Fire!");
+            if (SettingsFormStatus == true)
+            {
+                return;
+            }
+            else
+            {
+                dbStatus();
+            }
+        }
+
+        private void log_btn_settings_MouseEnter(object sender, EventArgs e)
+        {
+            Console.WriteLine("Fire!");
+            if (SettingsFormStatus == true)
+            {
+                return;
+            }
+            else
+            {
+                dbStatus();
+            }
         }
     }
 }
