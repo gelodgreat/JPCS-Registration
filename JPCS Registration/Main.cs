@@ -34,6 +34,17 @@ namespace JPCS_Registration
         }
         #endregion
 
+        #region errorProvider Processor
+        void SetError(Control c, string message)
+        {
+            if (message == "")
+                errorCount--;
+            else
+                errorCount++;
+            errorProviderEntries.SetError(c, message);
+        }
+        #endregion
+
         #region Load
         private void Main_Load(object sender, EventArgs e)
         {
@@ -375,17 +386,6 @@ namespace JPCS_Registration
             {
                 SetError(dateTimePicker1, "* Please Complete your birthday");
             }
-        }
-        #endregion
-
-        #region errorProvider Processor
-        void SetError(Control c, string message)
-        {
-            if (message == "")
-                errorCount--;
-            else
-                errorCount++;
-            errorProviderEntries.SetError(c, message);
         }
         #endregion
 

@@ -133,6 +133,12 @@ namespace JPCS_Registration
             get { return studentcount; }
             set { studentcount = value; }
         }
+        private static string eventid;
+        public static string currentEventId
+        {
+            get { return eventid; }
+            set { eventid = value; }
+        }
         public static void Logger(String msg)
         {
             if (ConsoleIsShown)
