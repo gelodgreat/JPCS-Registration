@@ -57,7 +57,7 @@ namespace JPCS_Registration
             {
 
                 MySQLConn.Open();
-                MySqlCommand comm = new MySqlCommand("CALL ChangeSchoolYear(@1)", MySQLConn);
+                MySqlCommand comm = new MySqlCommand("CALL Change_SchoolYear(@1)", MySQLConn);
                 comm.Parameters.AddWithValue("1", lvSchoolYear.SelectedItem.ToString());
                 comm.ExecuteNonQuery();
                 RadMessageBox.Show(this, "The School Year has been successfully Changed!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
