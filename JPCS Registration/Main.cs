@@ -182,6 +182,13 @@ namespace JPCS_Registration
                 catch (Exception ex)
                 {
                     RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                    #region Log
+
+                    globalconfig.Logger(ex.Message);
+
+                    #endregion
+
                 }
                 finally
                 {
@@ -193,7 +200,9 @@ namespace JPCS_Registration
             else
             {
                 RadMessageBox.Show(this, "The System has encountered a fatal error! Please report to the Develpoers immediately.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                
             }
+           
 
 
         }

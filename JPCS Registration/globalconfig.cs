@@ -139,13 +139,12 @@ namespace JPCS_Registration
             get { return eventid; }
             set { eventid = value; }
         }
-        public static void Logger(String msg)
+        public static void Logger(String msg, String Action)
         {
             if (ConsoleIsShown)
             {
                 logfile = File.AppendText(path);
-                logfile.WriteLine("[" + "MM-dd-yyyy HH:mm" + "] " + msg);
-                Console.WriteLine("[" + "MM-dd-yyyy HH:mm" + "] " + msg);
+                logfile.WriteLine("[" + "MM-dd-yyyy HH:mm" + "] " + msg +" "+ Action);
                 logfile.Close();
             }
         }
