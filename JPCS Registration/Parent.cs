@@ -293,5 +293,25 @@ namespace JPCS_Registration
             DBConn.Show();
         }
 
+        private void ParticipantAdd_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+
+            }
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is EventRegistration)
+                {
+                    f.Dispose();
+                    return;
+                }
+            }
+
+            EventRegistration eventReg = new EventRegistration();
+            eventReg.MdiParent = this;
+            eventReg.Show();
+        }
     }
 }
