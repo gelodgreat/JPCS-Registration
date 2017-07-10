@@ -143,7 +143,7 @@ namespace JPCS_Registration
         {
            
                 logfile = File.AppendText(path);
-                logfile.WriteLine("[" + "MM-dd-yyyy HH:mm" + "] " + msg +" "+ Mainaction);
+                logfile.WriteLine("[" + DateTime.Now.ToString("MM-dd-yyyy HH:mm:ss") + "] " + msg +" "+ Mainaction);
                 logfile.Close();
         }
 
