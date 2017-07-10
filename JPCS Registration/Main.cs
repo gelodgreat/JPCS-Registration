@@ -142,6 +142,11 @@ namespace JPCS_Registration
                     if (ex.Message.Contains("Duplicate"))
                     {
                         RadMessageBox.Show(this, "The Student Number you have entered is already registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                        #region Log
+                        globalconfig.Logger(ex.Message);
+                        #endregion
+
                     }
                     else
                     {
@@ -173,6 +178,7 @@ namespace JPCS_Registration
                     comm.Parameters.AddWithValue("12", reg_tb_emergencycontactname.Text);
                     comm.Parameters.AddWithValue("13", reg_tb_emergenctcontactnumber.Text);
                     comm.ExecuteNonQuery();
+                    globalconfig.Logger(PrintQuery(command));
                     conn.Close();
 
 
@@ -299,6 +305,12 @@ namespace JPCS_Registration
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                #region Log
+                globalconfig.Logger(ex.Message);
+                #endregion
+
+
             }
         }
         #endregion
