@@ -73,7 +73,6 @@ namespace JPCS_Registration
         }
         #endregion
 
-
         #region reg_btn_save
 
         private void reg_btn_save_Click(object sender, EventArgs e)
@@ -134,6 +133,10 @@ namespace JPCS_Registration
                         reg_tb_emergencycontactname.Clear();
                         reg_tb_emergenctcontactnumber.Clear();
                         dateTimePicker1.Value = dateTimePicker1.MinDate;
+
+                        globalconfig.Logger("Success");
+
+
                         //conn.Close();
                     }
                 }
@@ -183,6 +186,9 @@ namespace JPCS_Registration
 
 
                     RadMessageBox.Show(this, "Saved!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+
+                    globalconfig.Logger("Success");
+
                     this.Dispose();
                 }
                 catch (Exception ex)
