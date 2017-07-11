@@ -328,7 +328,7 @@ namespace JPCS_Registration
             if (!aa_tb_studo.MaskCompleted)
             {
                 SetError(aa_tb_studo, "Incorrect / Insufficient Student number");
-                Console.WriteLine(errorProviderEntries.ToString());
+                
             }
         }
 
