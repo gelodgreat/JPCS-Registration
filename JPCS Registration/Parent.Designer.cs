@@ -42,6 +42,8 @@
             this.radLabelMode = new Telerik.WinControls.UI.RadLabelElement();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.radLabelServer = new Telerik.WinControls.UI.RadLabelElement();
+            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
+            this.ParticipantAdd = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -59,18 +61,21 @@
             // 
             // MemberAdd
             // 
+            this.MemberAdd.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.MemberAdd.Name = "MemberAdd";
             this.MemberAdd.Text = "&Add Member";
             this.MemberAdd.Click += new System.EventHandler(this.MemberAdd_Click);
             // 
             // MemberRenew
             // 
+            this.MemberRenew.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.MemberRenew.Name = "MemberRenew";
             this.MemberRenew.Text = "&Renew Membership";
             this.MemberRenew.Click += new System.EventHandler(this.MemberRenew_Click);
             // 
             // MemberManage
             // 
+            this.MemberManage.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.MemberManage.Name = "MemberManage";
             this.MemberManage.Text = "&Manage Members";
             this.MemberManage.Click += new System.EventHandler(this.MemberManage_Click);
@@ -80,6 +85,7 @@
             this.radMenu1.AllowShowFocusCues = true;
             this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem1,
+            this.radMenuItem3,
             this.radMenuItem2});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
@@ -99,12 +105,14 @@
             // 
             // radMenuManageAccount
             // 
+            this.radMenuManageAccount.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radMenuManageAccount.Name = "radMenuManageAccount";
             this.radMenuManageAccount.Text = "Manage Accounts";
             this.radMenuManageAccount.Click += new System.EventHandler(this.radMenuManageAccount_Click);
             // 
             // radMenuSchoolYear
             // 
+            this.radMenuSchoolYear.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radMenuSchoolYear.Name = "radMenuSchoolYear";
             this.radMenuSchoolYear.Text = "Manage School Year";
             this.radMenuSchoolYear.Click += new System.EventHandler(this.radMenuSchoolYear_Click);
@@ -134,7 +142,6 @@
             // 
             this.commandBarSeparator1.Name = "commandBarSeparator1";
             this.radStatusStrip1.SetSpring(this.commandBarSeparator1, false);
-            this.commandBarSeparator1.Text = "";
             this.commandBarSeparator1.VisibleInOverflowMenu = false;
             // 
             // radLabelServer
@@ -143,6 +150,22 @@
             this.radStatusStrip1.SetSpring(this.radLabelServer, false);
             this.radLabelServer.Text = "radLabelServer";
             this.radLabelServer.TextWrap = true;
+            this.radLabelServer.Click += new System.EventHandler(this.radLabelServer_Click);
+            // 
+            // radMenuItem3
+            // 
+            this.radMenuItem3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radMenuItem3.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.ParticipantAdd});
+            this.radMenuItem3.Name = "radMenuItem3";
+            this.radMenuItem3.Text = "Event";
+            // 
+            // ParticipantAdd
+            // 
+            this.ParticipantAdd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ParticipantAdd.Name = "ParticipantAdd";
+            this.ParticipantAdd.Text = "Register";
+            this.ParticipantAdd.Click += new System.EventHandler(this.ParticipantAdd_Click);
             // 
             // Parent
             // 
@@ -188,5 +211,7 @@
         private Telerik.WinControls.UI.RadLabelElement radLabelMode;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator1;
         private Telerik.WinControls.UI.RadLabelElement radLabelServer;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
+        private Telerik.WinControls.UI.RadMenuItem ParticipantAdd;
     }
 }

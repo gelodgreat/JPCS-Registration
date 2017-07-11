@@ -13,9 +13,9 @@ namespace JPCS_Registration
     public partial class Renewal : Telerik.WinControls.UI.RadForm
     {
 
-        MySqlConnection conn;
+        
         globalconfig gc = new globalconfig();
-        DialogResult notreg;
+        
 
         public Renewal()
         {
@@ -63,7 +63,6 @@ namespace JPCS_Registration
             }
             MySqlConnection MySQLConn=new MySqlConnection();
             MySQLConn.ConnectionString = globalconfig.connstring;
-            Boolean success=false;
             try
             {
                 
@@ -115,7 +114,7 @@ namespace JPCS_Registration
             try
             {
                 MySQLConn.Open();
-                MySqlCommand comm = new MySqlCommand("CALL show_registered_courseyearsection()", MySQLConn);
+                MySqlCommand comm = new MySqlCommand("CALL get_registered_courseyearsection()", MySQLConn);
                 MySqlDataReader reader = comm.ExecuteReader();
                 while (reader.Read())
                 {
@@ -124,7 +123,7 @@ namespace JPCS_Registration
                 MySQLConn.Close();
             }catch (Exception ex)
             {
-                RadMessageBox.Show(this, ex.Message, "JPCS Registration");
+                RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
             }
             finally
             {

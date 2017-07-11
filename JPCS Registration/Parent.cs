@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using MySql.Data.MySqlClient;
+using System.Net.NetworkInformation;
 
 namespace JPCS_Registration
 {
@@ -22,13 +23,11 @@ namespace JPCS_Registration
         //Main register = new Main();
 
         Settings settings = new Settings();
-        
+
 
         String connstring = globalconfig.connstring;
         globalconfig gc = new globalconfig();
-        MySqlConnection conn;
         MySqlCommand comm = new MySqlCommand();
-        Boolean constate = false;
         String[] args = Environment.GetCommandLineArgs();
         public Parent()
         {
@@ -38,7 +37,7 @@ namespace JPCS_Registration
 
         private void Parent_Load(object sender, EventArgs e)
         {
-            
+
             get_schoolyear();
 
             // Loop through all of the form's controls looking
@@ -74,7 +73,8 @@ namespace JPCS_Registration
                 }
             }
             radLabelMode.Text = globalconfig.fullname;
-            radLabelServer.Text = "Server: "+Properties.Settings.Default.db_server;
+            radLabelServer.Text = "Server: " + Properties.Settings.Default.db_server;
+            check_connection_type();
 
         }
 
@@ -99,7 +99,7 @@ namespace JPCS_Registration
             register.MdiParent = this;
             register.Show();
         }
-        
+
         private void MemberManage_Click(object sender, EventArgs e)
         {
             if (globalconfig.isAuthenticated)
@@ -121,7 +121,8 @@ namespace JPCS_Registration
                 ViewMembers vm = new ViewMembers();
                 vm.MdiParent = this;
                 vm.Show();
-            }else
+            }
+            else
             {
                 RadMessageBox.Show(this, "Elevated mode is required to access Member Management. To enter elevated mode, close the Main Window and enter your correct account credentials. ", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1);
             }
@@ -129,7 +130,7 @@ namespace JPCS_Registration
         public void get_schoolyear()
         {
             MySqlConnection MySQLConn = new MySqlConnection();
-            MySQLConn.ConnectionString = connstring;
+            MySQLConn.ConnectionString = globalconfig.connstring;
             try
             {
                 MySQLConn.Open();
@@ -141,8 +142,9 @@ namespace JPCS_Registration
                     globalconfig.schoolyearactive = reader.GetString("schoolyear");
                 }
                 MySQLConn.Close();
-                
-            }catch (Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message);
             }
@@ -237,9 +239,79 @@ namespace JPCS_Registration
                 RadMessageBox.Show(this, "Elevated mode is required to access Member Management. To enter elevated mode, close the Main Window and enter your correct account credentials. ", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1);
             }
         }
-        // Display a child form to show this is still an MDI application.
-        //Form2 frm = new Form2();
-        //frm.MdiParent = this;
-        //frm.Show();
+
+
+        public void check_connection_type()
+        {
+           
+            List<String> Locals = new List<String>();
+
+
+            foreach (NetworkInterface nics in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                if (nics.OperationalStatus == OperationalStatus.Up)
+                {
+                    foreach (UnicastIPAddressInformation ip in nics.GetIPProperties().UnicastAddresses)
+                    {
+                        Locals.Add(ip.Address.ToString());
+                    }
+                }
+                Locals.Add("localhost");
+                Locals.Add(Environment.MachineName);
+            }
+            if (Locals.Contains(Properties.Settings.Default.db_server))
+            {
+                
+                radLabelServer.Text = radLabelServer.Text + "(Local)";
+            }
+            else
+            {
+               
+                radLabelServer.Text = radLabelServer.Text + "(Remote)";
+            }
+        }
+
+        private void radLabelServer_Click(object sender, EventArgs e)
+        {
+
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+
+            }
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is AddAccount)
+                {
+                    f.Dispose();
+                    return;
+                }
+            }
+
+            DatabaseConnection DBConn = new DatabaseConnection();
+            DBConn.MdiParent = this;
+            DBConn.Show();
+        }
+
+        private void ParticipantAdd_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+
+            }
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is EventRegistration)
+                {
+                    f.Dispose();
+                    return;
+                }
+            }
+
+            EventRegistration eventReg = new EventRegistration();
+            eventReg.MdiParent = this;
+            eventReg.Show();
+        }
     }
 }

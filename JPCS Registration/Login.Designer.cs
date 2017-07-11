@@ -112,6 +112,7 @@
             // 
             this.log_tb_password.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.log_tb_password.Location = new System.Drawing.Point(131, 85);
+            this.log_tb_password.MaxLength = 255;
             this.log_tb_password.Name = "log_tb_password";
             this.log_tb_password.PasswordChar = '*';
             this.log_tb_password.Size = new System.Drawing.Size(216, 33);
@@ -122,10 +123,12 @@
             // 
             this.log_tb_username.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.log_tb_username.Location = new System.Drawing.Point(131, 38);
+            this.log_tb_username.MaxLength = 255;
             this.log_tb_username.Name = "log_tb_username";
             this.log_tb_username.Size = new System.Drawing.Size(216, 33);
             this.log_tb_username.TabIndex = 2;
             this.log_tb_username.ThemeName = "VisualStudio2012Dark";
+            this.log_tb_username.MouseEnter += new System.EventHandler(this.log_tb_username_MouseEnter);
             // 
             // radLabel2
             // 
@@ -157,6 +160,7 @@
             this.log_btn_settings.Text = "Settings";
             this.log_btn_settings.ThemeName = "VisualStudio2012Dark";
             this.log_btn_settings.Click += new System.EventHandler(this.log_btn_settings_Click);
+            this.log_btn_settings.MouseEnter += new System.EventHandler(this.log_btn_settings_MouseEnter);
             // 
             // log_server_status
             // 

@@ -18,12 +18,11 @@ namespace JPCS_Registration
         public string query;
         DialogResult addYn;
         DialogResult delYn;
-        DialogResult updYn;
         string gender;
         string isofficerstat;
         int timerusername = 0;
         int studnotimeer = 0;
-        string storeusername, storestudno;
+        string storestudno;
 
         public AddAccount()
         {
@@ -43,7 +42,6 @@ namespace JPCS_Registration
 
             MySqlCommand command = new MySqlCommand();
             conn.ConnectionString = globalconfig.connstring;
-            MySqlDataReader reader = default(MySqlDataReader);
             DataTable dbdataset = new DataTable();
             BindingSource bsource = new BindingSource();
             MySqlDataAdapter sda = new MySqlDataAdapter();
@@ -322,7 +320,6 @@ namespace JPCS_Registration
             conn = new MySqlConnection();
             MySqlCommand command = gc.command;
             conn.ConnectionString = globalconfig.connstring;
-            MySqlDataReader reader = default(MySqlDataReader);
             try
             {
                 if (e.RowIndex >= 0)

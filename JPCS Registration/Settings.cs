@@ -20,6 +20,7 @@ namespace JPCS_Registration
         private void set_btn_save_Click(object sender, EventArgs e)
         {
             savesettings();
+            this.Close();
         }
 
         private void savesettings()
@@ -54,9 +55,7 @@ namespace JPCS_Registration
 
                     globalconfig.connstring = "server=" + server + ";port=" + port + ";username=" + username + ";password=" + password + ";database=" + database + ";";
                     RadMessageBox.Show("Succesfully Saved! Please Restart the Application", "JPCS Registration");
-                    this.Dispose();
-                    Application.Restart();
-                    
+                                       
                 }
             }
         }
@@ -89,6 +88,11 @@ namespace JPCS_Registration
                 }
 
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

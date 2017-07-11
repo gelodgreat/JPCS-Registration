@@ -233,7 +233,8 @@
             // aa_tb_security_ans
             // 
             this.aa_tb_security_ans.AutoSize = false;
-            this.aa_tb_security_ans.Location = new System.Drawing.Point(122, 367);
+            this.aa_tb_security_ans.Location = new System.Drawing.Point(128, 371);
+            this.aa_tb_security_ans.MaxLength = 255;
             this.aa_tb_security_ans.Multiline = true;
             this.aa_tb_security_ans.Name = "aa_tb_security_ans";
             this.aa_tb_security_ans.Size = new System.Drawing.Size(263, 57);
@@ -243,6 +244,7 @@
             // aa_tb_repass
             // 
             this.aa_tb_repass.Location = new System.Drawing.Point(122, 307);
+            this.aa_tb_repass.MaxLength = 255;
             this.aa_tb_repass.Name = "aa_tb_repass";
             this.aa_tb_repass.PasswordChar = '*';
             this.aa_tb_repass.Size = new System.Drawing.Size(263, 25);
@@ -263,6 +265,7 @@
             this.aa_cb_security_ques.Items.Add(radListDataItem4);
             this.aa_cb_security_ques.Items.Add(radListDataItem5);
             this.aa_cb_security_ques.Location = new System.Drawing.Point(122, 337);
+            this.aa_cb_security_ques.MaxLength = 255;
             this.aa_cb_security_ques.Name = "aa_cb_security_ques";
             this.aa_cb_security_ques.Size = new System.Drawing.Size(263, 28);
             this.aa_cb_security_ques.TabIndex = 7;
@@ -349,6 +352,7 @@
             // aa_tb_password
             // 
             this.aa_tb_password.Location = new System.Drawing.Point(122, 277);
+            this.aa_tb_password.MaxLength = 255;
             this.aa_tb_password.Name = "aa_tb_password";
             this.aa_tb_password.PasswordChar = '*';
             this.aa_tb_password.Size = new System.Drawing.Size(263, 25);
@@ -368,6 +372,7 @@
             // 
             this.aa_tb_address.AutoSize = false;
             this.aa_tb_address.Location = new System.Drawing.Point(122, 184);
+            this.aa_tb_address.MaxLength = 255;
             this.aa_tb_address.Multiline = true;
             this.aa_tb_address.Name = "aa_tb_address";
             this.aa_tb_address.Size = new System.Drawing.Size(263, 57);
@@ -395,6 +400,7 @@
             // aa_tb_username
             // 
             this.aa_tb_username.Location = new System.Drawing.Point(122, 247);
+            this.aa_tb_username.MaxLength = 255;
             this.aa_tb_username.Name = "aa_tb_username";
             this.aa_tb_username.Size = new System.Drawing.Size(196, 25);
             this.aa_tb_username.TabIndex = 4;
@@ -463,6 +469,7 @@
             // aa_tb_lname
             // 
             this.aa_tb_lname.Location = new System.Drawing.Point(122, 90);
+            this.aa_tb_lname.MaxLength = 255;
             this.aa_tb_lname.Name = "aa_tb_lname";
             this.aa_tb_lname.Size = new System.Drawing.Size(263, 25);
             this.aa_tb_lname.TabIndex = 2;
@@ -480,6 +487,7 @@
             // aa_tb_fname
             // 
             this.aa_tb_fname.Location = new System.Drawing.Point(122, 60);
+            this.aa_tb_fname.MaxLength = 255;
             this.aa_tb_fname.Name = "aa_tb_fname";
             this.aa_tb_fname.Size = new System.Drawing.Size(263, 25);
             this.aa_tb_fname.TabIndex = 1;

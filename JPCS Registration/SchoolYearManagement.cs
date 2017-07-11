@@ -57,8 +57,8 @@ namespace JPCS_Registration
             {
 
                 MySQLConn.Open();
-                MySqlCommand comm = new MySqlCommand("CALL ChangeSchoolYear(@schoolyear)", MySQLConn);
-                comm.Parameters.AddWithValue("schoolyear", lvSchoolYear.SelectedItem.ToString());
+                MySqlCommand comm = new MySqlCommand("CALL Change_SchoolYear(@1)", MySQLConn);
+                comm.Parameters.AddWithValue("1", lvSchoolYear.SelectedItem.ToString());
                 comm.ExecuteNonQuery();
                 RadMessageBox.Show(this, "The School Year has been successfully Changed!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                 MySQLConn.Close();
@@ -87,8 +87,8 @@ namespace JPCS_Registration
                 {
 
                     MySQLConn.Open();
-                    MySqlCommand comm = new MySqlCommand("CALL Delete_schoolyear(@schoolyear)", MySQLConn);
-                    comm.Parameters.AddWithValue("schoolyear", lvSchoolYear.Text);
+                    MySqlCommand comm = new MySqlCommand("CALL Delete_schoolyear(@1)", MySQLConn);
+                    comm.Parameters.AddWithValue("1", lvSchoolYear.Text);
                     comm.ExecuteNonQuery();
                     RadMessageBox.Show(this, "The School Year has been successfully Deleted!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                     MySQLConn.Close();
@@ -117,8 +117,8 @@ namespace JPCS_Registration
                 {
 
                     MySQLConn.Open();
-                    MySqlCommand comm = new MySqlCommand("CALL AddSchoolYear(@schoolyear)", MySQLConn);
-                    comm.Parameters.AddWithValue("schoolyear", mtbSchoolYear.Text);
+                    MySqlCommand comm = new MySqlCommand("CALL Add_SchoolYear(@1)", MySQLConn);
+                    comm.Parameters.AddWithValue("1", mtbSchoolYear.Text);
                     comm.ExecuteNonQuery();
                     RadMessageBox.Show(this, "The School Year has been successfully Changed!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
                     MySQLConn.Close();

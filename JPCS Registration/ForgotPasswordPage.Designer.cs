@@ -86,6 +86,7 @@
             // fp_tb_userstudno
             // 
             this.fp_tb_userstudno.Location = new System.Drawing.Point(103, 49);
+            this.fp_tb_userstudno.MaxLength = 255;
             this.fp_tb_userstudno.Name = "fp_tb_userstudno";
             this.fp_tb_userstudno.Size = new System.Drawing.Size(263, 25);
             this.fp_tb_userstudno.TabIndex = 1;
@@ -94,7 +95,7 @@
             // 
             // radLabel15
             // 
-            this.radLabel15.Location = new System.Drawing.Point(59, 64);
+            this.radLabel15.Location = new System.Drawing.Point(53, 64);
             this.radLabel15.Name = "radLabel15";
             this.radLabel15.Size = new System.Drawing.Size(56, 22);
             this.radLabel15.TabIndex = 18;
@@ -103,7 +104,7 @@
             // 
             // radLabel14
             // 
-            this.radLabel14.Location = new System.Drawing.Point(7, 34);
+            this.radLabel14.Location = new System.Drawing.Point(-7, 34);
             this.radLabel14.Name = "radLabel14";
             this.radLabel14.Size = new System.Drawing.Size(120, 22);
             this.radLabel14.TabIndex = 17;
@@ -114,6 +115,7 @@
             // 
             this.fp_tb_securityans.AutoSize = false;
             this.fp_tb_securityans.Location = new System.Drawing.Point(110, 64);
+            this.fp_tb_securityans.MaxLength = 255;
             this.fp_tb_securityans.Multiline = true;
             this.fp_tb_securityans.Name = "fp_tb_securityans";
             this.fp_tb_securityans.Size = new System.Drawing.Size(263, 57);
@@ -134,6 +136,7 @@
             this.fp_cb_securityques.Items.Add(radListDataItem4);
             this.fp_cb_securityques.Items.Add(radListDataItem5);
             this.fp_cb_securityques.Location = new System.Drawing.Point(110, 34);
+            this.fp_cb_securityques.MaxLength = 255;
             this.fp_cb_securityques.Name = "fp_cb_securityques";
             this.fp_cb_securityques.Size = new System.Drawing.Size(263, 28);
             this.fp_cb_securityques.TabIndex = 16;
@@ -170,6 +173,7 @@
             // fp_tb_new_pass
             // 
             this.fp_tb_new_pass.Location = new System.Drawing.Point(110, 30);
+            this.fp_tb_new_pass.MaxLength = 255;
             this.fp_tb_new_pass.Name = "fp_tb_new_pass";
             this.fp_tb_new_pass.PasswordChar = '*';
             this.fp_tb_new_pass.Size = new System.Drawing.Size(263, 25);
@@ -188,6 +192,7 @@
             // fp_tb_conf_new_pass
             // 
             this.fp_tb_conf_new_pass.Location = new System.Drawing.Point(110, 60);
+            this.fp_tb_conf_new_pass.MaxLength = 255;
             this.fp_tb_conf_new_pass.Name = "fp_tb_conf_new_pass";
             this.fp_tb_conf_new_pass.PasswordChar = '*';
             this.fp_tb_conf_new_pass.Size = new System.Drawing.Size(263, 25);
@@ -196,9 +201,9 @@
             // 
             // fp_btn_changepass
             // 
-            this.fp_btn_changepass.Location = new System.Drawing.Point(263, 90);
+            this.fp_btn_changepass.Location = new System.Drawing.Point(223, 90);
             this.fp_btn_changepass.Name = "fp_btn_changepass";
-            this.fp_btn_changepass.Size = new System.Drawing.Size(110, 44);
+            this.fp_btn_changepass.Size = new System.Drawing.Size(150, 44);
             this.fp_btn_changepass.TabIndex = 21;
             this.fp_btn_changepass.Text = "Change Password\r\n";
             this.fp_btn_changepass.ThemeName = "VisualStudio2012Dark";
