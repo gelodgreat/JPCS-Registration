@@ -73,7 +73,6 @@ namespace JPCS_Registration
         }
         #endregion
 
-
         #region reg_btn_save
 
         private void reg_btn_save_Click(object sender, EventArgs e)
@@ -134,6 +133,10 @@ namespace JPCS_Registration
                         reg_tb_emergencycontactname.Clear();
                         reg_tb_emergenctcontactnumber.Clear();
                         dateTimePicker1.Value = dateTimePicker1.MinDate;
+
+                        globalconfig.Logger("Success");
+
+
                         //conn.Close();
                     }
                 }
@@ -142,6 +145,11 @@ namespace JPCS_Registration
                     if (ex.Message.Contains("Duplicate"))
                     {
                         RadMessageBox.Show(this, "The Student Number you have entered is already registered!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                        #region Log
+                        globalconfig.Logger(ex.Message);
+                        #endregion
+
                     }
                     else
                     {
@@ -173,15 +181,26 @@ namespace JPCS_Registration
                     comm.Parameters.AddWithValue("12", reg_tb_emergencycontactname.Text);
                     comm.Parameters.AddWithValue("13", reg_tb_emergenctcontactnumber.Text);
                     comm.ExecuteNonQuery();
+                    globalconfig.Logger(PrintQuery(command));
                     conn.Close();
 
 
                     RadMessageBox.Show(this, "Saved!", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Info);
+
+                    globalconfig.Logger("Success");
+
                     this.Dispose();
                 }
                 catch (Exception ex)
                 {
                     RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                    #region Log
+
+                    globalconfig.Logger(ex.Message);
+
+                    #endregion
+
                 }
                 finally
                 {
@@ -193,7 +212,9 @@ namespace JPCS_Registration
             else
             {
                 RadMessageBox.Show(this, "The System has encountered a fatal error! Please report to the Develpoers immediately.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+                
             }
+           
 
 
         }
@@ -290,6 +311,12 @@ namespace JPCS_Registration
             catch (Exception ex)
             {
                 RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+
+                #region Log
+                globalconfig.Logger(ex.Message);
+                #endregion
+
+
             }
         }
         #endregion
@@ -301,7 +328,7 @@ namespace JPCS_Registration
             if (!aa_tb_studo.MaskCompleted)
             {
                 SetError(aa_tb_studo, "Incorrect / Insufficient Student number");
-                Console.WriteLine(errorProviderEntries.ToString());
+                
             }
         }
 

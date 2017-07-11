@@ -141,13 +141,10 @@ namespace JPCS_Registration
         }
         public static void Logger(String msg)
         {
-            if (ConsoleIsShown)
-            {
+           
                 logfile = File.AppendText(path);
-                logfile.WriteLine("[" + "MM-dd-yyyy HH:mm" + "] " + msg);
-                Console.WriteLine("[" + "MM-dd-yyyy HH:mm" + "] " + msg);
+                logfile.WriteLine("[" + DateTime.Now.ToString("MM-dd-yyyy HH:mm:ss") + "] " + msg +" "+ Mainaction);
                 logfile.Close();
-            }
         }
 
     }

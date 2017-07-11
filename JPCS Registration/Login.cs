@@ -227,7 +227,6 @@ namespace JPCS_Registration
 
         private void log_tb_username_MouseEnter(object sender, EventArgs e)
         {
-            Console.WriteLine("Fire!");
             if (SettingsFormStatus == true)
             {
                 return;
@@ -240,7 +239,7 @@ namespace JPCS_Registration
 
         private void log_btn_settings_MouseEnter(object sender, EventArgs e)
         {
-            Console.WriteLine("Fire!");
+            
             if (SettingsFormStatus == true)
             {
                 return;
