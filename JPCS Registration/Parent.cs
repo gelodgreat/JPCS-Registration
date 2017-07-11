@@ -15,8 +15,7 @@ namespace JPCS_Registration
     public partial class Parent : Telerik.WinControls.UI.RadForm
     {
         [DllImport("kernel32.dll")]
-        public static extern bool Alloc
-            ();
+        public static extern bool AllocConsole();
 
         [DllImport("kernel32.dll")]
         public static extern bool FreeConsole();
