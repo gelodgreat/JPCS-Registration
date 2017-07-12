@@ -39,6 +39,7 @@ namespace JPCS_Registration
         {
 
             get_schoolyear();
+            GetActiveEvent(globalconfig.schoolyearactive);
 
             // Loop through all of the form's controls looking
             // for the control of type MdiClient.
@@ -52,7 +53,7 @@ namespace JPCS_Registration
                     // Set the BackColor of the MdiClient control.
                     ctlMDI.BackColor = this.BackColor;
                 }
-                catch (InvalidCastException ex)
+                catch //(InvalidCastException ex)
                 {
                     // Catch and ignore the error if casting failed.
                 }
@@ -74,6 +75,7 @@ namespace JPCS_Registration
             }
             radLabelMode.Text = globalconfig.fullname;
             radLabelServer.Text = "Server: " + Properties.Settings.Default.db_server;
+            radLabelEvent.Text = "Event: " + globalconfig.eventName;
             check_connection_type();
 
         }
@@ -153,6 +155,40 @@ namespace JPCS_Registration
                 MySQLConn.Dispose();
             }
         }
+        #region GetActiveEvent
+
+        public void GetActiveEvent(String schoolyear)
+        {
+            MySqlConnection MySQLConn = new MySqlConnection();
+            MySqlCommand comm;
+            MySqlDataReader reader;
+
+            MySQLConn.ConnectionString = globalconfig.connstring;
+
+            try
+            {
+                MySQLConn.Open();
+                comm = new MySqlCommand("CALL get_active_event(@1);", MySQLConn);
+                comm.Parameters.AddWithValue("1", schoolyear);
+                reader = comm.ExecuteReader();
+                int count = 0;
+                while (reader.Read())
+                {
+                    globalconfig.eventID = reader.GetInt32("eventId");
+                    globalconfig.eventName = reader.GetString("eventname");
+                    globalconfig.eventDate = reader.GetString("eventdate");
+                    globalconfig.eventTime= reader.GetString("eventTimeFrom")+" to "+reader.GetString("eventTimeTo");
+                    count++;
+                }
+                MySQLConn.Close();
+            }
+            catch
+            {
+                RadMessageBox.Show(this, "A fatal error occured. Please report this error to the Developers immediately", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+
+        #endregion
 
         private void MemberRenew_Click(object sender, EventArgs e)
         {
@@ -309,9 +345,15 @@ namespace JPCS_Registration
                 }
             }
 
-            EventRegistration eventReg = new EventRegistration();
-            eventReg.MdiParent = this;
-            eventReg.Show();
+            if (String.IsNullOrEmpty(globalconfig.eventName))
+            {
+                RadMessageBox.Show(this, "There is no active event. To activate an event, go to Events Mangement.", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1);
+            }else
+            {
+                EventRegistration eventReg = new EventRegistration();
+                eventReg.MdiParent = this;
+                eventReg.Show();
+            }            
         }
     }
 }

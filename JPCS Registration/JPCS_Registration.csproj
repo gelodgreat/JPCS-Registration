@@ -101,27 +101,27 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WinControls">
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.GridView, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WinControls.GridView">
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.GridView.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark">
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light">
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.UI, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WinControls.UI">
       <HintPath>..\lib\RCWF\2017.2.502.40\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="TelerikCommon, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+    <Reference Include="TelerikCommon">
       <HintPath>..\lib\RCWF\2017.2.502.40\TelerikCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -302,12 +302,6 @@
     <None Include="Resources\cover.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\jpcs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\jpcs1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
@@ -325,6 +319,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\jpcs1.png" />
     <None Include="FodyWeavers.xml" />
     <Content Include="JPCS_orb.ico" />
   </ItemGroup>

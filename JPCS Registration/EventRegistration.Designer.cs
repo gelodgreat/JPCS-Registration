@@ -33,9 +33,13 @@
             this.mtbStudNum = new System.Windows.Forms.MaskedTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.lblEventName = new Telerik.WinControls.UI.RadLabel();
+            this.lblDate = new Telerik.WinControls.UI.RadLabel();
+            this.lblTime = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblEventName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +52,7 @@
             this.btnRegister.TabIndex = 43;
             this.btnRegister.Text = "Register";
             this.btnRegister.ThemeName = "VisualStudio2012Dark";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // mtbStudNum
             // 
@@ -74,25 +79,55 @@
             // 
             // lblEventName
             // 
+            this.lblEventName.AutoSize = false;
             this.lblEventName.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.lblEventName.Location = new System.Drawing.Point(192, 80);
+            this.lblEventName.Location = new System.Drawing.Point(-1, 80);
             this.lblEventName.Name = "lblEventName";
-            this.lblEventName.Size = new System.Drawing.Size(224, 51);
+            this.lblEventName.Size = new System.Drawing.Size(593, 51);
             this.lblEventName.TabIndex = 40;
             this.lblEventName.Text = "lblEventName";
+            this.lblEventName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblEventName.ThemeName = "VisualStudio2012Dark";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = false;
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblDate.Location = new System.Drawing.Point(-1, 138);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(593, 22);
+            this.lblDate.TabIndex = 44;
+            this.lblDate.Text = "lblDate";
+            this.lblDate.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDate.ThemeName = "VisualStudio2012Dark";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = false;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblTime.Location = new System.Drawing.Point(-1, 175);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(593, 31);
+            this.lblTime.TabIndex = 44;
+            this.lblTime.Text = "lblTIme";
+            this.lblTime.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTime.ThemeName = "VisualStudio2012Dark";
             // 
             // EventRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 536);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.mtbStudNum);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.lblEventName);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EventRegistration";
             // 
             // 
@@ -101,9 +136,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventRegistration";
             this.ThemeName = "VisualStudio2012Dark";
+            this.Load += new System.EventHandler(this.EventRegistration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblEventName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,5 +154,7 @@
         private System.Windows.Forms.MaskedTextBox mtbStudNum;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadLabel lblEventName;
+        private Telerik.WinControls.UI.RadLabel lblDate;
+        private Telerik.WinControls.UI.RadLabel lblTime;
     }
 }

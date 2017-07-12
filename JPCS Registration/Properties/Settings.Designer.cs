@@ -82,5 +82,17 @@ namespace JPCS_Registration.Properties {
                 this["db_password"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string eventID {
+            get {
+                return ((string)(this["eventID"]));
+            }
+            set {
+                this["eventID"] = value;
+            }
+        }
     }
 }

@@ -58,6 +58,10 @@ namespace JPCS_Registration
         public MySqlDataReader reader;
         public MySqlDataAdapter adapter;
         private static Boolean DebugMode;
+        private static int eventIdentification;
+        private static string EventName;
+        private static string EventDate;
+        private static string EventTime;
         //public List<string> Locals
         //{
         //    get;set;
@@ -104,7 +108,27 @@ namespace JPCS_Registration
             get { return Connection; }
             set { Connection = value; }
         }
-
+        public static int eventID
+        {
+            get { return eventIdentification; }
+            set { eventIdentification = value; }
+        }
+        public static string eventName
+        {
+            get { return EventName;}
+            set { EventName = value; }
+        }
+        public static string eventDate
+        {
+            get { return EventDate; }
+            set { EventDate = value; } 
+        }
+        public static string eventTime
+        {
+            get { return EventTime; }
+            set { EventTime = value; }
+        }
+        
         //This is the variable that will be used on Editing or deleting a Student.
         private static string selectedstudent;
         public static string selection
@@ -132,12 +156,6 @@ namespace JPCS_Registration
         {
             get { return studentcount; }
             set { studentcount = value; }
-        }
-        private static string eventid;
-        public static string currentEventId
-        {
-            get { return eventid; }
-            set { eventid = value; }
         }
         public static void Logger(String msg)
         {
