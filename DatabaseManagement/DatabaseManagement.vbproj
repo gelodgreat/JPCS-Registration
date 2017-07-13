@@ -102,6 +102,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PseudoCredentials.Designer.vb">
+      <DependentUpon>PseudoCredentials.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PseudoCredentials.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PseudoMain.Designer.vb">
       <DependentUpon>PseudoMain.vb</DependentUpon>
     </Compile>
@@ -120,6 +126,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PseudoCredentials.resx">
+      <DependentUpon>PseudoCredentials.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PseudoMain.resx">
       <DependentUpon>PseudoMain.vb</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +144,14 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="7z.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

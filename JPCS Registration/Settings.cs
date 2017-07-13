@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Actions;
 
 namespace JPCS_Registration
 {
@@ -42,14 +43,14 @@ namespace JPCS_Registration
                     Properties.Settings.Default.db_server = set_tb_server.Text;
                     Properties.Settings.Default.db_database = jpreg;
                     Properties.Settings.Default.db_port = set_tb_port.Text;
-                    Properties.Settings.Default.db_username = set_tb_username.Text;
-                    Properties.Settings.Default.db_password = set_tb_password.Text;
+                    Properties.Settings.Default.db_username = Actions.Actions.EncryptString(Actions.Actions.ToSecureString(set_tb_username.Text));
+                    Properties.Settings.Default.db_password = Actions.Actions.EncryptString(Actions.Actions.ToSecureString(set_tb_password.Text));
                     Properties.Settings.Default.Save();
 
                     String server = Properties.Settings.Default.db_server;
-                    String username = Properties.Settings.Default.db_username;
+                    String username = Actions.Actions.ToInsecureString(Actions.Actions.DecryptString(Properties.Settings.Default.db_username));
                     String port = Properties.Settings.Default.db_port;
-                    String password = Properties.Settings.Default.db_password;
+                    String password = Actions.Actions.ToInsecureString(Actions.Actions.DecryptString(Properties.Settings.Default.db_password));
                     String database = Properties.Settings.Default.db_database;
 
 

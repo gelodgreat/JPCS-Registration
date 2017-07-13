@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Actions;
 
 namespace JPCS_Registration
 {
@@ -27,9 +28,9 @@ namespace JPCS_Registration
                 Application.SetCompatibleTextRenderingDefault(false);
                 globalconfig.fullname = "Guest Mode";
                 globalconfig.hostname = Properties.Settings.Default.db_server;
-                globalconfig.username = Properties.Settings.Default.db_username;
+                globalconfig.username = Actions.Actions.ToInsecureString(Actions.Actions.DecryptString(Properties.Settings.Default.db_username));
                 globalconfig.port = Properties.Settings.Default.db_port;
-                globalconfig.password = Properties.Settings.Default.db_password;
+                globalconfig.password = Actions.Actions.ToInsecureString(Actions.Actions.DecryptString(Properties.Settings.Default.db_password));
                 globalconfig.dbname = Properties.Settings.Default.db_database;
                 globalconfig.connstring = "server=" + globalconfig.hostname + ";port=" + globalconfig.port + ";username=" + globalconfig.username + ";password=" + globalconfig.password + ";database=" + globalconfig.dbname + ";";
                 Application.Run(new Login());

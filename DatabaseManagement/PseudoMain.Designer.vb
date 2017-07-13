@@ -30,6 +30,7 @@ Partial Class PseudoMain
         'sfd_DBExport
         '
         Me.sfd_DBExport.DefaultExt = "JPCS|*.jpcs"
+        Me.sfd_DBExport.Filter = "JPCS|*.jpcs"
         '
         'btnExport
         '
@@ -42,7 +43,7 @@ Partial Class PseudoMain
         '
         'btnRestore
         '
-        Me.btnRestore.Location = New System.Drawing.Point(176, 161)
+        Me.btnRestore.Location = New System.Drawing.Point(245, 161)
         Me.btnRestore.Name = "btnRestore"
         Me.btnRestore.Size = New System.Drawing.Size(100, 41)
         Me.btnRestore.TabIndex = 0
@@ -57,7 +58,7 @@ Partial Class PseudoMain
         Me.Controls.Add(Me.btnRestore)
         Me.Controls.Add(Me.btnExport)
         Me.Font = New System.Drawing.Font("Arial", 12.0!)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "PseudoMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PseudoMain"
