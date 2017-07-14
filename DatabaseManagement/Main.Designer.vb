@@ -30,6 +30,7 @@ Partial Class Main
         Me.lblDatabase = New Telerik.WinControls.UI.RadLabel()
         Me.VisualStudio2012DarkTheme1 = New Telerik.WinControls.Themes.VisualStudio2012DarkTheme()
         Me.btnConfigure = New Telerik.WinControls.UI.RadButton()
+        Me.ofd_DBRestore = New System.Windows.Forms.OpenFileDialog()
         CType(Me.btnExport, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRestore, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lblServer, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,6 +94,10 @@ Partial Class Main
         Me.btnConfigure.Text = "Configure"
         Me.btnConfigure.ThemeName = "VisualStudio2012Dark"
         '
+        'ofd_DBRestore
+        '
+        Me.ofd_DBRestore.FileName = "OpenFileDialog1"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -134,5 +139,6 @@ Partial Class Main
     Friend WithEvents lblDatabase As Telerik.WinControls.UI.RadLabel
     Friend WithEvents VisualStudio2012DarkTheme1 As Telerik.WinControls.Themes.VisualStudio2012DarkTheme
     Friend WithEvents btnConfigure As Telerik.WinControls.UI.RadButton
+    Friend WithEvents ofd_DBRestore As OpenFileDialog
 End Class
 
