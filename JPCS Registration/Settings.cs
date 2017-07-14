@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Actions;
+using System.Diagnostics;
 
 namespace JPCS_Registration
 {
@@ -94,6 +95,17 @@ namespace JPCS_Registration
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDB_Click(object sender, EventArgs e)
+        {
+            Process db = new Process();
+            db.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            db.StartInfo.CreateNoWindow = true;
+            db.StartInfo.FileName = "DatabaseManagement.exe";
+            db.StartInfo.Arguments = "-TestArg";
+            db.Start();
+            db.WaitForExit();
         }
     }
 }

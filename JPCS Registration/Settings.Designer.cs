@@ -39,6 +39,7 @@
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.set_tb_password = new Telerik.WinControls.UI.RadTextBox();
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
+            this.btnDB = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.set_tb_server)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.set_btn_save)).BeginInit();
@@ -49,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.set_tb_password)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@
             // set_btn_save
             // 
             this.set_btn_save.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.set_btn_save.Location = new System.Drawing.Point(45, 213);
+            this.set_btn_save.Location = new System.Drawing.Point(14, 213);
             this.set_btn_save.Name = "set_btn_save";
             this.set_btn_save.Size = new System.Drawing.Size(145, 41);
             this.set_btn_save.TabIndex = 4;
@@ -141,14 +143,16 @@
             this.set_tb_password.Location = new System.Drawing.Point(116, 158);
             this.set_tb_password.MaxLength = 255;
             this.set_tb_password.Name = "set_tb_password";
+            this.set_tb_password.PasswordChar = '●';
             this.set_tb_password.Size = new System.Drawing.Size(242, 33);
             this.set_tb_password.TabIndex = 3;
             this.set_tb_password.ThemeName = "VisualStudio2012Dark";
+            this.set_tb_password.UseSystemPasswordChar = true;
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnCancel.Location = new System.Drawing.Point(203, 213);
+            this.btnCancel.Location = new System.Drawing.Point(165, 213);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(145, 41);
             this.btnCancel.TabIndex = 4;
@@ -156,11 +160,22 @@
             this.btnCancel.ThemeName = "VisualStudio2012Dark";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnDB
+            // 
+            this.btnDB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDB.Location = new System.Drawing.Point(316, 213);
+            this.btnDB.Name = "btnDB";
+            this.btnDB.Size = new System.Drawing.Size(145, 41);
+            this.btnDB.TabIndex = 4;
+            this.btnDB.Text = "DB";
+            this.btnDB.ThemeName = "VisualStudio2012Dark";
+            this.btnDB.Click += new System.EventHandler(this.btnDB_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 266);
+            this.ClientSize = new System.Drawing.Size(478, 266);
             this.ControlBox = false;
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.radLabel3);
@@ -168,6 +183,7 @@
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.set_tb_username);
             this.Controls.Add(this.set_tb_port);
+            this.Controls.Add(this.btnDB);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.set_btn_save);
             this.Controls.Add(this.radLabel1);
@@ -194,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.set_tb_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,5 +229,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadTextBox set_tb_password;
         private Telerik.WinControls.UI.RadButton btnCancel;
+        private Telerik.WinControls.UI.RadButton btnDB;
     }
 }
