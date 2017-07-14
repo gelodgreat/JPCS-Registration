@@ -16,10 +16,10 @@ namespace JPCS_Registration
         public string selected;
         MySqlConnection MySQLConn;
         public DataTable dbdataset = new DataTable();
+        public int selectedEventID=0;
 
         public string selectedEventName;
         public string selectedEventDate;
-        public int selectedEventID;
         public string selectedEventTime;
 
         public EventManagement()
@@ -67,7 +67,8 @@ namespace JPCS_Registration
             {
                 lbEvents.Items.Clear();
                 MySQLConn.Open();
-                MySqlCommand comm = new MySqlCommand("CALL list_schoolyear()", MySQLConn);
+                MySqlCommand comm = new MySqlCommand("CALL get_eventlist(@1)", MySQLConn);
+                comm.Parameters.AddWithValue("1", globalconfig.schoolyearactive);
                 MySqlDataReader reader = comm.ExecuteReader();
                 while (reader.Read())
                 {
@@ -88,6 +89,7 @@ namespace JPCS_Registration
         private void EventManagement_Load(object sender, EventArgs e)
         {
             ShowParticipants(globalconfig.eventID);
+            GetEvents();
         }
 
         private void lbEvents_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,7 +98,6 @@ namespace JPCS_Registration
             MySQLConn.ConnectionString = globalconfig.connstring;
             try
             {
-                lbEvents.Items.Clear();
                 MySQLConn.Open();
                 MySqlCommand comm = new MySqlCommand("CALL get_eventDetails(@1)", MySQLConn);
                 comm.Parameters.AddWithValue("1", lbEvents.Text);
@@ -128,11 +129,12 @@ namespace JPCS_Registration
             {
                 lbEvents.Items.Clear();
                 MySQLConn.Open();
-                MySqlCommand comm = new MySqlCommand("CALL Add_event(@1, @2, @3, @4)", MySQLConn);
+                MySqlCommand comm = new MySqlCommand("CALL Add_event(@1, @2, @3, @4, @5)", MySQLConn);
                 comm.Parameters.AddWithValue("1", txtEventname.Text);
                 comm.Parameters.AddWithValue("2", txtEventDate.Text);
                 comm.Parameters.AddWithValue("3", txtStartTime.Text);
                 comm.Parameters.AddWithValue("4", txtEndTime.Text);
+                comm.Parameters.AddWithValue("5", globalconfig.schoolyearactive);
                 comm.ExecuteNonQuery();
                 MySQLConn.Close();
             }
@@ -144,6 +146,7 @@ namespace JPCS_Registration
             {
                 MySQLConn.Dispose();
             }
+            GetEvents();
         }
 
         private void radGridParticipants_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
@@ -171,7 +174,7 @@ namespace JPCS_Registration
             MySQLConn.ConnectionString = globalconfig.connstring;
             try
             {
-                lbEvents.Items.Clear();
+                
                 MySQLConn.Open();
                 MySqlCommand comm = new MySqlCommand("CALL delete_eventAttendance(@1, @2)", MySQLConn);
                 comm.Parameters.AddWithValue("1", selected);
@@ -191,7 +194,64 @@ namespace JPCS_Registration
 
         private void btnActivate_Click(object sender, EventArgs e)
         {
-            //TODO: Activate
+            if (selectedEventID==0)
+            {
+                RadMessageBox.Show(this, "Please choose an event first!!", "JPCS Registration");
+                return;
+            }
+            MySqlConnection MySQLConn = new MySqlConnection();
+            MySQLConn.ConnectionString = globalconfig.connstring;
+            try
+            {
+
+                MySQLConn.Open();
+                MySqlCommand comm = new MySqlCommand("Call Change_event(@1, @2)", MySQLConn);
+                comm.Parameters.AddWithValue("1", selectedEventID);
+                comm.Parameters.AddWithValue("2", globalconfig.schoolyearactive);
+                comm.ExecuteNonQuery();
+                MySQLConn.Close();
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(this, ex.Message, "JPCS Registration");
+            }
+            finally
+            {
+                MySQLConn.Dispose();
+            }
+        }
+
+        private void btnCopyRows_Click(object sender, EventArgs e)
+        {
+            copyCurrenttoClipboard();
+
+            try
+            {
+                Microsoft.Office.Interop.Excel.Application xlexcel;
+                Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+                Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+                object misValue = System.Reflection.Missing.Value;
+                xlexcel = new Microsoft.Office.Interop.Excel.Application();
+                xlexcel.Visible = true;
+                xlWorkBook = xlexcel.Workbooks.Add(misValue);
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+                CR.Select();
+                xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+            }
+            catch (Exception ex)
+            {
+                RadMessageBox.Show(this, ex.Message, "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error);
+            }
+        }
+        private void copyCurrenttoClipboard()
+        {
+            radGridParticipants.MultiSelect = true;
+            radGridParticipants.SelectAll();
+            DataObject dataObj = radGridParticipants.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+            radGridParticipants.MultiSelect = false;
         }
     }
 }

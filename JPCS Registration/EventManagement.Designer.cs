@@ -102,7 +102,7 @@
             this.radPageView1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radPageView1.Location = new System.Drawing.Point(0, 0);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage2;
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
             this.radPageView1.Size = new System.Drawing.Size(1235, 566);
             this.radPageView1.TabIndex = 1;
             this.radPageView1.Text = "All";
@@ -160,6 +160,7 @@
             this.btnCopyRows.TabIndex = 1;
             this.btnCopyRows.Text = "Open Excel File";
             this.btnCopyRows.ThemeName = "VisualStudio2012Dark";
+            this.btnCopyRows.Click += new System.EventHandler(this.btnCopyRows_Click);
             // 
             // radGridParticipants
             // 
