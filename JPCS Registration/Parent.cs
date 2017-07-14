@@ -355,5 +355,33 @@ namespace JPCS_Registration
                 eventReg.Show();
             }            
         }
+
+        private void EventManage_Click(object sender, EventArgs e)
+        {
+            if (globalconfig.isAuthenticated)
+            {
+                foreach (Form frm in this.MdiChildren)
+                {
+                    frm.Close();
+
+                }
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f is EventManagement)
+                    {
+                        f.Dispose();
+                        return;
+                    }
+                }
+
+                EventManagement eventmgmt = new EventManagement();
+                eventmgmt.MdiParent = this;
+                eventmgmt.Show();
+            }
+            else
+            {
+                RadMessageBox.Show(this, "Elevated mode is required to access Member Management. To enter elevated mode, close the Main Window and enter your correct account credentials. ", "JPCS Registration", MessageBoxButtons.OK, RadMessageIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
     }
 }

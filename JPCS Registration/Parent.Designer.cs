@@ -44,8 +44,9 @@
             this.radLabelMode = new Telerik.WinControls.UI.RadLabelElement();
             this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
             this.radLabelServer = new Telerik.WinControls.UI.RadLabelElement();
-            this.radLabelEvent = new Telerik.WinControls.UI.RadLabelElement();
             this.commandBarSeparator2 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.radLabelEvent = new Telerik.WinControls.UI.RadLabelElement();
+            this.EventManage = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -100,7 +101,8 @@
             // 
             this.radMenuItem3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.radMenuItem3.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.ParticipantAdd});
+            this.ParticipantAdd,
+            this.EventManage});
             this.radMenuItem3.Name = "radMenuItem3";
             this.radMenuItem3.Text = "Event";
             // 
@@ -171,6 +173,12 @@
             this.radLabelServer.TextWrap = true;
             this.radLabelServer.Click += new System.EventHandler(this.radLabelServer_Click);
             // 
+            // commandBarSeparator2
+            // 
+            this.commandBarSeparator2.Name = "commandBarSeparator2";
+            this.radStatusStrip1.SetSpring(this.commandBarSeparator2, false);
+            this.commandBarSeparator2.VisibleInOverflowMenu = false;
+            // 
             // radLabelEvent
             // 
             this.radLabelEvent.Name = "radLabelEvent";
@@ -178,18 +186,18 @@
             this.radLabelEvent.Text = "radLabelEvent";
             this.radLabelEvent.TextWrap = true;
             // 
-            // commandBarSeparator2
+            // EventManage
             // 
-            this.commandBarSeparator2.Name = "commandBarSeparator2";
-            this.radStatusStrip1.SetSpring(this.commandBarSeparator2, false);
-            this.commandBarSeparator2.Text = "";
-            this.commandBarSeparator2.VisibleInOverflowMenu = false;
+            this.EventManage.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EventManage.Name = "EventManage";
+            this.EventManage.Text = "Management";
+            this.EventManage.Click += new System.EventHandler(this.EventManage_Click);
             // 
             // Parent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = Properties.Resources.jpcs1;
+            this.BackgroundImage = global::JPCS_Registration.Properties.Resources.jpcs1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(794, 515);
             this.Controls.Add(this.radStatusStrip1);
@@ -233,5 +241,6 @@
         private Telerik.WinControls.UI.RadMenuItem ParticipantAdd;
         private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator2;
         private Telerik.WinControls.UI.RadLabelElement radLabelEvent;
+        private Telerik.WinControls.UI.RadMenuItem EventManage;
     }
 }

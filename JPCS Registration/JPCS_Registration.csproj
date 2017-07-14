@@ -147,6 +147,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dataset_Print.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EventManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventManagement.Designer.cs">
+      <DependentUpon>EventManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatabaseConnection.resx">
       <DependentUpon>DatabaseConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventManagement.resx">
+      <DependentUpon>EventManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EventRegistration.resx">
       <DependentUpon>EventRegistration.cs</DependentUpon>
