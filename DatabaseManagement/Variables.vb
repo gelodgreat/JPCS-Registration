@@ -9,5 +9,5 @@ Module Variables
     Public MySQLConn As MySqlConnection
     Public comm As New MySqlCommand
 
-    Public connstring = "server=" & _host & ";username=" & _uname & ";password=" & _pwd & ";"
+    Public connstring = "server=" & _host & ";port=" & _port & ";username=" & _uname & ";password=" & _pwd & ";"
 End Module

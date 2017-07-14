@@ -11,7 +11,7 @@
         _uname = Actions.Actions.ToInsecureString(Actions.Actions.DecryptString(My.Settings.username))
         _pwd = Actions.Actions.ToInsecureString(Actions.Actions.DecryptString(My.Settings.password))
 
-        connstring = "server=" & _host & ";username=" & _uname & ";password=" & _pwd & ";"
+        connstring = "server=" & _host & ";port=" & _port & ";username=" & _uname & ";password=" & _pwd & ";"
         Me.Dispose()
 
     End Sub
